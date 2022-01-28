@@ -735,35 +735,35 @@
            <div itemprop="articleBody">
              
   <div class="section" id="writing-a-new-costmap2d-plugin">
-<span id="writing-new-costmap2d-plugin"></span><h1>编写新的代价地图2D插件     <a class="reference external" href="http://www.fishros.com/calib#msgid=2042">[校准&#64;fish]</a><a class="headerlink" href="#writing-a-new-costmap2d-plugin" title="永久链接至标题"></a></h1>
+<span id="writing-new-costmap2d-plugin"></span><h1>编写新的代价地图2D插件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2042">[校准&#64;fish]</a><a class="headerlink" href="#writing-a-new-costmap2d-plugin" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">Overview</a></p></li>
 <li><p><a class="reference internal" href="#requirements">Requirements</a></p></li>
 <li><p><a class="reference internal" href="#tutorial-steps">Tutorial Steps</a></p></li>
 </ul>
-<a class="reference internal image-reference" href="../../_images/gradient_layer_preview.gif"><img alt="带有渐变演示的动画gif     `[校准&#64;fish] &lt;http://www.fishros.com/calib#msgid=2043&gt;`_ " class="align-center" src="../../_images/gradient_layer_preview.gif" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/gradient_layer_preview.gif"><img alt="带有渐变演示的动画gif     `[校准&#64;fish] &lt;http://10.55.23.25:3000/#msgid=2043&gt;`_ " class="align-center" src="../../_images/gradient_layer_preview.gif" style="width: 700px;" /></a>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>本教程演示如何创建自己的简单 <a class="reference external" href="http://wiki.ros.org/pluginlib">plugin</a> 用代价地图2D。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2044">[校准&#64;fish]</a></p>
-<p>在开始本教程之前，请检查此 <a class="reference external" href="https://vimeo.com/106994708">video</a> ，其中包含有关代价地图2D层设计和插件基本操作原理的信息。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2045">[校准&#64;fish]</a></p>
+<p>本教程演示如何创建自己的简单 <a class="reference external" href="http://wiki.ros.org/pluginlib">plugin</a> 用代价地图2D。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2044">[校准&#64;fish]</a></p>
+<p>在开始本教程之前，请检查此 <a class="reference external" href="https://vimeo.com/106994708">video</a> ，其中包含有关代价地图2D层设计和插件基本操作原理的信息。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2045">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
-<p>假设ROS 2、Gazebo和TurtleBot3包是在本地安装或构建的。请确保导航2项目也是在本地建造的，因为它是在 <a class="reference internal" href="../../build_instructions/index.html#build-instructions"><span class="std std-ref">构建和安装</span></a> 制造的。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2046">[校准&#64;fish]</a></p>
+<p>假设ROS 2、Gazebo和TurtleBot3包是在本地安装或构建的。请确保导航2项目也是在本地建造的，因为它是在 <a class="reference internal" href="../../build_instructions/index.html#build-instructions"><span class="std std-ref">构建和安装</span></a> 制造的。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2046">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="tutorial-steps">
 <h2>教程步骤<a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="write-a-new-costmap2d-plugin">
-<h3>1写新代价地图2D插件     <a class="reference external" href="http://www.fishros.com/calib#msgid=2047">[校准&#64;fish]</a><a class="headerlink" href="#write-a-new-costmap2d-plugin" title="永久链接至标题"></a></h3>
-<p>演示，这个例子将创建costmap插件，重复成本梯度costmap。注解码可以找到本教程在 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials">navigation2_tutorials</a> 库的 <code class="docutils literal notranslate"><span class="pre">nav2_gradient_costmap_plugin</span></code> ROS 2包。请参考时自己层插件代价地图2D。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2048">[校准&#64;fish]</a></p>
-<p>插件类 “nav2 _ 梯度 _ 成本 _ 插件:: 梯度层 `` is inherited from basic class `` nav2 _ 成本 _ 2d:: 层”:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2049">[校准&#64;fish]</a></p>
+<h3>1写新代价地图2D插件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2047">[校准&#64;fish]</a><a class="headerlink" href="#write-a-new-costmap2d-plugin" title="永久链接至标题"></a></h3>
+<p>演示，这个例子将创建costmap插件，重复成本梯度costmap。注解码可以找到本教程在 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials">navigation2_tutorials</a> 库的 <code class="docutils literal notranslate"><span class="pre">nav2_gradient_costmap_plugin</span></code> ROS 2包。请参考时自己层插件代价地图2D。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2048">[校准&#64;fish]</a></p>
+<p>插件类 “nav2 _ 梯度 _ 成本 _ 插件:: 梯度层 `` is inherited from basic class `` nav2 _ 成本 _ 2d:: 层”:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2049">[校准&#64;fish]</a></p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">namespace</span><span class="w"> </span><span class="n">nav2_gradient_costmap_plugin</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 
 <span class="n">class</span><span class="w"> </span><span class="nl">GradientLayer</span> <span class="p">:</span><span class="w"> </span><span class="n">public</span><span class="w"> </span><span class="n">nav2_costmap_2d</span><span class="o">::</span><span class="n">Layer</span><span class="w"></span>
 </pre></div>
 </div>
-<p>基本类提供的虚拟方法API处理costmap层插件。这些方法调用在运行 <code class="docutils literal notranslate"><span class="pre">LayeredCostmap</span></code> 。方法列表，描述必要性这些方法插件代码提出下表:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2050">[校准&#64;fish]</a></p>
+<p>基本类提供的虚拟方法API处理costmap层插件。这些方法调用在运行 <code class="docutils literal notranslate"><span class="pre">LayeredCostmap</span></code> 。方法列表，描述必要性这些方法插件代码提出下表:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2050">[校准&#64;fish]</a></p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -773,49 +773,49 @@
 <tbody>
 <tr class="row-odd"><td><p>虚拟方法</p></td>
 <td><p>方法描述</p></td>
-<td><p>Requires需要覆盖？**     <a class="reference external" href="http://www.fishros.com/calib#msgid=2052">[校准&#64;fish]</a></p></td>
+<td><p>Requires需要覆盖？**     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2052">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-even"><td><p>onInitialize()     <a class="reference external" href="http://www.fishros.com/calib#msgid=2053">[校准&#64;fish]</a></p></td>
-<td><p>方法的末尾调用插件初始化。通常声明ROS参数。这是任何需要初始化应该发生。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2054">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>onInitialize()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2053">[校准&#64;fish]</a></p></td>
+<td><p>方法的末尾调用插件初始化。通常声明ROS参数。这是任何需要初始化应该发生。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2054">[校准&#64;fish]</a></p></td>
 <td><p>不</p></td>
 </tr>
-<tr class="row-odd"><td><p>Updatebound ()     <a class="reference external" href="http://www.fishros.com/calib#msgid=2055">[校准&#64;fish]</a></p></td>
-<td><p>方法问插件: 面积costmap层需要更新。有3输入参数方法: 机器人位置和定位4输出参数: 指针窗口边界。这些边界用于性能原因: 更新区域内窗口是新信息，避免更新整个costmap每次迭代。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2056">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>Updatebound ()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2055">[校准&#64;fish]</a></p></td>
+<td><p>方法问插件: 面积costmap层需要更新。有3输入参数方法: 机器人位置和定位4输出参数: 指针窗口边界。这些边界用于性能原因: 更新区域内窗口是新信息，避免更新整个costmap每次迭代。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2056">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
-<tr class="row-even"><td><p>updateCosts()     <a class="reference external" href="http://www.fishros.com/calib#msgid=2057">[校准&#64;fish]</a></p></td>
-<td><p>每次需要重新计算costmap时都会调用方法。它仅在其边界窗口内更新costmap层。方法有4个输入参数: 计算窗口边界和1个输出参数: 参考结果costmap <code class="docutils literal notranslate"><span class="pre">master_grid</span></code> 。 <code class="docutils literal notranslate"><span class="pre">Layer</span></code> 类为插件提供了一个内部成本图， <code class="docutils literal notranslate"><span class="pre">costmap_</span></code> ，用于更新。的 <code class="docutils literal notranslate"><span class="pre">master_grid</span></code> 应更新值窗口边界使用以下更新方法:  <code class="docutils literal notranslate"><span class="pre">updateWithAddition()</span></code> ， <code class="docutils literal notranslate"><span class="pre">updateWithMax()</span></code> ， <code class="docutils literal notranslate"><span class="pre">updateWithOverwrite()</span></code> 或 <code class="docutils literal notranslate"><span class="pre">updateWithTrueOverwrite()</span></code> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2058">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>updateCosts()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2057">[校准&#64;fish]</a></p></td>
+<td><p>每次需要重新计算costmap时都会调用方法。它仅在其边界窗口内更新costmap层。方法有4个输入参数: 计算窗口边界和1个输出参数: 参考结果costmap <code class="docutils literal notranslate"><span class="pre">master_grid</span></code> 。 <code class="docutils literal notranslate"><span class="pre">Layer</span></code> 类为插件提供了一个内部成本图， <code class="docutils literal notranslate"><span class="pre">costmap_</span></code> ，用于更新。的 <code class="docutils literal notranslate"><span class="pre">master_grid</span></code> 应更新值窗口边界使用以下更新方法:  <code class="docutils literal notranslate"><span class="pre">updateWithAddition()</span></code> ， <code class="docutils literal notranslate"><span class="pre">updateWithMax()</span></code> ， <code class="docutils literal notranslate"><span class="pre">updateWithOverwrite()</span></code> 或 <code class="docutils literal notranslate"><span class="pre">updateWithTrueOverwrite()</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2058">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
-<tr class="row-odd"><td><p>matchSize()     <a class="reference external" href="http://www.fishros.com/calib#msgid=2059">[校准&#64;fish]</a></p></td>
-<td><p>方法每次地图大小改变。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2060">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>matchSize()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2059">[校准&#64;fish]</a></p></td>
+<td><p>方法每次地图大小改变。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2060">[校准&#64;fish]</a></p></td>
 <td><p>不</p></td>
 </tr>
-<tr class="row-even"><td><p>onFootprintChanged()     <a class="reference external" href="http://www.fishros.com/calib#msgid=2061">[校准&#64;fish]</a></p></td>
-<td><p>每次改变足迹时都会调用方法。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2062">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>onFootprintChanged()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2061">[校准&#64;fish]</a></p></td>
+<td><p>每次改变足迹时都会调用方法。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2062">[校准&#64;fish]</a></p></td>
 <td><p>不</p></td>
 </tr>
 <tr class="row-odd"><td><p>reset()</p></td>
-<td><p>可能任何代码执行costmap复位。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2064">[校准&#64;fish]</a></p></td>
+<td><p>可能任何代码执行costmap复位。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2064">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
 </tbody>
 </table>
-<p>在我们的示例中，这些方法具有以下功能:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2065">[校准&#64;fish]</a></p>
+<p>在我们的示例中，这些方法具有以下功能:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2065">[校准&#64;fish]</a></p>
 <ol class="arabic simple">
-<li><p>参数``GradientLayer::onInitialize()`` contains声明ROS参数的默认值:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2066">[校准&#64;fish]</a></p></li>
+<li><p>参数``GradientLayer::onInitialize()`` contains声明ROS参数的默认值:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2066">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">declareParameter</span><span class="p">(</span><span class="s">&quot;enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">ParameterValue</span><span class="p">(</span><span class="nb">true</span><span class="p">));</span><span class="w"></span>
 <span class="n">node_</span><span class="o">-&gt;</span><span class="n">get_parameter</span><span class="p">(</span><span class="n">name_</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">enabled_</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>并设置 <code class="docutils literal notranslate"><span class="pre">need_recalculation_</span></code> 边界重新计算指标:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2067">[校准&#64;fish]</a></p>
+<p>并设置 <code class="docutils literal notranslate"><span class="pre">need_recalculation_</span></code> 边界重新计算指标:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2067">[校准&#64;fish]</a></p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">need_recalculation_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p><code class="docutils literal notranslate"><span class="pre">GradientLayer::updateBounds()</span></code> re-calculates window bounds if <code class="docutils literal notranslate"><span class="pre">need_recalculation_</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code> and updates them regardless of <code class="docutils literal notranslate"><span class="pre">need_recalculation_</span></code> value.     <a class="reference external" href="http://www.fishros.com/calib#msgid=2068">[校准&#64;fish]</a></p></li>
-<li><p>参数``GradientLayer::updateCosts()`` - in this method the gradient is writing directly to the resulting costmap <code class="docutils literal notranslate"><span class="pre">master_grid</span></code> without merging with previous layers. This is equal to working with internal <code class="docutils literal notranslate"><span class="pre">costmap_</span></code> and then calling <code class="docutils literal notranslate"><span class="pre">updateWithTrueOverwrite()</span></code> method。以下是主成本图的梯度制作算法:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2069">[校准&#64;fish]</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GradientLayer::updateBounds()</span></code> re-calculates window bounds if <code class="docutils literal notranslate"><span class="pre">need_recalculation_</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code> and updates them regardless of <code class="docutils literal notranslate"><span class="pre">need_recalculation_</span></code> value.     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2068">[校准&#64;fish]</a></p></li>
+<li><p>参数``GradientLayer::updateCosts()`` - in this method the gradient is writing directly to the resulting costmap <code class="docutils literal notranslate"><span class="pre">master_grid</span></code> without merging with previous layers. This is equal to working with internal <code class="docutils literal notranslate"><span class="pre">costmap_</span></code> and then calling <code class="docutils literal notranslate"><span class="pre">updateWithTrueOverwrite()</span></code> method。以下是主成本图的梯度制作算法:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2069">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">gradient_index</span><span class="p">;</span><span class="w"></span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min_j</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">max_j</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -836,36 +836,36 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>其中 <code class="docutils literal notranslate"><span class="pre">GRADIENT_SIZE</span></code> 是地图单元中每个梯度周期的大小， <code class="docutils literal notranslate"><span class="pre">GRADIENT_FACTOR</span></code> -每一步的成本图值的递减:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2070">[校准&#64;fish]</a></p>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">GRADIENT_SIZE</span></code> 是地图单元中每个梯度周期的大小， <code class="docutils literal notranslate"><span class="pre">GRADIENT_FACTOR</span></code> -每一步的成本图值的递减:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2070">[校准&#64;fish]</a></p>
 <img alt="../../_images/gradient_explanation.png" src="../../_images/gradient_explanation.png" />
-<p>这些参数在插件的头文件中定义。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2071">[校准&#64;fish]</a></p>
+<p>这些参数在插件的头文件中定义。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2071">[校准&#64;fish]</a></p>
 <ol class="arabic simple" start="4">
-<li><p><code class="docutils literal notranslate"><span class="pre">GradientLayer::onFootprintChanged()</span></code> just resets <code class="docutils literal notranslate"><span class="pre">need_recalculation_</span></code> value.     <a class="reference external" href="http://www.fishros.com/calib#msgid=2072">[校准&#64;fish]</a></p></li>
-<li><p>参数``GradientLayer::reset()`` method is dummy: it is not used in this example plugin. It remaining there since pure virtual function <code class="docutils literal notranslate"><span class="pre">reset()</span></code> in parent <code class="docutils literal notranslate"><span class="pre">Layer</span></code> class必须被推翻。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2073">[校准&#64;fish]</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GradientLayer::onFootprintChanged()</span></code> just resets <code class="docutils literal notranslate"><span class="pre">need_recalculation_</span></code> value.     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2072">[校准&#64;fish]</a></p></li>
+<li><p>参数``GradientLayer::reset()`` method is dummy: it is not used in this example plugin. It remaining there since pure virtual function <code class="docutils literal notranslate"><span class="pre">reset()</span></code> in parent <code class="docutils literal notranslate"><span class="pre">Layer</span></code> class必须被推翻。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2073">[校准&#64;fish]</a></p></li>
 </ol>
 </div>
 <div class="section" id="export-and-make-gradientlayer-plugin">
-<h3>2-Export GradientLayer plugin     <a class="reference external" href="http://www.fishros.com/calib#msgid=2074">[校准&#64;fish]</a><a class="headerlink" href="#export-and-make-gradientlayer-plugin" title="永久链接至标题"></a></h3>
-<p>书面插件将加载运行时基本父类然后将调用插件处理模块 (costmap2d的 <code class="docutils literal notranslate"><span class="pre">LayeredCostmap</span></code> )。Pluginlib打开给定插件在运行时提供方法导出类调用。机制类导出告诉pluginlib基本类中使用这些调用。这允许扩展应用插件不知道应用源代码或重新编译它。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2075">[校准&#64;fish]</a></p>
-<p>在我们的示例中，“nav2_gradent_costmap_plugin:: gradentlayer” 插件的类应作为“ nav2_costmap_2d:: layer” 基础类动态加载。为此，插件应按如下方式注册:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2076">[校准&#64;fish]</a></p>
+<h3>2-Export GradientLayer plugin     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2074">[校准&#64;fish]</a><a class="headerlink" href="#export-and-make-gradientlayer-plugin" title="永久链接至标题"></a></h3>
+<p>书面插件将加载运行时基本父类然后将调用插件处理模块 (costmap2d的 <code class="docutils literal notranslate"><span class="pre">LayeredCostmap</span></code> )。Pluginlib打开给定插件在运行时提供方法导出类调用。机制类导出告诉pluginlib基本类中使用这些调用。这允许扩展应用插件不知道应用源代码或重新编译它。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2075">[校准&#64;fish]</a></p>
+<p>在我们的示例中，“nav2_gradent_costmap_plugin:: gradentlayer” 插件的类应作为“ nav2_costmap_2d:: layer” 基础类动态加载。为此，插件应按如下方式注册:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2076">[校准&#64;fish]</a></p>
 <ol class="arabic simple">
-<li><p>插件的类应该用加载类的基本类型注册。为此，应该将一个特殊的宏 <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code> 添加到组成插件库的任何源文件中:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2077">[校准&#64;fish]</a></p></li>
+<li><p>插件的类应该用加载类的基本类型注册。为此，应该将一个特殊的宏 <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code> 添加到组成插件库的任何源文件中:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2077">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#include &quot;pluginlib/class_list_macros.hpp&quot;
 PLUGINLIB_EXPORT_CLASS(nav2_gradient_costmap_plugin::GradientLayer, nav2_costmap_2d::Layer)
 </pre></div>
 </div>
-<p>这部分通常放在写插件类的cpp文件的末尾 (在我们的例子中是 <code class="docutils literal notranslate"><span class="pre">gradient_layer.cpp</span></code> )。最好将这些行放在文件的末尾，但从技术上讲，您也可以放在顶部。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2078">[校准&#64;fish]</a></p>
+<p>这部分通常放在写插件类的cpp文件的末尾 (在我们的例子中是 <code class="docutils literal notranslate"><span class="pre">gradient_layer.cpp</span></code> )。最好将这些行放在文件的末尾，但从技术上讲，您也可以放在顶部。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2078">[校准&#64;fish]</a></p>
 <ol class="arabic simple" start="2">
-<li><p>插件的信息应该存储到插件描述文件中。这是通过在插件包中使用单独的XML (在我们的示例中是 <code class="docutils literal notranslate"><span class="pre">gradient_plugins.xml</span></code> ) 来完成的。此文件包含以下信息:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2079">[校准&#64;fish]</a></p></li>
+<li><p>插件的信息应该存储到插件描述文件中。这是通过在插件包中使用单独的XML (在我们的示例中是 <code class="docutils literal notranslate"><span class="pre">gradient_plugins.xml</span></code> ) 来完成的。此文件包含以下信息:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2079">[校准&#64;fish]</a></p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li><p>参数``path``:路径和名称库插件放置。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2080">[校准&#64;fish]</a></p></li>
-<li><p>参数``name``: 关于插件类型可以参考 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> parameter (详见下一节)。它可以是你想要的任何东西。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2081">[校准&#64;fish]</a></p></li>
-<li><p>参数``type``:插件类命名空间从源代码。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2082">[校准&#64;fish]</a></p></li>
-<li><p>参数``basic_class_type``:基本父类plugin类导出。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2083">[校准&#64;fish]</a></p></li>
-<li><p>参数``description``:插件描述文本形式。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2084">[校准&#64;fish]</a></p></li>
+<li><p>参数``path``:路径和名称库插件放置。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2080">[校准&#64;fish]</a></p></li>
+<li><p>参数``name``: 关于插件类型可以参考 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> parameter (详见下一节)。它可以是你想要的任何东西。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2081">[校准&#64;fish]</a></p></li>
+<li><p>参数``type``:插件类命名空间从源代码。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2082">[校准&#64;fish]</a></p></li>
+<li><p>参数``basic_class_type``:基本父类plugin类导出。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2083">[校准&#64;fish]</a></p></li>
+<li><p>参数``description``:插件描述文本形式。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2084">[校准&#64;fish]</a></p></li>
 </ul>
 </div></blockquote>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;library</span> <span class="na">path=</span><span class="s">&quot;nav2_gradient_costmap_plugin_core&quot;</span><span class="nt">&gt;</span>
@@ -875,26 +875,26 @@ PLUGINLIB_EXPORT_CLASS(nav2_gradient_costmap_plugin::GradientLayer, nav2_costmap
 <span class="nt">&lt;/library&gt;</span>
 </pre></div>
 </div>
-<p>插件的导出是通过将 <code class="docutils literal notranslate"><span class="pre">pluginlib_export_plugin_description_file()</span></code> cmake函数包含到 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> 中来执行的。此函数将插件描述文件安装到 <code class="docutils literal notranslate"><span class="pre">share</span></code> 目录中，并设置插件描述XML的属性索引，以便作为所选类型的插件发现:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2085">[校准&#64;fish]</a></p>
+<p>插件的导出是通过将 <code class="docutils literal notranslate"><span class="pre">pluginlib_export_plugin_description_file()</span></code> cmake函数包含到 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> 中来执行的。此函数将插件描述文件安装到 <code class="docutils literal notranslate"><span class="pre">share</span></code> 目录中，并设置插件描述XML的属性索引，以便作为所选类型的插件发现:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2085">[校准&#64;fish]</a></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pluginlib_export_plugin_description_file(nav2_costmap_2d gradient_layer.xml)
 </pre></div>
 </div>
-<p>插件描述文件也应该添加到 <code class="docutils literal notranslate"><span class="pre">package.xml</span></code> 。 <code class="docutils literal notranslate"><span class="pre">costmap_2d</span></code> 是包的接口定义，我们机箱 <code class="docutils literal notranslate"><span class="pre">Layer</span></code> ，需要路径xml文件:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2086">[校准&#64;fish]</a></p>
+<p>插件描述文件也应该添加到 <code class="docutils literal notranslate"><span class="pre">package.xml</span></code> 。 <code class="docutils literal notranslate"><span class="pre">costmap_2d</span></code> 是包的接口定义，我们机箱 <code class="docutils literal notranslate"><span class="pre">Layer</span></code> ，需要路径xml文件:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2086">[校准&#64;fish]</a></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;export&gt;
   &lt;costmap_2d plugin=&quot;${prefix}/gradient_layer.xml&quot; /&gt;
   ...
 &lt;/export&gt;
 </pre></div>
 </div>
-<p>一切完成后把插件封装成 <code class="docutils literal notranslate"><span class="pre">src</span></code> 目录一定ROS 2-workspace，构建插件包 ( <code class="docutils literal notranslate"><span class="pre">colcon</span> <span class="pre">build</span> <span class="pre">--packages-select</span> <span class="pre">nav2_gradient_costmap_plugin</span> <span class="pre">--symlink-install</span></code> ) 和源 <code class="docutils literal notranslate"><span class="pre">setup.bash</span></code> 文件有必要。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2087">[校准&#64;fish]</a></p>
+<p>一切完成后把插件封装成 <code class="docutils literal notranslate"><span class="pre">src</span></code> 目录一定ROS 2-workspace，构建插件包 ( <code class="docutils literal notranslate"><span class="pre">colcon</span> <span class="pre">build</span> <span class="pre">--packages-select</span> <span class="pre">nav2_gradient_costmap_plugin</span> <span class="pre">--symlink-install</span></code> ) 和源 <code class="docutils literal notranslate"><span class="pre">setup.bash</span></code> 文件有必要。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2087">[校准&#64;fish]</a></p>
 <p>现在插件可以使用了。</p>
 </div>
 <div class="section" id="enable-the-plugin-in-costmap2d">
-<h3>3-在代价地图2D中启用插件     <a class="reference external" href="http://www.fishros.com/calib#msgid=2089">[校准&#64;fish]</a><a class="headerlink" href="#enable-the-plugin-in-costmap2d" title="永久链接至标题"></a></h3>
-<p>下一步，需要告知代价地图2D有关新插件的信息。的插件应添加到 <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 列表 <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> 可选用 <code class="docutils literal notranslate"><span class="pre">local_costmap</span></code> / <code class="docutils literal notranslate"><span class="pre">global_costmap</span></code> 为了启用在运行时间控制器/规划器服务器。 <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 列表包含插件对象的名称。这些名字可以是你想要的任何东西。 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 包含列在 <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 对象中的类型。这些类型应对应于插件描述XML文件中指定的插件类的 <code class="docutils literal notranslate"><span class="pre">name</span></code> 字段。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2090">[校准&#64;fish]</a></p>
+<h3>3-在代价地图2D中启用插件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2089">[校准&#64;fish]</a><a class="headerlink" href="#enable-the-plugin-in-costmap2d" title="永久链接至标题"></a></h3>
+<p>下一步，需要告知代价地图2D有关新插件的信息。的插件应添加到 <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 列表 <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> 可选用 <code class="docutils literal notranslate"><span class="pre">local_costmap</span></code> / <code class="docutils literal notranslate"><span class="pre">global_costmap</span></code> 为了启用在运行时间控制器/规划器服务器。 <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 列表包含插件对象的名称。这些名字可以是你想要的任何东西。 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 包含列在 <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 对象中的类型。这些类型应对应于插件描述XML文件中指定的插件类的 <code class="docutils literal notranslate"><span class="pre">name</span></code> 字段。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2090">[校准&#64;fish]</a></p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>用Galactic或后， <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 替换单个 <code class="docutils literal notranslate"><span class="pre">plugins</span></code> string载体插件名称。类型现在定义在 <code class="docutils literal notranslate"><span class="pre">plugin_name</span></code> 命名空间 ''plugin: `` field (e.g. `` 插件: MyPlugin: Plugin'')。内联注释代码块将帮助您通过这个。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2091">[校准&#64;fish]</a></p>
+<p>用Galactic或后， <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 替换单个 <code class="docutils literal notranslate"><span class="pre">plugins</span></code> string载体插件名称。类型现在定义在 <code class="docutils literal notranslate"><span class="pre">plugin_name</span></code> 命名空间 ''plugin: `` field (e.g. `` 插件: MyPlugin: Plugin'')。内联注释代码块将帮助您通过这个。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2091">[校准&#64;fish]</a></p>
 </div>
 <p>例如:</p>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- a/nav2_bringup/bringup/params/nav2_params.yaml</span>
@@ -927,14 +927,14 @@ PLUGINLIB_EXPORT_CLASS(nav2_gradient_costmap_plugin::GradientLayer, nav2_costmap
        obstacle_layer:
 </pre></div>
 </div>
-<p>YAML-file还可能包含每个插件的参数列表 (如果有)，由插件对象名称标识。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2093">[校准&#64;fish]</a></p>
-<p>注意: 可能有许多同时加载的一种类型的插件对象。为此， <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 列表应包含不同的插件名称，无论 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 是否保持相同类型。例如:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2094">[校准&#64;fish]</a></p>
+<p>YAML-file还可能包含每个插件的参数列表 (如果有)，由插件对象名称标识。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2093">[校准&#64;fish]</a></p>
+<p>注意: 可能有许多同时加载的一种类型的插件对象。为此， <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 列表应包含不同的插件名称，无论 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 是否保持相同类型。例如:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2094">[校准&#64;fish]</a></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>plugin_names: [&quot;obstacle_layer&quot;, &quot;gradient_layer_1&quot;, &quot;gradient_layer_2&quot;] # For Eloquent and earlier
 plugin_types: [&quot;nav2_costmap_2d::ObstacleLayer&quot;, &quot;nav2_gradient_costmap_plugin/GradientLayer&quot;, &quot;nav2_gradient_costmap_plugin/GradientLayer&quot;] # For Eloquent and earlier
 plugins: [&quot;obstacle_layer&quot;, &quot;gradient_layer_1&quot;, &quot;gradient_layer_2&quot;] # For Foxy and later
 </pre></div>
 </div>
-<p>在这种情况下，每个插件对象将由其自己的YAML文件中的参数树处理，例如:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2095">[校准&#64;fish]</a></p>
+<p>在这种情况下，每个插件对象将由其自己的YAML文件中的参数树处理，例如:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2095">[校准&#64;fish]</a></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>gradient_layer_1:
   plugin: nav2_gradient_costmap_plugin/GradientLayer # For Foxy and later
   enabled: True
@@ -948,12 +948,12 @@ gradient_layer_2:
 </div>
 <div class="section" id="run-gradientlayer-plugin">
 <h3>4-运行梯度层插件<a class="headerlink" href="#run-gradientlayer-plugin" title="永久链接至标题"></a></h3>
-<p>运行Turtlebot3 仿真启用Nav2。详细instructuction如何使得它写在 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 。下面快捷命令:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2097">[校准&#64;fish]</a></p>
+<p>运行Turtlebot3 仿真启用Nav2。详细instructuction如何使得它写在 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 。下面快捷命令:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2097">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ros2 launch nav2_bringup tb3_simulation_launch.py
 </pre></div>
 </div>
-<p>然后转到RViz，点击顶部的  &quot;2D Pose Estimate&quot; 按钮，指出地图上的位置，就像 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 中描述的那样。机器人将被定位在地图上，结果应如下图所示。可以看到梯度成本图。还有两件值得注意的事情: 由 “梯度层::updateCosts()” 在其边界内的成本图和按梯度弯曲的全局路径动态更新:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2098">[校准&#64;fish]</a></p>
-<a class="reference internal image-reference" href="../../_images/gradient_layer_run.png"><img alt="图像梯度costmap使用     `[校准&#64;fish] &lt;http://www.fishros.com/calib#msgid=2099&gt;`_ " class="align-center" src="../../_images/gradient_layer_run.png" style="width: 700px;" /></a>
+<p>然后转到RViz，点击顶部的  &quot;2D Pose Estimate&quot; 按钮，指出地图上的位置，就像 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 中描述的那样。机器人将被定位在地图上，结果应如下图所示。可以看到梯度成本图。还有两件值得注意的事情: 由 “梯度层::updateCosts()” 在其边界内的成本图和按梯度弯曲的全局路径动态更新:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2098">[校准&#64;fish]</a></p>
+<a class="reference internal image-reference" href="../../_images/gradient_layer_run.png"><img alt="图像梯度costmap使用     `[校准&#64;fish] &lt;http://10.55.23.25:3000/#msgid=2099&gt;`_ " class="align-center" src="../../_images/gradient_layer_run.png" style="width: 700px;" /></a>
 </div>
 </div>
 </div>

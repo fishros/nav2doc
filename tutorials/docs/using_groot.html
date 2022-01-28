@@ -735,7 +735,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="groot-interacting-with-behavior-trees">
-<span id="groot-introduction"></span><h1>Groot与行为树互动     <a class="reference external" href="http://www.fishros.com/calib#msgid=1432">[校准&#64;fish]</a><a class="headerlink" href="#groot-interacting-with-behavior-trees" title="永久链接至标题"></a></h1>
+<span id="groot-introduction"></span><h1>Groot与行为树互动     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1432">[校准&#64;fish]</a><a class="headerlink" href="#groot-interacting-with-behavior-trees" title="永久链接至标题"></a></h1>
 <div class="figure align-center" id="groot-startup-menu">
 <img alt="../../_images/groot_start_menu.png" src="../../_images/groot_start_menu.png" />
 </div>
@@ -757,19 +757,19 @@
 Behavior Trees are deeply integrated into Nav2, used as the main method of orchestrating task server logic across a complex navigation and autonomy stack.
 Behavior Trees, in short BTs, consist of many nodes completing different tasks and control the flow of logic, similar to a Heirarchical or Finite State Machine, but organized in a tree structure.
 These nodes are of types: <cite>Action</cite>, <cite>Condition</cite>, <cite>Control</cite>, or <cite>Decorator</cite>, and are described in more detail in <a class="reference internal" href="../../concepts/index.html#concepts"><span class="std std-ref">导航相关概念</span></a> and <a class="reference external" href="https://github.com/BehaviorTree/BehaviorTree.CPP">BehaviorTree.CPP</a>.</p>
-<p>如果创建新的BT节点是有趣的， <a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#writing-new-nbt-plugin"><span class="std std-ref">编写新的行为树插件</span></a> 提供了一个创建简单的 <code class="docutils literal notranslate"><span class="pre">Action</span></code> 节点的写得很好的例子。本教程将仅专注于启动Groot、可视化行为树以及为给定的定制修改该树，假设有一个BT节点库。幸运的是，Nav2提供了大量的BT节点供您开箱使用，列于 <a class="reference internal" href="../../plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1437">[校准&#64;fish]</a></p>
-<p>行为树.CPP中的BT配置文件是XML文件。这用于在运行时从映射到其名称的适当库动态加载BT节点插件。XML格式定义为 <a class="reference external" href="https://www.behaviortree.dev/xml_format/">in detail here</a> 。因此，Groot需要有一个它可以访问的节点列表，以及关于它们的重要元数据，比如它们的类型和端口 (或参数)。在本教程的后面部分，我们将其称为节点的  &quot;pallet&quot; 乙。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1438">[校准&#64;fish]</a></p>
-<p>在上面的视频中，您可以看到Groot与RVIz和配备西门子支持ROS的硬件的测试平台100% 并排。Groot不仅在机器人运行时显示当前行为树。注意: 在ROS 2谦逊之前，Nav2支持执行期间的实时Groot行为树监控。由于BT.CPP/Groot对动态更改行为树的错误支持，此选项被删除，有关更多详细信息，请参见 <a class="reference internal" href="../../migration/Galactic.html#galactic-migration"><span class="std std-ref">Galactic到Humble     [校准&#64;fish]</span></a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1439">[校准&#64;fish]</a></p>
+<p>如果创建新的BT节点是有趣的， <a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#writing-new-nbt-plugin"><span class="std std-ref">编写新的行为树插件</span></a> 提供了一个创建简单的 <code class="docutils literal notranslate"><span class="pre">Action</span></code> 节点的写得很好的例子。本教程将仅专注于启动Groot、可视化行为树以及为给定的定制修改该树，假设有一个BT节点库。幸运的是，Nav2提供了大量的BT节点供您开箱使用，列于 <a class="reference internal" href="../../plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1437">[校准&#64;fish]</a></p>
+<p>行为树.CPP中的BT配置文件是XML文件。这用于在运行时从映射到其名称的适当库动态加载BT节点插件。XML格式定义为 <a class="reference external" href="https://www.behaviortree.dev/xml_format/">in detail here</a> 。因此，Groot需要有一个它可以访问的节点列表，以及关于它们的重要元数据，比如它们的类型和端口 (或参数)。在本教程的后面部分，我们将其称为节点的  &quot;pallet&quot; 乙。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1438">[校准&#64;fish]</a></p>
+<p>在上面的视频中，您可以看到Groot与RVIz和配备西门子支持ROS的硬件的测试平台100% 并排。Groot不仅在机器人运行时显示当前行为树。注意: 在ROS 2谦逊之前，Nav2支持执行期间的实时Groot行为树监控。由于BT.CPP/Groot对动态更改行为树的错误支持，此选项被删除，有关更多详细信息，请参见 <a class="reference internal" href="../../migration/Galactic.html#galactic-migration"><span class="std std-ref">Galactic到Humble     [校准&#64;fish]</span></a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1439">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="visualize-behavior-trees">
 <h2>可视化行为树<a class="headerlink" href="#visualize-behavior-trees" title="永久链接至标题"></a></h2>
-<p>要在: numref: <cite>groot_nav2_default_bt</cite> 中显示这样的行为树，我们将首先启动Groot可执行文件。开箱即用，Groot只能显示BT.CPP中默认值的行为树和节点，因为它对Nav2或您的其他项目一无所知。因此，我们必须将Groot指向Nav2乙/自定义行为树节点的托盘或索引:     <a class="reference external" href="http://www.fishros.com/calib#msgid=1441">[校准&#64;fish]</a></p>
+<p>要在: numref: <cite>groot_nav2_default_bt</cite> 中显示这样的行为树，我们将首先启动Groot可执行文件。开箱即用，Groot只能显示BT.CPP中默认值的行为树和节点，因为它对Nav2或您的其他项目一无所知。因此，我们必须将Groot指向Nav2乙/自定义行为树节点的托盘或索引:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1441">[校准&#64;fish]</a></p>
 <ol class="arabic simple">
-<li><p>在编辑器模式下打开Groot。现在，格鲁特应该看起来像: 数字:  <cite>groot_bt_editor</cite> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1442">[校准&#64;fish]</a></p></li>
-<li><p>通过上下文菜单或菜单栏顶部中间的导入图标选择 <cite>Load palette from file</cite> 选项。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1443">[校准&#64;fish]</a></p></li>
-<li><p>打开文件 “/path/to/navigation2/nav2_acts _ tree/nav2_tree_nodes.xml” 以导入用于导航的所有自定义行为树节点。这是Nav2自定义行为树节点的托盘。现在，格鲁特应该看起来像: 数字:  <cite>groot_bt_editor_with_nodes</cite> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1444">[校准&#64;fish]</a></p></li>
-<li><p>选择左上角附近的 <cite>Load tree</cite> 选项     <a class="reference external" href="http://www.fishros.com/calib#msgid=1445">[校准&#64;fish]</a></p></li>
-<li><p>浏览您想要可视化的树，然后选择 <cite>OK</cite> 。Nav2BTs存在于 “/路径/到/导航2/nav2_bt_navigator/行为树/” 中     <a class="reference external" href="http://www.fishros.com/calib#msgid=1446">[校准&#64;fish]</a></p></li>
+<li><p>在编辑器模式下打开Groot。现在，格鲁特应该看起来像: 数字:  <cite>groot_bt_editor</cite> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1442">[校准&#64;fish]</a></p></li>
+<li><p>通过上下文菜单或菜单栏顶部中间的导入图标选择 <cite>Load palette from file</cite> 选项。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1443">[校准&#64;fish]</a></p></li>
+<li><p>打开文件 “/path/to/navigation2/nav2_acts _ tree/nav2_tree_nodes.xml” 以导入用于导航的所有自定义行为树节点。这是Nav2自定义行为树节点的托盘。现在，格鲁特应该看起来像: 数字:  <cite>groot_bt_editor_with_nodes</cite> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1444">[校准&#64;fish]</a></p></li>
+<li><p>选择左上角附近的 <cite>Load tree</cite> 选项     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1445">[校准&#64;fish]</a></p></li>
+<li><p>浏览您想要可视化的树，然后选择 <cite>OK</cite> 。Nav2BTs存在于 “/路径/到/导航2/nav2_bt_navigator/行为树/” 中     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1446">[校准&#64;fish]</a></p></li>
 </ol>
 <table class="docutils align-default">
 <colgroup>
@@ -784,13 +784,13 @@ These nodes are of types: <cite>Action</cite>, <cite>Condition</cite>, <cite>Con
 </td>
 <td><div class="figure align-default" id="groot-bt-editor-with-nodes">
 <img alt="../../_images/groot_with_nav2_custom_nodes.png" src="../../_images/groot_with_nav2_custom_nodes.png" />
-<p class="caption"><span class="caption-number">Figure 2 </span><span class="caption-text">以蓝色加载自定义节点的编辑器     <a class="reference external" href="http://www.fishros.com/calib#msgid=1448">[校准&#64;fish]</a></span><a class="headerlink" href="#groot-bt-editor-with-nodes" title="永久链接至图片"></a></p>
+<p class="caption"><span class="caption-number">Figure 2 </span><span class="caption-text">以蓝色加载自定义节点的编辑器     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1448">[校准&#64;fish]</a></span><a class="headerlink" href="#groot-bt-editor-with-nodes" title="永久链接至图片"></a></p>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-<p>如果选择默认树 <cite>navigate_w_replanning_and_recovery.xml</cite> ，格鲁特编辑器应该: numref: <cite>groot_nav2_default_bt</cite> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1449">[校准&#64;fish]</a></p>
+<p>如果选择默认树 <cite>navigate_w_replanning_and_recovery.xml</cite> ，格鲁特编辑器应该: numref: <cite>groot_nav2_default_bt</cite> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1449">[校准&#64;fish]</a></p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 100%" />
@@ -806,17 +806,17 @@ These nodes are of types: <cite>Action</cite>, <cite>Condition</cite>, <cite>Con
 </table>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>如果由于托盘中缺少某些节点而无法可视化树，则可能需要将其添加到托盘中。当我们尝试保持Nav2的BT节点和托盘同步时，如果您发现其中一个丢失，请提交票证或请求，我们应该会快速更新。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1451">[校准&#64;fish]</a></p>
+<p>如果由于托盘中缺少某些节点而无法可视化树，则可能需要将其添加到托盘中。当我们尝试保持Nav2的BT节点和托盘同步时，如果您发现其中一个丢失，请提交票证或请求，我们应该会快速更新。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1451">[校准&#64;fish]</a></p>
 </div>
 </div>
 <div class="section" id="edit-behavior-trees">
 <h2>编辑行为树<a class="headerlink" href="#edit-behavior-trees" title="永久链接至标题"></a></h2>
-<p>现在你有Nav2BT在格鲁特在编辑器模式，你应该能够平凡修改使用GUI。从屏幕所示: numref: <cite>groot_nav2_default_bt</cite> ，你可以新节点侧面板添加到工作区。你可以连接节点使用  &quot;drag and drop&quot; 运动节点的输入和输出端口组装新节点树。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1453">[校准&#64;fish]</a></p>
-<p>如果选择给定节点，则可以更改有关该节点的元数据，例如其名称或可参数化端口的值。完成修改后，只需保存新的配置文件，下次在您的机器人上使用它!     <a class="reference external" href="http://www.fishros.com/calib#msgid=1454">[校准&#64;fish]</a></p>
+<p>现在你有Nav2BT在格鲁特在编辑器模式，你应该能够平凡修改使用GUI。从屏幕所示: numref: <cite>groot_nav2_default_bt</cite> ，你可以新节点侧面板添加到工作区。你可以连接节点使用  &quot;drag and drop&quot; 运动节点的输入和输出端口组装新节点树。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1453">[校准&#64;fish]</a></p>
+<p>如果选择给定节点，则可以更改有关该节点的元数据，例如其名称或可参数化端口的值。完成修改后，只需保存新的配置文件，下次在您的机器人上使用它!     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1454">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="adding-a-custom-node">
 <h2>添加自定义节点<a class="headerlink" href="#adding-a-custom-node" title="永久链接至标题"></a></h2>
-<p>行为树中的每个节点都有一个专用函数。有时，在设计过程中创建新节点并将其添加到托盘中很有用-也许在实现本身存在之前。这有助于设计人员从树本身的高级逻辑中抽象出节点的实现细节，以及他们希望如何与给定节点进行交互 (例如g.类型、端口等)。在Groot中，您可以创建新的自定义节点以添加到树中，并将这些新节点导出回托盘。实现节点本身需要与Groot分开完成，这在 <a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#writing-new-nbt-plugin"><span class="std std-ref">编写新的行为树插件</span></a> 中有所描述。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1456">[校准&#64;fish]</a></p>
+<p>行为树中的每个节点都有一个专用函数。有时，在设计过程中创建新节点并将其添加到托盘中很有用-也许在实现本身存在之前。这有助于设计人员从树本身的高级逻辑中抽象出节点的实现细节，以及他们希望如何与给定节点进行交互 (例如g.类型、端口等)。在Groot中，您可以创建新的自定义节点以添加到树中，并将这些新节点导出回托盘。实现节点本身需要与Groot分开完成，这在 <a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#writing-new-nbt-plugin"><span class="std std-ref">编写新的行为树插件</span></a> 中有所描述。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1456">[校准&#64;fish]</a></p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 100%" />
@@ -830,8 +830,8 @@ These nodes are of types: <cite>Action</cite>, <cite>Condition</cite>, <cite>Con
 </tr>
 </tbody>
 </table>
-<p>创建新定制节点可以开始单击橙色标记图标 <a class="reference internal" href="#groot-create-custom-node"><span class="std std-numref">Figure 4</span></a> ，格鲁特在编辑器模式。这应该加载新窗口，类似 <a class="reference internal" href="#groot-interactive-node-creation"><span class="std std-numref">Figure 5</span></a> 。在这个新窗口，它要求你填写元数据新节点，创建它。它会问你标准信息如姓名 (绿色框)，节点类型 (橙色框)，任何可选端口参数化或访问黑板变量 (蓝色框)。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1458">[校准&#64;fish]</a></p>
-<p>完成后，在 <a class="reference internal" href="#groot-interactive-node-creation"><span class="std std-numref">Figure 5</span></a> 中选择 <cite>OK</cite> ，新的自定义节点应在 <cite>TreeNode Palette</cite> 中显示为蓝色，如 <a class="reference internal" href="#groot-export-new-node"><span class="std std-numref">Figure 6</span></a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1459">[校准&#64;fish]</a></p>
+<p>创建新定制节点可以开始单击橙色标记图标 <a class="reference internal" href="#groot-create-custom-node"><span class="std std-numref">Figure 4</span></a> ，格鲁特在编辑器模式。这应该加载新窗口，类似 <a class="reference internal" href="#groot-interactive-node-creation"><span class="std std-numref">Figure 5</span></a> 。在这个新窗口，它要求你填写元数据新节点，创建它。它会问你标准信息如姓名 (绿色框)，节点类型 (橙色框)，任何可选端口参数化或访问黑板变量 (蓝色框)。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1458">[校准&#64;fish]</a></p>
+<p>完成后，在 <a class="reference internal" href="#groot-interactive-node-creation"><span class="std std-numref">Figure 5</span></a> 中选择 <cite>OK</cite> ，新的自定义节点应在 <cite>TreeNode Palette</cite> 中显示为蓝色，如 <a class="reference internal" href="#groot-export-new-node"><span class="std std-numref">Figure 6</span></a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1459">[校准&#64;fish]</a></p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
@@ -851,7 +851,7 @@ These nodes are of types: <cite>Action</cite>, <cite>Condition</cite>, <cite>Con
 </tr>
 </tbody>
 </table>
-<p>在开始基于新的自定义节点创建新的BT之前，建议导出新创建的节点以保存以防Groot崩溃。这可以用绿色突出显示的图标来执行 <a class="reference internal" href="#groot-export-new-node"><span class="std std-numref">Figure 6</span></a> 。从在 <a class="reference internal" href="#groot-export-new-node"><span class="std std-numref">Figure 6</span></a> 可以在下面看到。你可以看到更多的例子在 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_behavior_tree/nav2_tree_nodes.xml">Nav2's BT Node Pallet XML</a> 中创建的节点生成的XML输出。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1462">[校准&#64;fish]</a></p>
+<p>在开始基于新的自定义节点创建新的BT之前，建议导出新创建的节点以保存以防Groot崩溃。这可以用绿色突出显示的图标来执行 <a class="reference internal" href="#groot-export-new-node"><span class="std std-numref">Figure 6</span></a> 。从在 <a class="reference internal" href="#groot-export-new-node"><span class="std std-numref">Figure 6</span></a> 可以在下面看到。你可以看到更多的例子在 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_behavior_tree/nav2_tree_nodes.xml">Nav2's BT Node Pallet XML</a> 中创建的节点生成的XML输出。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1462">[校准&#64;fish]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root&gt;</span>
     <span class="nt">&lt;TreeNodesModel&gt;</span>
         <span class="nt">&lt;Action</span> <span class="na">ID=</span><span class="s">&quot;MyAwesomeNewNode&quot;</span><span class="nt">&gt;</span>

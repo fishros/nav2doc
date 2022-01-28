@@ -732,22 +732,22 @@
            <div itemprop="articleBody">
              
   <div class="section" id="reduce-ros-2-nodes-and-determinism">
-<span id="spinners"></span><h1>7.减少ROS 2节点和决定论     <a class="reference external" href="http://www.fishros.com/calib#msgid=470">[校准&#64;fish]</a><a class="headerlink" href="#reduce-ros-2-nodes-and-determinism" title="永久链接至标题"></a></h1>
+<span id="spinners"></span><h1>7.减少ROS 2节点和决定论     <a class="reference external" href="http://10.55.23.25:3000/#msgid=470">[校准&#64;fish]</a><a class="headerlink" href="#reduce-ros-2-nodes-and-determinism" title="永久链接至标题"></a></h1>
 <p>任务描述</p>
-<p>这个项目公认是抽象的，以向不熟悉ROS 2及其层内部细节的人解释。如果你对此感兴趣，你将成为少数真正了解它内部运作的人之一，并且是一个非常有市场价值的技能。我们不希望任何申请这个项目的人事先拥有这些知识，我们将帮助你学习必要的项目。     <a class="reference external" href="http://www.fishros.com/calib#msgid=471">[校准&#64;fish]</a></p>
-<p>ROS 2在Foxy之前进行了架构更改，以确保包含多个ROS 2节点对象的任何单个进程都将共享网络上的相同DDS参与者。由于每个额外的DDS参与者对系统的开销，这一点很重要。     <a class="reference external" href="http://www.fishros.com/calib#msgid=472">[校准&#64;fish]</a></p>
-<p>为了使nav2能够最好地利用这一点，我们需要调整ROS 2节点和执行程序的使用，以进一步最小化存在的节点对象的数量。在构建Nav2的ROS 2的早期，我们被要求在一个服务器中有许多节点，以便处理操作请求和其他回调。现在，我们可以将多线程微调器、回调组和单个执行程序用于特定任务。     <a class="reference external" href="http://www.fishros.com/calib#msgid=473">[校准&#64;fish]</a></p>
-<p>该项目将涉及识别堆栈中的所有节点对象 (控制 + F使这变得容易) 并与导师合作，确保在夏季结束前，每台服务器仅包含一个节点。此外，应更新行为树插件以利用回调组，以确保任何单个BT节点旋转以检查其回调上是否有任何新消息只会通过相同机制触发其自己的回调。     <a class="reference external" href="http://www.fishros.com/calib#msgid=474">[校准&#64;fish]</a></p>
-<p>如果有兴趣，可以提供有关该项目的更多详细信息，但下面链接的票证也提供了更多背景信息。相信我说，在整个夏天，这是一个非常可实现的目标，也将让您同时了解Nav2和rclcpp，在你的职业生涯中为你提供有价值的洞察力未来 (并让你在知道这一点的ROS 2开发人员中名列前10%)。     <a class="reference external" href="http://www.fishros.com/calib#msgid=475">[校准&#64;fish]</a></p>
-<p>Project项目难度: 中型difficulty     <a class="reference external" href="http://www.fishros.com/calib#msgid=344">[校准&#64;fish]</a></p>
-<p>Project项目社区导师: 史蒂夫·麦肯斯基 <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a>      <a class="reference external" href="http://www.fishros.com/calib#msgid=345">[校准&#64;fish]</a></p>
-<p>Mentor导师联系方式: [请参阅上面的链接，GitHub个人资料描述中的链接] **     <a class="reference external" href="http://www.fishros.com/calib#msgid=346">[校准&#64;fish]</a></p>
-<p>项目输出要求-从堆栈中删除多余的ROS 2节点，并用执行程序和多线程执行程序替换-用本地执行程序替换行为树节点微调程序，以确保确定性执行&amp; 仅处理当前BT节点的回调组-如果分配了时间，则创建一个单一的 <code class="docutils literal notranslate"><span class="pre">main()</span></code> 函数Nav2可执行文件，组成所有Nav2进程并对性能的提高进行基准测试     <a class="reference external" href="http://www.fishros.com/calib#msgid=476">[校准&#64;fish]</a></p>
+<p>这个项目公认是抽象的，以向不熟悉ROS 2及其层内部细节的人解释。如果你对此感兴趣，你将成为少数真正了解它内部运作的人之一，并且是一个非常有市场价值的技能。我们不希望任何申请这个项目的人事先拥有这些知识，我们将帮助你学习必要的项目。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=471">[校准&#64;fish]</a></p>
+<p>ROS 2在Foxy之前进行了架构更改，以确保包含多个ROS 2节点对象的任何单个进程都将共享网络上的相同DDS参与者。由于每个额外的DDS参与者对系统的开销，这一点很重要。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=472">[校准&#64;fish]</a></p>
+<p>为了使nav2能够最好地利用这一点，我们需要调整ROS 2节点和执行程序的使用，以进一步最小化存在的节点对象的数量。在构建Nav2的ROS 2的早期，我们被要求在一个服务器中有许多节点，以便处理操作请求和其他回调。现在，我们可以将多线程微调器、回调组和单个执行程序用于特定任务。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=473">[校准&#64;fish]</a></p>
+<p>该项目将涉及识别堆栈中的所有节点对象 (控制 + F使这变得容易) 并与导师合作，确保在夏季结束前，每台服务器仅包含一个节点。此外，应更新行为树插件以利用回调组，以确保任何单个BT节点旋转以检查其回调上是否有任何新消息只会通过相同机制触发其自己的回调。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=474">[校准&#64;fish]</a></p>
+<p>如果有兴趣，可以提供有关该项目的更多详细信息，但下面链接的票证也提供了更多背景信息。相信我说，在整个夏天，这是一个非常可实现的目标，也将让您同时了解Nav2和rclcpp，在你的职业生涯中为你提供有价值的洞察力未来 (并让你在知道这一点的ROS 2开发人员中名列前10%)。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=475">[校准&#64;fish]</a></p>
+<p>Project项目难度: 中型difficulty     <a class="reference external" href="http://10.55.23.25:3000/#msgid=344">[校准&#64;fish]</a></p>
+<p>Project项目社区导师: 史蒂夫·麦肯斯基 <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=345">[校准&#64;fish]</a></p>
+<p>Mentor导师联系方式: [请参阅上面的链接，GitHub个人资料描述中的链接] **     <a class="reference external" href="http://10.55.23.25:3000/#msgid=346">[校准&#64;fish]</a></p>
+<p>项目输出要求-从堆栈中删除多余的ROS 2节点，并用执行程序和多线程执行程序替换-用本地执行程序替换行为树节点微调程序，以确保确定性执行&amp; 仅处理当前BT节点的回调组-如果分配了时间，则创建一个单一的 <code class="docutils literal notranslate"><span class="pre">main()</span></code> 函数Nav2可执行文件，组成所有Nav2进程并对性能的提高进行基准测试     <a class="reference external" href="http://10.55.23.25:3000/#msgid=476">[校准&#64;fish]</a></p>
 <p>所需技能</p>
 <ul class="simple">
 <li><p>C ++，ROS</p></li>
 </ul>
-<p>相关开源软件存储库和参考文献列表     <a class="reference external" href="http://www.fishros.com/calib#msgid=352">[校准&#64;fish]</a></p>
+<p>相关开源软件存储库和参考文献列表     <a class="reference external" href="http://10.55.23.25:3000/#msgid=352">[校准&#64;fish]</a></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ros.org/">ROS</a></p></li>
 <li><p><a class="reference external" href="http://gazebosim.org/">Gazebo Simulator</a></p></li>
@@ -756,7 +756,7 @@
 <li><p><a class="reference external" href="https://navigation.ros.org/">Navigation2</a></p></li>
 <li><p><a class="reference external" href="https://alyssapierson.files.wordpress.com/2018/05/pierson2018.pdf">Some related works</a></p></li>
 </ul>
-<p>许可-所有贡献将在Apache 2.0许可下进行。-不需要其他CLA。     <a class="reference external" href="http://www.fishros.com/calib#msgid=357">[校准&#64;fish]</a></p>
+<p>许可-所有贡献将在Apache 2.0许可下进行。-不需要其他CLA。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=357">[校准&#64;fish]</a></p>
 </div>
 
 

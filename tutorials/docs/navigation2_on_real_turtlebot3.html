@@ -735,7 +735,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="navigating-with-a-physical-turtlebot-3">
-<span id="navigation2-on-real-turtlebot3"></span><h1>用实体Turtlebot3机器人导航     <a class="reference external" href="http://www.fishros.com/calib#msgid=1262">[校准&#64;fish]</a><a class="headerlink" href="#navigating-with-a-physical-turtlebot-3" title="永久链接至标题"></a></h1>
+<span id="navigation2-on-real-turtlebot3"></span><h1>用实体Turtlebot3机器人导航     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1262">[校准&#64;fish]</a><a class="headerlink" href="#navigating-with-a-physical-turtlebot-3" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">Overview</a></p></li>
 <li><p><a class="reference internal" href="#requirements">Requirements</a></p></li>
@@ -747,71 +747,71 @@
   </div>
 </h1><div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>本教程展示了如何在物理Turtlebot 3机器人上使用ROS 2Nav2控制和导航Turtlebot 3。在完成本教程之前，强烈建议您完成 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> ，尤其是如果您是ROS和Nav2的新手。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1263">[校准&#64;fish]</a></p>
-<p>本教程可能需要大约1小时才能完成。这取决于您对ROS，机器人的经验以及您拥有的计算机系统。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1264">[校准&#64;fish]</a></p>
+<p>本教程展示了如何在物理Turtlebot 3机器人上使用ROS 2Nav2控制和导航Turtlebot 3。在完成本教程之前，强烈建议您完成 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> ，尤其是如果您是ROS和Nav2的新手。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1263">[校准&#64;fish]</a></p>
+<p>本教程可能需要大约1小时才能完成。这取决于您对ROS，机器人的经验以及您拥有的计算机系统。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1264">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
-<p>你必须安装Nav2，turtlebot3。如果你没有安装它们，请遵循 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1265">[校准&#64;fish]</a></p>
+<p>你必须安装Nav2，turtlebot3。如果你没有安装它们，请遵循 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1265">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="tutorial-steps">
 <h2>教程步骤<a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="setup-your-enviroment-variables">
 <h3>0-设置环境变量<a class="headerlink" href="#setup-your-enviroment-variables" title="永久链接至标题"></a></h3>
-<p>在本教程中，每当您打开新终端时，请先运行以下命令。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1267">[校准&#64;fish]</a></p>
+<p>在本教程中，每当您打开新终端时，请先运行以下命令。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1267">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/opt/ros/&lt;ros2-distro&gt;/setup.bash</span></code>     <a class="reference external" href="http://www.fishros.com/calib#msgid=1268">[校准&#64;fish]</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">TURTLEBOT3_MODEL=waffle</span></code>     <a class="reference external" href="http://www.fishros.com/calib#msgid=1269">[校准&#64;fish]</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/opt/ros/&lt;ros2-distro&gt;/setup.bash</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1268">[校准&#64;fish]</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">TURTLEBOT3_MODEL=waffle</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1269">[校准&#64;fish]</a></p></li>
 </ul>
 </div>
 <div class="section" id="launch-turtlebot-3">
-<h3>1-Launch Turtlebot 3     <a class="reference external" href="http://www.fishros.com/calib#msgid=1270">[校准&#64;fish]</a><a class="headerlink" href="#launch-turtlebot-3" title="永久链接至标题"></a></h3>
-<p>你需要启动你的机器人界面，     <a class="reference external" href="http://www.fishros.com/calib#msgid=1271">[校准&#64;fish]</a></p>
+<h3>1-Launch Turtlebot 3     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1270">[校准&#64;fish]</a><a class="headerlink" href="#launch-turtlebot-3" title="永久链接至标题"></a></h3>
+<p>你需要启动你的机器人界面，     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1271">[校准&#64;fish]</a></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">turtlebot3_bringup</span> <span class="pre">robot.launch.py</span>&#160; <span class="pre">use_sim_time:=False</span></code>     <a class="reference external" href="http://www.fishros.com/calib#msgid=1272">[校准&#64;fish]</a></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">turtlebot3_bringup</span> <span class="pre">robot.launch.py</span>&#160; <span class="pre">use_sim_time:=False</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1272">[校准&#64;fish]</a></p>
 </div></blockquote>
 </div>
 <div class="section" id="launch-nav2">
-<h3>2-LaunchNav2     <a class="reference external" href="http://www.fishros.com/calib#msgid=1273">[校准&#64;fish]</a><a class="headerlink" href="#launch-nav2" title="永久链接至标题"></a></h3>
-<p>你需要地图环境要导航Turtlebot 3，或创建一个活带SLAM。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1274">[校准&#64;fish]</a></p>
-<p>如果你感兴趣，有一个用例教程，展示了如何在SLAM中使用Nav2。 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/doc/use_cases/navigation_with_slam.md">Nav2 with SLAM</a>      <a class="reference external" href="http://www.fishros.com/calib#msgid=1275">[校准&#64;fish]</a></p>
+<h3>2-LaunchNav2     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1273">[校准&#64;fish]</a><a class="headerlink" href="#launch-nav2" title="永久链接至标题"></a></h3>
+<p>你需要地图环境要导航Turtlebot 3，或创建一个活带SLAM。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1274">[校准&#64;fish]</a></p>
+<p>如果你感兴趣，有一个用例教程，展示了如何在SLAM中使用Nav2。 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/doc/use_cases/navigation_with_slam.md">Nav2 with SLAM</a>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=1275">[校准&#64;fish]</a></p>
 <p>所需文件:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">your-map.map</span></code>     <a class="reference external" href="http://www.fishros.com/calib#msgid=1277">[校准&#64;fish]</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">your-map.yaml</span></code>     <a class="reference external" href="http://www.fishros.com/calib#msgid=1278">[校准&#64;fish]</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">your-map.map</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1277">[校准&#64;fish]</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">your-map.yaml</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1278">[校准&#64;fish]</a></p></li>
 </ul>
 </div></blockquote>
-<p>参数``&lt;your_map&gt;.yaml`` is配置文件地图我们想提供Nav2。在这种情况下，它具有地图分辨率值、障碍物和自由空间的阈值以及地图文件位置。您需要确保这些值是正确的。更多关于地图的信息。yaml可以在 <a class="reference external" href="http://wiki.ros.org/map_server">here</a> 找到。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1279">[校准&#64;fish]</a></p>
-<p>LaunchNav2如果设置autostart:= False，则需要单击RViz中的起动按钮来初始化节点。确保 <cite>use_sim time</cite> 设置为False，因为我们想使用系统时间而不是Gazebo的时间模拟时间。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1280">[校准&#64;fish]</a></p>
-<p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">nav2_bringup</span> <span class="pre">bringup_launch.py</span> <span class="pre">use_sim_time:=False</span> <span class="pre">autostart:=False</span> <span class="pre">map:=/path/to/your-map.yaml</span></code>     <a class="reference external" href="http://www.fishros.com/calib#msgid=1281">[校准&#64;fish]</a></p>
-<p>注意: 不要忘记将your/ path/to/your-map.yaml change更改为your-map.yaml文件的实际路径。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1282">[校准&#64;fish]</a></p>
+<p>参数``&lt;your_map&gt;.yaml`` is配置文件地图我们想提供Nav2。在这种情况下，它具有地图分辨率值、障碍物和自由空间的阈值以及地图文件位置。您需要确保这些值是正确的。更多关于地图的信息。yaml可以在 <a class="reference external" href="http://wiki.ros.org/map_server">here</a> 找到。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1279">[校准&#64;fish]</a></p>
+<p>LaunchNav2如果设置autostart:= False，则需要单击RViz中的起动按钮来初始化节点。确保 <cite>use_sim time</cite> 设置为False，因为我们想使用系统时间而不是Gazebo的时间模拟时间。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1280">[校准&#64;fish]</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">nav2_bringup</span> <span class="pre">bringup_launch.py</span> <span class="pre">use_sim_time:=False</span> <span class="pre">autostart:=False</span> <span class="pre">map:=/path/to/your-map.yaml</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1281">[校准&#64;fish]</a></p>
+<p>注意: 不要忘记将your/ path/to/your-map.yaml change更改为your-map.yaml文件的实际路径。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1282">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="launch-rviz">
-<h3>3-LaunchRVIZ     <a class="reference external" href="http://www.fishros.com/calib#msgid=1283">[校准&#64;fish]</a><a class="headerlink" href="#launch-rviz" title="永久链接至标题"></a></h3>
-<p>使用预定义的配置文件启动RVIZ。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1284">[校准&#64;fish]</a></p>
+<h3>3-LaunchRVIZ     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1283">[校准&#64;fish]</a><a class="headerlink" href="#launch-rviz" title="永久链接至标题"></a></h3>
+<p>使用预定义的配置文件启动RVIZ。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1284">[校准&#64;fish]</a></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">rviz2</span> <span class="pre">rviz2</span> <span class="pre">-d</span> <span class="pre">$(ros2</span> <span class="pre">pkg</span> <span class="pre">prefix</span> <span class="pre">nav2_bringup)/share/nav2_bringup/launch/nav2_default_view.rviz</span></code>     <a class="reference external" href="http://www.fishros.com/calib#msgid=1285">[校准&#64;fish]</a></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">rviz2</span> <span class="pre">rviz2</span> <span class="pre">-d</span> <span class="pre">$(ros2</span> <span class="pre">pkg</span> <span class="pre">prefix</span> <span class="pre">nav2_bringup)/share/nav2_bringup/launch/nav2_default_view.rviz</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1285">[校准&#64;fish]</a></p>
 </div></blockquote>
-<p>现在，你应该在Rviz的情节中心看到一个Turtlebot 3机器人模型的影子。如果将auto_start参数设置为false，请单击起动按钮 (左下方)。然后，地图应该出现在RViz。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1286">[校准&#64;fish]</a></p>
+<p>现在，你应该在Rviz的情节中心看到一个Turtlebot 3机器人模型的影子。如果将auto_start参数设置为false，请单击起动按钮 (左下方)。然后，地图应该出现在RViz。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1286">[校准&#64;fish]</a></p>
 <a class="reference internal image-reference" href="../../_images/rviz_after_launch_view.png"><img alt="../../_images/rviz_after_launch_view.png" src="../../_images/rviz_after_launch_view.png" style="width: 48%;" /></a>
 <a class="reference internal image-reference" href="../../_images/rviz_slam_map_view.png"><img alt="../../_images/rviz_slam_map_view.png" src="../../_images/rviz_slam_map_view.png" style="width: 45%;" /></a>
 </div>
 <div class="section" id="initialize-the-location-of-turtlebot-3">
-<h3>4-初始化Turtlebot3位置     <a class="reference external" href="http://www.fishros.com/calib#msgid=1287">[校准&#64;fish]</a><a class="headerlink" href="#initialize-the-location-of-turtlebot-3" title="永久链接至标题"></a></h3>
-<p>首先，找到机器人在地图上的位置。检查你的机器人在房间里的位置。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1288">[校准&#64;fish]</a></p>
-<p>将机器人的姿势设置在RViz。点击2D姿势估计按钮并将机器人的位置指向地图上。绿色箭头的方向是Turtlebot的方向。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1289">[校准&#64;fish]</a></p>
+<h3>4-初始化Turtlebot3位置     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1287">[校准&#64;fish]</a><a class="headerlink" href="#initialize-the-location-of-turtlebot-3" title="永久链接至标题"></a></h3>
+<p>首先，找到机器人在地图上的位置。检查你的机器人在房间里的位置。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1288">[校准&#64;fish]</a></p>
+<p>将机器人的姿势设置在RViz。点击2D姿势估计按钮并将机器人的位置指向地图上。绿色箭头的方向是Turtlebot的方向。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1289">[校准&#64;fish]</a></p>
 <a class="reference internal image-reference" href="../../_images/rviz_set_initial_pose.png"><img alt="设置初始姿势RViz" class="align-center" src="../../_images/rviz_set_initial_pose.png" style="width: 700px;" /></a>
-<p>现在，Turtlebot的3D模型应该移动到那个位置。估计位置的小误差是可以容忍的。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1291">[校准&#64;fish]</a></p>
+<p>现在，Turtlebot的3D模型应该移动到那个位置。估计位置的小误差是可以容忍的。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1291">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="send-a-goal-pose">
 <h3>5-发送一个进球姿势<a class="headerlink" href="#send-a-goal-pose" title="永久链接至标题"></a></h3>
-<p>选择一个目标位置Turtlebot地图上。你可以发送Turtlebot 3目标位置和目标取向使用Nav2目标或GoalTool按钮。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1293">[校准&#64;fish]</a></p>
-<p>注意: Nav2目标按钮使用ROS 2Action发送目标，并且目标工具将目标发布到主题。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1294">[校准&#64;fish]</a></p>
-<a class="reference internal image-reference" href="../../_images/rviz_send_goal.png"><img alt="在RViz中发送目标姿势     `[校准&#64;fish] &lt;http://www.fishros.com/calib#msgid=1295&gt;`_ " class="align-center" src="../../_images/rviz_send_goal.png" style="width: 700px;" /></a>
-<p>一旦你定义了目标姿势，Nav2将会找到一个全局路径，并开始在地图上导航机器人。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1296">[校准&#64;fish]</a></p>
+<p>选择一个目标位置Turtlebot地图上。你可以发送Turtlebot 3目标位置和目标取向使用Nav2目标或GoalTool按钮。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1293">[校准&#64;fish]</a></p>
+<p>注意: Nav2目标按钮使用ROS 2Action发送目标，并且目标工具将目标发布到主题。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1294">[校准&#64;fish]</a></p>
+<a class="reference internal image-reference" href="../../_images/rviz_send_goal.png"><img alt="在RViz中发送目标姿势     `[校准&#64;fish] &lt;http://10.55.23.25:3000/#msgid=1295&gt;`_ " class="align-center" src="../../_images/rviz_send_goal.png" style="width: 700px;" /></a>
+<p>一旦你定义了目标姿势，Nav2将会找到一个全局路径，并开始在地图上导航机器人。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1296">[校准&#64;fish]</a></p>
 <a class="reference internal image-reference" href="../../_images/rviz_robot_navigating.png"><img alt="RViz机器人导航" class="align-center" src="../../_images/rviz_robot_navigating.png" style="width: 700px;" /></a>
-<p>现在，你可以看到Turtlebot3朝着房间里的目标位置移动。请看下面的视频。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1298">[校准&#64;fish]</a></p>
+<p>现在，你可以看到Turtlebot3朝着房间里的目标位置移动。请看下面的视频。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1298">[校准&#64;fish]</a></p>
 </div>
 </div>
 </div>

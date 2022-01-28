@@ -734,35 +734,35 @@
   <div class="section" id="navigation-safety-node">
 <span id="safety-node"></span><h1>5.导航安全节点<a class="headerlink" href="#navigation-safety-node" title="永久链接至标题"></a></h1>
 <p>任务描述</p>
-<p>该项目的目的是创建一个安全看门狗节点，以确保机器人操作正常，不会与障碍物碰撞。典型的安全等级lidars将包含  &quot;safety zones&quot; ，而如果任何传感器点位于激光雷达周围的盒子中，那么激光雷达将向机器人发送信号，使其由于潜在的碰撞而停止。然而，越来越少的人使用安全等级的lidars，因为消费者可用的lidars成本正在下降，3D lidars在移动机器人中有更多的用途。     <a class="reference external" href="http://www.fishros.com/calib#msgid=450">[校准&#64;fish]</a></p>
-<p>您的项目将在导航级别重新创建此逻辑。虽然这不是  &quot;safety certified&quot; ，但这是对安全性的重大功能改进，可以潜在地保护真实的人免受现实世界中的真实伤害。该项目将创建一个位于导航堆栈下方但位于机器人控制器上方的节点，以执行以下操作:     <a class="reference external" href="http://www.fishros.com/calib#msgid=451">[校准&#64;fish]</a></p>
+<p>该项目的目的是创建一个安全看门狗节点，以确保机器人操作正常，不会与障碍物碰撞。典型的安全等级lidars将包含  &quot;safety zones&quot; ，而如果任何传感器点位于激光雷达周围的盒子中，那么激光雷达将向机器人发送信号，使其由于潜在的碰撞而停止。然而，越来越少的人使用安全等级的lidars，因为消费者可用的lidars成本正在下降，3D lidars在移动机器人中有更多的用途。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=450">[校准&#64;fish]</a></p>
+<p>您的项目将在导航级别重新创建此逻辑。虽然这不是  &quot;safety certified&quot; ，但这是对安全性的重大功能改进，可以潜在地保护真实的人免受现实世界中的真实伤害。该项目将创建一个位于导航堆栈下方但位于机器人控制器上方的节点，以执行以下操作:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=451">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p>从导航和最近的激光或RGBD扫描中获取当前命令速度     <a class="reference external" href="http://www.fishros.com/calib#msgid=452">[校准&#64;fish]</a></p></li>
-<li><p>投影速度向前时间 <code class="docutils literal notranslate"><span class="pre">N</span></code> 秒检查速度将导致碰撞任何传感器测量     <a class="reference external" href="http://www.fishros.com/calib#msgid=453">[校准&#64;fish]</a></p></li>
-<li><p>如果没有，允许速度命令直达基地     <a class="reference external" href="http://www.fishros.com/calib#msgid=454">[校准&#64;fish]</a></p></li>
-<li><p>如果它真的发生了碰撞，缩小速度，这样机器人在碰撞后总是至少有 <code class="docutils literal notranslate"><span class="pre">N</span></code> 秒     <a class="reference external" href="http://www.fishros.com/calib#msgid=455">[校准&#64;fish]</a></p></li>
-<li><p>可选地，如果设置了一个标志，如果在机器人周围定义的边界框中有 <code class="docutils literal notranslate"><span class="pre">M</span></code> 或更多的点，只发送 <code class="docutils literal notranslate"><span class="pre">0</span></code> 命令来实施紧急停止。     <a class="reference external" href="http://www.fishros.com/calib#msgid=456">[校准&#64;fish]</a></p></li>
+<li><p>从导航和最近的激光或RGBD扫描中获取当前命令速度     <a class="reference external" href="http://10.55.23.25:3000/#msgid=452">[校准&#64;fish]</a></p></li>
+<li><p>投影速度向前时间 <code class="docutils literal notranslate"><span class="pre">N</span></code> 秒检查速度将导致碰撞任何传感器测量     <a class="reference external" href="http://10.55.23.25:3000/#msgid=453">[校准&#64;fish]</a></p></li>
+<li><p>如果没有，允许速度命令直达基地     <a class="reference external" href="http://10.55.23.25:3000/#msgid=454">[校准&#64;fish]</a></p></li>
+<li><p>如果它真的发生了碰撞，缩小速度，这样机器人在碰撞后总是至少有 <code class="docutils literal notranslate"><span class="pre">N</span></code> 秒     <a class="reference external" href="http://10.55.23.25:3000/#msgid=455">[校准&#64;fish]</a></p></li>
+<li><p>可选地，如果设置了一个标志，如果在机器人周围定义的边界框中有 <code class="docutils literal notranslate"><span class="pre">M</span></code> 或更多的点，只发送 <code class="docutils literal notranslate"><span class="pre">0</span></code> 命令来实施紧急停止。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=456">[校准&#64;fish]</a></p></li>
 </ul>
-<p>这将是一个极好的机会，可以让移动机器人和Nav2使用者在他们的生产或研究环境中更加安全，并以更高的速度运行。对于那些不使用具有类似功能的安全等级lidars的人来说，这对功能安全大有帮助。     <a class="reference external" href="http://www.fishros.com/calib#msgid=457">[校准&#64;fish]</a></p>
-<p>Project项目难度: 中型difficulty     <a class="reference external" href="http://www.fishros.com/calib#msgid=344">[校准&#64;fish]</a></p>
-<p>Project项目社区导师: 史蒂夫·麦肯斯基 <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a>      <a class="reference external" href="http://www.fishros.com/calib#msgid=345">[校准&#64;fish]</a></p>
-<p>Mentor导师联系方式: [请参阅上面的链接，GitHub个人资料描述中的链接] **     <a class="reference external" href="http://www.fishros.com/calib#msgid=346">[校准&#64;fish]</a></p>
-<p>项目输出要求-创建ROS 2节点，以防止基于lidar和/或RGBD数据的机器人碰撞-节点应能够以lidar数据速度 (40hz以上) 运行并相应地调整速度命令 -- 如果分配了时间，努力调整/向DWB本地planner增加新的批评者，以提高开箱即用用户的性能安全性     <a class="reference external" href="http://www.fishros.com/calib#msgid=458">[校准&#64;fish]</a></p>
+<p>这将是一个极好的机会，可以让移动机器人和Nav2使用者在他们的生产或研究环境中更加安全，并以更高的速度运行。对于那些不使用具有类似功能的安全等级lidars的人来说，这对功能安全大有帮助。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=457">[校准&#64;fish]</a></p>
+<p>Project项目难度: 中型difficulty     <a class="reference external" href="http://10.55.23.25:3000/#msgid=344">[校准&#64;fish]</a></p>
+<p>Project项目社区导师: 史蒂夫·麦肯斯基 <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=345">[校准&#64;fish]</a></p>
+<p>Mentor导师联系方式: [请参阅上面的链接，GitHub个人资料描述中的链接] **     <a class="reference external" href="http://10.55.23.25:3000/#msgid=346">[校准&#64;fish]</a></p>
+<p>项目输出要求-创建ROS 2节点，以防止基于lidar和/或RGBD数据的机器人碰撞-节点应能够以lidar数据速度 (40hz以上) 运行并相应地调整速度命令 -- 如果分配了时间，努力调整/向DWB本地planner增加新的批评者，以提高开箱即用用户的性能安全性     <a class="reference external" href="http://10.55.23.25:3000/#msgid=458">[校准&#64;fish]</a></p>
 <p>所需技能</p>
 <ul class="simple">
 <li><p>C ++，ROS</p></li>
 <li><p>移动机器人导航体验</p></li>
 <li><p>几何和统计</p></li>
-<li><p>推荐: Gazebo模拟，ROS导航     <a class="reference external" href="http://www.fishros.com/calib#msgid=439">[校准&#64;fish]</a></p></li>
+<li><p>推荐: Gazebo模拟，ROS导航     <a class="reference external" href="http://10.55.23.25:3000/#msgid=439">[校准&#64;fish]</a></p></li>
 </ul>
-<p>相关开源软件存储库和参考文献列表     <a class="reference external" href="http://www.fishros.com/calib#msgid=352">[校准&#64;fish]</a></p>
+<p>相关开源软件存储库和参考文献列表     <a class="reference external" href="http://10.55.23.25:3000/#msgid=352">[校准&#64;fish]</a></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ros.org/">ROS</a></p></li>
 <li><p><a class="reference external" href="http://gazebosim.org/">Gazebo Simulator</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1899">Github ticket</a></p></li>
 <li><p><a class="reference external" href="https://navigation.ros.org/">Navigation2</a></p></li>
 </ul>
-<p>许可-所有贡献将在Apache 2.0许可下进行。-不需要其他CLA。     <a class="reference external" href="http://www.fishros.com/calib#msgid=357">[校准&#64;fish]</a></p>
+<p>许可-所有贡献将在Apache 2.0许可下进行。-不需要其他CLA。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=357">[校准&#64;fish]</a></p>
 </div>
 
 

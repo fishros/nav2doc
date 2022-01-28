@@ -735,25 +735,25 @@
            <div itemprop="articleBody">
              
   <div class="section" id="dashing-to-eloquent">
-<span id="dashing-migration"></span><h1>Dashing转Eloquent     <a class="reference external" href="http://www.fishros.com/calib#msgid=715">[校准&#64;fish]</a><a class="headerlink" href="#dashing-to-eloquent" title="永久链接至标题"></a></h1>
-<p>从ROS2 Dashing到Eloquent，增加了一些稳定性改进，我们在此不具体讨论。     <a class="reference external" href="http://www.fishros.com/calib#msgid=716">[校准&#64;fish]</a></p>
+<span id="dashing-migration"></span><h1>Dashing转Eloquent     <a class="reference external" href="http://10.55.23.25:3000/#msgid=715">[校准&#64;fish]</a><a class="headerlink" href="#dashing-to-eloquent" title="永久链接至标题"></a></h1>
+<p>从ROS2 Dashing到Eloquent，增加了一些稳定性改进，我们在此不具体讨论。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=716">[校准&#64;fish]</a></p>
 <div class="section" id="new-packages">
 <h2>新包装<a class="headerlink" href="#new-packages" title="永久链接至标题"></a></h2>
-<p>导航2现在包括一个新的 <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> 包。航路点跟随者是一个操作服务器，它将接收要遵循的航路点列表并按顺序跟踪它们。在单个航点出现故障时，机器人是否应该继续到下一个航点，或者将故障返回给动作客户端，都有一个参数 <code class="docutils literal notranslate"><span class="pre">stop_on_failure</span></code> 。航点跟随者也是一个参考应用程序，用于说明如何使用Navigation2操作服务器来完成基本的自治任务。     <a class="reference external" href="http://www.fishros.com/calib#msgid=718">[校准&#64;fish]</a></p>
-<p>导航2现在支持控制和SLAM的新算法。定时松紧带 (TEB) 控制器由 <a class="reference external" href="https://github.com/rst-tu-dortmund/teb_local_planner">在这里</a> 实施。它是自己的控制器插件，可以代替DWB控制器使用。Nav2也支持SLAM工具箱默认SLAM实现ROS2 这取代使用制图员。     <a class="reference external" href="http://www.fishros.com/calib#msgid=719">[校准&#64;fish]</a></p>
+<p>导航2现在包括一个新的 <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> 包。航路点跟随者是一个操作服务器，它将接收要遵循的航路点列表并按顺序跟踪它们。在单个航点出现故障时，机器人是否应该继续到下一个航点，或者将故障返回给动作客户端，都有一个参数 <code class="docutils literal notranslate"><span class="pre">stop_on_failure</span></code> 。航点跟随者也是一个参考应用程序，用于说明如何使用Navigation2操作服务器来完成基本的自治任务。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=718">[校准&#64;fish]</a></p>
+<p>导航2现在支持控制和SLAM的新算法。定时松紧带 (TEB) 控制器由 <a class="reference external" href="https://github.com/rst-tu-dortmund/teb_local_planner">在这里</a> 实施。它是自己的控制器插件，可以代替DWB控制器使用。Nav2也支持SLAM工具箱默认SLAM实现ROS2 这取代使用制图员。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=719">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="new-plugins">
 <h2>新插件<a class="headerlink" href="#new-plugins" title="永久链接至标题"></a></h2>
-<p>Eloquent介绍回到pluginlib插件导航堆栈。 <code class="docutils literal notranslate"><span class="pre">nav2_core</span></code> 定义插件头接口实现控制器，planner、恢复和目标检查插件。所有算法 (NavFn，DWB，回收率) 添加插件接口和通用包服务器创建。 <code class="docutils literal notranslate"><span class="pre">nav2_planner</span></code> 是动作服务器规划承载插件planner。 <code class="docutils literal notranslate"><span class="pre">nav2_controller</span></code> 是动作服务器控制器主机插件控制器。 <code class="docutils literal notranslate"><span class="pre">nav2_recovery</span></code> 是动作服务器恢复承载插件恢复。     <a class="reference external" href="http://www.fishros.com/calib#msgid=721">[校准&#64;fish]</a></p>
-<p>新恢复插件增加包括备份，将在距离备份，如果无碰撞。此外，等待恢复补充说，将等待可配置的时间之前再次导航。这个插件尤其有助于时变障碍或暂停导航景象成为少动。     <a class="reference external" href="http://www.fishros.com/calib#msgid=722">[校准&#64;fish]</a></p>
-<p>添加了许多新的行为树节点。这些行为树节点在行为树引擎中进行硬编码。行为树cpp v3支持插件，并将在下一个版本中进行转换。     <a class="reference external" href="http://www.fishros.com/calib#msgid=723">[校准&#64;fish]</a></p>
+<p>Eloquent介绍回到pluginlib插件导航堆栈。 <code class="docutils literal notranslate"><span class="pre">nav2_core</span></code> 定义插件头接口实现控制器，planner、恢复和目标检查插件。所有算法 (NavFn，DWB，回收率) 添加插件接口和通用包服务器创建。 <code class="docutils literal notranslate"><span class="pre">nav2_planner</span></code> 是动作服务器规划承载插件planner。 <code class="docutils literal notranslate"><span class="pre">nav2_controller</span></code> 是动作服务器控制器主机插件控制器。 <code class="docutils literal notranslate"><span class="pre">nav2_recovery</span></code> 是动作服务器恢复承载插件恢复。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=721">[校准&#64;fish]</a></p>
+<p>新恢复插件增加包括备份，将在距离备份，如果无碰撞。此外，等待恢复补充说，将等待可配置的时间之前再次导航。这个插件尤其有助于时变障碍或暂停导航景象成为少动。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=722">[校准&#64;fish]</a></p>
+<p>添加了许多新的行为树节点。这些行为树节点在行为树引擎中进行硬编码。行为树cpp v3支持插件，并将在下一个版本中进行转换。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=723">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="navigation2-architectural-changes">
 <h2>导航2架构变化<a class="headerlink" href="#navigation2-architectural-changes" title="永久链接至标题"></a></h2>
-<p>这个 <code class="docutils literal notranslate"><span class="pre">nav2_world_model</span></code> 包装被移除。单个 <code class="docutils literal notranslate"><span class="pre">nav2_planner</span></code> 和 <code class="docutils literal notranslate"><span class="pre">nav2_controller</span></code> 服务器现在托管它们相关的成本图。这样做是为了减少网络流量并确保系统安全关键要素的最新信息。如上所述，插件被引入到堆栈中，这些服务器每个主机插件都用于导航、控制和成本映射层。     <a class="reference external" href="http://www.fishros.com/calib#msgid=725">[校准&#64;fish]</a></p>
-<p>地图服务器基本上被重构，但外部API保持不变。它现在使用SDL库来加载图像。     <a class="reference external" href="http://www.fishros.com/calib#msgid=726">[校准&#64;fish]</a></p>
-<p>基于TF的定位现在用于堆栈中任何地方的姿态估计。之前，导航堆栈的一些元素只是从 <code class="docutils literal notranslate"><span class="pre">/amcl_pose</span></code> 主题以不规则的速度发布更新了它的姿态。这显然是低准确度和高延迟。现在，所有定位都基于从全局框架到机器人框架的TF树。     <a class="reference external" href="http://www.fishros.com/calib#msgid=727">[校准&#64;fish]</a></p>
-<p>在Eloquent之前，没有可用的ROS 2动作服务器和客户端。相反，导航2使用了一个我们称为任务的接口。Eloquent现在包含操作，并且创建了一个简单的操作服务器界面，该界面现在在整个堆栈中使用。任务被删除。     <a class="reference external" href="http://www.fishros.com/calib#msgid=728">[校准&#64;fish]</a></p>
+<p>这个 <code class="docutils literal notranslate"><span class="pre">nav2_world_model</span></code> 包装被移除。单个 <code class="docutils literal notranslate"><span class="pre">nav2_planner</span></code> 和 <code class="docutils literal notranslate"><span class="pre">nav2_controller</span></code> 服务器现在托管它们相关的成本图。这样做是为了减少网络流量并确保系统安全关键要素的最新信息。如上所述，插件被引入到堆栈中，这些服务器每个主机插件都用于导航、控制和成本映射层。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=725">[校准&#64;fish]</a></p>
+<p>地图服务器基本上被重构，但外部API保持不变。它现在使用SDL库来加载图像。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=726">[校准&#64;fish]</a></p>
+<p>基于TF的定位现在用于堆栈中任何地方的姿态估计。之前，导航堆栈的一些元素只是从 <code class="docutils literal notranslate"><span class="pre">/amcl_pose</span></code> 主题以不规则的速度发布更新了它的姿态。这显然是低准确度和高延迟。现在，所有定位都基于从全局框架到机器人框架的TF树。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=727">[校准&#64;fish]</a></p>
+<p>在Eloquent之前，没有可用的ROS 2动作服务器和客户端。相反，导航2使用了一个我们称为任务的接口。Eloquent现在包含操作，并且创建了一个简单的操作服务器界面，该界面现在在整个堆栈中使用。任务被删除。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=728">[校准&#64;fish]</a></p>
 </div>
 </div>
 

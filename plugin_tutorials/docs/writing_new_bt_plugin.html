@@ -743,13 +743,13 @@
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>本教程演示如何创建你自己行为树 (BT) 插件。BT插件作为节点行为树XML处理BT导航仪导航逻辑。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1993">[校准&#64;fish]</a></p>
+<p>本教程演示如何创建你自己行为树 (BT) 插件。BT插件作为节点行为树XML处理BT导航仪导航逻辑。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1993">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p>ROS 2 (二进制或从源代码构建)     <a class="reference external" href="http://www.fishros.com/calib#msgid=1995">[校准&#64;fish]</a></p></li>
-<li><p>Nav2 (包括依赖项)     <a class="reference external" href="http://www.fishros.com/calib#msgid=1996">[校准&#64;fish]</a></p></li>
+<li><p>ROS 2 (二进制或从源代码构建)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1995">[校准&#64;fish]</a></p></li>
+<li><p>Nav2 (包括依赖项)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1996">[校准&#64;fish]</a></p></li>
 <li><p>Gazebo</p></li>
 <li><p>Turtlebot3</p></li>
 </ul>
@@ -758,11 +758,11 @@
 <h2>教程步骤<a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="creating-a-new-bt-plugin">
 <h3>1创建新BT插件<a class="headerlink" href="#creating-a-new-bt-plugin" title="永久链接至标题"></a></h3>
-<p>我们将创建一个简单的BT插件节点来在另一个服务器上执行操作。在这个例子中，我们将分析 <code class="docutils literal notranslate"><span class="pre">nav2_behavior_tree</span></code> 包中最简单的行为树动作节点， <code class="docutils literal notranslate"><span class="pre">wait</span></code> 节点。除了操作BT节点的示例之外，您还可以创建自定义装饰器、条件和控制节点。每个节点类型在行为树中都具有独特的作用，以执行诸如规划、控制BT流、检查条件状态或修改其他BT节点的输出之类的操作。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2001">[校准&#64;fish]</a></p>
-<p>本教程中的代码可以在 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree">nav2_behavior_tree</a> 包中找到，作为 <code class="docutils literal notranslate"><span class="pre">wait_action</span></code> 节点。可以将此操作节点视为编写其他操作节点插件的参考。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2002">[校准&#64;fish]</a></p>
-<p>我们的示例插件继承自基类 “nav2 _ 行为 _ 树::BtAction节点 <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">The</span> <span class="pre">base</span> <span class="pre">class</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">wrapper</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">BehaviorTree.CPP</span> <span class="pre">``</span> <span class="pre">::Action节点基本”，简化了利用ROS</span> <span class="pre">2动作客户端的BT动作节点。</span> <span class="pre">``BTActionNode</span></code> 既是BT动作，也是使用ROS 2动作网络接口调用远程服务器进行一些工作。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2003">[校准&#64;fish]</a></p>
-<p>与其它类型BT节点 (e。g.装饰、控制、状态) 使用相应BT节点，''BT: DecoratorNode''，''BT: ControlNode''，或 ''BT: ConditionNode''。BT动作节点 * 不 * 利用ROS 2动作接口，使用 ''BT: ActionNodeBase'' 基类本身。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2004">[校准&#64;fish]</a></p>
-<p>的 <code class="docutils literal notranslate"><span class="pre">BTActionNode</span></code> 类提供虚拟方法使用，除了信息提供构造函数。让学习更方法需要写BT动作插件。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2005">[校准&#64;fish]</a></p>
+<p>我们将创建一个简单的BT插件节点来在另一个服务器上执行操作。在这个例子中，我们将分析 <code class="docutils literal notranslate"><span class="pre">nav2_behavior_tree</span></code> 包中最简单的行为树动作节点， <code class="docutils literal notranslate"><span class="pre">wait</span></code> 节点。除了操作BT节点的示例之外，您还可以创建自定义装饰器、条件和控制节点。每个节点类型在行为树中都具有独特的作用，以执行诸如规划、控制BT流、检查条件状态或修改其他BT节点的输出之类的操作。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2001">[校准&#64;fish]</a></p>
+<p>本教程中的代码可以在 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree">nav2_behavior_tree</a> 包中找到，作为 <code class="docutils literal notranslate"><span class="pre">wait_action</span></code> 节点。可以将此操作节点视为编写其他操作节点插件的参考。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2002">[校准&#64;fish]</a></p>
+<p>我们的示例插件继承自基类 “nav2 _ 行为 _ 树::BtAction节点 <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">The</span> <span class="pre">base</span> <span class="pre">class</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">wrapper</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">BehaviorTree.CPP</span> <span class="pre">``</span> <span class="pre">::Action节点基本”，简化了利用ROS</span> <span class="pre">2动作客户端的BT动作节点。</span> <span class="pre">``BTActionNode</span></code> 既是BT动作，也是使用ROS 2动作网络接口调用远程服务器进行一些工作。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2003">[校准&#64;fish]</a></p>
+<p>与其它类型BT节点 (e。g.装饰、控制、状态) 使用相应BT节点，''BT: DecoratorNode''，''BT: ControlNode''，或 ''BT: ConditionNode''。BT动作节点 * 不 * 利用ROS 2动作接口，使用 ''BT: ActionNodeBase'' 基类本身。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2004">[校准&#64;fish]</a></p>
+<p>的 <code class="docutils literal notranslate"><span class="pre">BTActionNode</span></code> 类提供虚拟方法使用，除了信息提供构造函数。让学习更方法需要写BT动作插件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2005">[校准&#64;fish]</a></p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -772,40 +772,40 @@
 <tbody>
 <tr class="row-odd"><td><p>方法</p></td>
 <td><p>方法描述</p></td>
-<td><p>Required需要吗？**     <a class="reference external" href="http://www.fishros.com/calib#msgid=2008">[校准&#64;fish]</a></p></td>
+<td><p>Required需要吗？**     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2008">[校准&#64;fish]</a></p></td>
 </tr>
 <tr class="row-even"><td><p>构造函数</p></td>
-<td><p>构造函数，用于指示与插件匹配的相应XML标记名称、使用插件调用的操作服务器的名称以及所需的任何行为树.CPP特殊配置。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2010">[校准&#64;fish]</a></p></td>
+<td><p>构造函数，用于指示与插件匹配的相应XML标记名称、使用插件调用的操作服务器的名称以及所需的任何行为树.CPP特殊配置。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2010">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
-<tr class="row-odd"><td><p>providedPorts()     <a class="reference external" href="http://www.fishros.com/calib#msgid=2012">[校准&#64;fish]</a></p></td>
-<td><p>函数定义输入和输出端口BT节点可能。这些类似于参数定义BT XML硬编码值或其他输出端口其他节点。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2013">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>providedPorts()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2012">[校准&#64;fish]</a></p></td>
+<td><p>函数定义输入和输出端口BT节点可能。这些类似于参数定义BT XML硬编码值或其他输出端口其他节点。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2013">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
 <tr class="row-even"><td><p>On_tic()</p></td>
-<td><p>方法当BT节点勾选行为时执行。这应该使用动态更新如新黑板值，输入端口，或参数。可能也复位状态动作。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2015">[校准&#64;fish]</a></p></td>
+<td><p>方法当BT节点勾选行为时执行。这应该使用动态更新如新黑板值，输入端口，或参数。可能也复位状态动作。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2015">[校准&#64;fish]</a></p></td>
 <td><p>不</p></td>
 </tr>
-<tr class="row-odd"><td><p>on_wait_for_result()     <a class="reference external" href="http://www.fishros.com/calib#msgid=2017">[校准&#64;fish]</a></p></td>
-<td><p>当行为树节点等待其调用的ROS 2操作服务器的结果时，将调用方法。这可用于检查更新以抢占当前任务、检查超时或等待操作完成时要计算的任何内容。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2018">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>on_wait_for_result()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2017">[校准&#64;fish]</a></p></td>
+<td><p>当行为树节点等待其调用的ROS 2操作服务器的结果时，将调用方法。这可用于检查更新以抢占当前任务、检查超时或等待操作完成时要计算的任何内容。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2018">[校准&#64;fish]</a></p></td>
 <td><p>不</p></td>
 </tr>
-<tr class="row-even"><td><p>on_success()     <a class="reference external" href="http://www.fishros.com/calib#msgid=2019">[校准&#64;fish]</a></p></td>
-<td><p>方法当ROS 2动作服务器返回成功结果。返回值BT节点报告树。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2020">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>on_success()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2019">[校准&#64;fish]</a></p></td>
+<td><p>方法当ROS 2动作服务器返回成功结果。返回值BT节点报告树。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2020">[校准&#64;fish]</a></p></td>
 <td><p>不</p></td>
 </tr>
-<tr class="row-odd"><td><p>on_aborted()     <a class="reference external" href="http://www.fishros.com/calib#msgid=2021">[校准&#64;fish]</a></p></td>
-<td><p>当ROS 2操作服务器返回中止结果时，将调用方法。返回BT节点将向树报告的值。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2022">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>on_aborted()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2021">[校准&#64;fish]</a></p></td>
+<td><p>当ROS 2操作服务器返回中止结果时，将调用方法。返回BT节点将向树报告的值。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2022">[校准&#64;fish]</a></p></td>
 <td><p>不</p></td>
 </tr>
-<tr class="row-even"><td><p>on_cancelled()     <a class="reference external" href="http://www.fishros.com/calib#msgid=2023">[校准&#64;fish]</a></p></td>
-<td><p>MMethod当ROS 2动作服务器返回取消结果。返回BT节点将向树报告的值。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2024">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>on_cancelled()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2023">[校准&#64;fish]</a></p></td>
+<td><p>MMethod当ROS 2动作服务器返回取消结果。返回BT节点将向树报告的值。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2024">[校准&#64;fish]</a></p></td>
 <td><p>不</p></td>
 </tr>
 </tbody>
 </table>
-<p>在本教程中，我们将仅使用 <code class="docutils literal notranslate"><span class="pre">on_tick()</span></code> 方法。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2025">[校准&#64;fish]</a></p>
-<p>在构造函数中，我们需要获取应用于行为树节点的任何非变量参数。在此示例中，我们需要从行为树XML的输入端口获取睡眠时间的值。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2026">[校准&#64;fish]</a></p>
+<p>在本教程中，我们将仅使用 <code class="docutils literal notranslate"><span class="pre">on_tick()</span></code> 方法。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2025">[校准&#64;fish]</a></p>
+<p>在构造函数中，我们需要获取应用于行为树节点的任何非变量参数。在此示例中，我们需要从行为树XML的输入端口获取睡眠时间的值。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2026">[校准&#64;fish]</a></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">WaitAction</span><span class="o">::</span><span class="n">WaitAction</span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">xml_tag_name</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">action_name</span><span class="p">,</span><span class="w"></span>
@@ -825,10 +825,10 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>这里给出输入的 <code class="docutils literal notranslate"><span class="pre">xml_tag_name</span></code> 告诉BT节点插件stringXML中对应节点。这将看到后我们登记这BT节点插件。它也在string名称动作服务器将调用执行一些行为。最后，配置，我们可以忽略的最节点插件。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2027">[校准&#64;fish]</a></p>
-<p>然后我们调用 <code class="docutils literal notranslate"><span class="pre">BTActionNode</span></code> 构造函数。可以看出，它是由ROS 2操作类型模板化的，所以我们给它 “nav2_msgs::action:: wait” 操作消息类型，并转发我们的其他输入。 <code class="docutils literal notranslate"><span class="pre">BTActionNode</span></code> 作为 <code class="docutils literal notranslate"><span class="pre">tick()</span></code> 方法，当从树中调用该节点时，行为树直接调用该方法。然后， <code class="docutils literal notranslate"><span class="pre">on_tick()</span></code> 与行动客户目标一起被调用。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2028">[校准&#64;fish]</a></p>
-<p>在构造函数的主体，我们输入端口 <code class="docutils literal notranslate"><span class="pre">getInput</span></code> 参数 <code class="docutils literal notranslate"><span class="pre">wait_duration</span></code> 可独立配置的每个例证 <code class="docutils literal notranslate"><span class="pre">wait</span></code> 节点树。它是在 <code class="docutils literal notranslate"><span class="pre">duration</span></code> 参数插入 <code class="docutils literal notranslate"><span class="pre">goal_</span></code> 。的 <code class="docutils literal notranslate"><span class="pre">goal_</span></code> 类变量目标ROS 2行动客户端将发送到操作服务器。所以在这个例子，我们设置时间我们想等使动作服务器知道细节的请求。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2029">[校准&#64;fish]</a></p>
-<p>的 <code class="docutils literal notranslate"><span class="pre">providedPorts()</span></code> 方法给我们机会定义输入或输出端口。端口可以认为参数行为树节点访问行为树本身。例如，只有一个输入端口， <code class="docutils literal notranslate"><span class="pre">wait_duration</span></code> 可以把它BT XML每个实例 <code class="docutils literal notranslate"><span class="pre">wait</span></code> 恢复。我们设置类型， <code class="docutils literal notranslate"><span class="pre">int</span></code> ，默认 <code class="docutils literal notranslate"><span class="pre">1</span></code> ， <code class="docutils literal notranslate"><span class="pre">wait_duration</span></code> ，描述港口 <code class="docutils literal notranslate"><span class="pre">Wait</span> <span class="pre">time</span></code> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2030">[校准&#64;fish]</a></p>
+<p>这里给出输入的 <code class="docutils literal notranslate"><span class="pre">xml_tag_name</span></code> 告诉BT节点插件stringXML中对应节点。这将看到后我们登记这BT节点插件。它也在string名称动作服务器将调用执行一些行为。最后，配置，我们可以忽略的最节点插件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2027">[校准&#64;fish]</a></p>
+<p>然后我们调用 <code class="docutils literal notranslate"><span class="pre">BTActionNode</span></code> 构造函数。可以看出，它是由ROS 2操作类型模板化的，所以我们给它 “nav2_msgs::action:: wait” 操作消息类型，并转发我们的其他输入。 <code class="docutils literal notranslate"><span class="pre">BTActionNode</span></code> 作为 <code class="docutils literal notranslate"><span class="pre">tick()</span></code> 方法，当从树中调用该节点时，行为树直接调用该方法。然后， <code class="docutils literal notranslate"><span class="pre">on_tick()</span></code> 与行动客户目标一起被调用。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2028">[校准&#64;fish]</a></p>
+<p>在构造函数的主体，我们输入端口 <code class="docutils literal notranslate"><span class="pre">getInput</span></code> 参数 <code class="docutils literal notranslate"><span class="pre">wait_duration</span></code> 可独立配置的每个例证 <code class="docutils literal notranslate"><span class="pre">wait</span></code> 节点树。它是在 <code class="docutils literal notranslate"><span class="pre">duration</span></code> 参数插入 <code class="docutils literal notranslate"><span class="pre">goal_</span></code> 。的 <code class="docutils literal notranslate"><span class="pre">goal_</span></code> 类变量目标ROS 2行动客户端将发送到操作服务器。所以在这个例子，我们设置时间我们想等使动作服务器知道细节的请求。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2029">[校准&#64;fish]</a></p>
+<p>的 <code class="docutils literal notranslate"><span class="pre">providedPorts()</span></code> 方法给我们机会定义输入或输出端口。端口可以认为参数行为树节点访问行为树本身。例如，只有一个输入端口， <code class="docutils literal notranslate"><span class="pre">wait_duration</span></code> 可以把它BT XML每个实例 <code class="docutils literal notranslate"><span class="pre">wait</span></code> 恢复。我们设置类型， <code class="docutils literal notranslate"><span class="pre">int</span></code> ，默认 <code class="docutils literal notranslate"><span class="pre">1</span></code> ， <code class="docutils literal notranslate"><span class="pre">wait_duration</span></code> ，描述港口 <code class="docutils literal notranslate"><span class="pre">Wait</span> <span class="pre">time</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2030">[校准&#64;fish]</a></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="n">BT</span><span class="o">::</span><span class="n">PortsList</span><span class="w"> </span><span class="nf">providedPorts</span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">providedBasicPorts</span><span class="p">(</span><span class="w"></span>
@@ -838,18 +838,18 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>当行为树勾选特定节点时，将调用 <code class="docutils literal notranslate"><span class="pre">on_tick()</span></code> 方法。对于等待BT节点，我们只想通知黑板上的计数器，勾选了与恢复相对应的操作插件。这对于保持特定导航运行期间执行的恢复数量的度量很有用。如果是可变输入，您也可以记录或更新 <code class="docutils literal notranslate"><span class="pre">goal_</span></code> 的等待时间。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2031">[校准&#64;fish]</a></p>
+<p>当行为树勾选特定节点时，将调用 <code class="docutils literal notranslate"><span class="pre">on_tick()</span></code> 方法。对于等待BT节点，我们只想通知黑板上的计数器，勾选了与恢复相对应的操作插件。这对于保持特定导航运行期间执行的恢复数量的度量很有用。如果是可变输入，您也可以记录或更新 <code class="docutils literal notranslate"><span class="pre">goal_</span></code> 的等待时间。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2031">[校准&#64;fish]</a></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">WaitAction::on_tick</span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">increment_recovery_count</span><span class="p">();</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>不使用其余方法，也不强制重写它们。只有一些BT节点插件需要覆盖 <code class="docutils literal notranslate"><span class="pre">on_wait_for_result()</span></code> 来检查抢占或检查超时。如果不重叠，成功、中止和取消的方法将分别默认为 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 、 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 、 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2032">[校准&#64;fish]</a></p>
+<p>不使用其余方法，也不强制重写它们。只有一些BT节点插件需要覆盖 <code class="docutils literal notranslate"><span class="pre">on_wait_for_result()</span></code> 来检查抢占或检查超时。如果不重叠，成功、中止和取消的方法将分别默认为 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 、 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 、 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2032">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="exporting-the-planner-plugin">
-<h3>2-导出planner插件     <a class="reference external" href="http://www.fishros.com/calib#msgid=2033">[校准&#64;fish]</a><a class="headerlink" href="#exporting-the-planner-plugin" title="永久链接至标题"></a></h3>
-<p>现在我们创建定制BT节点，我们需要导出插件也能见的行为树时加载定制BT XML。插件加载运行时如果不可见，然后我们BT导航仪服务器将无法加载或使用它。在BehaviorTree.CPP，导出和加载插件由 <code class="docutils literal notranslate"><span class="pre">BT_REGISTER_NODES</span></code> 微距。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2034">[校准&#64;fish]</a></p>
+<h3>2-导出planner插件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2033">[校准&#64;fish]</a><a class="headerlink" href="#exporting-the-planner-plugin" title="永久链接至标题"></a></h3>
+<p>现在我们创建定制BT节点，我们需要导出插件也能见的行为树时加载定制BT XML。插件加载运行时如果不可见，然后我们BT导航仪服务器将无法加载或使用它。在BehaviorTree.CPP，导出和加载插件由 <code class="docutils literal notranslate"><span class="pre">BT_REGISTER_NODES</span></code> 微距。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2034">[校准&#64;fish]</a></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">BT_REGISTER_NODES</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">BT</span><span class="o">::</span><span class="n">NodeBuilder</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
@@ -862,15 +862,15 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>在此宏中，我们必须创建一个 <code class="docutils literal notranslate"><span class="pre">NodeBuilder</span></code> ，以便我们的自定义操作节点可以具有非默认构造函数签名 (用于操作和xml名称)。此lambda将返回指向我们创建的行为树节点的唯一指针。用相关信息填充构造函数，在函数参数中给出 <code class="docutils literal notranslate"><span class="pre">name</span></code> 和 <code class="docutils literal notranslate"><span class="pre">config</span></code> 。然后定义这个BT节点将调用的ROS 2动作服务器的名称，在这种情况下，是 <cite>wWait</cite> 的动作。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2035">[校准&#64;fish]</a></p>
-<p>我们最后给生成器工厂登记。 <code class="docutils literal notranslate"><span class="pre">Wait</span></code> 给工厂名称在行为树XML文件对应BT节点插件。可以看到一个示例下面， <code class="docutils literal notranslate"><span class="pre">Wait</span></code> BT XML节点指定非变量输入端口 <code class="docutils literal notranslate"><span class="pre">wait_duration</span></code> 5秒。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2036">[校准&#64;fish]</a></p>
+<p>在此宏中，我们必须创建一个 <code class="docutils literal notranslate"><span class="pre">NodeBuilder</span></code> ，以便我们的自定义操作节点可以具有非默认构造函数签名 (用于操作和xml名称)。此lambda将返回指向我们创建的行为树节点的唯一指针。用相关信息填充构造函数，在函数参数中给出 <code class="docutils literal notranslate"><span class="pre">name</span></code> 和 <code class="docutils literal notranslate"><span class="pre">config</span></code> 。然后定义这个BT节点将调用的ROS 2动作服务器的名称，在这种情况下，是 <cite>wWait</cite> 的动作。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2035">[校准&#64;fish]</a></p>
+<p>我们最后给生成器工厂登记。 <code class="docutils literal notranslate"><span class="pre">Wait</span></code> 给工厂名称在行为树XML文件对应BT节点插件。可以看到一个示例下面， <code class="docutils literal notranslate"><span class="pre">Wait</span></code> BT XML节点指定非变量输入端口 <code class="docutils literal notranslate"><span class="pre">wait_duration</span></code> 5秒。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2036">[校准&#64;fish]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Wait</span> <span class="na">wait_duration=</span><span class="s">&quot;5&quot;</span><span class="nt">/&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="add-plugin-library-name-to-config">
-<h3>3-将插件库名称添加到配置     <a class="reference external" href="http://www.fishros.com/calib#msgid=2037">[校准&#64;fish]</a><a class="headerlink" href="#add-plugin-library-name-to-config" title="永久链接至标题"></a></h3>
-<p>为了使BT Navigator节点发现我们刚刚注册的插件，我们需要在configuration YAML文件的bt_navigator节点下列出插件库名称。配置应类似于下面显示的配置。请注意plugin_lib_names下列出的nav2_wait_action_bt_node。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2038">[校准&#64;fish]</a></p>
+<h3>3-将插件库名称添加到配置     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2037">[校准&#64;fish]</a><a class="headerlink" href="#add-plugin-library-name-to-config" title="永久链接至标题"></a></h3>
+<p>为了使BT Navigator节点发现我们刚刚注册的插件，我们需要在configuration YAML文件的bt_navigator节点下列出插件库名称。配置应类似于下面显示的配置。请注意plugin_lib_names下列出的nav2_wait_action_bt_node。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2038">[校准&#64;fish]</a></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bt_navigator:
   ros__parameters:
     use_sim_time: True
@@ -886,8 +886,8 @@
 </div>
 <div class="section" id="run-your-custom-plugin">
 <h3>4运行定制插件<a class="headerlink" href="#run-your-custom-plugin" title="永久链接至标题"></a></h3>
-<p>现在，您可以在自定义BT节点上使用行为树。例如， <code class="docutils literal notranslate"><span class="pre">navigate_w_replanning_and_recovery.xml</span></code> 文件如下所示。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2040">[校准&#64;fish]</a></p>
-<p>选择此BT XML文件特定导航请求 <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code> 或默认行为树BT导航仪配置yaml文件。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2041">[校准&#64;fish]</a></p>
+<p>现在，您可以在自定义BT节点上使用行为树。例如， <code class="docutils literal notranslate"><span class="pre">navigate_w_replanning_and_recovery.xml</span></code> 文件如下所示。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2040">[校准&#64;fish]</a></p>
+<p>选择此BT XML文件特定导航请求 <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code> 或默认行为树BT导航仪配置yaml文件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2041">[校准&#64;fish]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span> <span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;BehaviorTree</span> <span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;RecoveryNode</span> <span class="na">number_of_retries=</span><span class="s">&quot;6&quot;</span> <span class="na">name=</span><span class="s">&quot;NavigateRecovery&quot;</span><span class="nt">&gt;</span>

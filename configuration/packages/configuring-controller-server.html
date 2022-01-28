@@ -736,12 +736,12 @@
              
   <div class="section" id="controller-server">
 <span id="configuring-controller-server"></span><h1>控制器服务器<a class="headerlink" href="#controller-server" title="永久链接至标题"></a></h1>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_controller">Github</a> 上的源代码。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2425">[校准&#64;fish]</a></p>
-<p>控制器服务器实现用于处理堆栈的控制器请求的服务器，并托管插件实现的映射。它将采用控制器、进度检查器和目标检查器的路径和插件名称来使用和调用适当的插件。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2574">[校准&#64;fish]</a></p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_controller">Github</a> 上的源代码。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2425">[校准&#64;fish]</a></p>
+<p>控制器服务器实现用于处理堆栈的控制器请求的服务器，并托管插件实现的映射。它将采用控制器、进度检查器和目标检查器的路径和插件名称来使用和调用适当的插件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2574">[校准&#64;fish]</a></p>
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">controller_frequency     <a class="reference external" href="http://www.fishros.com/calib#msgid=2575">[校准&#64;fish]</a></dt>
+<dt class="field-odd">controller_frequency     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2575">[校准&#64;fish]</a></dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 67%" />
@@ -757,11 +757,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>运行控制器的频率 (赫兹)。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2577">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>运行控制器的频率 (赫兹)。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2577">[校准&#64;fish]</a></p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">controller_plugins     <a class="reference external" href="http://www.fishros.com/calib#msgid=2578">[校准&#64;fish]</a></dt>
+<dt class="field-even">controller_plugins     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2578">[校准&#64;fish]</a></dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
@@ -771,15 +771,15 @@
 <tr class="row-odd"><td><p>Type</p></td>
 <td><p>Default</p></td>
 </tr>
-<tr class="row-even"><td><p>vector&lt;string&gt;     <a class="reference external" href="http://www.fishros.com/calib#msgid=2537">[校准&#64;fish]</a></p></td>
-<td><p>['FollowPath']     <a class="reference external" href="http://www.fishros.com/calib#msgid=2579">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>vector&lt;string&gt;     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2537">[校准&#64;fish]</a></p></td>
+<td><p>['FollowPath']     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2579">[校准&#64;fish]</a></p></td>
 </tr>
 </tbody>
 </table>
 <dl>
-<dt>描述</dt><dd><p>用于处理请求和参数的控制器插件的映射名称列表。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2580">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>用于处理请求和参数的控制器插件的映射名称列表。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2580">[校准&#64;fish]</a></p>
 </dd>
-<dt>Note</dt><dd><p>此列表中定义的每个插件命名空间都需要有一个: 代码:  <cite>plugin</cite> 参数，用于定义要在命名空间中加载的插件的类型。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2582">[校准&#64;fish]</a></p>
+<dt>Note</dt><dd><p>此列表中定义的每个插件命名空间都需要有一个: 代码:  <cite>plugin</cite> 参数，用于定义要在命名空间中加载的插件的类型。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2582">[校准&#64;fish]</a></p>
 <p>示例:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_server</span><span class="p">:</span>
   <span class="nt">ros__parameters</span><span class="p">:</span>
@@ -791,7 +791,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">progress_checker_plugin     <a class="reference external" href="http://www.fishros.com/calib#msgid=2584">[校准&#64;fish]</a></dt>
+<dt class="field-odd">progress_checker_plugin     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2584">[校准&#64;fish]</a></dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 44%" />
@@ -802,14 +802,14 @@
 <td><p>Default</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
-<td><p>'progress_checker'     <a class="reference external" href="http://www.fishros.com/calib#msgid=2585">[校准&#64;fish]</a></p></td>
+<td><p>'progress_checker'     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2585">[校准&#64;fish]</a></p></td>
 </tr>
 </tbody>
 </table>
 <dl>
-<dt>描述</dt><dd><p>用于检查机器人进度的进度检查器插件的映射名称。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2586">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>用于检查机器人进度的进度检查器插件的映射名称。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2586">[校准&#64;fish]</a></p>
 </dd>
-<dt>Note</dt><dd><p>定义的插件命名空间需要有一个: 代码:  <cite>plugin</cite> 参数，定义要在命名空间中加载的插件的类型。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2587">[校准&#64;fish]</a></p>
+<dt>Note</dt><dd><p>定义的插件命名空间需要有一个: 代码:  <cite>plugin</cite> 参数，定义要在命名空间中加载的插件的类型。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2587">[校准&#64;fish]</a></p>
 <p>示例:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_server</span><span class="p">:</span>
   <span class="nt">ros__parameters</span><span class="p">:</span>
@@ -821,7 +821,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-even">goal_checker_plugin     <a class="reference external" href="http://www.fishros.com/calib#msgid=2588">[校准&#64;fish]</a></dt>
+<dt class="field-even">goal_checker_plugin     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2588">[校准&#64;fish]</a></dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
@@ -832,14 +832,14 @@
 <td><p>Default</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
-<td><p>'goal_checker'     <a class="reference external" href="http://www.fishros.com/calib#msgid=2589">[校准&#64;fish]</a></p></td>
+<td><p>'goal_checker'     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2589">[校准&#64;fish]</a></p></td>
 </tr>
 </tbody>
 </table>
 <dl>
-<dt>描述</dt><dd><p>达到用于检查目标的目标检查器插件的映射名称。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2590">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>达到用于检查目标的目标检查器插件的映射名称。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2590">[校准&#64;fish]</a></p>
 </dd>
-<dt>Note</dt><dd><p>定义的插件命名空间需要有一个: 代码:  <cite>plugin</cite> 参数，定义要在命名空间中加载的插件的类型。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2587">[校准&#64;fish]</a></p>
+<dt>Note</dt><dd><p>定义的插件命名空间需要有一个: 代码:  <cite>plugin</cite> 参数，定义要在命名空间中加载的插件的类型。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2587">[校准&#64;fish]</a></p>
 <p>示例:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_server</span><span class="p">:</span>
   <span class="nt">ros__parameters</span><span class="p">:</span>
@@ -851,7 +851,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">min_x_velocity_threshold     <a class="reference external" href="http://www.fishros.com/calib#msgid=2591">[校准&#64;fish]</a></dt>
+<dt class="field-odd">min_x_velocity_threshold     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2591">[校准&#64;fish]</a></dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -867,11 +867,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>控制器服务器过滤接收到的里程表消息的速度部分，然后将其发送到控制器插件。低于该阈值 (以m/s为单位) 的里程表值将设置为0.0。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2593">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>控制器服务器过滤接收到的里程表消息的速度部分，然后将其发送到控制器插件。低于该阈值 (以m/s为单位) 的里程表值将设置为0.0。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2593">[校准&#64;fish]</a></p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">min_y_velocity_threshold     <a class="reference external" href="http://www.fishros.com/calib#msgid=2594">[校准&#64;fish]</a></dt>
+<dt class="field-even">min_y_velocity_threshold     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2594">[校准&#64;fish]</a></dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -887,11 +887,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>控制器服务器过滤接收到的里程表消息的速度部分，然后将其发送到控制器插件。低于该阈值 (以m/s为单位) 的里程表值将设置为0.0。对于非完整的机器人     <a class="reference external" href="http://www.fishros.com/calib#msgid=2595">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>控制器服务器过滤接收到的里程表消息的速度部分，然后将其发送到控制器插件。低于该阈值 (以m/s为单位) 的里程表值将设置为0.0。对于非完整的机器人     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2595">[校准&#64;fish]</a></p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">min_theta_velocity_threshold     <a class="reference external" href="http://www.fishros.com/calib#msgid=2596">[校准&#64;fish]</a></dt>
+<dt class="field-odd">min_theta_velocity_threshold     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2596">[校准&#64;fish]</a></dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -907,11 +907,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>控制器服务器过滤接收到的里程表消息的速度部分，然后将其发送到控制器插件。低于该阈值的里程计值 (以rad/s为单位) 将设置为0.0。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2597">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>控制器服务器过滤接收到的里程表消息的速度部分，然后将其发送到控制器插件。低于该阈值的里程计值 (以rad/s为单位) 将设置为0.0。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2597">[校准&#64;fish]</a></p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">failure_tolerance     <a class="reference external" href="http://www.fishros.com/calib#msgid=2598">[校准&#64;fish]</a></dt>
+<dt class="field-even">failure_tolerance     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2598">[校准&#64;fish]</a></dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -927,11 +927,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>被调用的控制器插件可能失败的最大持续时间 (秒) (即插件的代码:  <cite>computeVelocityCommands</cite> 函数引发异常) 之前: 代码: 'nav2_msgs::action::FollowPath' 操作失败。将其设置为-1.0的特殊值使其无限，禁用0，以及适当超时的任何正值。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2599">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>被调用的控制器插件可能失败的最大持续时间 (秒) (即插件的代码:  <cite>computeVelocityCommands</cite> 函数引发异常) 之前: 代码: 'nav2_msgs::action::FollowPath' 操作失败。将其设置为-1.0的特殊值使其无限，禁用0，以及适当超时的任何正值。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2599">[校准&#64;fish]</a></p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">speed_limit_topic     <a class="reference external" href="http://www.fishros.com/calib#msgid=2600">[校准&#64;fish]</a></dt>
+<dt class="field-odd">speed_limit_topic     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2600">[校准&#64;fish]</a></dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -947,7 +947,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>限速订阅主题名称。这可以由速度过滤器发布 (请参考 <a class="reference internal" href="costmap-plugins/speed_filter.html#speed-filter"><span class="std std-ref">速度过滤器参数</span></a> 配置页面)。如果您提供外部服务器来发布 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg">these messages</a> ，您也可以在没有速度过滤器的情况下使用它。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2602">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>限速订阅主题名称。这可以由速度过滤器发布 (请参考 <a class="reference internal" href="costmap-plugins/speed_filter.html#speed-filter"><span class="std std-ref">速度过滤器参数</span></a> 配置页面)。如果您提供外部服务器来发布 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg">these messages</a> ，您也可以在没有速度过滤器的情况下使用它。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2602">[校准&#64;fish]</a></p>
 </dd>
 </dl>
 </dd>
@@ -967,7 +967,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>获取速度瞬时测量的主题。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2603">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>获取速度瞬时测量的主题。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2603">[校准&#64;fish]</a></p>
 </dd>
 </dl>
 </dd>
@@ -976,7 +976,7 @@
 <div class="section" id="provided-plugins">
 <h2>提供的插件<a class="headerlink" href="#provided-plugins" title="永久链接至标题"></a></h2>
 <blockquote>
-<div><p>下面列出的插件在 <code class="docutils literal notranslate"><span class="pre">nav2_controller</span></code> 命名空间内。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2605">[校准&#64;fish]</a></p>
+<div><p>下面列出的插件在 <code class="docutils literal notranslate"><span class="pre">nav2_controller</span></code> 命名空间内。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2605">[校准&#64;fish]</a></p>
 </div></blockquote>
 <div class="toctree-wrapper compound">
 <ul>
@@ -988,7 +988,7 @@
 </div>
 <div class="section" id="default-plugins">
 <h2>默认插件<a class="headerlink" href="#default-plugins" title="永久链接至标题"></a></h2>
-<p>当: 代码:  <cite>progress_checker_plugin</cite> ，: 代码:  <cite>goal_checker_plugin</cite> 或: 代码:  <cite>controller_plugins</cite> 参数没有被覆盖时，将加载以下默认插件:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2607">[校准&#64;fish]</a></p>
+<p>当: 代码:  <cite>progress_checker_plugin</cite> ，: 代码:  <cite>goal_checker_plugin</cite> 或: 代码:  <cite>controller_plugins</cite> 参数没有被覆盖时，将加载以下默认插件:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2607">[校准&#64;fish]</a></p>
 <blockquote>
 <div><table class="docutils align-default">
 <colgroup>

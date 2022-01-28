@@ -739,49 +739,49 @@
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <dl class="simple">
-<dt>刚开始时，词汇在这里可能是一个很大的困惑点。     <a class="reference external" href="http://www.fishros.com/calib#msgid=166">[校准&#64;fish]</a></dt><dd><ul class="simple">
-<li><p>在讨论BT时， <code class="docutils literal notranslate"><span class="pre">Node</span></code> 与ROS2背景下的 <code class="docutils literal notranslate"><span class="pre">Node</span></code> 完全不同。     <a class="reference external" href="http://www.fishros.com/calib#msgid=167">[校准&#64;fish]</a></p></li>
-<li><p>在BT背景下的 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 不同于导航 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 的行为     <a class="reference external" href="http://www.fishros.com/calib#msgid=168">[校准&#64;fish]</a></p></li>
-<li><p>BT环境中的 <code class="docutils literal notranslate"><span class="pre">ActionNode</span></code> 不一定连接到ROS2环境中的Action服务器 (但通常是)     <a class="reference external" href="http://www.fishros.com/calib#msgid=169">[校准&#64;fish]</a></p></li>
+<dt>刚开始时，词汇在这里可能是一个很大的困惑点。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=166">[校准&#64;fish]</a></dt><dd><ul class="simple">
+<li><p>在讨论BT时， <code class="docutils literal notranslate"><span class="pre">Node</span></code> 与ROS2背景下的 <code class="docutils literal notranslate"><span class="pre">Node</span></code> 完全不同。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=167">[校准&#64;fish]</a></p></li>
+<li><p>在BT背景下的 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 不同于导航 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 的行为     <a class="reference external" href="http://10.55.23.25:3000/#msgid=168">[校准&#64;fish]</a></p></li>
+<li><p>BT环境中的 <code class="docutils literal notranslate"><span class="pre">ActionNode</span></code> 不一定连接到ROS2环境中的Action服务器 (但通常是)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=169">[校准&#64;fish]</a></p></li>
 </ul>
 </dd>
 </dl>
 </div>
-<p>有相当多的定制Nav2BT节点被提供用于Nav2特定的方式。一些常用的Nav2节点将在下面描述。自定义BT节点的完整列表可以在 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins">nav2_behavior_tree plugins folder</a> 中找到。 <a class="reference external" href="../../configuration/packages/configuring-bt-xml.html">configuration guide</a> 也非常有用。     <a class="reference external" href="http://www.fishros.com/calib#msgid=170">[校准&#64;fish]</a></p>
+<p>有相当多的定制Nav2BT节点被提供用于Nav2特定的方式。一些常用的Nav2节点将在下面描述。自定义BT节点的完整列表可以在 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins">nav2_behavior_tree plugins folder</a> 中找到。 <a class="reference external" href="../../configuration/packages/configuring-bt-xml.html">configuration guide</a> 也非常有用。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=170">[校准&#64;fish]</a></p>
 <div class="section" id="action-nodes">
 <h2>Action节点<a class="headerlink" href="#action-nodes" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p>ComputePathToPose-ComputePathToPoseAction服务器客户端 (规划器接口)     <a class="reference external" href="http://www.fishros.com/calib#msgid=172">[校准&#64;fish]</a></p></li>
-<li><p>跟随路径-跟随路径Action服务器客户端 (控制器接口)     <a class="reference external" href="http://www.fishros.com/calib#msgid=173">[校准&#64;fish]</a></p></li>
-<li><p>旋转、等待、备份-恢复Action服务器客户端     <a class="reference external" href="http://www.fishros.com/calib#msgid=174">[校准&#64;fish]</a></p></li>
-<li><p>清除代价地图服务-清除代价地图服务服务器客户端     <a class="reference external" href="http://www.fishros.com/calib#msgid=175">[校准&#64;fish]</a></p></li>
+<li><p>ComputePathToPose-ComputePathToPoseAction服务器客户端 (规划器接口)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=172">[校准&#64;fish]</a></p></li>
+<li><p>跟随路径-跟随路径Action服务器客户端 (控制器接口)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=173">[校准&#64;fish]</a></p></li>
+<li><p>旋转、等待、备份-恢复Action服务器客户端     <a class="reference external" href="http://10.55.23.25:3000/#msgid=174">[校准&#64;fish]</a></p></li>
+<li><p>清除代价地图服务-清除代价地图服务服务器客户端     <a class="reference external" href="http://10.55.23.25:3000/#msgid=175">[校准&#64;fish]</a></p></li>
 </ul>
-<p>完成后，如果操作服务器认为操作已正确完成，这些操作节点将返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ，如果仍在运行，则返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> ，否则返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。请注意，在上面的列表中， <cite>ClearCostmapService</cite> 操作节点 * 不是 * 操作服务器客户端，而是服务客户端。     <a class="reference external" href="http://www.fishros.com/calib#msgid=176">[校准&#64;fish]</a></p>
+<p>完成后，如果操作服务器认为操作已正确完成，这些操作节点将返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ，如果仍在运行，则返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> ，否则返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。请注意，在上面的列表中， <cite>ClearCostmapService</cite> 操作节点 * 不是 * 操作服务器客户端，而是服务客户端。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=176">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="condition-nodes">
 <h2>条件节点<a class="headerlink" href="#condition-nodes" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p>目标更新-检查目标主题上的目标是否已更新     <a class="reference external" href="http://www.fishros.com/calib#msgid=178">[校准&#64;fish]</a></p></li>
-<li><p>目标-检查目标是否已经达到     <a class="reference external" href="http://www.fishros.com/calib#msgid=179">[校准&#64;fish]</a></p></li>
-<li><p>初始接收-检查是否收到了关于 <code class="docutils literal notranslate"><span class="pre">intial_pose</span></code> 主题的姿势     <a class="reference external" href="http://www.fishros.com/calib#msgid=180">[校准&#64;fish]</a></p></li>
-<li><p>电池电量不足-通过收听电池主题来检查电池电量是否不足     <a class="reference external" href="http://www.fishros.com/calib#msgid=181">[校准&#64;fish]</a></p></li>
+<li><p>目标更新-检查目标主题上的目标是否已更新     <a class="reference external" href="http://10.55.23.25:3000/#msgid=178">[校准&#64;fish]</a></p></li>
+<li><p>目标-检查目标是否已经达到     <a class="reference external" href="http://10.55.23.25:3000/#msgid=179">[校准&#64;fish]</a></p></li>
+<li><p>初始接收-检查是否收到了关于 <code class="docutils literal notranslate"><span class="pre">intial_pose</span></code> 主题的姿势     <a class="reference external" href="http://10.55.23.25:3000/#msgid=180">[校准&#64;fish]</a></p></li>
+<li><p>电池电量不足-通过收听电池主题来检查电池电量是否不足     <a class="reference external" href="http://10.55.23.25:3000/#msgid=181">[校准&#64;fish]</a></p></li>
 </ul>
-<p>上述条件节点列表可用于探测系统的特定方面。通常情况下，他们会返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 是 <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> ， <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 是 <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> 。默认Nav2BT中使用的关键条件是 <code class="docutils literal notranslate"><span class="pre">GoalUpdated</span></code> ，在特定子树中异步检查。此条件节点允许描述为 “如果目标已更新，则我们必须重新计划” 的行为。条件节点通常与ReactiveFallback节点配对。     <a class="reference external" href="http://www.fishros.com/calib#msgid=182">[校准&#64;fish]</a></p>
+<p>上述条件节点列表可用于探测系统的特定方面。通常情况下，他们会返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 是 <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> ， <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 是 <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> 。默认Nav2BT中使用的关键条件是 <code class="docutils literal notranslate"><span class="pre">GoalUpdated</span></code> ，在特定子树中异步检查。此条件节点允许描述为 “如果目标已更新，则我们必须重新计划” 的行为。条件节点通常与ReactiveFallback节点配对。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=182">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="decorator-nodes">
 <h2>装饰节点<a class="headerlink" href="#decorator-nodes" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p>距离控制器-每次机器人行驶一定距离时，都会勾选儿童节点     <a class="reference external" href="http://www.fishros.com/calib#msgid=184">[校准&#64;fish]</a></p></li>
-<li><p>速率控制器-以恒定的频率控制其子节点的滴答声。滴答率是一个暴露的端口     <a class="reference external" href="http://www.fishros.com/calib#msgid=185">[校准&#64;fish]</a></p></li>
-<li><p>目标更新程序-将通过BT上的端口更新子节点的目标     <a class="reference external" href="http://www.fishros.com/calib#msgid=186">[校准&#64;fish]</a></p></li>
-<li><p>单个触发器-将只对其子节点打一次勾，并将为所有后续的勾返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>      <a class="reference external" href="http://www.fishros.com/calib#msgid=187">[校准&#64;fish]</a></p></li>
-<li><p>速度控制器-控制它的滴答声's child node at a rate proportional to the robot'速度     <a class="reference external" href="http://www.fishros.com/calib#msgid=188">[校准&#64;fish]</a></p></li>
+<li><p>距离控制器-每次机器人行驶一定距离时，都会勾选儿童节点     <a class="reference external" href="http://10.55.23.25:3000/#msgid=184">[校准&#64;fish]</a></p></li>
+<li><p>速率控制器-以恒定的频率控制其子节点的滴答声。滴答率是一个暴露的端口     <a class="reference external" href="http://10.55.23.25:3000/#msgid=185">[校准&#64;fish]</a></p></li>
+<li><p>目标更新程序-将通过BT上的端口更新子节点的目标     <a class="reference external" href="http://10.55.23.25:3000/#msgid=186">[校准&#64;fish]</a></p></li>
+<li><p>单个触发器-将只对其子节点打一次勾，并将为所有后续的勾返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=187">[校准&#64;fish]</a></p></li>
+<li><p>速度控制器-控制它的滴答声's child node at a rate proportional to the robot'速度     <a class="reference external" href="http://10.55.23.25:3000/#msgid=188">[校准&#64;fish]</a></p></li>
 </ul>
 </div>
 <div class="section" id="control-pipelinesequence">
 <h2>控制: 管道查询<a class="headerlink" href="#control-pipelinesequence" title="永久链接至标题"></a></h2>
-<p>当一个孩子返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 时， <code class="docutils literal notranslate"><span class="pre">PipelineSequence</span></code> 控制节点重新标记以前的孩子。该节点类似于 <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> 节点，具有重新勾选  &quot;current&quot; 之前的孩子的附加特性 (类似于管道中的水流)。如果子节点在任何时候返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> ，所有子节点都将停止，父节点也将返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。在 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 最后节点序列，节点将停止并返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=190">[校准&#64;fish]</a></p>
-<p>为了进一步解释这一点，这里有一个使用PipelineSequence的BT示例。     <a class="reference external" href="http://www.fishros.com/calib#msgid=191">[校准&#64;fish]</a></p>
+<p>当一个孩子返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 时， <code class="docutils literal notranslate"><span class="pre">PipelineSequence</span></code> 控制节点重新标记以前的孩子。该节点类似于 <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> 节点，具有重新勾选  &quot;current&quot; 之前的孩子的附加特性 (类似于管道中的水流)。如果子节点在任何时候返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> ，所有子节点都将停止，父节点也将返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。在 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 最后节点序列，节点将停止并返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=190">[校准&#64;fish]</a></p>
+<p>为了进一步解释这一点，这里有一个使用PipelineSequence的BT示例。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=191">[校准&#64;fish]</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -803,8 +803,8 @@
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li><p>这个 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 都是 <code class="docutils literal notranslate"><span class="pre">IDLE</span></code> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=192">[校准&#64;fish]</a></p></li>
-<li><p>当父管道序列第一次被勾选时，让我们假设 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。父节点现在将返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> ，并且没有勾选其他节点。     <a class="reference external" href="http://www.fishros.com/calib#msgid=193">[校准&#64;fish]</a></p></li>
+<li><p>这个 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 都是 <code class="docutils literal notranslate"><span class="pre">IDLE</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=192">[校准&#64;fish]</a></p></li>
+<li><p>当父管道序列第一次被勾选时，让我们假设 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。父节点现在将返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> ，并且没有勾选其他节点。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=193">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -816,7 +816,7 @@
 <div class="line"><br /></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>现在，让我们假设 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ， <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 现在会被勾选，并返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 尚未打勾，因此将归还 <code class="docutils literal notranslate"><span class="pre">IDLE</span></code> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=194">[校准&#64;fish]</a></p></li>
+<li><p>现在，让我们假设 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ， <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 现在会被勾选，并返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 尚未打勾，因此将归还 <code class="docutils literal notranslate"><span class="pre">IDLE</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=194">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -828,7 +828,7 @@
 <div class="line"><br /></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>这个 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 再次被打勾并返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> ， <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 再次被打勾并返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ，因此BT第一次继续打勾 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 。假设 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。这个 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 的折射使得管道序列有用。     <a class="reference external" href="http://www.fishros.com/calib#msgid=195">[校准&#64;fish]</a></p></li>
+<li><p>这个 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 再次被打勾并返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> ， <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 再次被打勾并返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ，因此BT第一次继续打勾 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 。假设 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。这个 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 的折射使得管道序列有用。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=195">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -840,7 +840,7 @@
 <div class="line"><br /></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>序列中的所有动作都将被重新勾选。让我们假设 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 仍然返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 乙，而 <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 再次返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ， <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 现在返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。序列现在完成了，因此 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 停止了，尽管它仍然是 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=196">[校准&#64;fish]</a></p></li>
+<li><p>序列中的所有动作都将被重新勾选。让我们假设 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 仍然返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 乙，而 <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 再次返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ， <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 现在返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。序列现在完成了，因此 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 停止了，尽管它仍然是 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=196">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -851,18 +851,18 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>回想一下，如果 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 或 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 在任何时候归还 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> ，父母就会归还 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> ，并阻止任何孩子。     <a class="reference external" href="http://www.fishros.com/calib#msgid=197">[校准&#64;fish]</a></p>
-<p>有关 <code class="docutils literal notranslate"><span class="pre">PipelineSequence</span></code> 的更多细节，请参见 <a class="reference external" href="../../configuration/packages/bt-plugins/controls/PipelineSequence.html">PipelineSequence configuration guide</a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=198">[校准&#64;fish]</a></p>
+<p>回想一下，如果 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 或 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 在任何时候归还 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> ，父母就会归还 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> ，并阻止任何孩子。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=197">[校准&#64;fish]</a></p>
+<p>有关 <code class="docutils literal notranslate"><span class="pre">PipelineSequence</span></code> 的更多细节，请参见 <a class="reference external" href="../../configuration/packages/bt-plugins/controls/PipelineSequence.html">PipelineSequence configuration guide</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=198">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="control-recovery">
 <h2>控制: 恢复<a class="headerlink" href="#control-recovery" title="永久链接至标题"></a></h2>
-<p>当且仅当第一个子节点返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 时，恢复控制节点只有两个子节点返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。如果第一个孩子返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> ，第二个孩子将被勾选。此循环将持续到以下任一时刻:     <a class="reference external" href="http://www.fishros.com/calib#msgid=200">[校准&#64;fish]</a></p>
+<p>当且仅当第一个子节点返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 时，恢复控制节点只有两个子节点返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。如果第一个孩子返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> ，第二个孩子将被勾选。此循环将持续到以下任一时刻:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=200">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p>第一个子节点返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 节点 (导致父节点的 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 节点)     <a class="reference external" href="http://www.fishros.com/calib#msgid=201">[校准&#64;fish]</a></p></li>
-<li><p>第二个子节点返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 节点 (导致父节点的 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 节点)     <a class="reference external" href="http://www.fishros.com/calib#msgid=202">[校准&#64;fish]</a></p></li>
-<li><p>违反了 <code class="docutils literal notranslate"><span class="pre">number_of_retries</span></code> 输入参数     <a class="reference external" href="http://www.fishros.com/calib#msgid=203">[校准&#64;fish]</a></p></li>
+<li><p>第一个子节点返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 节点 (导致父节点的 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 节点)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=201">[校准&#64;fish]</a></p></li>
+<li><p>第二个子节点返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 节点 (导致父节点的 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 节点)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=202">[校准&#64;fish]</a></p></li>
+<li><p>违反了 <code class="docutils literal notranslate"><span class="pre">number_of_retries</span></code> 输入参数     <a class="reference external" href="http://10.55.23.25:3000/#msgid=203">[校准&#64;fish]</a></p></li>
 </ul>
-<p>该节点通常用于将操作和恢复操作 (顾名思义) 链接在一起。第一行动通常会是  &quot;main&quot; 行为，第二行动将是要做的 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 主要行为。通常，第二个孩子动作的滴答声会增加第一个动作成功的机会。     <a class="reference external" href="http://www.fishros.com/calib#msgid=204">[校准&#64;fish]</a></p>
+<p>该节点通常用于将操作和恢复操作 (顾名思义) 链接在一起。第一行动通常会是  &quot;main&quot; 行为，第二行动将是要做的 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 主要行为。通常，第二个孩子动作的滴答声会增加第一个动作成功的机会。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=204">[校准&#64;fish]</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -882,13 +882,13 @@
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 </div>
-<p>在上面的例子中，让我们假设 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 失败了。 <code class="docutils literal notranslate"><span class="pre">ClearLocalCostmap</span></code> 将被打勾作为回应，并返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。既然我们已经清除了成本图，让我们说机器人能够正确地计算路径， <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 现在返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。然后，父恢复节点也将返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ，BT将完成。     <a class="reference external" href="http://www.fishros.com/calib#msgid=205">[校准&#64;fish]</a></p>
-<p>有关 <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> 的更多细节，请参见 <a class="reference external" href="../../configuration/packages/bt-plugins/controls/RecoveryNode.html">RecoveryNode configuration guide</a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=206">[校准&#64;fish]</a></p>
+<p>在上面的例子中，让我们假设 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 失败了。 <code class="docutils literal notranslate"><span class="pre">ClearLocalCostmap</span></code> 将被打勾作为回应，并返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。既然我们已经清除了成本图，让我们说机器人能够正确地计算路径， <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 现在返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。然后，父恢复节点也将返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ，BT将完成。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=205">[校准&#64;fish]</a></p>
+<p>有关 <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> 的更多细节，请参见 <a class="reference external" href="../../configuration/packages/bt-plugins/controls/RecoveryNode.html">RecoveryNode configuration guide</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=206">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="control-roundrobin">
-<h2>控制: RoundRobin     <a class="reference external" href="http://www.fishros.com/calib#msgid=207">[校准&#64;fish]</a><a class="headerlink" href="#control-roundrobin" title="永久链接至标题"></a></h2>
-<p>RoundRobin控制节点以循环的方式滴答子节点，直到子节点返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ，其中父节点也将返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。如果所有的孩子都返回了 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> ，那么父母也会返回。     <a class="reference external" href="http://www.fishros.com/calib#msgid=208">[校准&#64;fish]</a></p>
-<p>这是我们将用来介绍这个概念的BT示例。     <a class="reference external" href="http://www.fishros.com/calib#msgid=209">[校准&#64;fish]</a></p>
+<h2>控制: RoundRobin     <a class="reference external" href="http://10.55.23.25:3000/#msgid=207">[校准&#64;fish]</a><a class="headerlink" href="#control-roundrobin" title="永久链接至标题"></a></h2>
+<p>RoundRobin控制节点以循环的方式滴答子节点，直到子节点返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ，其中父节点也将返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。如果所有的孩子都返回了 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> ，那么父母也会返回。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=208">[校准&#64;fish]</a></p>
+<p>这是我们将用来介绍这个概念的BT示例。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=209">[校准&#64;fish]</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -910,7 +910,7 @@
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li><p>所有节点从 <code class="docutils literal notranslate"><span class="pre">IDLE</span></code> 开始     <a class="reference external" href="http://www.fishros.com/calib#msgid=210">[校准&#64;fish]</a></p></li>
+<li><p>所有节点从 <code class="docutils literal notranslate"><span class="pre">IDLE</span></code> 开始     <a class="reference external" href="http://10.55.23.25:3000/#msgid=210">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -921,7 +921,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>2.在父节点打勾时，第一个子节点 ( <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> ) 被打勾。让我们假设孩子在打勾时返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。在这种情况下，没有其他子节点被勾选，父节点也返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=211">[校准&#64;fish]</a></p>
+<p>2.在父节点打勾时，第一个子节点 ( <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> ) 被打勾。让我们假设孩子在打勾时返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。在这种情况下，没有其他子节点被勾选，父节点也返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=211">[校准&#64;fish]</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -931,7 +931,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>3.在下一个勾号上，让我们假设 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。这意味着 <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 接下来会被打勾，而 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 仍然没有打勾。假设 <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 这次 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 回来。这意味着父RoundRobin节点也将返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=212">[校准&#64;fish]</a></p>
+<p>3.在下一个勾号上，让我们假设 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。这意味着 <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 接下来会被打勾，而 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 仍然没有打勾。假设 <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 这次 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 回来。这意味着父RoundRobin节点也将返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=212">[校准&#64;fish]</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -941,7 +941,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>4.在下一个勾号上，让我们假设 <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。父母朗德罗宾现在将停止所有的孩子并返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。父节点保留了该状态信息，并将在下一次滴答中滴答 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> ，而不是像步骤2那样从 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 开始。     <a class="reference external" href="http://www.fishros.com/calib#msgid=213">[校准&#64;fish]</a></p>
+<p>4.在下一个勾号上，让我们假设 <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。父母朗德罗宾现在将停止所有的孩子并返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。父节点保留了该状态信息，并将在下一次滴答中滴答 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> ，而不是像步骤2那样从 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 开始。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=213">[校准&#64;fish]</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -952,7 +952,7 @@
 <div class="line"><br /></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>在这个勾号上，让我们假设 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> ，母罗德宾也是如此。没有勾选其他节点。     <a class="reference external" href="http://www.fishros.com/calib#msgid=214">[校准&#64;fish]</a></p></li>
+<li><p>在这个勾号上，让我们假设 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> ，母罗德宾也是如此。没有勾选其他节点。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=214">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -964,7 +964,7 @@
 <div class="line"><br /></div>
 </div>
 <ol class="arabic simple" start="6">
-<li><p>在最后一个勾号上，让我们假设 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。父母将再次圈出并滴答 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 。 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> ，父RoundRobin节点也将返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。这种模式将无限期地持续下去，除非所有的孩子都返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=215">[校准&#64;fish]</a></p></li>
+<li><p>在最后一个勾号上，让我们假设 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。父母将再次圈出并滴答 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 。 <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> ，父RoundRobin节点也将返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> 。这种模式将无限期地持续下去，除非所有的孩子都返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=215">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -975,7 +975,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>有关 <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> 的更多细节，请参见 <a class="reference external" href="../../configuration/packages/bt-plugins/controls/RoundRobin.html">RoundRobin configuration guide</a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=216">[校准&#64;fish]</a></p>
+<p>有关 <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> 的更多细节，请参见 <a class="reference external" href="../../configuration/packages/bt-plugins/controls/RoundRobin.html">RoundRobin configuration guide</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=216">[校准&#64;fish]</a></p>
 </div>
 </div>
 

@@ -736,36 +736,36 @@
              
   <div class="section" id="ros-to-ros-2-navigation">
 <span id="ros1-comparison"></span><h1>ROS到ROS2变化<a class="headerlink" href="#ros-to-ros-2-navigation" title="永久链接至标题"></a></h1>
-<p>这个 <code class="docutils literal notranslate"><span class="pre">move_base</span></code> 被分成多种成分。导航2利用动作服务器和ROS 2的低延迟、可靠的通信来分离想法，而不是单一的整体状态机。行为树用于编排这些任务。这允许Navigation2具有高度可配置的导航行为，而无需通过在行为树xml文件中重新排列任务进行编程。     <a class="reference external" href="http://www.fishros.com/calib#msgid=308">[校准&#64;fish]</a></p>
-<p>Nav2中,* nav2_bt_navigator * 用 * Action * 接口替换顶层的 <code class="docutils literal notranslate"><span class="pre">move_base</span></code> ，用基于树的动作模型完成导航任务。它使用 * 行为树 * 使拥有更复杂的状态机成为可能，并添加恢复行为作为额外的 * Action服务器 <a href="#id1"><span class="problematic" id="id2">*</span></a>。这些行为树是可配置的XMLs，我们提供了几个起始示例。     <a class="reference external" href="http://www.fishros.com/calib#msgid=309">[校准&#64;fish]</a></p>
-<p>计划、恢复和控制器服务器也是BT navigator可以调用以进行计算的动作服务器。所有3个服务器都可以托管许多算法的插件，每个插件都可以从导航行为树中单独调用特定行为。提供的默认插件是从ROS 1移植的，即: DWB、NavFn和类似的恢复，如旋转和清除成本图。还添加了用于等待固定持续时间的新恢复。这些服务器通过其动作服务器从BT navigator调用，以计算结果或完成任务。状态由BT导航器行为树维护。     <a class="reference external" href="http://www.fishros.com/calib#msgid=310">[校准&#64;fish]</a></p>
-<p>所有这些更改使得在启动/运行时用实现相同接口的任何其他算法替换这些节点中的任何一个成为可能。有关更多详细信息，请参阅每个包README.md。     <a class="reference external" href="http://www.fishros.com/calib#msgid=311">[校准&#64;fish]</a></p>
-<a class="reference internal image-reference" href="../_images/move_base_compare_2.png"><img alt="移动基础-&gt; 导航2概述     `[校准&#64;fish] &lt;http://www.fishros.com/calib#msgid=312&gt;`_ " class="align-center" src="../_images/move_base_compare_2.png" style="width: 700px;" /></a>
-<p>注:  <code class="docutils literal notranslate"><span class="pre">nav2_simple_navigator</span></code> 已不复存在，已被 <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator</span></code> 取代。     <a class="reference external" href="http://www.fishros.com/calib#msgid=313">[校准&#64;fish]</a></p>
+<p>这个 <code class="docutils literal notranslate"><span class="pre">move_base</span></code> 被分成多种成分。导航2利用动作服务器和ROS 2的低延迟、可靠的通信来分离想法，而不是单一的整体状态机。行为树用于编排这些任务。这允许Navigation2具有高度可配置的导航行为，而无需通过在行为树xml文件中重新排列任务进行编程。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=308">[校准&#64;fish]</a></p>
+<p>Nav2中,* nav2_bt_navigator * 用 * Action * 接口替换顶层的 <code class="docutils literal notranslate"><span class="pre">move_base</span></code> ，用基于树的动作模型完成导航任务。它使用 * 行为树 * 使拥有更复杂的状态机成为可能，并添加恢复行为作为额外的 * Action服务器 <a href="#id1"><span class="problematic" id="id2">*</span></a>。这些行为树是可配置的XMLs，我们提供了几个起始示例。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=309">[校准&#64;fish]</a></p>
+<p>计划、恢复和控制器服务器也是BT navigator可以调用以进行计算的动作服务器。所有3个服务器都可以托管许多算法的插件，每个插件都可以从导航行为树中单独调用特定行为。提供的默认插件是从ROS 1移植的，即: DWB、NavFn和类似的恢复，如旋转和清除成本图。还添加了用于等待固定持续时间的新恢复。这些服务器通过其动作服务器从BT navigator调用，以计算结果或完成任务。状态由BT导航器行为树维护。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=310">[校准&#64;fish]</a></p>
+<p>所有这些更改使得在启动/运行时用实现相同接口的任何其他算法替换这些节点中的任何一个成为可能。有关更多详细信息，请参阅每个包README.md。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=311">[校准&#64;fish]</a></p>
+<a class="reference internal image-reference" href="../_images/move_base_compare_2.png"><img alt="移动基础-&gt; 导航2概述     `[校准&#64;fish] &lt;http://10.55.23.25:3000/#msgid=312&gt;`_ " class="align-center" src="../_images/move_base_compare_2.png" style="width: 700px;" /></a>
+<p>注:  <code class="docutils literal notranslate"><span class="pre">nav2_simple_navigator</span></code> 已不复存在，已被 <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator</span></code> 取代。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=313">[校准&#64;fish]</a></p>
 <p>总结: **</p>
 <p>移植包:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>amcl: 移植到nav2_amcl     <a class="reference external" href="http://www.fishros.com/calib#msgid=316">[校准&#64;fish]</a></p></li>
-<li><p>map_server: 移植到nav2_map_server     <a class="reference external" href="http://www.fishros.com/calib#msgid=317">[校准&#64;fish]</a></p></li>
-<li><p>nav2 _ planner: 取代全球 _ planner，主机 <code class="docutils literal notranslate"><span class="pre">N</span></code> planner插件     <a class="reference external" href="http://www.fishros.com/calib#msgid=318">[校准&#64;fish]</a></p></li>
-<li><p>Nav2 _ 控制器: 替换本地 _ planner，主机 <code class="docutils literal notranslate"><span class="pre">N</span></code> 控制器插件     <a class="reference external" href="http://www.fishros.com/calib#msgid=319">[校准&#64;fish]</a></p></li>
-<li><p>Navfn: 移植到nav2_navfn _ planner     <a class="reference external" href="http://www.fishros.com/calib#msgid=320">[校准&#64;fish]</a></p></li>
-<li><p>DWB: 替换DWA并在nav2_dwb_controlmetapackage下移植到ROS 2     <a class="reference external" href="http://www.fishros.com/calib#msgid=321">[校准&#64;fish]</a></p></li>
-<li><p>nav_core: 移植为nav2_core，更新接口     <a class="reference external" href="http://www.fishros.com/calib#msgid=322">[校准&#64;fish]</a></p></li>
-<li><p>costmap_2d: 移植为nav2_costmap_2d     <a class="reference external" href="http://www.fishros.com/calib#msgid=323">[校准&#64;fish]</a></p></li>
+<li><p>amcl: 移植到nav2_amcl     <a class="reference external" href="http://10.55.23.25:3000/#msgid=316">[校准&#64;fish]</a></p></li>
+<li><p>map_server: 移植到nav2_map_server     <a class="reference external" href="http://10.55.23.25:3000/#msgid=317">[校准&#64;fish]</a></p></li>
+<li><p>nav2 _ planner: 取代全球 _ planner，主机 <code class="docutils literal notranslate"><span class="pre">N</span></code> planner插件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=318">[校准&#64;fish]</a></p></li>
+<li><p>Nav2 _ 控制器: 替换本地 _ planner，主机 <code class="docutils literal notranslate"><span class="pre">N</span></code> 控制器插件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=319">[校准&#64;fish]</a></p></li>
+<li><p>Navfn: 移植到nav2_navfn _ planner     <a class="reference external" href="http://10.55.23.25:3000/#msgid=320">[校准&#64;fish]</a></p></li>
+<li><p>DWB: 替换DWA并在nav2_dwb_controlmetapackage下移植到ROS 2     <a class="reference external" href="http://10.55.23.25:3000/#msgid=321">[校准&#64;fish]</a></p></li>
+<li><p>nav_core: 移植为nav2_core，更新接口     <a class="reference external" href="http://10.55.23.25:3000/#msgid=322">[校准&#64;fish]</a></p></li>
+<li><p>costmap_2d: 移植为nav2_costmap_2d     <a class="reference external" href="http://10.55.23.25:3000/#msgid=323">[校准&#64;fish]</a></p></li>
 </ul>
 </div></blockquote>
 <p>新包:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>nav2_bt_navigator: 替换 <code class="docutils literal notranslate"><span class="pre">move_base</span></code> 状态机     <a class="reference external" href="http://www.fishros.com/calib#msgid=325">[校准&#64;fish]</a></p></li>
-<li><p>Nav2_lifeycle_manager: 处理服务器程序生命周期     <a class="reference external" href="http://www.fishros.com/calib#msgid=326">[校准&#64;fish]</a></p></li>
-<li><p>nav2_waypoint_follower: 可以使用许多航路点来执行复杂的任务     <a class="reference external" href="http://www.fishros.com/calib#msgid=327">[校准&#64;fish]</a></p></li>
-<li><p>nav2_system_tests: 模拟中CI和基本教程的一组集成测试     <a class="reference external" href="http://www.fishros.com/calib#msgid=328">[校准&#64;fish]</a></p></li>
-<li><p>nav2_rviz_plugins: 用于控制导航2服务器、命令、取消和导航的rviz插件     <a class="reference external" href="http://www.fishros.com/calib#msgid=329">[校准&#64;fish]</a></p></li>
-<li><p>nav2_experimental: 深度强化学习控制器的实验 (和不完整) 工作     <a class="reference external" href="http://www.fishros.com/calib#msgid=330">[校准&#64;fish]</a></p></li>
-<li><p>navigation2_behavior_trees: 行为树库的包装器，用于调用ROS动作服务器     <a class="reference external" href="http://www.fishros.com/calib#msgid=331">[校准&#64;fish]</a></p></li>
+<li><p>nav2_bt_navigator: 替换 <code class="docutils literal notranslate"><span class="pre">move_base</span></code> 状态机     <a class="reference external" href="http://10.55.23.25:3000/#msgid=325">[校准&#64;fish]</a></p></li>
+<li><p>Nav2_lifeycle_manager: 处理服务器程序生命周期     <a class="reference external" href="http://10.55.23.25:3000/#msgid=326">[校准&#64;fish]</a></p></li>
+<li><p>nav2_waypoint_follower: 可以使用许多航路点来执行复杂的任务     <a class="reference external" href="http://10.55.23.25:3000/#msgid=327">[校准&#64;fish]</a></p></li>
+<li><p>nav2_system_tests: 模拟中CI和基本教程的一组集成测试     <a class="reference external" href="http://10.55.23.25:3000/#msgid=328">[校准&#64;fish]</a></p></li>
+<li><p>nav2_rviz_plugins: 用于控制导航2服务器、命令、取消和导航的rviz插件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=329">[校准&#64;fish]</a></p></li>
+<li><p>nav2_experimental: 深度强化学习控制器的实验 (和不完整) 工作     <a class="reference external" href="http://10.55.23.25:3000/#msgid=330">[校准&#64;fish]</a></p></li>
+<li><p>navigation2_behavior_trees: 行为树库的包装器，用于调用ROS动作服务器     <a class="reference external" href="http://10.55.23.25:3000/#msgid=331">[校准&#64;fish]</a></p></li>
 </ul>
 </div></blockquote>
 </div>

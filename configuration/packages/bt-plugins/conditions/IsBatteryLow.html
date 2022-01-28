@@ -736,8 +736,8 @@
            <div itemprop="articleBody">
              
   <div class="section" id="isbatterylow">
-<span id="bt-is-battery-low-condition"></span><h1>IsBatteryLow     <a class="reference external" href="http://www.fishros.com/calib#msgid=2368">[校准&#64;fish]</a><a class="headerlink" href="#isbatterylow" title="永久链接至标题"></a></h1>
-<p>通过订阅 <code class="docutils literal notranslate"><span class="pre">sensor_msgs/BatteryState</span></code> 主题并检查电池百分比/电压是否低于指定的最小值来检查电池是否电量不足。默认情况下，百分比 (范围0到1) 用于检查电池电量是否低。将 <code class="docutils literal notranslate"><span class="pre">is_voltage</span></code> 参数设置为 <cite>true</cite> 以使用电压。当电池百分比/电压低于指定值时返回成功，否则返回失败。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2369">[校准&#64;fish]</a></p>
+<span id="bt-is-battery-low-condition"></span><h1>IsBatteryLow     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2368">[校准&#64;fish]</a><a class="headerlink" href="#isbatterylow" title="永久链接至标题"></a></h1>
+<p>通过订阅 <code class="docutils literal notranslate"><span class="pre">sensor_msgs/BatteryState</span></code> 主题并检查电池百分比/电压是否低于指定的最小值来检查电池是否电量不足。默认情况下，百分比 (范围0到1) 用于检查电池电量是否低。将 <code class="docutils literal notranslate"><span class="pre">is_voltage</span></code> 参数设置为 <cite>true</cite> 以使用电压。当电池百分比/电压低于指定值时返回成功，否则返回失败。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2369">[校准&#64;fish]</a></p>
 <div class="section" id="example">
 <h2>示例<a class="headerlink" href="#example" title="永久链接至标题"></a></h2>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;IsBatteryLow</span> <span class="na">min_battery=</span><span class="s">&quot;0.5&quot;</span> <span class="na">battery_topic=</span><span class="s">&quot;/battery_status&quot;</span> <span class="na">is_voltage=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>

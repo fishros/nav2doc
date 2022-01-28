@@ -735,17 +735,17 @@
            <div itemprop="articleBody">
              
   <div class="section" id="eloquent-to-foxy">
-<span id="eloquent-migration"></span><h1>Eloquent到Eloquent     <a class="reference external" href="http://www.fishros.com/calib#msgid=729">[校准&#64;fish]</a><a class="headerlink" href="#eloquent-to-foxy" title="永久链接至标题"></a></h1>
-<p>从ROS2Eloquent到Foxy，增加了一些稳定性改进，我们在此不具体讨论。然而，我们将特别提到终端噪声的降低。TF2转换超时错误和启动时的警告已被大量删除或限制，以便更容易处理。此外，在costmap 2d中解决了导致消息被丢弃的消息过滤器填充。     <a class="reference external" href="http://www.fishros.com/calib#msgid=730">[校准&#64;fish]</a></p>
+<span id="eloquent-migration"></span><h1>Eloquent到Eloquent     <a class="reference external" href="http://10.55.23.25:3000/#msgid=729">[校准&#64;fish]</a><a class="headerlink" href="#eloquent-to-foxy" title="永久链接至标题"></a></h1>
+<p>从ROS2Eloquent到Foxy，增加了一些稳定性改进，我们在此不具体讨论。然而，我们将特别提到终端噪声的降低。TF2转换超时错误和启动时的警告已被大量删除或限制，以便更容易处理。此外，在costmap 2d中解决了导致消息被丢弃的消息过滤器填充。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=730">[校准&#64;fish]</a></p>
 <div class="section" id="general">
 <h2>综述<a class="headerlink" href="#general" title="永久链接至标题"></a></h2>
-<p>生命周期管理器分成2独特的生命周期管理。他们是 <code class="docutils literal notranslate"><span class="pre">navigation_lifecycle_manager</span></code> 和 <code class="docutils literal notranslate"><span class="pre">localization_lifecycle_manager</span></code> 。这样，过程自己经理允许用户切换SLAM定位没有影响导航。它也降低了冗余代码 <code class="docutils literal notranslate"><span class="pre">nav2_bringup</span></code> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=732">[校准&#64;fish]</a></p>
-<p>生命周期管理器现在还包含与每个生命周期服务器的 <code class="docutils literal notranslate"><span class="pre">Bond</span></code> 连接。这意味着，如果服务器崩溃或退出，生命周期管理器将不断检查并向下转换其生命周期节点以确保安全。这在运行时充当看门狗，以补充生命周期管理器从活动状态上下的过渡。见 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1894">this PR for details</a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=733">[校准&#64;fish]</a></p>
-<p>修复BT导航仪添加删除罕见问题可能崩溃由于异步问题。因此，行为树创建每个导航请求而不是重置现有树。创建此树添加少量延迟。建议减少这种延迟将考虑下一个版本。     <a class="reference external" href="http://www.fishros.com/calib#msgid=734">[校准&#64;fish]</a></p>
+<p>生命周期管理器分成2独特的生命周期管理。他们是 <code class="docutils literal notranslate"><span class="pre">navigation_lifecycle_manager</span></code> 和 <code class="docutils literal notranslate"><span class="pre">localization_lifecycle_manager</span></code> 。这样，过程自己经理允许用户切换SLAM定位没有影响导航。它也降低了冗余代码 <code class="docutils literal notranslate"><span class="pre">nav2_bringup</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=732">[校准&#64;fish]</a></p>
+<p>生命周期管理器现在还包含与每个生命周期服务器的 <code class="docutils literal notranslate"><span class="pre">Bond</span></code> 连接。这意味着，如果服务器崩溃或退出，生命周期管理器将不断检查并向下转换其生命周期节点以确保安全。这在运行时充当看门狗，以补充生命周期管理器从活动状态上下的过渡。见 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1894">this PR for details</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=733">[校准&#64;fish]</a></p>
+<p>修复BT导航仪添加删除罕见问题可能崩溃由于异步问题。因此，行为树创建每个导航请求而不是重置现有树。创建此树添加少量延迟。建议减少这种延迟将考虑下一个版本。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=734">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="server-updates">
 <h2>服务器更新<a class="headerlink" href="#server-updates" title="永久链接至标题"></a></h2>
-<p>所有插件服务器 (控制器、planner、恢复) 现在都支持使用多个插件。这可以通过加载插件映射来完成，将插件的名称映射到其预期用例。每个服务器定义一个参数，其中可以定义要加载的插件的名称列表。     <a class="reference external" href="http://www.fishros.com/calib#msgid=736">[校准&#64;fish]</a></p>
+<p>所有插件服务器 (控制器、planner、恢复) 现在都支持使用多个插件。这可以通过加载插件映射来完成，将插件的名称映射到其预期用例。每个服务器定义一个参数，其中可以定义要加载的插件的名称列表。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=736">[校准&#64;fish]</a></p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 49%" />
@@ -758,27 +758,27 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>控制器服务器</p></td>
-<td><p>progress_checker_plugin     <a class="reference external" href="http://www.fishros.com/calib#msgid=740">[校准&#64;fish]</a></p></td>
+<td><p>progress_checker_plugin     <a class="reference external" href="http://10.55.23.25:3000/#msgid=740">[校准&#64;fish]</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>控制器服务器</p></td>
-<td><p>goal_checker_plugin     <a class="reference external" href="http://www.fishros.com/calib#msgid=741">[校准&#64;fish]</a></p></td>
+<td><p>goal_checker_plugin     <a class="reference external" href="http://10.55.23.25:3000/#msgid=741">[校准&#64;fish]</a></p></td>
 </tr>
 <tr class="row-even"><td><p>控制器服务器</p></td>
-<td><p>controller_plugins     <a class="reference external" href="http://www.fishros.com/calib#msgid=742">[校准&#64;fish]</a></p></td>
+<td><p>controller_plugins     <a class="reference external" href="http://10.55.23.25:3000/#msgid=742">[校准&#64;fish]</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>规划器服务器</p></td>
-<td><p>planner_plugins     <a class="reference external" href="http://www.fishros.com/calib#msgid=744">[校准&#64;fish]</a></p></td>
+<td><p>planner_plugins     <a class="reference external" href="http://10.55.23.25:3000/#msgid=744">[校准&#64;fish]</a></p></td>
 </tr>
 <tr class="row-even"><td><p>恢复服务器</p></td>
-<td><p>recovery_plugins     <a class="reference external" href="http://www.fishros.com/calib#msgid=746">[校准&#64;fish]</a></p></td>
+<td><p>recovery_plugins     <a class="reference external" href="http://10.55.23.25:3000/#msgid=746">[校准&#64;fish]</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>代价地图节点</p></td>
 <td><p>插件</p></td>
 </tr>
 </tbody>
 </table>
-<p>要映射到特定名称的插件类型必须使用插件命名空间中的 <code class="docutils literal notranslate"><span class="pre">plugin</span></code> 参数为服务器插件列表中定义的每个名称定义。插件参数列表中的每个名称都应定义 <code class="docutils literal notranslate"><span class="pre">plugin</span></code> 参数。     <a class="reference external" href="http://www.fishros.com/calib#msgid=749">[校准&#64;fish]</a></p>
-<p>实例:  <code class="docutils literal notranslate"><span class="pre">controller_server</span></code> 定义参数 <code class="docutils literal notranslate"><span class="pre">controller_plugins</span></code> 在列表插件名称可以定义:     <a class="reference external" href="http://www.fishros.com/calib#msgid=750">[校准&#64;fish]</a></p>
+<p>要映射到特定名称的插件类型必须使用插件命名空间中的 <code class="docutils literal notranslate"><span class="pre">plugin</span></code> 参数为服务器插件列表中定义的每个名称定义。插件参数列表中的每个名称都应定义 <code class="docutils literal notranslate"><span class="pre">plugin</span></code> 参数。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=749">[校准&#64;fish]</a></p>
+<p>实例:  <code class="docutils literal notranslate"><span class="pre">controller_server</span></code> 定义参数 <code class="docutils literal notranslate"><span class="pre">controller_plugins</span></code> 在列表插件名称可以定义:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=750">[校准&#64;fish]</a></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_server</span><span class="p">:</span>
   <span class="nt">ros__parameters</span><span class="p">:</span>
     <span class="nt">controller_plugins</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;FollowPath&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;DynamicFollowPath&quot;</span><span class="p p-Indicator">]</span>
@@ -790,13 +790,13 @@
       <span class="nt">max_vel_x</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.5</span>
 </pre></div>
 </div>
-<p>服务器命名空间中的``FollowPath`` controller is of type <code class="docutils literal notranslate"><span class="pre">dwb_local_planner/DWBLocalPlanner</span></code> and <code class="docutils literal notranslate"><span class="pre">DynamicFollowPath</span></code> of type <code class="docutils literal notranslate"><span class="pre">teb_local_planner/TEBLocalPlanner</span></code>. Each plugin will load the parameters in their namespace, e.g. <code class="docutils literal notranslate"><span class="pre">FollowPath.max_vel_x</span></code>,而不是全局。这将允许具有不同参数的相同类型的多个插件，并减少冲突的参数名称。     <a class="reference external" href="http://www.fishros.com/calib#msgid=751">[校准&#64;fish]</a></p>
-<p>DWB包含新参数，作为与ROS 1更新相关的更新， <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1501">see here for more information</a> 。此外，控制器和planner接口在初始化时更新为包括 “std::string名称” 参数。这被添加到接口中，以允许插件知道它应该加载其参数的命名空间。例如，控制器要找到参数 <code class="docutils literal notranslate"><span class="pre">FollowPath.max_vel_x</span></code> ，必须给出它的名称， <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 才能得到这个参数。所有插件都应在其给定名称的命名空间中查找参数。     <a class="reference external" href="http://www.fishros.com/calib#msgid=752">[校准&#64;fish]</a></p>
+<p>服务器命名空间中的``FollowPath`` controller is of type <code class="docutils literal notranslate"><span class="pre">dwb_local_planner/DWBLocalPlanner</span></code> and <code class="docutils literal notranslate"><span class="pre">DynamicFollowPath</span></code> of type <code class="docutils literal notranslate"><span class="pre">teb_local_planner/TEBLocalPlanner</span></code>. Each plugin will load the parameters in their namespace, e.g. <code class="docutils literal notranslate"><span class="pre">FollowPath.max_vel_x</span></code>,而不是全局。这将允许具有不同参数的相同类型的多个插件，并减少冲突的参数名称。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=751">[校准&#64;fish]</a></p>
+<p>DWB包含新参数，作为与ROS 1更新相关的更新， <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1501">see here for more information</a> 。此外，控制器和planner接口在初始化时更新为包括 “std::string名称” 参数。这被添加到接口中，以允许插件知道它应该加载其参数的命名空间。例如，控制器要找到参数 <code class="docutils literal notranslate"><span class="pre">FollowPath.max_vel_x</span></code> ，必须给出它的名称， <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 才能得到这个参数。所有插件都应在其给定名称的命名空间中查找参数。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=752">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="new-plugins">
 <h2>新插件<a class="headerlink" href="#new-plugins" title="永久链接至标题"></a></h2>
-<p>添加了许多新的行为树节点。这些行为树节点现在BT插件动态加载运行时使用行为树cpp v3.默认行为树升级停止恢复行为和触发重新当导航目标抢占。看到 <code class="docutils literal notranslate"><span class="pre">nav2_behavior_tree</span></code> 完整列表，或 <a class="reference internal" href="../plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a> 当前列表行为树插件及其说明。这些插件设置为默认在 <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator</span></code> 但可能覆盖 <code class="docutils literal notranslate"><span class="pre">bt_plugins</span></code> 参数包括特定插件。     <a class="reference external" href="http://www.fishros.com/calib#msgid=753">[校准&#64;fish]</a></p>
-<p>原始GitHub门票:     <a class="reference external" href="http://www.fishros.com/calib#msgid=754">[校准&#64;fish]</a></p>
+<p>添加了许多新的行为树节点。这些行为树节点现在BT插件动态加载运行时使用行为树cpp v3.默认行为树升级停止恢复行为和触发重新当导航目标抢占。看到 <code class="docutils literal notranslate"><span class="pre">nav2_behavior_tree</span></code> 完整列表，或 <a class="reference internal" href="../plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a> 当前列表行为树插件及其说明。这些插件设置为默认在 <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator</span></code> 但可能覆盖 <code class="docutils literal notranslate"><span class="pre">bt_plugins</span></code> 参数包括特定插件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=753">[校准&#64;fish]</a></p>
+<p>原始GitHub门票:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=754">[校准&#64;fish]</a></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1699">DistanceController</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1744">SpeedController</a></p></li>
@@ -812,31 +812,31 @@
 </div>
 <div class="section" id="map-server-re-work">
 <h2>地图服务器重新工作<a class="headerlink" href="#map-server-re-work" title="永久链接至标题"></a></h2>
-<p>这个``map_saver`` was re-worked and divided into 2 parts: CLI and server. CLI part is a command-line tool that listens incoming map topic, saves map once into a file and finishes its work. This part is remained to be almost untouched: CLI executable was renamed from <code class="docutils literal notranslate"><span class="pre">map_saver</span></code> to <code class="docutils literal notranslate"><span class="pre">map_saver_cli</span></code> without changing its functionality. Server is a new part. It spins in the background and can be used to save map continuously through a <code class="docutils literal notranslate"><span class="pre">save_map</span></code> service。每个服务请求试着听传入映射主题，收到消息从它写获得地图文件。     <a class="reference external" href="http://www.fishros.com/calib#msgid=766">[校准&#64;fish]</a></p>
-<p>这个``map_server`` was dramatically simplified and cleaned-up. <code class="docutils literal notranslate"><span class="pre">OccGridLoader</span></code> was merged with <code class="docutils literal notranslate"><span class="pre">MapServer</span></code> class as it is intended to work only with one <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> type信息在可预见的未来。     <a class="reference external" href="http://www.fishros.com/calib#msgid=767">[校准&#64;fish]</a></p>
-<p>地图服务器现在有新 <code class="docutils literal notranslate"><span class="pre">map_io</span></code> 动态库。所有功能保存/加载 <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> 消息从 <code class="docutils literal notranslate"><span class="pre">map_server</span></code> 和 <code class="docutils literal notranslate"><span class="pre">map_saver</span></code> 这里。这些功能可以轻松调用任何部分外部ROS 2码即使地图服务器节点未启动。     <a class="reference external" href="http://www.fishros.com/calib#msgid=768">[校准&#64;fish]</a></p>
-<p>这个``map_loader`` was completely removed from <code class="docutils literal notranslate"><span class="pre">nav2_util</span></code>. All its functionality already present in <code class="docutils literal notranslate"><span class="pre">map_io</span></code>.请在您的代码中使用它。     <a class="reference external" href="http://www.fishros.com/calib#msgid=769">[校准&#64;fish]</a></p>
-<p>更多信息请参考 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1010">original GitHub ticket</a> 和 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_map_server/README.md">Map Server README</a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=770">[校准&#64;fish]</a></p>
+<p>这个``map_saver`` was re-worked and divided into 2 parts: CLI and server. CLI part is a command-line tool that listens incoming map topic, saves map once into a file and finishes its work. This part is remained to be almost untouched: CLI executable was renamed from <code class="docutils literal notranslate"><span class="pre">map_saver</span></code> to <code class="docutils literal notranslate"><span class="pre">map_saver_cli</span></code> without changing its functionality. Server is a new part. It spins in the background and can be used to save map continuously through a <code class="docutils literal notranslate"><span class="pre">save_map</span></code> service。每个服务请求试着听传入映射主题，收到消息从它写获得地图文件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=766">[校准&#64;fish]</a></p>
+<p>这个``map_server`` was dramatically simplified and cleaned-up. <code class="docutils literal notranslate"><span class="pre">OccGridLoader</span></code> was merged with <code class="docutils literal notranslate"><span class="pre">MapServer</span></code> class as it is intended to work only with one <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> type信息在可预见的未来。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=767">[校准&#64;fish]</a></p>
+<p>地图服务器现在有新 <code class="docutils literal notranslate"><span class="pre">map_io</span></code> 动态库。所有功能保存/加载 <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> 消息从 <code class="docutils literal notranslate"><span class="pre">map_server</span></code> 和 <code class="docutils literal notranslate"><span class="pre">map_saver</span></code> 这里。这些功能可以轻松调用任何部分外部ROS 2码即使地图服务器节点未启动。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=768">[校准&#64;fish]</a></p>
+<p>这个``map_loader`` was completely removed from <code class="docutils literal notranslate"><span class="pre">nav2_util</span></code>. All its functionality already present in <code class="docutils literal notranslate"><span class="pre">map_io</span></code>.请在您的代码中使用它。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=769">[校准&#64;fish]</a></p>
+<p>更多信息请参考 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1010">original GitHub ticket</a> 和 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_map_server/README.md">Map Server README</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=770">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="new-particle-filter-messages">
 <h2>新粒子滤波消息<a class="headerlink" href="#new-particle-filter-messages" title="永久链接至标题"></a></h2>
-<p>添加了用于粒子云的新粒子过滤器消息，以包括粒子权重及其姿势。 <code class="docutils literal notranslate"><span class="pre">nav2_msgs/Particle</span></code> 在粒子云中定义了一个具有姿态和重量的单个粒子。 <code class="docutils literal notranslate"><span class="pre">nav2_msgs/ParticleCloud</span></code> 定义了一组粒子，每个粒子都有一个姿势和一个重量。     <a class="reference external" href="http://www.fishros.com/calib#msgid=772">[校准&#64;fish]</a></p>
-<p><code class="docutils literal notranslate"><span class="pre">AMCL</span></code> now publishes its particle cloud as a <code class="docutils literal notranslate"><span class="pre">nav2_msgs/ParticleCloud</span></code> instead of a <code class="docutils literal notranslate"><span class="pre">geometry_msgs/PoseArray</span></code>.     <a class="reference external" href="http://www.fishros.com/calib#msgid=773">[校准&#64;fish]</a></p>
+<p>添加了用于粒子云的新粒子过滤器消息，以包括粒子权重及其姿势。 <code class="docutils literal notranslate"><span class="pre">nav2_msgs/Particle</span></code> 在粒子云中定义了一个具有姿态和重量的单个粒子。 <code class="docutils literal notranslate"><span class="pre">nav2_msgs/ParticleCloud</span></code> 定义了一组粒子，每个粒子都有一个姿势和一个重量。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=772">[校准&#64;fish]</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">AMCL</span></code> now publishes its particle cloud as a <code class="docutils literal notranslate"><span class="pre">nav2_msgs/ParticleCloud</span></code> instead of a <code class="docutils literal notranslate"><span class="pre">geometry_msgs/PoseArray</span></code>.     <a class="reference external" href="http://10.55.23.25:3000/#msgid=773">[校准&#64;fish]</a></p>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1677">See here for more information.</a></p>
 </div>
 <div class="section" id="selection-of-behavior-tree-in-each-navigation-action">
-<h2>选择行为树每一个导航动作中     <a class="reference external" href="http://www.fishros.com/calib#msgid=775">[校准&#64;fish]</a><a class="headerlink" href="#selection-of-behavior-tree-in-each-navigation-action" title="永久链接至标题"></a></h2>
-<p>参数``NavigateToPose`` 行动现在允许选择行动请求行为树使用 <code class="docutils literal notranslate"><span class="pre">bt_navigator</span></code> 进行导航行动 <code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">behavior_tree</span></code> 领域。此字段指示绝对路径的xml文件将用于使用开展行动。如果未指定文件，此字段空，默认行为树中指定 <code class="docutils literal notranslate"><span class="pre">default_bt_xml_filename</span> <span class="pre">parameter</span></code> 将使用。     <a class="reference external" href="http://www.fishros.com/calib#msgid=776">[校准&#64;fish]</a></p>
-<p>这个功能已经在 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1780">the ticket #1780</a>, and carried out in <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1784">the pull request #1784</a> 中讨论过了。     <a class="reference external" href="http://www.fishros.com/calib#msgid=777">[校准&#64;fish]</a></p>
+<h2>选择行为树每一个导航动作中     <a class="reference external" href="http://10.55.23.25:3000/#msgid=775">[校准&#64;fish]</a><a class="headerlink" href="#selection-of-behavior-tree-in-each-navigation-action" title="永久链接至标题"></a></h2>
+<p>参数``NavigateToPose`` 行动现在允许选择行动请求行为树使用 <code class="docutils literal notranslate"><span class="pre">bt_navigator</span></code> 进行导航行动 <code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">behavior_tree</span></code> 领域。此字段指示绝对路径的xml文件将用于使用开展行动。如果未指定文件，此字段空，默认行为树中指定 <code class="docutils literal notranslate"><span class="pre">default_bt_xml_filename</span> <span class="pre">parameter</span></code> 将使用。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=776">[校准&#64;fish]</a></p>
+<p>这个功能已经在 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1780">the ticket #1780</a>, and carried out in <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1784">the pull request #1784</a> 中讨论过了。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=777">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="followpoint-capability">
 <h2>后续功能<a class="headerlink" href="#followpoint-capability" title="永久链接至标题"></a></h2>
-<p>增加了一种新的行为树 <code class="docutils literal notranslate"><span class="pre">followpoint.xml</span></code> 。该行为树使机器人跟随动态生成的点，与目标保持一定距离。这可以用于移动操作后的目标。     <a class="reference external" href="http://www.fishros.com/calib#msgid=779">[校准&#64;fish]</a></p>
-<p>这个功能已经在 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1660">the ticket #1660</a>, and carried out in <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1859">the pull request #1859</a> 中讨论过了。     <a class="reference external" href="http://www.fishros.com/calib#msgid=780">[校准&#64;fish]</a></p>
+<p>增加了一种新的行为树 <code class="docutils literal notranslate"><span class="pre">followpoint.xml</span></code> 。该行为树使机器人跟随动态生成的点，与目标保持一定距离。这可以用于移动操作后的目标。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=779">[校准&#64;fish]</a></p>
+<p>这个功能已经在 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1660">the ticket #1660</a>, and carried out in <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1859">the pull request #1859</a> 中讨论过了。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=780">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="new-costmap-layer">
 <h2>新的代价地图层<a class="headerlink" href="#new-costmap-layer" title="永久链接至标题"></a></h2>
-<p>距离传感器costmap尚未作为 <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d::RangeSensorLayer&quot;</span></code>. It uses the same probabilistic model as the <a class="reference external" href="http://wiki.ros.org/range_sensor_layer">ROS1</a> 层以及许多相同的接口移植到navigation2。关于参数的文档已被添加到文档/参数和navigation.ros.org的 <code class="docutils literal notranslate"><span class="pre">Configuration</span> <span class="pre">Guide</span></code> 下。     <a class="reference external" href="http://www.fishros.com/calib#msgid=782">[校准&#64;fish]</a></p>
+<p>距离传感器costmap尚未作为 <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d::RangeSensorLayer&quot;</span></code>. It uses the same probabilistic model as the <a class="reference external" href="http://wiki.ros.org/range_sensor_layer">ROS1</a> 层以及许多相同的接口移植到navigation2。关于参数的文档已被添加到文档/参数和navigation.ros.org的 <code class="docutils literal notranslate"><span class="pre">Configuration</span> <span class="pre">Guide</span></code> 下。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=782">[校准&#64;fish]</a></p>
 </div>
 </div>
 

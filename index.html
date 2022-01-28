@@ -743,33 +743,33 @@
   </div>
 </h1><div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>Nav2项目是精神继承者的ROS导航栈。该项目力求安全方式移动机器人从A点移动到B点。也可以应用于其他应用，包括机器人导航，如下动态点。这将完成动态路径规划计算速度电机，避免障碍，结构回收行为。了解这个项目，如相关项目，机器人，ROS1比较，维护者，看到 <a class="reference internal" href="about/index.html#about"><span class="std std-ref">关于和联系</span></a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1496">[校准&#64;fish]</a></p>
-<p>这个Nav2使用行为树调用模块化服务器来完成操作。操作可以是计算路径、控制工作量、恢复或任何其他与导航相关的操作。这些都是通过ROS操作服务器与行为树 (BT) 通信的独立节点。下面的图表将会给你一个很好的第一眼看到这个Nav2的结构。注意: 在每个服务器中有多个控制器、planner和恢复插件，并且有匹配的BT插件是可能的。这可用于创建上下文导航行为。如果你想看这个项目和ROS (1) 导航之间的比较，请看 <a class="reference internal" href="about/ros1_comparison.html#ros1-comparison"><span class="std std-ref">ROS到ROS2变化</span></a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1497">[校准&#64;fish]</a></p>
-<p>预期投入Nav2TF转换符合REP-105，地图源利用静态代价地图层，BT XML文件，任何相关传感器数据来源。它将提供有效速度命令电机完整或非完整机器人。我们目前支持所有主要机器人类型: 完整，差速，腿，阿克曼 (汽车) 底座类型!我们支持他们唯一带圆形和任意形机器人SE2碰撞检查。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1498">[校准&#64;fish]</a></p>
+<p>Nav2项目是精神继承者的ROS导航栈。该项目力求安全方式移动机器人从A点移动到B点。也可以应用于其他应用，包括机器人导航，如下动态点。这将完成动态路径规划计算速度电机，避免障碍，结构回收行为。了解这个项目，如相关项目，机器人，ROS1比较，维护者，看到 <a class="reference internal" href="about/index.html#about"><span class="std std-ref">关于和联系</span></a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1496">[校准&#64;fish]</a></p>
+<p>这个Nav2使用行为树调用模块化服务器来完成操作。操作可以是计算路径、控制工作量、恢复或任何其他与导航相关的操作。这些都是通过ROS操作服务器与行为树 (BT) 通信的独立节点。下面的图表将会给你一个很好的第一眼看到这个Nav2的结构。注意: 在每个服务器中有多个控制器、planner和恢复插件，并且有匹配的BT插件是可能的。这可用于创建上下文导航行为。如果你想看这个项目和ROS (1) 导航之间的比较，请看 <a class="reference internal" href="about/ros1_comparison.html#ros1-comparison"><span class="std std-ref">ROS到ROS2变化</span></a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1497">[校准&#64;fish]</a></p>
+<p>预期投入Nav2TF转换符合REP-105，地图源利用静态代价地图层，BT XML文件，任何相关传感器数据来源。它将提供有效速度命令电机完整或非完整机器人。我们目前支持所有主要机器人类型: 完整，差速，腿，阿克曼 (汽车) 底座类型!我们支持他们唯一带圆形和任意形机器人SE2碰撞检查。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1498">[校准&#64;fish]</a></p>
 <p>它有工具:</p>
 <ul class="simple">
-<li><p>负载、服务和存储地图 (地图服务器)     <a class="reference external" href="http://www.fishros.com/calib#msgid=1500">[校准&#64;fish]</a></p></li>
-<li><p>在地图上定位机器人 (AMCL)     <a class="reference external" href="http://www.fishros.com/calib#msgid=1501">[校准&#64;fish]</a></p></li>
-<li><p>围绕障碍物规划从甲到乙的路径 (Nav2规划器)     <a class="reference external" href="http://www.fishros.com/calib#msgid=1502">[校准&#64;fish]</a></p></li>
-<li><p>当机器人沿着路径时控制它 (Nav2控制器)     <a class="reference external" href="http://www.fishros.com/calib#msgid=1503">[校准&#64;fish]</a></p></li>
-<li><p>转换传感器数据costmap表示世界 (Nav2代价地图2D)     <a class="reference external" href="http://www.fishros.com/calib#msgid=1504">[校准&#64;fish]</a></p></li>
-<li><p>使用行为树构建复杂的机器人行为 (Nav2行为树和BT导航器)     <a class="reference external" href="http://www.fishros.com/calib#msgid=1505">[校准&#64;fish]</a></p></li>
-<li><p>计算故障时的恢复行为 (Nav2恢复)     <a class="reference external" href="http://www.fishros.com/calib#msgid=1506">[校准&#64;fish]</a></p></li>
-<li><p>跟随连续路点 (Nav2路点追踪)     <a class="reference external" href="http://www.fishros.com/calib#msgid=1507">[校准&#64;fish]</a></p></li>
-<li><p>管理生命周期和看门狗服务器 (Nav2生命周期经理)     <a class="reference external" href="http://www.fishros.com/calib#msgid=1508">[校准&#64;fish]</a></p></li>
-<li><p>启用您自己的自定义算法和行为的插件 (Nav2核心)     <a class="reference external" href="http://www.fishros.com/calib#msgid=1509">[校准&#64;fish]</a></p></li>
+<li><p>负载、服务和存储地图 (地图服务器)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1500">[校准&#64;fish]</a></p></li>
+<li><p>在地图上定位机器人 (AMCL)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1501">[校准&#64;fish]</a></p></li>
+<li><p>围绕障碍物规划从甲到乙的路径 (Nav2规划器)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1502">[校准&#64;fish]</a></p></li>
+<li><p>当机器人沿着路径时控制它 (Nav2控制器)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1503">[校准&#64;fish]</a></p></li>
+<li><p>转换传感器数据costmap表示世界 (Nav2代价地图2D)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1504">[校准&#64;fish]</a></p></li>
+<li><p>使用行为树构建复杂的机器人行为 (Nav2行为树和BT导航器)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1505">[校准&#64;fish]</a></p></li>
+<li><p>计算故障时的恢复行为 (Nav2恢复)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1506">[校准&#64;fish]</a></p></li>
+<li><p>跟随连续路点 (Nav2路点追踪)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1507">[校准&#64;fish]</a></p></li>
+<li><p>管理生命周期和看门狗服务器 (Nav2生命周期经理)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1508">[校准&#64;fish]</a></p></li>
+<li><p>启用您自己的自定义算法和行为的插件 (Nav2核心)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1509">[校准&#64;fish]</a></p></li>
 </ul>
-<a class="reference internal image-reference" href="_images/architectural_diagram.png"><img alt="Navigation2框图     `[校准&#64;fish] &lt;http://www.fishros.com/calib#msgid=1510&gt;`_ " class="align-center" src="_images/architectural_diagram.png" style="width: 700px;" /></a>
-<p>我们还提供一套启动插件让你去。NavFn计算最短路径对目标姿势使用A*或Dijkstra的算法。DWB将使用DWA算法计算控制努力跟随路径，几个插件的轨迹批评者。有回收行为包括: 等待，旋转，清除costmaps，备份。有一组BT插件呼叫这些服务器和计算条件。最后，有一组Rviz插件交互堆栈控制生命周期。所有用户报告插件可以查找 <a class="reference internal" href="plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1511">[校准&#64;fish]</a></p>
-<p>这里是文档如何安装和使用Nav2为例机器人，Turtlebot 3 (TB3)，以及如何自定义其他机器人，调整行为更好性能，以及定制内部以获得高级结果。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1512">[校准&#64;fish]</a></p>
+<a class="reference internal image-reference" href="_images/architectural_diagram.png"><img alt="Navigation2框图     `[校准&#64;fish] &lt;http://10.55.23.25:3000/#msgid=1510&gt;`_ " class="align-center" src="_images/architectural_diagram.png" style="width: 700px;" /></a>
+<p>我们还提供一套启动插件让你去。NavFn计算最短路径对目标姿势使用A*或Dijkstra的算法。DWB将使用DWA算法计算控制努力跟随路径，几个插件的轨迹批评者。有回收行为包括: 等待，旋转，清除costmaps，备份。有一组BT插件呼叫这些服务器和计算条件。最后，有一组Rviz插件交互堆栈控制生命周期。所有用户报告插件可以查找 <a class="reference internal" href="plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1511">[校准&#64;fish]</a></p>
+<p>这里是文档如何安装和使用Nav2为例机器人，Turtlebot 3 (TB3)，以及如何自定义其他机器人，调整行为更好性能，以及定制内部以获得高级结果。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1512">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="citations">
 <h2>引文<a class="headerlink" href="#citations" title="永久链接至标题"></a></h2>
-<p>如果你使用了导航框架、这个资源库中的算法，或其中的想法，请在你的论文中引用这项工作!   <a class="reference external" href="http://www.fishros.com/calib#msgid=1514">[校准&#64;fish]</a></p>
+<p>如果你使用了导航框架、这个资源库中的算法，或其中的想法，请在你的论文中引用这项工作!   <a class="reference external" href="http://10.55.23.25:3000/#msgid=1514">[校准&#64;fish]</a></p>
 <p>S. Macenski, F. Martín, R. White, J. Clavero.
 <a class="reference external" href="https://arxiv.org/abs/2003.00368/">The Marathon 2: A Navigation System</a>.
 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2020.</p>
-<p>IROS 2020谈Nav2马拉松实验:     <a class="reference external" href="http://www.fishros.com/calib#msgid=1516">[校准&#64;fish]</a></p>
+<p>IROS 2020谈Nav2马拉松实验:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1516">[校准&#64;fish]</a></p>
 <h1 align="center">
   <div style="position: relative; padding-bottom: 0%; overflow: hidden; max-width: 100%; height: auto;">
     <iframe width="708" height="400" src="https://www.youtube.com/embed/QB7lOKp3ZDQ?autoplay=1&mute=1" frameborder="1" allowfullscreen></iframe>
@@ -782,8 +782,8 @@ IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2020
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>如果使用工作VSLAM和正式比较服务机器人需要，请引用本文:     <a class="reference external" href="http://www.fishros.com/calib#msgid=1517">[校准&#64;fish]</a></p>
-<p>A.Merzlyakov，S。Macenski。 <a class="reference external" href="https://arxiv.org/abs/2107.07589">A Comparison of Modern General-Purpose Visual SLAM Approaches</a> 。IEEE/RSJ国际会议智能机器人与系统 (IROS)，2021。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1518">[校准&#64;fish]</a></p>
+<p>如果使用工作VSLAM和正式比较服务机器人需要，请引用本文:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1517">[校准&#64;fish]</a></p>
+<p>A.Merzlyakov，S。Macenski。 <a class="reference external" href="https://arxiv.org/abs/2107.07589">A Comparison of Modern General-Purpose Visual SLAM Approaches</a> 。IEEE/RSJ国际会议智能机器人与系统 (IROS)，2021。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1518">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>@InProceedings<span class="o">{</span>vslamComparison2021,
 <span class="nv">author</span> <span class="o">=</span> <span class="o">{</span>Merzlyakov, Alexey and Macenski, Steven<span class="o">}</span>,
 <span class="nv">title</span> <span class="o">=</span> <span class="o">{</span>A Comparison of Modern General-Purpose Visual SLAM Approaches<span class="o">}</span>,
@@ -795,7 +795,7 @@ IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2020
 </div>
 <div class="section" id="example">
 <h2>示例<a class="headerlink" href="#example" title="永久链接至标题"></a></h2>
-<p>下面是一个TB3在小休息室导航的例子。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1520">[校准&#64;fish]</a></p>
+<p>下面是一个TB3在小休息室导航的例子。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1520">[校准&#64;fish]</a></p>
 <h1 align="center">
   <div style="position: relative; padding-bottom: 0%; overflow: hidden; max-width: 100%; height: auto;">
     <iframe width="708" height="400" src="https://www.youtube.com/embed/ZeCds7Sv-5Q?autoplay=1&mute=1" frameborder="1" allowfullscreen></iframe>

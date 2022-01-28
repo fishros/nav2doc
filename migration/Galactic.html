@@ -735,53 +735,53 @@
            <div itemprop="articleBody">
              
   <div class="section" id="galactic-to-humble">
-<span id="galactic-migration"></span><h1>Galactic到Humble     <a class="reference external" href="http://www.fishros.com/calib#msgid=899">[校准&#64;fish]</a><a class="headerlink" href="#galactic-to-humble" title="永久链接至标题"></a></h1>
-<p>从ROS2 Galactic到Humble，稳定性改进添加我们不会具体地址。     <a class="reference external" href="http://www.fishros.com/calib#msgid=900">[校准&#64;fish]</a></p>
+<span id="galactic-migration"></span><h1>Galactic到Humble     <a class="reference external" href="http://10.55.23.25:3000/#msgid=899">[校准&#64;fish]</a><a class="headerlink" href="#galactic-to-humble" title="永久链接至标题"></a></h1>
+<p>从ROS2 Galactic到Humble，稳定性改进添加我们不会具体地址。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=900">[校准&#64;fish]</a></p>
 <div class="section" id="major-improvements-to-smac-planners">
-<h2>Smac规划器的主要改进     <a class="reference external" href="http://www.fishros.com/calib#msgid=901">[校准&#64;fish]</a><a class="headerlink" href="#major-improvements-to-smac-planners" title="永久链接至标题"></a></h2>
-<p>在2D和混合-A*的实施中，Smac规划器得到了显著改进，使得路径更好、更快、质量更高。     <a class="reference external" href="http://www.fishros.com/calib#msgid=902">[校准&#64;fish]</a></p>
+<h2>Smac规划器的主要改进     <a class="reference external" href="http://10.55.23.25:3000/#msgid=901">[校准&#64;fish]</a><a class="headerlink" href="#major-improvements-to-smac-planners" title="永久链接至标题"></a></h2>
+<p>在2D和混合-A*的实施中，Smac规划器得到了显著改进，使得路径更好、更快、质量更高。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=902">[校准&#64;fish]</a></p>
 <blockquote>
 <div><ul class="simple">
-<li><p>碰撞检查拒绝碰撞更快查询costmap坐标少     <a class="reference external" href="http://www.fishros.com/calib#msgid=903">[校准&#64;fish]</a></p></li>
+<li><p>碰撞检查拒绝碰撞更快查询costmap坐标少     <a class="reference external" href="http://10.55.23.25:3000/#msgid=903">[校准&#64;fish]</a></p></li>
 <li><p>零拷贝冲突检查对象</p></li>
-<li><p>预计算碰撞检查足迹方向所以不需要trig在运行     <a class="reference external" href="http://www.fishros.com/calib#msgid=905">[校准&#64;fish]</a></p></li>
-<li><p>仅当机器人处于可能的内切区域时才检查完整的SE2足迹     <a class="reference external" href="http://www.fishros.com/calib#msgid=906">[校准&#64;fish]</a></p></li>
-<li><p>计算可能的内切区域，或部分足迹可能与边界碰撞的成本，以检查全部足迹。否则，检查中心成本，因为承诺不会处于潜在的碰撞状态     <a class="reference external" href="http://www.fishros.com/calib#msgid=907">[校准&#64;fish]</a></p></li>
-<li><p>将混合-A*planner重命名为Smac规划器混合     <a class="reference external" href="http://www.fishros.com/calib#msgid=908">[校准&#64;fish]</a></p></li>
-<li><p>预计算的Reedshepp和杜宾路径脱机所以在运行只是查找表     <a class="reference external" href="http://www.fishros.com/calib#msgid=909">[校准&#64;fish]</a></p></li>
-<li><p>用一种新的、新颖的、被称为障碍启发式的启发式方法代替波前启发式方法。这计算了一个Dijkstra的路径，考虑了8个连接的空间，以及在引导启发式进入过道中心的位置的成本权重。它还对costmap进行下采样，这样它可以将扩展次数减少75%，并且通过关闭单细胞距离的部分距离，在启发式算法中引入一个非常小的误差。     <a class="reference external" href="http://www.fishros.com/calib#msgid=910">[校准&#64;fish]</a></p></li>
-<li><p>改进解析展开算法可能性循环的路径，尽可能去除     <a class="reference external" href="http://www.fishros.com/calib#msgid=911">[校准&#64;fish]</a></p></li>
-<li><p>改进分析扩展以提供最大路径长度以防止靠近障碍物的踢脚线     <a class="reference external" href="http://www.fishros.com/calib#msgid=912">[校准&#64;fish]</a></p></li>
-<li><p>2DA*旅行成本和启发式改进，以加快计划时间并显著提高路径质量     <a class="reference external" href="http://www.fishros.com/calib#msgid=913">[校准&#64;fish]</a></p></li>
-<li><p>用定制的梯度下降实现取代了平滑器     <a class="reference external" href="http://www.fishros.com/calib#msgid=914">[校准&#64;fish]</a></p></li>
-<li><p>摘要共同事业planners成utils文件     <a class="reference external" href="http://www.fishros.com/calib#msgid=915">[校准&#64;fish]</a></p></li>
+<li><p>预计算碰撞检查足迹方向所以不需要trig在运行     <a class="reference external" href="http://10.55.23.25:3000/#msgid=905">[校准&#64;fish]</a></p></li>
+<li><p>仅当机器人处于可能的内切区域时才检查完整的SE2足迹     <a class="reference external" href="http://10.55.23.25:3000/#msgid=906">[校准&#64;fish]</a></p></li>
+<li><p>计算可能的内切区域，或部分足迹可能与边界碰撞的成本，以检查全部足迹。否则，检查中心成本，因为承诺不会处于潜在的碰撞状态     <a class="reference external" href="http://10.55.23.25:3000/#msgid=907">[校准&#64;fish]</a></p></li>
+<li><p>将混合-A*planner重命名为Smac规划器混合     <a class="reference external" href="http://10.55.23.25:3000/#msgid=908">[校准&#64;fish]</a></p></li>
+<li><p>预计算的Reedshepp和杜宾路径脱机所以在运行只是查找表     <a class="reference external" href="http://10.55.23.25:3000/#msgid=909">[校准&#64;fish]</a></p></li>
+<li><p>用一种新的、新颖的、被称为障碍启发式的启发式方法代替波前启发式方法。这计算了一个Dijkstra的路径，考虑了8个连接的空间，以及在引导启发式进入过道中心的位置的成本权重。它还对costmap进行下采样，这样它可以将扩展次数减少75%，并且通过关闭单细胞距离的部分距离，在启发式算法中引入一个非常小的误差。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=910">[校准&#64;fish]</a></p></li>
+<li><p>改进解析展开算法可能性循环的路径，尽可能去除     <a class="reference external" href="http://10.55.23.25:3000/#msgid=911">[校准&#64;fish]</a></p></li>
+<li><p>改进分析扩展以提供最大路径长度以防止靠近障碍物的踢脚线     <a class="reference external" href="http://10.55.23.25:3000/#msgid=912">[校准&#64;fish]</a></p></li>
+<li><p>2DA*旅行成本和启发式改进，以加快计划时间并显著提高路径质量     <a class="reference external" href="http://10.55.23.25:3000/#msgid=913">[校准&#64;fish]</a></p></li>
+<li><p>用定制的梯度下降实现取代了平滑器     <a class="reference external" href="http://10.55.23.25:3000/#msgid=914">[校准&#64;fish]</a></p></li>
+<li><p>摘要共同事业planners成utils文件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=915">[校准&#64;fish]</a></p></li>
 <li><p>调整成本函数</p></li>
-<li><p>预计算障碍启发式动态规划扩大最少节点数     <a class="reference external" href="http://www.fishros.com/calib#msgid=917">[校准&#64;fish]</a></p></li>
-<li><p>缓存启发式设置启用25hz规划速率缓存障碍启发式值目标保持不变     <a class="reference external" href="http://www.fishros.com/calib#msgid=918">[校准&#64;fish]</a></p></li>
-<li><p>利用dubin和芦苇绵羊空间的对称性将缓存大小减少50%，以增加可用于启发式查找的窗口大小。     <a class="reference external" href="http://www.fishros.com/calib#msgid=919">[校准&#64;fish]</a></p></li>
-<li><p>所有定向箱的预计算原语     <a class="reference external" href="http://www.fishros.com/calib#msgid=920">[校准&#64;fish]</a></p></li>
-<li><p>Smac规划器2D参数现在可重构     <a class="reference external" href="http://www.fishros.com/calib#msgid=921">[校准&#64;fish]</a></p></li>
-<li><p>混合A*和状态栅格规划现在都完全可以接受     <a class="reference external" href="http://www.fishros.com/calib#msgid=922">[校准&#64;fish]</a></p></li>
-<li><p>混合-A*和状态晶格对路径平滑进行了参数化读取。     <a class="reference external" href="http://www.fishros.com/calib#msgid=923">[校准&#64;fish]</a></p></li>
-<li><p>平滑器现在启用了运动学上可行的边界条件。     <a class="reference external" href="http://www.fishros.com/calib#msgid=924">[校准&#64;fish]</a></p></li>
-<li><p>State Lattice supports turning in place primitive types   <a class="reference external" href="http://www.fishros.com/calib#msgid=925">[校准&#64;fish]</a></p></li>
+<li><p>预计算障碍启发式动态规划扩大最少节点数     <a class="reference external" href="http://10.55.23.25:3000/#msgid=917">[校准&#64;fish]</a></p></li>
+<li><p>缓存启发式设置启用25hz规划速率缓存障碍启发式值目标保持不变     <a class="reference external" href="http://10.55.23.25:3000/#msgid=918">[校准&#64;fish]</a></p></li>
+<li><p>利用dubin和芦苇绵羊空间的对称性将缓存大小减少50%，以增加可用于启发式查找的窗口大小。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=919">[校准&#64;fish]</a></p></li>
+<li><p>所有定向箱的预计算原语     <a class="reference external" href="http://10.55.23.25:3000/#msgid=920">[校准&#64;fish]</a></p></li>
+<li><p>Smac规划器2D参数现在可重构     <a class="reference external" href="http://10.55.23.25:3000/#msgid=921">[校准&#64;fish]</a></p></li>
+<li><p>混合A*和状态栅格规划现在都完全可以接受     <a class="reference external" href="http://10.55.23.25:3000/#msgid=922">[校准&#64;fish]</a></p></li>
+<li><p>混合-A*和状态晶格对路径平滑进行了参数化读取。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=923">[校准&#64;fish]</a></p></li>
+<li><p>平滑器现在启用了运动学上可行的边界条件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=924">[校准&#64;fish]</a></p></li>
+<li><p>State Lattice supports turning in place primitive types   <a class="reference external" href="http://10.55.23.25:3000/#msgid=925">[校准&#64;fish]</a></p></li>
 </ul>
 </div></blockquote>
 <dl class="simple">
 <dt>这些改进的是:</dt><dd><ul class="simple">
-<li><p>计划2-3x尽快以前，200ms几乎所有情况，尽快NavFn和全球规划器 (但现在运动学可行)。典型规划时间sub-100ms甚至没有利用缓存或采样功能。     <a class="reference external" href="http://www.fishros.com/calib#msgid=927">[校准&#64;fish]</a></p></li>
-<li><p>通过改进的平滑和一种将机器人隐式地引导到过道中心的新颖的启发式方法，路径的质量明显更高。这使得尽可能远离障碍的道路更加平滑。     <a class="reference external" href="http://www.fishros.com/calib#msgid=928">[校准&#64;fish]</a></p></li>
-<li><p>使用缓存或downsampler参数化，可以轻松实现路径规划sub-50ms几乎任何大小的空间。     <a class="reference external" href="http://www.fishros.com/calib#msgid=929">[校准&#64;fish]</a></p></li>
-<li><p>平滑现在能够多做改进可以创建运动学可行边界条件，甚至逆转。     <a class="reference external" href="http://www.fishros.com/calib#msgid=930">[校准&#64;fish]</a></p></li>
+<li><p>计划2-3x尽快以前，200ms几乎所有情况，尽快NavFn和全球规划器 (但现在运动学可行)。典型规划时间sub-100ms甚至没有利用缓存或采样功能。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=927">[校准&#64;fish]</a></p></li>
+<li><p>通过改进的平滑和一种将机器人隐式地引导到过道中心的新颖的启发式方法，路径的质量明显更高。这使得尽可能远离障碍的道路更加平滑。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=928">[校准&#64;fish]</a></p></li>
+<li><p>使用缓存或downsampler参数化，可以轻松实现路径规划sub-50ms几乎任何大小的空间。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=929">[校准&#64;fish]</a></p></li>
+<li><p>平滑现在能够多做改进可以创建运动学可行边界条件，甚至逆转。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=930">[校准&#64;fish]</a></p></li>
 </ul>
 </dd>
 </dl>
-<p>做了额外的改进，包括一个 <code class="docutils literal notranslate"><span class="pre">analytic_expansion_max_length</span></code> 参数，这样分析扩展的潜在长度是有限的。如果长度太远，则拒绝此扩展。这防止了不安全的捷径进入远离目标本身的高成本区域，让搜索在分析扩展将其带回家之前接近的工作。这绝不应该小于使用的最小转弯半径的4-5倍，否则计划时间将开始增加。     <a class="reference external" href="http://www.fishros.com/calib#msgid=931">[校准&#64;fish]</a></p>
-<p>此外，如果您有先前存在的配置，则遍历成本和启发式成本计算已更新，需要重新调整惩罚函数。算法的默认值也被适当地重新调整为与以前相似的盒子行为的变化 (作为参考)。     <a class="reference external" href="http://www.fishros.com/calib#msgid=932">[校准&#64;fish]</a></p>
+<p>做了额外的改进，包括一个 <code class="docutils literal notranslate"><span class="pre">analytic_expansion_max_length</span></code> 参数，这样分析扩展的潜在长度是有限的。如果长度太远，则拒绝此扩展。这防止了不安全的捷径进入远离目标本身的高成本区域，让搜索在分析扩展将其带回家之前接近的工作。这绝不应该小于使用的最小转弯半径的4-5倍，否则计划时间将开始增加。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=931">[校准&#64;fish]</a></p>
+<p>此外，如果您有先前存在的配置，则遍历成本和启发式成本计算已更新，需要重新调整惩罚函数。算法的默认值也被适当地重新调整为与以前相似的盒子行为的变化 (作为参考)。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=932">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="simple-python-commander">
-<h2>简单 (Python) 控制命令     <a class="reference external" href="http://www.fishros.com/calib#msgid=933">[校准&#64;fish]</a><a class="headerlink" href="#simple-python-commander" title="永久链接至标题"></a></h2>
-<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2411">This PR</a> 介绍新包Nav2，称为 <code class="docutils literal notranslate"><span class="pre">nav2_simple_commander</span></code> 。它是一套功能对象， <code class="docutils literal notranslate"><span class="pre">BasicNavigator</span></code> ，可用于构建Nav2供电自治任务Python3不含关于自己Nav2，ROS 2，或Action服务器细节。它包含一个简单API以普通类型 (主要 <code class="docutils literal notranslate"><span class="pre">PoseStamped</span></code> ) 和处理所有实现细节后面的引擎盖。例如，这是一个简易导航任务使用此API:     <a class="reference external" href="http://www.fishros.com/calib#msgid=934">[校准&#64;fish]</a></p>
+<h2>简单 (Python) 控制命令     <a class="reference external" href="http://10.55.23.25:3000/#msgid=933">[校准&#64;fish]</a><a class="headerlink" href="#simple-python-commander" title="永久链接至标题"></a></h2>
+<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2411">This PR</a> 介绍新包Nav2，称为 <code class="docutils literal notranslate"><span class="pre">nav2_simple_commander</span></code> 。它是一套功能对象， <code class="docutils literal notranslate"><span class="pre">BasicNavigator</span></code> ，可用于构建Nav2供电自治任务Python3不含关于自己Nav2，ROS 2，或Action服务器细节。它包含一个简单API以普通类型 (主要 <code class="docutils literal notranslate"><span class="pre">PoseStamped</span></code> ) 和处理所有实现细节后面的引擎盖。例如，这是一个简易导航任务使用此API:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=934">[校准&#64;fish]</a></p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
     <span class="n">navigator</span> <span class="o">=</span> <span class="n">BasicNavigator</span><span class="p">()</span>
@@ -816,26 +816,26 @@
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Goal failed!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander">The full API can be found in the README of the package</a> 。在之前的链接中，也可以在包的源代码中找到许多注释良好的示例和演示。     <a class="reference external" href="http://www.fishros.com/calib#msgid=935">[校准&#64;fish]</a></p>
+<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander">The full API can be found in the README of the package</a> 。在之前的链接中，也可以在包的源代码中找到许多注释良好的示例和演示。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=935">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="reduce-nodes-and-executors">
 <h2>减少节点和执行程序<a class="headerlink" href="#reduce-nodes-and-executors" title="永久链接至标题"></a></h2>
-<p>为了nav2充分利用ROS 2，我们需要减少节点执行者在nav2，可以提高性能。     <a class="reference external" href="http://www.fishros.com/calib#msgid=937">[校准&#64;fish]</a></p>
-<p>这个功能已经在 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/816">the ticket #816</a> 中讨论过了，并且在     <a class="reference external" href="http://www.fishros.com/calib#msgid=938">[校准&#64;fish]</a></p>
+<p>为了nav2充分利用ROS 2，我们需要减少节点执行者在nav2，可以提高性能。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=937">[校准&#64;fish]</a></p>
+<p>这个功能已经在 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/816">the ticket #816</a> 中讨论过了，并且在     <a class="reference external" href="http://10.55.23.25:3000/#msgid=938">[校准&#64;fish]</a></p>
 <blockquote>
 <div><ul class="simple">
-<li><p>除 <code class="docutils literal notranslate"><span class="pre">client_node_</span></code> 在 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">WaypointFollower</span></code> :  <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2441">PR2441</a>      <a class="reference external" href="http://www.fishros.com/calib#msgid=939">[校准&#64;fish]</a></p></li>
-<li><p>除 <code class="docutils literal notranslate"><span class="pre">rclcpp_node_</span></code> 在 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">MapSaver</span></code> :  <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2454">PR2454</a>      <a class="reference external" href="http://www.fishros.com/calib#msgid=940">[校准&#64;fish]</a></p></li>
-<li><p>除 <code class="docutils literal notranslate"><span class="pre">bond_client_node_</span></code> 在 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">LifecycleManager</span></code> :  <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2456">PR2456</a>      <a class="reference external" href="http://www.fishros.com/calib#msgid=941">[校准&#64;fish]</a></p></li>
-<li><p>除 <code class="docutils literal notranslate"><span class="pre">node_</span></code> 在 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">LifecycleManagerClient</span></code> :  <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2469">PR2469</a>      <a class="reference external" href="http://www.fishros.com/calib#msgid=942">[校准&#64;fish]</a></p></li>
-<li><p>除 <code class="docutils literal notranslate"><span class="pre">rclcpp_node_</span></code> 在 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ControllerServer</span></code> :  <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2459">PR2459</a>, <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2479">PR2479</a>      <a class="reference external" href="http://www.fishros.com/calib#msgid=943">[校准&#64;fish]</a></p></li>
-<li><p>除 <code class="docutils literal notranslate"><span class="pre">rclcpp_node_</span></code> 在 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">PlannerServer</span></code> :  <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2459">PR2459</a>, <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2480">PR2480</a>      <a class="reference external" href="http://www.fishros.com/calib#msgid=944">[校准&#64;fish]</a></p></li>
+<li><p>除 <code class="docutils literal notranslate"><span class="pre">client_node_</span></code> 在 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">WaypointFollower</span></code> :  <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2441">PR2441</a>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=939">[校准&#64;fish]</a></p></li>
+<li><p>除 <code class="docutils literal notranslate"><span class="pre">rclcpp_node_</span></code> 在 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">MapSaver</span></code> :  <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2454">PR2454</a>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=940">[校准&#64;fish]</a></p></li>
+<li><p>除 <code class="docutils literal notranslate"><span class="pre">bond_client_node_</span></code> 在 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">LifecycleManager</span></code> :  <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2456">PR2456</a>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=941">[校准&#64;fish]</a></p></li>
+<li><p>除 <code class="docutils literal notranslate"><span class="pre">node_</span></code> 在 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">LifecycleManagerClient</span></code> :  <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2469">PR2469</a>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=942">[校准&#64;fish]</a></p></li>
+<li><p>除 <code class="docutils literal notranslate"><span class="pre">rclcpp_node_</span></code> 在 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ControllerServer</span></code> :  <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2459">PR2459</a>, <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2479">PR2479</a>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=943">[校准&#64;fish]</a></p></li>
+<li><p>除 <code class="docutils literal notranslate"><span class="pre">rclcpp_node_</span></code> 在 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">PlannerServer</span></code> :  <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2459">PR2459</a>, <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2480">PR2480</a>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=944">[校准&#64;fish]</a></p></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="extending-the-btservicenode-to-process-service-results">
-<h2>延长BtServiceNode处理服务结果     <a class="reference external" href="http://www.fishros.com/calib#msgid=945">[校准&#64;fish]</a><a class="headerlink" href="#extending-the-btservicenode-to-process-service-results" title="永久链接至标题"></a></h2>
-<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2481">PR</a> addresses <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2467">this Ticket</a> ，并增加了一个虚拟的 <code class="docutils literal notranslate"><span class="pre">on_completion()</span></code> 功能到 <code class="docutils literal notranslate"><span class="pre">BtServiceNode</span></code> 类 ( <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/c417e2fd267e1dfa880b7ff9d37aaaa7b5eab9ca/nav2_behavior_tree/include/nav2_behavior_tree/bt_service_node.hpp">here</a> )。与已经存在的虚拟 <code class="docutils literal notranslate"><span class="pre">on_wait_for_result()</span></code> 函数类似，它可以在子类中被覆盖，以便通过一些用户定义的操作对相应的事件做出反应。添加的 <code class="docutils literal notranslate"><span class="pre">on_completion()</span></code> 功能将在 <code class="docutils literal notranslate"><span class="pre">BtServiceNode</span></code> 的服务交互成功完成后调用。     <a class="reference external" href="http://www.fishros.com/calib#msgid=946">[校准&#64;fish]</a></p>
+<h2>延长BtServiceNode处理服务结果     <a class="reference external" href="http://10.55.23.25:3000/#msgid=945">[校准&#64;fish]</a><a class="headerlink" href="#extending-the-btservicenode-to-process-service-results" title="永久链接至标题"></a></h2>
+<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2481">PR</a> addresses <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2467">this Ticket</a> ，并增加了一个虚拟的 <code class="docutils literal notranslate"><span class="pre">on_completion()</span></code> 功能到 <code class="docutils literal notranslate"><span class="pre">BtServiceNode</span></code> 类 ( <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/c417e2fd267e1dfa880b7ff9d37aaaa7b5eab9ca/nav2_behavior_tree/include/nav2_behavior_tree/bt_service_node.hpp">here</a> )。与已经存在的虚拟 <code class="docutils literal notranslate"><span class="pre">on_wait_for_result()</span></code> 函数类似，它可以在子类中被覆盖，以便通过一些用户定义的操作对相应的事件做出反应。添加的 <code class="docutils literal notranslate"><span class="pre">on_completion()</span></code> 功能将在 <code class="docutils literal notranslate"><span class="pre">BtServiceNode</span></code> 的服务交互成功完成后调用。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=946">[校准&#64;fish]</a></p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm">* @brief Function to perform some user-defined operation upon successful</span>
 <span class="cm">* completion of the service. Could put a value on the blackboard.</span>
@@ -847,97 +847,97 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>返回的 “BT:: nodestatus” 将设置BT节点的当前状态。由于函数可以访问服务的结果，因此返回的节点状态可以依赖于这些服务结果，例如。 <code class="docutils literal notranslate"><span class="pre">BtServiceNode</span></code> 的正常行为不受引入 <code class="docutils literal notranslate"><span class="pre">on_completion()</span></code> 功能的影响，因为如果服务交互成功完成，默认实现仍然简单地返回 “bt::NodeStatus:: success”。     <a class="reference external" href="http://www.fishros.com/calib#msgid=947">[校准&#64;fish]</a></p>
+<p>返回的 “BT:: nodestatus” 将设置BT节点的当前状态。由于函数可以访问服务的结果，因此返回的节点状态可以依赖于这些服务结果，例如。 <code class="docutils literal notranslate"><span class="pre">BtServiceNode</span></code> 的正常行为不受引入 <code class="docutils literal notranslate"><span class="pre">on_completion()</span></code> 功能的影响，因为如果服务交互成功完成，默认实现仍然简单地返回 “bt::NodeStatus:: success”。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=947">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="including-new-rotation-shim-controller-plugin">
-<h2>包括新旋转垫片控制器插件     <a class="reference external" href="http://www.fishros.com/calib#msgid=948">[校准&#64;fish]</a><a class="headerlink" href="#including-new-rotation-shim-controller-plugin" title="永久链接至标题"></a></h2>
-<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2718">PR</a> 介绍新 <code class="docutils literal notranslate"><span class="pre">nav2_rotation_shim_controller</span></code> 。该控制器将检查粗糙标题差别关于机器人和新收到路径。如果内门槛，将请求传递到主控制器执行。如果是外面的门槛，控制器将旋转机器人的路径标题。一旦它在公差范围内，它就会将控制执行从这个旋转垫片控制器传递到主控制器插件上。此时，机器人仍然是旋转，允许电流插件采取控制平滑切换到路径跟踪。     <a class="reference external" href="http://www.fishros.com/calib#msgid=949">[校准&#64;fish]</a></p>
-<p>旋转垫片控制器适用于:     <a class="reference external" href="http://www.fishros.com/calib#msgid=950">[校准&#64;fish]</a></p>
+<h2>包括新旋转垫片控制器插件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=948">[校准&#64;fish]</a><a class="headerlink" href="#including-new-rotation-shim-controller-plugin" title="永久链接至标题"></a></h2>
+<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2718">PR</a> 介绍新 <code class="docutils literal notranslate"><span class="pre">nav2_rotation_shim_controller</span></code> 。该控制器将检查粗糙标题差别关于机器人和新收到路径。如果内门槛，将请求传递到主控制器执行。如果是外面的门槛，控制器将旋转机器人的路径标题。一旦它在公差范围内，它就会将控制执行从这个旋转垫片控制器传递到主控制器插件上。此时，机器人仍然是旋转，允许电流插件采取控制平滑切换到路径跟踪。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=949">[校准&#64;fish]</a></p>
+<p>旋转垫片控制器适用于:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=950">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p>可以就地旋转的机器人，如差分和全向机器人。     <a class="reference external" href="http://www.fishros.com/calib#msgid=951">[校准&#64;fish]</a></p></li>
-<li><p>当开始跟踪一条与机器人当前航向明显不同的新路径时，优先选择就地旋转而不是'spiral out'。     <a class="reference external" href="http://www.fishros.com/calib#msgid=952">[校准&#64;fish]</a></p></li>
-<li><p>使用非运动学上可行的planner，如NavFn、Theta <a href="#id1"><span class="problematic" id="id2">*</span></a>，或Smac 2D (可行planner等Smac Hybrid-A*和点阵将启动搜索机器人的实际启动标题，无需旋转)。     <a class="reference external" href="http://www.fishros.com/calib#msgid=953">[校准&#64;fish]</a></p></li>
+<li><p>可以就地旋转的机器人，如差分和全向机器人。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=951">[校准&#64;fish]</a></p></li>
+<li><p>当开始跟踪一条与机器人当前航向明显不同的新路径时，优先选择就地旋转而不是'spiral out'。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=952">[校准&#64;fish]</a></p></li>
+<li><p>使用非运动学上可行的planner，如NavFn、Theta <a href="#id1"><span class="problematic" id="id2">*</span></a>，或Smac 2D (可行planner等Smac Hybrid-A*和点阵将启动搜索机器人的实际启动标题，无需旋转)。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=953">[校准&#64;fish]</a></p></li>
 </ul>
 </div>
 <div class="section" id="spawning-the-robot-in-gazebo">
-<h2>在Gazebo产生机器人     <a class="reference external" href="http://www.fishros.com/calib#msgid=954">[校准&#64;fish]</a><a class="headerlink" href="#spawning-the-robot-in-gazebo" title="永久链接至标题"></a></h2>
-<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2473">PR</a> 删除pkg <code class="docutils literal notranslate"><span class="pre">nav2_gazebo_spawner</span></code> 内nav2_bringup目录。而不是 <code class="docutils literal notranslate"><span class="pre">nav2_gazebo_spawner</span></code> 节点 <a class="reference external" href="https://github.com/ros-simulation/gazebo_ros_pkgs/blob/ros2/gazebo_ros/scripts/spawn_entity.py">spawn_entity.py</a> 的 <code class="docutils literal notranslate"><span class="pre">gazebo_ros</span></code> 是推荐产卵机器人凉亭。请注意     <a class="reference external" href="http://www.fishros.com/calib#msgid=955">[校准&#64;fish]</a></p>
+<h2>在Gazebo产生机器人     <a class="reference external" href="http://10.55.23.25:3000/#msgid=954">[校准&#64;fish]</a><a class="headerlink" href="#spawning-the-robot-in-gazebo" title="永久链接至标题"></a></h2>
+<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2473">PR</a> 删除pkg <code class="docutils literal notranslate"><span class="pre">nav2_gazebo_spawner</span></code> 内nav2_bringup目录。而不是 <code class="docutils literal notranslate"><span class="pre">nav2_gazebo_spawner</span></code> 节点 <a class="reference external" href="https://github.com/ros-simulation/gazebo_ros_pkgs/blob/ros2/gazebo_ros/scripts/spawn_entity.py">spawn_entity.py</a> 的 <code class="docutils literal notranslate"><span class="pre">gazebo_ros</span></code> 是推荐产卵机器人凉亭。请注意     <a class="reference external" href="http://10.55.23.25:3000/#msgid=955">[校准&#64;fish]</a></p>
 <blockquote>
 <div><ul class="simple">
-<li><p>gazebo启动时要保证 <code class="docutils literal notranslate"><span class="pre">libgazebo_ros_init.so</span></code> 和 <code class="docutils literal notranslate"><span class="pre">libgazebo_ros_factory.so</span></code> 工作正确。     <a class="reference external" href="http://www.fishros.com/calib#msgid=956">[校准&#64;fish]</a></p></li>
-<li><p>spawn_entity节点无法在启动文件中将/tf和/tf_static重新映射为tf和tf_static，仅用于多机器人情况。通过添加重新映射参数 “&lt;重新映射&gt;/tf:= tf&lt;/重新映射&gt;  ``  ``  &lt;重新映射&gt;/tf_static，解决了此问题: 在SDF文件中发布转换的每个插件的ros2标签下 = tf_static&lt;/remap&gt;''。区分不同机器人的tf至关重要。     <a class="reference external" href="http://www.fishros.com/calib#msgid=957">[校准&#64;fish]</a></p></li>
+<li><p>gazebo启动时要保证 <code class="docutils literal notranslate"><span class="pre">libgazebo_ros_init.so</span></code> 和 <code class="docutils literal notranslate"><span class="pre">libgazebo_ros_factory.so</span></code> 工作正确。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=956">[校准&#64;fish]</a></p></li>
+<li><p>spawn_entity节点无法在启动文件中将/tf和/tf_static重新映射为tf和tf_static，仅用于多机器人情况。通过添加重新映射参数 “&lt;重新映射&gt;/tf:= tf&lt;/重新映射&gt;  ``  ``  &lt;重新映射&gt;/tf_static，解决了此问题: 在SDF文件中发布转换的每个插件的ros2标签下 = tf_static&lt;/remap&gt;''。区分不同机器人的tf至关重要。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=957">[校准&#64;fish]</a></p></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="recovery-behavior-timeout">
 <h2>恢复行为超时<a class="headerlink" href="#recovery-behavior-timeout" title="永久链接至标题"></a></h2>
-<p>Nav2中的恢复，旋转和备份，现在有 <code class="docutils literal notranslate"><span class="pre">time_allowance</span></code> 端口在BT节点请求字段行动指定超时。这有助于确保机器人在被卡住或无法在合理的时间段内备份全部距离的情况下，能够退出备份或旋转的原始行为。     <a class="reference external" href="http://www.fishros.com/calib#msgid=959">[校准&#64;fish]</a></p>
+<p>Nav2中的恢复，旋转和备份，现在有 <code class="docutils literal notranslate"><span class="pre">time_allowance</span></code> 端口在BT节点请求字段行动指定超时。这有助于确保机器人在被卡住或无法在合理的时间段内备份全部距离的情况下，能够退出备份或旋转的原始行为。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=959">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="new-parameter-use-final-approach-orientation-for-the-3-2d-planners">
-<h2>新参数 <code class="docutils literal notranslate"><span class="pre">use_final_approach_orientation</span></code> 3 2D规划器     <a class="reference external" href="http://www.fishros.com/calib#msgid=960">[校准&#64;fish]</a><a class="headerlink" href="#new-parameter-use-final-approach-orientation-for-the-3-2d-planners" title="永久链接至标题"></a></h2>
-<p>这个 ` PR &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2488">https://github.com/ros-planning/navigation2/pull/2488</a>&gt;`_ 添加新参数 <code class="docutils literal notranslate"><span class="pre">use_final_approach_orientation</span></code> 3 2Dplanners (θ <a href="#id1"><span class="problematic" id="id2">*</span></a>，Smac规划器2D和NavFn)， <code class="docutils literal notranslate"><span class="pre">false</span></code> 默认。如果 <code class="docutils literal notranslate"><span class="pre">true</span></code> ，pose的路径生成planner将方向设置为方法取向，即方向矢量连接最后两点的路径。它允许发送机器人位置 (x，y) 而不是姿势 (x，y，θ) 有效忽略目标取向。例如，下面，同一目标的取向指出左屏幕， <code class="docutils literal notranslate"><span class="pre">use_final_approach_orientation=false</span></code>  (左) 和 <code class="docutils literal notranslate"><span class="pre">use_final_approach_orientation=true</span></code>  (右)     <a class="reference external" href="http://www.fishros.com/calib#msgid=961">[校准&#64;fish]</a></p>
+<h2>新参数 <code class="docutils literal notranslate"><span class="pre">use_final_approach_orientation</span></code> 3 2D规划器     <a class="reference external" href="http://10.55.23.25:3000/#msgid=960">[校准&#64;fish]</a><a class="headerlink" href="#new-parameter-use-final-approach-orientation-for-the-3-2d-planners" title="永久链接至标题"></a></h2>
+<p>这个 ` PR &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2488">https://github.com/ros-planning/navigation2/pull/2488</a>&gt;`_ 添加新参数 <code class="docutils literal notranslate"><span class="pre">use_final_approach_orientation</span></code> 3 2Dplanners (θ <a href="#id1"><span class="problematic" id="id2">*</span></a>，Smac规划器2D和NavFn)， <code class="docutils literal notranslate"><span class="pre">false</span></code> 默认。如果 <code class="docutils literal notranslate"><span class="pre">true</span></code> ，pose的路径生成planner将方向设置为方法取向，即方向矢量连接最后两点的路径。它允许发送机器人位置 (x，y) 而不是姿势 (x，y，θ) 有效忽略目标取向。例如，下面，同一目标的取向指出左屏幕， <code class="docutils literal notranslate"><span class="pre">use_final_approach_orientation=false</span></code>  (左) 和 <code class="docutils literal notranslate"><span class="pre">use_final_approach_orientation=true</span></code>  (右)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=961">[校准&#64;fish]</a></p>
 <a class="reference internal image-reference" href="../_images/use_final_approach_orientation_false.gif"><img alt="../_images/use_final_approach_orientation_false.gif" src="../_images/use_final_approach_orientation_false.gif" style="width: 45%;" /></a>
 <a class="reference internal image-reference" href="../_images/use_final_approach_orientation_true.gif"><img alt="../_images/use_final_approach_orientation_true.gif" src="../_images/use_final_approach_orientation_true.gif" style="width: 45%;" /></a>
 </div>
 <div class="section" id="smacplanner2d-and-theta-fix-goal-orientation-being-ignored">
-<h2>Smac规划器2D和Theta*: 修复被忽略的目标方向     <a class="reference external" href="http://www.fishros.com/calib#msgid=962">[校准&#64;fish]</a><a class="headerlink" href="#smacplanner2d-and-theta-fix-goal-orientation-being-ignored" title="永久链接至标题"></a></h2>
-<p>忽略目标姿态方向的 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2488">This PR</a> fixes <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2482">the  issue</a>  (最终路径姿态方向始终设置为0)。     <a class="reference external" href="http://www.fishros.com/calib#msgid=963">[校准&#64;fish]</a></p>
+<h2>Smac规划器2D和Theta*: 修复被忽略的目标方向     <a class="reference external" href="http://10.55.23.25:3000/#msgid=962">[校准&#64;fish]</a><a class="headerlink" href="#smacplanner2d-and-theta-fix-goal-orientation-being-ignored" title="永久链接至标题"></a></h2>
+<p>忽略目标姿态方向的 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2488">This PR</a> fixes <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2482">the  issue</a>  (最终路径姿态方向始终设置为0)。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=963">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="smacplanner2d-navfn-and-theta-fix-small-path-corner-cases">
-<h2>SmacPlanner2D、NavFn和Theta*: 修复小路径角案例     <a class="reference external" href="http://www.fishros.com/calib#msgid=964">[校准&#64;fish]</a><a class="headerlink" href="#smacplanner2d-navfn-and-theta-fix-small-path-corner-cases" title="永久链接至标题"></a></h2>
-<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2488">PR</a> 确保planners不失败时距离启动目标小 (即。当它们在同一个costmap单元格上时)，在这种情况下，输出路径由单个姿态构造。     <a class="reference external" href="http://www.fishros.com/calib#msgid=965">[校准&#64;fish]</a></p>
+<h2>SmacPlanner2D、NavFn和Theta*: 修复小路径角案例     <a class="reference external" href="http://10.55.23.25:3000/#msgid=964">[校准&#64;fish]</a><a class="headerlink" href="#smacplanner2d-navfn-and-theta-fix-small-path-corner-cases" title="永久链接至标题"></a></h2>
+<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2488">PR</a> 确保planners不失败时距离启动目标小 (即。当它们在同一个costmap单元格上时)，在这种情况下，输出路径由单个姿态构造。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=965">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="change-and-fix-behavior-of-dynamic-parameter-change-detection">
-<h2>动态参数变更检测的变更与修复行为     <a class="reference external" href="http://www.fishros.com/calib#msgid=966">[校准&#64;fish]</a><a class="headerlink" href="#change-and-fix-behavior-of-dynamic-parameter-change-detection" title="永久链接至标题"></a></h2>
-<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2576">https://github.com/ros-planning/navigation2/pull/2576</a> and <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2585">this PR</a> 修改方法抓变化动态参数。动机是解决问题 ''void on_parameter_event_callback(const rcl_interfaces: 味精: ParameterEvent: SharedPtr事件) ”呼吁各参数变化每节点导致有害参数变化如果2不同节点的参数名称。     <a class="reference external" href="http://www.fishros.com/calib#msgid=967">[校准&#64;fish]</a></p>
+<h2>动态参数变更检测的变更与修复行为     <a class="reference external" href="http://10.55.23.25:3000/#msgid=966">[校准&#64;fish]</a><a class="headerlink" href="#change-and-fix-behavior-of-dynamic-parameter-change-detection" title="永久链接至标题"></a></h2>
+<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2576">https://github.com/ros-planning/navigation2/pull/2576</a> and <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2585">this PR</a> 修改方法抓变化动态参数。动机是解决问题 ''void on_parameter_event_callback(const rcl_interfaces: 味精: ParameterEvent: SharedPtr事件) ”呼吁各参数变化每节点导致有害参数变化如果2不同节点的参数名称。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=967">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="dynamic-parameters">
 <h2>动态参数<a class="headerlink" href="#dynamic-parameters" title="永久链接至标题"></a></h2>
 <p>新增动态参数:</p>
 <ul class="simple">
-<li><p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2592">PR</a> 使大多数代价地图2DROS参数动态     <a class="reference external" href="http://www.fishros.com/calib#msgid=970">[校准&#64;fish]</a></p></li>
-<li><p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2607">This PR</a> 使大多数调节的纯追踪参数动态     <a class="reference external" href="http://www.fishros.com/calib#msgid=971">[校准&#64;fish]</a></p></li>
-<li><p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2665">This PR</a> 大多数 θ * 规划器参数动态     <a class="reference external" href="http://www.fishros.com/calib#msgid=972">[校准&#64;fish]</a></p></li>
-<li><p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2704">PR</a> 使路点追踪、规划器服务器和控制器服务器的参数可重新配置     <a class="reference external" href="http://www.fishros.com/calib#msgid=973">[校准&#64;fish]</a></p></li>
+<li><p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2592">PR</a> 使大多数代价地图2DROS参数动态     <a class="reference external" href="http://10.55.23.25:3000/#msgid=970">[校准&#64;fish]</a></p></li>
+<li><p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2607">This PR</a> 使大多数调节的纯追踪参数动态     <a class="reference external" href="http://10.55.23.25:3000/#msgid=971">[校准&#64;fish]</a></p></li>
+<li><p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2665">This PR</a> 大多数 θ * 规划器参数动态     <a class="reference external" href="http://10.55.23.25:3000/#msgid=972">[校准&#64;fish]</a></p></li>
+<li><p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2704">PR</a> 使路点追踪、规划器服务器和控制器服务器的参数可重新配置     <a class="reference external" href="http://10.55.23.25:3000/#msgid=973">[校准&#64;fish]</a></p></li>
 </ul>
 </div>
 <div class="section" id="bt-action-nodes-exception-changes">
-<h2>BTAction节点异常更改     <a class="reference external" href="http://www.fishros.com/calib#msgid=974">[校准&#64;fish]</a><a class="headerlink" href="#bt-action-nodes-exception-changes" title="永久链接至标题"></a></h2>
-<p>当BT操作节点由于网络或操作服务器故障而引发异常时，它们现在返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 的状态代码，以使行为树中的特定操作失败以做出反应。这与从网络引发的异常发送到根树的先验相反，根树将被视为任务级故障，树无法对此做出反应。     <a class="reference external" href="http://www.fishros.com/calib#msgid=975">[校准&#64;fish]</a></p>
+<h2>BTAction节点异常更改     <a class="reference external" href="http://10.55.23.25:3000/#msgid=974">[校准&#64;fish]</a><a class="headerlink" href="#bt-action-nodes-exception-changes" title="永久链接至标题"></a></h2>
+<p>当BT操作节点由于网络或操作服务器故障而引发异常时，它们现在返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 的状态代码，以使行为树中的特定操作失败以做出反应。这与从网络引发的异常发送到根树的先验相反，根树将被视为任务级故障，树无法对此做出反应。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=975">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="bt-navigator-groot-multiple-navigators">
-<h2>BT Navigator Groot多重导航器     <a class="reference external" href="http://www.fishros.com/calib#msgid=976">[校准&#64;fish]</a><a class="headerlink" href="#bt-navigator-groot-multiple-navigators" title="永久链接至标题"></a></h2>
-<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2627">PR</a> 为NavToPose和navvia poses导航器类型的groot监视创建单独的参数，以便您可以通过ZMQ发布者单独跟踪每个行为树的状态。在我们向BT navigator添加了多个导航器类型之后，这解决了一个长期存在的问题，即您只能查看nav来实时执行BT。BT。CPP和Groot一次只支持一个静态ZMQ流，因此，有一个奇怪的地方，你必须在切换树后本地重置Groot，以便通过BT姿势查看导航的实时流 (如果使用的话)。这是BT.CPP和Groot库的状态，不是我们可以在Nav2中解决的问题。     <a class="reference external" href="http://www.fishros.com/calib#msgid=977">[校准&#64;fish]</a></p>
-<p>由于这个怪癖和几乎可以肯定的关于该主题的门票输入，对于使用Groot的实时BT监控的完全弃用，未来有一些想法。然而，Groot将始终支持可视化行为树XML文件和修改，而不支持在机器人导航期间实时可视化BT执行。     <a class="reference external" href="http://www.fishros.com/calib#msgid=978">[校准&#64;fish]</a></p>
+<h2>BT Navigator Groot多重导航器     <a class="reference external" href="http://10.55.23.25:3000/#msgid=976">[校准&#64;fish]</a><a class="headerlink" href="#bt-navigator-groot-multiple-navigators" title="永久链接至标题"></a></h2>
+<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2627">PR</a> 为NavToPose和navvia poses导航器类型的groot监视创建单独的参数，以便您可以通过ZMQ发布者单独跟踪每个行为树的状态。在我们向BT navigator添加了多个导航器类型之后，这解决了一个长期存在的问题，即您只能查看nav来实时执行BT。BT。CPP和Groot一次只支持一个静态ZMQ流，因此，有一个奇怪的地方，你必须在切换树后本地重置Groot，以便通过BT姿势查看导航的实时流 (如果使用的话)。这是BT.CPP和Groot库的状态，不是我们可以在Nav2中解决的问题。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=977">[校准&#64;fish]</a></p>
+<p>由于这个怪癖和几乎可以肯定的关于该主题的门票输入，对于使用Groot的实时BT监控的完全弃用，未来有一些想法。然而，Groot将始终支持可视化行为树XML文件和修改，而不支持在机器人导航期间实时可视化BT执行。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=978">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="removed-kinematic-limiting-in-rpp">
 <h2>删除运动学限制RPP<a class="headerlink" href="#removed-kinematic-limiting-in-rpp" title="永久链接至标题"></a></h2>
-<p>参数 <code class="docutils literal notranslate"><span class="pre">max_linear_accel</span></code> 和 <code class="docutils literal notranslate"><span class="pre">max_linear_decel</span></code> 与引起不稳定性的控制器中的运动限制一起被移除。相反，如果您想要类似的行为，请使用ROS生态系统中可用的速度平滑器。     <a class="reference external" href="http://www.fishros.com/calib#msgid=980">[校准&#64;fish]</a></p>
+<p>参数 <code class="docutils literal notranslate"><span class="pre">max_linear_accel</span></code> 和 <code class="docutils literal notranslate"><span class="pre">max_linear_decel</span></code> 与引起不稳定性的控制器中的运动限制一起被移除。相反，如果您想要类似的行为，请使用ROS生态系统中可用的速度平滑器。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=980">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="removed-use-approach-velocity-scaling-param-in-rpp">
-<h2>删除使用方法速度缩放参数在RPP     <a class="reference external" href="http://www.fishros.com/calib#msgid=981">[校准&#64;fish]</a><a class="headerlink" href="#removed-use-approach-velocity-scaling-param-in-rpp" title="永久链接至标题"></a></h2>
-<p>参数 <code class="docutils literal notranslate"><span class="pre">use_approach_linear_velocity_scaling</span></code> 删除赞成总是帮助光滑过渡目标。 这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2701">PR</a> 实现。     <a class="reference external" href="http://www.fishros.com/calib#msgid=982">[校准&#64;fish]</a></p>
+<h2>删除使用方法速度缩放参数在RPP     <a class="reference external" href="http://10.55.23.25:3000/#msgid=981">[校准&#64;fish]</a><a class="headerlink" href="#removed-use-approach-velocity-scaling-param-in-rpp" title="永久链接至标题"></a></h2>
+<p>参数 <code class="docutils literal notranslate"><span class="pre">use_approach_linear_velocity_scaling</span></code> 删除赞成总是帮助光滑过渡目标。 这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2701">PR</a> 实现。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=982">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="refactored-amcl-motion-models-as-plugins">
-<h2>将AMCL运动模型重构为插件     <a class="reference external" href="http://www.fishros.com/calib#msgid=983">[校准&#64;fish]</a><a class="headerlink" href="#refactored-amcl-motion-models-as-plugins" title="永久链接至标题"></a></h2>
-<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2642">PR</a> 为AMCL目前使用的不同运动模型创建插件。此功能使用户能够使用任何自定义运动模型，方法是将其创建为插件，并将robot_model_type参数更改为nav2_params.yaml文件中插件的名称。这有助于使用自定义运动模型，而无需修改AMCL源代码。     <a class="reference external" href="http://www.fishros.com/calib#msgid=984">[校准&#64;fish]</a></p>
+<h2>将AMCL运动模型重构为插件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=983">[校准&#64;fish]</a><a class="headerlink" href="#refactored-amcl-motion-models-as-plugins" title="永久链接至标题"></a></h2>
+<p>这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2642">PR</a> 为AMCL目前使用的不同运动模型创建插件。此功能使用户能够使用任何自定义运动模型，方法是将其创建为插件，并将robot_model_type参数更改为nav2_params.yaml文件中插件的名称。这有助于使用自定义运动模型，而无需修改AMCL源代码。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=984">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="dropping-support-for-live-groot-monitoring-of-nav2">
-<h2>放弃对Nav2实时Groot监控的支持     <a class="reference external" href="http://www.fishros.com/calib#msgid=985">[校准&#64;fish]</a><a class="headerlink" href="#dropping-support-for-live-groot-monitoring-of-nav2" title="永久链接至标题"></a></h2>
+<h2>放弃对Nav2实时Groot监控的支持     <a class="reference external" href="http://10.55.23.25:3000/#msgid=985">[校准&#64;fish]</a><a class="headerlink" href="#dropping-support-for-live-groot-monitoring-of-nav2" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2642">https://github.com/ros-planning/navigation2/pull/2642</a>     <a class="reference external" href="http://www.fishros.com/calib#msgid=986">[校准&#64;fish]</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2642">https://github.com/ros-planning/navigation2/pull/2642</a>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=986">[校准&#64;fish]</a></p></li>
 </ul>
-<p>这是一个很棒的功能创意，但从未完全实现，尤其是在我们在BT navigator服务器中引入了多种Navigator类型之后。我们主要遇到的问题是，零MQ阻止用户在同一进程中生成多个记录器类型。由于英国电信导航系统有多个服务器，它们之间的交换以供查看，从来没有一个干净的切换，导致人们提交票证，或者出现讨厌的日志，或者ZMQ在后台崩溃。BT.CPP客户端这't allow us to have a clean shutdown process so we'重新留下希望ZMQ正确处理情况，很少。此外，Groot一次仅支持可视化一种类型的树，因此对于经常在导航器类型之间切换的应用程序，不可能使用单个groot客户端，这导致了极大的挫败感。     <a class="reference external" href="http://www.fishros.com/calib#msgid=987">[校准&#64;fish]</a></p>
-<p>所以，我提出这是删除活监测BT从Nav2。** 我们仍然可以使用格鲁特修改、可视化和一般工作行为树 <a href="#id1"><span class="problematic" id="id2">**</span></a>，唯一正在删除生活查看执行行为树Nav2目前执行 (用来照亮盒子当前节点)。这令人怀疑阀门总之，因为树蜱所以快速难以可视化得到有意义见解事情系统移动很快。     <a class="reference external" href="http://www.fishros.com/calib#msgid=988">[校准&#64;fish]</a></p>
+<p>这是一个很棒的功能创意，但从未完全实现，尤其是在我们在BT navigator服务器中引入了多种Navigator类型之后。我们主要遇到的问题是，零MQ阻止用户在同一进程中生成多个记录器类型。由于英国电信导航系统有多个服务器，它们之间的交换以供查看，从来没有一个干净的切换，导致人们提交票证，或者出现讨厌的日志，或者ZMQ在后台崩溃。BT.CPP客户端这't allow us to have a clean shutdown process so we'重新留下希望ZMQ正确处理情况，很少。此外，Groot一次仅支持可视化一种类型的树，因此对于经常在导航器类型之间切换的应用程序，不可能使用单个groot客户端，这导致了极大的挫败感。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=987">[校准&#64;fish]</a></p>
+<p>所以，我提出这是删除活监测BT从Nav2。** 我们仍然可以使用格鲁特修改、可视化和一般工作行为树 <a href="#id1"><span class="problematic" id="id2">**</span></a>，唯一正在删除生活查看执行行为树Nav2目前执行 (用来照亮盒子当前节点)。这令人怀疑阀门总之，因为树蜱所以快速难以可视化得到有意义见解事情系统移动很快。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=988">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="fix-costmaplayer-cleararea-invert-param-logic">
-<h2>Fix CostmapLayer clearArea invert param logic   <a class="reference external" href="http://www.fishros.com/calib#msgid=989">[校准&#64;fish]</a><a class="headerlink" href="#fix-costmaplayer-cleararea-invert-param-logic" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2772">This PR</a> fixes the invert paramlogic of the CostmapLayer clearArea fonction. Hence correcting the behavior of the clearAroundRobot and clearExceptRegion services and their corresponding BT actions.   <a class="reference external" href="http://www.fishros.com/calib#msgid=990">[校准&#64;fish]</a></p>
+<h2>Fix CostmapLayer clearArea invert param logic   <a class="reference external" href="http://10.55.23.25:3000/#msgid=989">[校准&#64;fish]</a><a class="headerlink" href="#fix-costmaplayer-cleararea-invert-param-logic" title="永久链接至标题"></a></h2>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2772">This PR</a> fixes the invert paramlogic of the CostmapLayer clearArea fonction. Hence correcting the behavior of the clearAroundRobot and clearExceptRegion services and their corresponding BT actions.   <a class="reference external" href="http://10.55.23.25:3000/#msgid=990">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="dynamic-composition">
-<h2>Dynamic Composition   <a class="reference external" href="http://www.fishros.com/calib#msgid=991">[校准&#64;fish]</a><a class="headerlink" href="#dynamic-composition" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2750">This PR</a> provides a optional bringup based on ROS2 dynamic composition for users. It can be used to compose all Nav2 nodes in a single process instead of launching these nodes separately, which is useful for embedded systems users that need to make optimizations due to harsh resource constraints. it's used by default, but can be disabled by using the launch argument <code class="docutils literal notranslate"><span class="pre">use_composition:=False</span></code>.   <a class="reference external" href="http://www.fishros.com/calib#msgid=992">[校准&#64;fish]</a></p>
-<p>Some experiments to show performance improvement of dynamic composition, and the cpu and memory are captured by <code class="docutils literal notranslate"><span class="pre">psutil</span></code> :   <a class="reference external" href="http://www.fishros.com/calib#msgid=993">[校准&#64;fish]</a></p>
+<h2>Dynamic Composition   <a class="reference external" href="http://10.55.23.25:3000/#msgid=991">[校准&#64;fish]</a><a class="headerlink" href="#dynamic-composition" title="永久链接至标题"></a></h2>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2750">This PR</a> provides a optional bringup based on ROS2 dynamic composition for users. It can be used to compose all Nav2 nodes in a single process instead of launching these nodes separately, which is useful for embedded systems users that need to make optimizations due to harsh resource constraints. it's used by default, but can be disabled by using the launch argument <code class="docutils literal notranslate"><span class="pre">use_composition:=False</span></code>.   <a class="reference external" href="http://10.55.23.25:3000/#msgid=992">[校准&#64;fish]</a></p>
+<p>Some experiments to show performance improvement of dynamic composition, and the cpu and memory are captured by <code class="docutils literal notranslate"><span class="pre">psutil</span></code> :   <a class="reference external" href="http://10.55.23.25:3000/#msgid=993">[校准&#64;fish]</a></p>
 <blockquote>
 <div><table class="docutils align-default">
 <colgroup>
@@ -946,24 +946,24 @@
 <col style="width: 12%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>CPU: Intel(R) i7-8700 (6Cores 12Threads), Memory: 32GB   <a class="reference external" href="http://www.fishros.com/calib#msgid=994">[校准&#64;fish]</a></p></th>
+<tr class="row-odd"><th class="head"><p>CPU: Intel(R) i7-8700 (6Cores 12Threads), Memory: 32GB   <a class="reference external" href="http://10.55.23.25:3000/#msgid=994">[校准&#64;fish]</a></p></th>
 <th class="head"><p>cpu(%)</p></th>
 <th class="head"><p>memory(%)</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>normal multiple processes   <a class="reference external" href="http://www.fishros.com/calib#msgid=997">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>normal multiple processes   <a class="reference external" href="http://10.55.23.25:3000/#msgid=997">[校准&#64;fish]</a></p></td>
 <td><p>44</p></td>
 <td><p>0.76</p></td>
 </tr>
-<tr class="row-odd"><td><p>dynamic composition (use <code class="docutils literal notranslate"><span class="pre">component_container_isolated</span></code>)   <a class="reference external" href="http://www.fishros.com/calib#msgid=1000">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>dynamic composition (use <code class="docutils literal notranslate"><span class="pre">component_container_isolated</span></code>)   <a class="reference external" href="http://10.55.23.25:3000/#msgid=1000">[校准&#64;fish]</a></p></td>
 <td><p>38</p></td>
 <td><p>0.23</p></td>
 </tr>
 </tbody>
 </table>
 </div></blockquote>
-<p>The way of dynamic composition consumes lower memory(saves ~70%),  and lower cpu (saves ~13%) than normal multiple processes.   <a class="reference external" href="http://www.fishros.com/calib#msgid=1003">[校准&#64;fish]</a></p>
+<p>The way of dynamic composition consumes lower memory(saves ~70%),  and lower cpu (saves ~13%) than normal multiple processes.   <a class="reference external" href="http://10.55.23.25:3000/#msgid=1003">[校准&#64;fish]</a></p>
 </div>
 </div>
 

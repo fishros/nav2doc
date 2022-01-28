@@ -741,18 +741,18 @@
 <li><p><a class="reference internal" href="#requirements">Requirements</a></p></li>
 <li><p><a class="reference internal" href="#tutorial-steps">Tutorial Steps</a></p></li>
 </ul>
-<a class="reference internal image-reference" href="../../_images/nav2_pure_pursuit_gif.gif"><img alt="纯粹追求控制器演示的gif动画     `[校准&#64;fish] &lt;http://www.fishros.com/calib#msgid=2101&gt;`_ " class="align-center" src="../../_images/nav2_pure_pursuit_gif.gif" style="width: 640px;" /></a>
+<a class="reference internal image-reference" href="../../_images/nav2_pure_pursuit_gif.gif"><img alt="纯粹追求控制器演示的gif动画     `[校准&#64;fish] &lt;http://10.55.23.25:3000/#msgid=2101&gt;`_ " class="align-center" src="../../_images/nav2_pure_pursuit_gif.gif" style="width: 640px;" /></a>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>本教程展示了如何创建自己的控制器 <a class="reference external" href="https://index.ros.org/p/pluginlib/">plugin</a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2102">[校准&#64;fish]</a></p>
-<p>在本教程中，我们将实施单纯追求路径跟踪算法基于此 <a class="reference external" href="https://www.ri.cmu.edu/pub_files/pub3/coulter_r_craig_1992_1/coulter_r_craig_1992_1.pdf">paper</a> 。建议你去通过它。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2103">[校准&#64;fish]</a></p>
-<p>注意: 本教程是基于先前现有简化版本稳压纯追求控制器现在Nav2堆栈。你可以找到源代码匹配本教程 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/tree/126902457c5c646b136569886d6325f070c1073d/nav2_pure_pursuit_controller">here</a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2104">[校准&#64;fish]</a></p>
+<p>本教程展示了如何创建自己的控制器 <a class="reference external" href="https://index.ros.org/p/pluginlib/">plugin</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2102">[校准&#64;fish]</a></p>
+<p>在本教程中，我们将实施单纯追求路径跟踪算法基于此 <a class="reference external" href="https://www.ri.cmu.edu/pub_files/pub3/coulter_r_craig_1992_1/coulter_r_craig_1992_1.pdf">paper</a> 。建议你去通过它。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2103">[校准&#64;fish]</a></p>
+<p>注意: 本教程是基于先前现有简化版本稳压纯追求控制器现在Nav2堆栈。你可以找到源代码匹配本教程 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/tree/126902457c5c646b136569886d6325f070c1073d/nav2_pure_pursuit_controller">here</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2104">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p>ROS 2 (二进制或从源代码构建)     <a class="reference external" href="http://www.fishros.com/calib#msgid=1995">[校准&#64;fish]</a></p></li>
-<li><p>Nav2 (包括依赖项)     <a class="reference external" href="http://www.fishros.com/calib#msgid=1996">[校准&#64;fish]</a></p></li>
+<li><p>ROS 2 (二进制或从源代码构建)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1995">[校准&#64;fish]</a></p></li>
+<li><p>Nav2 (包括依赖项)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1996">[校准&#64;fish]</a></p></li>
 <li><p>Gazebo</p></li>
 <li><p>Turtlebot3</p></li>
 </ul>
@@ -760,9 +760,9 @@
 <div class="section" id="tutorial-steps">
 <h2>教程步骤<a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="create-a-new-controller-plugin">
-<h3>1-创建一个新的控制器插件     <a class="reference external" href="http://www.fishros.com/calib#msgid=2105">[校准&#64;fish]</a><a class="headerlink" href="#create-a-new-controller-plugin" title="永久链接至标题"></a></h3>
-<p>我们将实施纯追求控制器。注解本教程中的代码在 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials">navigation_tutorials</a> 库的 <code class="docutils literal notranslate"><span class="pre">nav2_pure_pursuit_controller</span></code> 。这个包可以参考写下自己控制器插件。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2106">[校准&#64;fish]</a></p>
-<p>我们例子插件类 ”nav2_pure_pursuit_controller: PurePursuit控制器 `` inherits from the base class `` nav2_core: 控制器”。基类提供一组虚拟方法实现控制器插件。调用这些方法在运行控制器服务器计算速度命令。方法列表及其说明，必要性提出下表:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2107">[校准&#64;fish]</a></p>
+<h3>1-创建一个新的控制器插件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2105">[校准&#64;fish]</a><a class="headerlink" href="#create-a-new-controller-plugin" title="永久链接至标题"></a></h3>
+<p>我们将实施纯追求控制器。注解本教程中的代码在 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials">navigation_tutorials</a> 库的 <code class="docutils literal notranslate"><span class="pre">nav2_pure_pursuit_controller</span></code> 。这个包可以参考写下自己控制器插件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2106">[校准&#64;fish]</a></p>
+<p>我们例子插件类 ”nav2_pure_pursuit_controller: PurePursuit控制器 `` inherits from the base class `` nav2_core: 控制器”。基类提供一组虚拟方法实现控制器插件。调用这些方法在运行控制器服务器计算速度命令。方法列表及其说明，必要性提出下表:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2107">[校准&#64;fish]</a></p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -772,36 +772,36 @@
 <tbody>
 <tr class="row-odd"><td><p>虚拟方法</p></td>
 <td><p>方法描述</p></td>
-<td><p>Requires需要覆盖？**     <a class="reference external" href="http://www.fishros.com/calib#msgid=2052">[校准&#64;fish]</a></p></td>
+<td><p>Requires需要覆盖？**     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2052">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-even"><td><p>configure()     <a class="reference external" href="http://www.fishros.com/calib#msgid=2108">[校准&#64;fish]</a></p></td>
-<td><p>当控制器服务器进入on_configure状态时调用方法。理想情况下，该方法应执行ROS参数的声明和控制器成员变量的初始化。该方法采用4个输入参数: 弱指针到父节点、控制器名称、tf缓冲区指针和共享指针到costmap。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2109">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>configure()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2108">[校准&#64;fish]</a></p></td>
+<td><p>当控制器服务器进入on_configure状态时调用方法。理想情况下，该方法应执行ROS参数的声明和控制器成员变量的初始化。该方法采用4个输入参数: 弱指针到父节点、控制器名称、tf缓冲区指针和共享指针到costmap。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2109">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
 <tr class="row-odd"><td><p>activate()</p></td>
-<td><p>当控制器服务器进入on_activate状态时调用方法。理想情况下，该方法应在控制器进入活动状态之前实现必要的操作。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2111">[校准&#64;fish]</a></p></td>
+<td><p>当控制器服务器进入on_activate状态时调用方法。理想情况下，该方法应在控制器进入活动状态之前实现必要的操作。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2111">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
-<tr class="row-even"><td><p>deactivate()     <a class="reference external" href="http://www.fishros.com/calib#msgid=2112">[校准&#64;fish]</a></p></td>
-<td><p>方法时调用控制器服务器进入on_deactivate状态。理想此方法执行的操作必要之前控制器去非活动状态。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2113">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>deactivate()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2112">[校准&#64;fish]</a></p></td>
+<td><p>方法时调用控制器服务器进入on_deactivate状态。理想此方法执行的操作必要之前控制器去非活动状态。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2113">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
 <tr class="row-odd"><td><p>cleanup()</p></td>
-<td><p>当控制器服务器进入on_clean状态时调用方法。理想情况下，该方法应清理为控制器创建的资源。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2115">[校准&#64;fish]</a></p></td>
+<td><p>当控制器服务器进入on_clean状态时调用方法。理想情况下，该方法应清理为控制器创建的资源。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2115">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
 <tr class="row-even"><td><p>setPlan()</p></td>
-<td><p>在更新全局计划时调用方法。理想情况下，该方法应执行转换和存储全局计划的操作。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2117">[校准&#64;fish]</a></p></td>
+<td><p>在更新全局计划时调用方法。理想情况下，该方法应执行转换和存储全局计划的操作。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2117">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
-<tr class="row-odd"><td><p>computeVelocityCommands()     <a class="reference external" href="http://www.fishros.com/calib#msgid=2118">[校准&#64;fish]</a></p></td>
-<td><p>当控制器服务器要求新的速度命令以使机器人遵循全局路径时，将调用方法。此方法返回 “几何 _ msgs::msg::TwistStamped'，表示机器人驱动的速度命令。该方法传递2个参数: 参考当前机器人姿势及其当前速度。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2119">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>computeVelocityCommands()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2118">[校准&#64;fish]</a></p></td>
+<td><p>当控制器服务器要求新的速度命令以使机器人遵循全局路径时，将调用方法。此方法返回 “几何 _ msgs::msg::TwistStamped'，表示机器人驱动的速度命令。该方法传递2个参数: 参考当前机器人姿势及其当前速度。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2119">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
 </tbody>
 </table>
-<p>在本教程中，我们将使用方法 “pureseek控制器:: 配置”，“pureseek控制器::setPlan `` and `` pureseek控制器:: computevelocitycommand”。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2120">[校准&#64;fish]</a></p>
-<p>在控制器， <code class="docutils literal notranslate"><span class="pre">configure()</span></code> 方法必须员变量ROS参数并执行任何初始化，     <a class="reference external" href="http://www.fishros.com/calib#msgid=2121">[校准&#64;fish]</a></p>
+<p>在本教程中，我们将使用方法 “pureseek控制器:: 配置”，“pureseek控制器::setPlan `` and `` pureseek控制器:: computevelocitycommand”。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2120">[校准&#64;fish]</a></p>
+<p>在控制器， <code class="docutils literal notranslate"><span class="pre">configure()</span></code> 方法必须员变量ROS参数并执行任何初始化，     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2121">[校准&#64;fish]</a></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">PurePursuitController::configure</span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">LifecycleNode</span><span class="o">::</span><span class="n">WeakPtr</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">tf2_ros</span><span class="o">::</span><span class="n">Buffer</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">tf</span><span class="p">,</span><span class="w"></span>
@@ -838,9 +838,9 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>在这里，“plugin_name _ +”。desired_线性化 _ vel “” 正在获取特定于我们的控制器的ROS参数 <code class="docutils literal notranslate"><span class="pre">desired_linear_vel</span></code> 。Nav2允许加载多个插件，为了使事情井然有序，每个插件都映射到某个账号/名称。现在，如果我们想要检索那个特定插件的参数，我们使用上面片段中所做的 <code class="docutils literal notranslate"><span class="pre">&lt;mapped_name_of_plugin&gt;.&lt;name_of_parameter&gt;</span></code> 。例如，我们的示例控制器映射到名称 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> ，为了检索特定于 “跟随路径” 的 <code class="docutils literal notranslate"><span class="pre">desired_linear_vel</span> <span class="pre">parameter</span></code> ，我们使用了 <code class="docutils literal notranslate"><span class="pre">FollowPath.desired_linear_vel</span></code> 。换句话说， <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 被用作插件特定参数的命名空间。当我们讨论参数文件 (或params文件) 时，我们将看到更多有关此的信息。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2122">[校准&#64;fish]</a></p>
-<p>传入的参数存储在成员变量中，以便在需要时可以在稍后阶段使用它们。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2123">[校准&#64;fish]</a></p>
-<p>在 <code class="docutils literal notranslate"><span class="pre">setPlan()</span></code> 法中，我们收到机器人要遵循的更新的全局路径。在我们的示例中，我们将接收到的全局路径转换为机器人的框架，然后存储此转换后的全局路径以供以后使用。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2124">[校准&#64;fish]</a></p>
+<p>在这里，“plugin_name _ +”。desired_线性化 _ vel “” 正在获取特定于我们的控制器的ROS参数 <code class="docutils literal notranslate"><span class="pre">desired_linear_vel</span></code> 。Nav2允许加载多个插件，为了使事情井然有序，每个插件都映射到某个账号/名称。现在，如果我们想要检索那个特定插件的参数，我们使用上面片段中所做的 <code class="docutils literal notranslate"><span class="pre">&lt;mapped_name_of_plugin&gt;.&lt;name_of_parameter&gt;</span></code> 。例如，我们的示例控制器映射到名称 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> ，为了检索特定于 “跟随路径” 的 <code class="docutils literal notranslate"><span class="pre">desired_linear_vel</span> <span class="pre">parameter</span></code> ，我们使用了 <code class="docutils literal notranslate"><span class="pre">FollowPath.desired_linear_vel</span></code> 。换句话说， <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 被用作插件特定参数的命名空间。当我们讨论参数文件 (或params文件) 时，我们将看到更多有关此的信息。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2122">[校准&#64;fish]</a></p>
+<p>传入的参数存储在成员变量中，以便在需要时可以在稍后阶段使用它们。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2123">[校准&#64;fish]</a></p>
+<p>在 <code class="docutils literal notranslate"><span class="pre">setPlan()</span></code> 法中，我们收到机器人要遵循的更新的全局路径。在我们的示例中，我们将接收到的全局路径转换为机器人的框架，然后存储此转换后的全局路径以供以后使用。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2124">[校准&#64;fish]</a></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">PurePursuitController::setPlan</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">nav_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Path</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">path</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="c1">// Transform global path into the robot&#39;s frame</span>
@@ -848,7 +848,7 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>所需速度的计算采用 <code class="docutils literal notranslate"><span class="pre">computeVelocityCommands()</span></code> 法。它用于计算给定当前速度和姿态的所需速度指令。在纯追求的情况下，该算法计算速度命令，使得机器人试图尽可能接近地跟随全局路径。该算法假设一个恒定的线速度，并基于全局路径的曲率计算角速度。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2125">[校准&#64;fish]</a></p>
+<p>所需速度的计算采用 <code class="docutils literal notranslate"><span class="pre">computeVelocityCommands()</span></code> 法。它用于计算给定当前速度和姿态的所需速度指令。在纯追求的情况下，该算法计算速度命令，使得机器人试图尽可能接近地跟随全局路径。该算法假设一个恒定的线速度，并基于全局路径的曲率计算角速度。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2125">[校准&#64;fish]</a></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">TwistStamped</span><span class="w"> </span><span class="nf">PurePursuitController::computeVelocityCommands</span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PoseStamped</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">pose</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Twist</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">velocity</span><span class="p">)</span><span class="w"></span>
@@ -891,30 +891,30 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>其余方法不使用，但强制覆盖它们。根据规则，我们覆盖所有但留在空。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2126">[校准&#64;fish]</a></p>
+<p>其余方法不使用，但强制覆盖它们。根据规则，我们覆盖所有但留在空。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2126">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="exporting-the-controller-plugin">
 <h3>2导出控制器插件<a class="headerlink" href="#exporting-the-controller-plugin" title="永久链接至标题"></a></h3>
-<p>现在我们已经创建了自定义控制器，我们需要导出控制器插件，以便控制器服务器可以看到它。插件是在运行时加载的，如果它们不可见，那么我们的控制器服务器将无法加载它。在ROS 2中，导出和加载插件由 <code class="docutils literal notranslate"><span class="pre">pluginlib</span></code> 处理。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2128">[校准&#64;fish]</a></p>
-<p>来到我们的教程，类 “nav2_pure_pursuit_control:: pureseek控制器 `` is loaded dynamically as `` nav2_core::控制器” 是我们的基类。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2129">[校准&#64;fish]</a></p>
+<p>现在我们已经创建了自定义控制器，我们需要导出控制器插件，以便控制器服务器可以看到它。插件是在运行时加载的，如果它们不可见，那么我们的控制器服务器将无法加载它。在ROS 2中，导出和加载插件由 <code class="docutils literal notranslate"><span class="pre">pluginlib</span></code> 处理。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2128">[校准&#64;fish]</a></p>
+<p>来到我们的教程，类 “nav2_pure_pursuit_control:: pureseek控制器 `` is loaded dynamically as `` nav2_core::控制器” 是我们的基类。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2129">[校准&#64;fish]</a></p>
 <ol class="arabic simple">
-<li><p>要导出控制器，我们需要提供两行     <a class="reference external" href="http://www.fishros.com/calib#msgid=2130">[校准&#64;fish]</a></p></li>
+<li><p>要导出控制器，我们需要提供两行     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2130">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pluginlib/class_list_macros.hpp&quot;</span><span class="cp"></span>
 <span class="n">PLUGINLIB_EXPORT_CLASS</span><span class="p">(</span><span class="n">nav2_pure_pursuit_controller</span><span class="o">::</span><span class="n">PurePursuitController</span><span class="p">,</span><span class="w"> </span><span class="n">nav2_core</span><span class="o">::</span><span class="n">Controller</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
-<p>请注意，它需要pluginlib导出插件的类。Pluginlib将提供宏 <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code> ，它负责导出的所有工作。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2131">[校准&#64;fish]</a></p>
-<p>将这些行放在文件末尾是一个很好的做法，但是从技术上讲，您也可以在顶部编写。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2132">[校准&#64;fish]</a></p>
+<p>请注意，它需要pluginlib导出插件的类。Pluginlib将提供宏 <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code> ，它负责导出的所有工作。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2131">[校准&#64;fish]</a></p>
+<p>将这些行放在文件末尾是一个很好的做法，但是从技术上讲，您也可以在顶部编写。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2132">[校准&#64;fish]</a></p>
 <ol class="arabic simple" start="2">
-<li><p>下一步是在包的根目录中创建插件的描述文件。例如，我们的教程包中的 <code class="docutils literal notranslate"><span class="pre">pure_pursuit_controller_plugin.xml</span></code> 文件。此文件包含以下信息     <a class="reference external" href="http://www.fishros.com/calib#msgid=2133">[校准&#64;fish]</a></p></li>
+<li><p>下一步是在包的根目录中创建插件的描述文件。例如，我们的教程包中的 <code class="docutils literal notranslate"><span class="pre">pure_pursuit_controller_plugin.xml</span></code> 文件。此文件包含以下信息     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2133">[校准&#64;fish]</a></p></li>
 </ol>
 <ul class="simple">
-<li><p>参数``library path``:插件的库名和它的位置。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2134">[校准&#64;fish]</a></p></li>
-<li><p>参数``class name``:class的名称。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2135">[校准&#64;fish]</a></p></li>
-<li><p>参数``class type``:类的类型     <a class="reference external" href="http://www.fishros.com/calib#msgid=2136">[校准&#64;fish]</a></p></li>
-<li><p>参数``base class``:基类的名称。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2137">[校准&#64;fish]</a></p></li>
-<li><p>参数``description``:插件的描述。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2138">[校准&#64;fish]</a></p></li>
+<li><p>参数``library path``:插件的库名和它的位置。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2134">[校准&#64;fish]</a></p></li>
+<li><p>参数``class name``:class的名称。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2135">[校准&#64;fish]</a></p></li>
+<li><p>参数``class type``:类的类型     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2136">[校准&#64;fish]</a></p></li>
+<li><p>参数``base class``:基类的名称。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2137">[校准&#64;fish]</a></p></li>
+<li><p>参数``description``:插件的描述。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2138">[校准&#64;fish]</a></p></li>
 </ul>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;library</span> <span class="na">path=</span><span class="s">&quot;nav2_pure_pursuit_controller&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;class</span> <span class="na">type=</span><span class="s">&quot;nav2_pure_pursuit_controller::PurePursuitController&quot;</span> <span class="na">base_class_type=</span><span class="s">&quot;nav2_core::Controller&quot;</span><span class="nt">&gt;</span>
@@ -926,13 +926,13 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>下一步是导出插件使用 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> 使用CMake功能 <code class="docutils literal notranslate"><span class="pre">pluginlib_export_plugin_description_file()</span></code> 。此函数将插件描述文件安装到 <code class="docutils literal notranslate"><span class="pre">share</span></code> 目录，并设置属性索引以使其可被发现。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2139">[校准&#64;fish]</a></p></li>
+<li><p>下一步是导出插件使用 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> 使用CMake功能 <code class="docutils literal notranslate"><span class="pre">pluginlib_export_plugin_description_file()</span></code> 。此函数将插件描述文件安装到 <code class="docutils literal notranslate"><span class="pre">share</span></code> 目录，并设置属性索引以使其可被发现。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2139">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pluginlib_export_plugin_description_file(nav2_core pure_pursuit_controller_plugin.xml)
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>插件描述文件也应添加到 <code class="docutils literal notranslate"><span class="pre">package.xml</span></code>      <a class="reference external" href="http://www.fishros.com/calib#msgid=2140">[校准&#64;fish]</a></p></li>
+<li><p>插件描述文件也应添加到 <code class="docutils literal notranslate"><span class="pre">package.xml</span></code>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=2140">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;export&gt;</span>
   <span class="nt">&lt;build_type&gt;</span>ament_cmake<span class="nt">&lt;/build_type&gt;</span>
@@ -941,12 +941,12 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>编译，它应该被注册。接下来，我们将使用这个插件。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2141">[校准&#64;fish]</a></p></li>
+<li><p>编译，它应该被注册。接下来，我们将使用这个插件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2141">[校准&#64;fish]</a></p></li>
 </ol>
 </div>
 <div class="section" id="pass-the-plugin-name-through-the-params-file">
-<h3>3-通过params文件传递插件名称     <a class="reference external" href="http://www.fishros.com/calib#msgid=2142">[校准&#64;fish]</a><a class="headerlink" href="#pass-the-plugin-name-through-the-params-file" title="永久链接至标题"></a></h3>
-<p>为了启用插件，我们需要如下修改 <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> 文件     <a class="reference external" href="http://www.fishros.com/calib#msgid=2143">[校准&#64;fish]</a></p>
+<h3>3-通过params文件传递插件名称     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2142">[校准&#64;fish]</a><a class="headerlink" href="#pass-the-plugin-name-through-the-params-file" title="永久链接至标题"></a></h3>
+<p>为了启用插件，我们需要如下修改 <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> 文件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2143">[校准&#64;fish]</a></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>controller_server:
   ros__parameters:
     controller_plugins: [&quot;FollowPath&quot;]
@@ -960,15 +960,15 @@
       transform_tolerance: 1.0
 </pre></div>
 </div>
-<p>在上面的片段中，你可以观察到我们的 <code class="docutils literal notranslate"><span class="pre">nav2_pure_pursuit_controller/PurePursuitController</span></code> 控制器与其账号 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 的映射。为了传递插件特定的参数，我们使用了 <code class="docutils literal notranslate"><span class="pre">&lt;plugin_id&gt;.&lt;plugin_specific_parameter&gt;</span></code> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2144">[校准&#64;fish]</a></p>
+<p>在上面的片段中，你可以观察到我们的 <code class="docutils literal notranslate"><span class="pre">nav2_pure_pursuit_controller/PurePursuitController</span></code> 控制器与其账号 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 的映射。为了传递插件特定的参数，我们使用了 <code class="docutils literal notranslate"><span class="pre">&lt;plugin_id&gt;.&lt;plugin_specific_parameter&gt;</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2144">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="run-pure-pursuit-controller-plugin">
-<h3>4运行纯追求控制器插件     <a class="reference external" href="http://www.fishros.com/calib#msgid=2145">[校准&#64;fish]</a><a class="headerlink" href="#run-pure-pursuit-controller-plugin" title="永久链接至标题"></a></h3>
-<p>运行Turtlebot3 仿真启用Nav2。详细说明如何使运行写在 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 。以下是快捷命令:     <a class="reference external" href="http://www.fishros.com/calib#msgid=2146">[校准&#64;fish]</a></p>
+<h3>4运行纯追求控制器插件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2145">[校准&#64;fish]</a><a class="headerlink" href="#run-pure-pursuit-controller-plugin" title="永久链接至标题"></a></h3>
+<p>运行Turtlebot3 仿真启用Nav2。详细说明如何使运行写在 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 。以下是快捷命令:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2146">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ros2 launch nav2_bringup tb3_simulation_launch.py params_file:<span class="o">=</span>/path/to/your_params_file.yaml
 </pre></div>
 </div>
-<p>然后转到RViz，点击顶部的  &quot;2D Pose Estimate&quot; 按钮，指出地图上的位置，就像 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 中描述的那样。机器人将在地图上定位，然后点击  &quot;Nav2 goal&quot; ，点击你希望机器人导航到的姿势。之后，控制器将使机器人遵循全局路径。     <a class="reference external" href="http://www.fishros.com/calib#msgid=2147">[校准&#64;fish]</a></p>
+<p>然后转到RViz，点击顶部的  &quot;2D Pose Estimate&quot; 按钮，指出地图上的位置，就像 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 中描述的那样。机器人将在地图上定位，然后点击  &quot;Nav2 goal&quot; ，点击你希望机器人导航到的姿势。之后，控制器将使机器人遵循全局路径。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2147">[校准&#64;fish]</a></p>
 </div>
 </div>
 </div>

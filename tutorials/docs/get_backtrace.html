@@ -735,7 +735,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="get-backtrace-in-ros-2-nav2">
-<span id="get-backtrace"></span><h1>在ROS 2/Nav2中获取回溯     <a class="reference external" href="http://www.fishros.com/calib#msgid=1187">[校准&#64;fish]</a><a class="headerlink" href="#get-backtrace-in-ros-2-nav2" title="永久链接至标题"></a></h1>
+<span id="get-backtrace"></span><h1>在ROS 2/Nav2中获取回溯     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1187">[校准&#64;fish]</a><a class="headerlink" href="#get-backtrace-in-ros-2-nav2" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">Overview</a></p></li>
 <li><p><a class="reference internal" href="#preliminaries">Preliminaries</a></p></li>
@@ -746,39 +746,39 @@
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>本文档解释了一组获取ROS 2和Nav2回溯的方法。有许多方法可以实现这一点，但这对于没有GDB经验的新cdevelopers开发人员来说是一个很好的起点。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1193">[校准&#64;fish]</a></p>
-<p>以下步骤向ROS 2用户展示了如何修改Nav2堆栈，以便在遇到问题时从特定服务器获取跟踪。本教程适用于模拟和物理机器人。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1194">[校准&#64;fish]</a></p>
-<p>这将涵盖如何从使用 <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span></code> 的特定节点、代表使用 <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span></code> 的单个节点的启动文件以及更复杂的节点编排中获取回溯。在本教程结束时，当您注意到服务器在ROS 2中崩溃时，您应该能够获得回溯。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1195">[校准&#64;fish]</a></p>
+<p>本文档解释了一组获取ROS 2和Nav2回溯的方法。有许多方法可以实现这一点，但这对于没有GDB经验的新cdevelopers开发人员来说是一个很好的起点。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1193">[校准&#64;fish]</a></p>
+<p>以下步骤向ROS 2用户展示了如何修改Nav2堆栈，以便在遇到问题时从特定服务器获取跟踪。本教程适用于模拟和物理机器人。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1194">[校准&#64;fish]</a></p>
+<p>这将涵盖如何从使用 <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span></code> 的特定节点、代表使用 <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span></code> 的单个节点的启动文件以及更复杂的节点编排中获取回溯。在本教程结束时，当您注意到服务器在ROS 2中崩溃时，您应该能够获得回溯。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1195">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="preliminaries">
 <h2>预备工作<a class="headerlink" href="#preliminaries" title="永久链接至标题"></a></h2>
-<p>GDB是Unix系统上最流行的C++ 调试器。它可用于确定崩溃的原因并跟踪线程。它还可以用于在代码中添加断点，以检查内存中软件中特定点的值。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1197">[校准&#64;fish]</a></p>
-<p>对于所有在C/C ++ 上工作的软件开发人员来说，使用GDB是一项关键技能。许多IDEs将内置某种调试器或分析器，但对于ROS，几乎没有可供选择的IDEs。因此，重要的是要了解如何使用这些可用的原始工具，而不是依靠IDE来提供它们。此外，理解这些工具是C/C + + 开发的一项基本技能，如果你改变角色，不再能够访问它，或者正在进行动态开发，把它留给你的集成开发环境可能是有问题的通过ssh会话到远程资产。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1198">[校准&#64;fish]</a></p>
-<p>幸运的是，在你掌握了基本知识后，使用GDB相当简单。第一步是将 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 添加到要配置文件/调试的ROS包的编译器标志中。此标志构建调试符号，GDB和valgrind可以读取这些符号，以告诉您项目中的特定代码行失败以及原因。如果您没有设置此标志，您仍然可以获得回溯，但它不会提供失败的行号。请确保在调试后删除此标志，它将降低运行时的性能。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1199">[校准&#64;fish]</a></p>
-<p>为您的项目在 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> 中添加以下一行应该可以解决问题。如果项目已经 <code class="docutils literal notranslate"><span class="pre">add_compile_options()</span></code> ，你可以简单地添加 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 。然后简单地用这个包 <code class="docutils literal notranslate"><span class="pre">colcon</span> <span class="pre">build</span> <span class="pre">--packages-select</span> <span class="pre">&lt;package-name&gt;</span></code> 重建你的工作空间。编译可能比平时花费更长的时间。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1200">[校准&#64;fish]</a></p>
+<p>GDB是Unix系统上最流行的C++ 调试器。它可用于确定崩溃的原因并跟踪线程。它还可以用于在代码中添加断点，以检查内存中软件中特定点的值。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1197">[校准&#64;fish]</a></p>
+<p>对于所有在C/C ++ 上工作的软件开发人员来说，使用GDB是一项关键技能。许多IDEs将内置某种调试器或分析器，但对于ROS，几乎没有可供选择的IDEs。因此，重要的是要了解如何使用这些可用的原始工具，而不是依靠IDE来提供它们。此外，理解这些工具是C/C + + 开发的一项基本技能，如果你改变角色，不再能够访问它，或者正在进行动态开发，把它留给你的集成开发环境可能是有问题的通过ssh会话到远程资产。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1198">[校准&#64;fish]</a></p>
+<p>幸运的是，在你掌握了基本知识后，使用GDB相当简单。第一步是将 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 添加到要配置文件/调试的ROS包的编译器标志中。此标志构建调试符号，GDB和valgrind可以读取这些符号，以告诉您项目中的特定代码行失败以及原因。如果您没有设置此标志，您仍然可以获得回溯，但它不会提供失败的行号。请确保在调试后删除此标志，它将降低运行时的性能。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1199">[校准&#64;fish]</a></p>
+<p>为您的项目在 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> 中添加以下一行应该可以解决问题。如果项目已经 <code class="docutils literal notranslate"><span class="pre">add_compile_options()</span></code> ，你可以简单地添加 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 。然后简单地用这个包 <code class="docutils literal notranslate"><span class="pre">colcon</span> <span class="pre">build</span> <span class="pre">--packages-select</span> <span class="pre">&lt;package-name&gt;</span></code> 重建你的工作空间。编译可能比平时花费更长的时间。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1200">[校准&#64;fish]</a></p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">add_compile_options</span><span class="p">(</span><span class="s">-g</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>现在，您可以调试代码了!如果这是一个非ROS项目，此时您可以执行以下操作。在这里，我们启动一个GDB会话，并告诉我们的程序立即运行。一旦您的程序崩溃，它将返回一个由 <code class="docutils literal notranslate"><span class="pre">(gdb)</span></code> 表示的gdb会话提示。在此提示下，您可以访问您感兴趣的信息。然而，由于这是ROS项目的节点配置和其他事情，这't a great option for beginners or those that don'喜欢吨命令行工作了解文件系统。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1201">[校准&#64;fish]</a></p>
+<p>现在，您可以调试代码了!如果这是一个非ROS项目，此时您可以执行以下操作。在这里，我们启动一个GDB会话，并告诉我们的程序立即运行。一旦您的程序崩溃，它将返回一个由 <code class="docutils literal notranslate"><span class="pre">(gdb)</span></code> 表示的gdb会话提示。在此提示下，您可以访问您感兴趣的信息。然而，由于这是ROS项目的节点配置和其他事情，这't a great option for beginners or those that don'喜欢吨命令行工作了解文件系统。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1201">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdb ex run --args /path/to/exe/program
 </pre></div>
 </div>
-<p>以下部分描述了基于ROS 2的系统可能遇到的3种主要情况。阅读最能描述你试图解决的问题的部分。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1202">[校准&#64;fish]</a></p>
+<p>以下部分描述了基于ROS 2的系统可能遇到的3种主要情况。阅读最能描述你试图解决的问题的部分。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1202">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="from-a-node">
 <h2>从节点<a class="headerlink" href="#from-a-node" title="永久链接至标题"></a></h2>
-<p>就像在非ROS示例中一样，我们需要在启动ROS 2节点之前设置GDB会话。虽然我们可以在了解ROS 2文件系统的情况下通过命令行进行设置，但我们可以使用开放机器人公司为我们提供的启动 <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> 选项。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1204">[校准&#64;fish]</a></p>
-<p>参数``--prefix`` will execute some bits of code before our <code class="docutils literal notranslate"><span class="pre">ros2</span></code> command allowing us to insert some information. If you attempted to do <code class="docutils literal notranslate"><span class="pre">gdb</span> <span class="pre">ex</span> <span class="pre">run</span> <span class="pre">--args</span> <span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">&lt;pkg&gt;</span> <span class="pre">&lt;node&gt;</span></code> as analog to our example in the preliminaries, you'd find that it couldn't find the <code class="docutils literal notranslate"><span class="pre">ros2</span></code> command。如果你更聪明，你觉得要源工作区也失败类似原因。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1205">[校准&#64;fish]</a></p>
-<p>我们可以使用 <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> ，而不是必须恢复找到可执行文件的安装路径并将其全部键入。这使我们能够使用与您习惯的相同的 <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span></code> 语法，而不必担心GDB的一些细节。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1206">[校准&#64;fish]</a></p>
+<p>就像在非ROS示例中一样，我们需要在启动ROS 2节点之前设置GDB会话。虽然我们可以在了解ROS 2文件系统的情况下通过命令行进行设置，但我们可以使用开放机器人公司为我们提供的启动 <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> 选项。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1204">[校准&#64;fish]</a></p>
+<p>参数``--prefix`` will execute some bits of code before our <code class="docutils literal notranslate"><span class="pre">ros2</span></code> command allowing us to insert some information. If you attempted to do <code class="docutils literal notranslate"><span class="pre">gdb</span> <span class="pre">ex</span> <span class="pre">run</span> <span class="pre">--args</span> <span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">&lt;pkg&gt;</span> <span class="pre">&lt;node&gt;</span></code> as analog to our example in the preliminaries, you'd find that it couldn't find the <code class="docutils literal notranslate"><span class="pre">ros2</span></code> command。如果你更聪明，你觉得要源工作区也失败类似原因。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1205">[校准&#64;fish]</a></p>
+<p>我们可以使用 <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> ，而不是必须恢复找到可执行文件的安装路径并将其全部键入。这使我们能够使用与您习惯的相同的 <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span></code> 语法，而不必担心GDB的一些细节。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1206">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2 run --prefix <span class="s1">&#39;gdb -ex run --args&#39;</span> &lt;pkg&gt; &lt;node&gt; --all-other-launch arguments
 </pre></div>
 </div>
-<p>正如之前，此前缀将推出和GDB会话运行节点要求所有附加命令行参数。你现在应该节点运行应运转调试印刷。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1207">[校准&#64;fish]</a></p>
-<p>一旦服务器崩溃，你会看到提示如下。此时你可以现在回溯。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1208">[校准&#64;fish]</a></p>
+<p>正如之前，此前缀将推出和GDB会话运行节点要求所有附加命令行参数。你现在应该节点运行应运转调试印刷。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1207">[校准&#64;fish]</a></p>
+<p>一旦服务器崩溃，你会看到提示如下。此时你可以现在回溯。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1208">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span>
 </pre></div>
 </div>
-<p>在本课程中，键入 <code class="docutils literal notranslate"><span class="pre">backtrace</span></code> ，它将为您提供回溯。根据您的需要复制此文件。例如:     <a class="reference external" href="http://www.fishros.com/calib#msgid=1209">[校准&#64;fish]</a></p>
+<p>在本课程中，键入 <code class="docutils literal notranslate"><span class="pre">backtrace</span></code> ，它将为您提供回溯。根据您的需要复制此文件。例如:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1209">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span> backtrace
 <span class="c1">#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:50</span>
 <span class="c1">#1  0x00007ffff79cc859 in __GI_abort () at abort.c:79</span>
@@ -797,18 +797,18 @@
     at /home/steve/Documents/nav2_ws/src/gdb_test_pkg/src/main.cpp:25
 </pre></div>
 </div>
-<p>在此示例中，您应该从底部开始以以下方式阅读:     <a class="reference external" href="http://www.fishros.com/calib#msgid=1210">[校准&#64;fish]</a></p>
+<p>在此示例中，您应该从底部开始以以下方式阅读:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1210">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p>在main函数中，在第25行，我们调用函数VectorCrash。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1211">[校准&#64;fish]</a></p></li>
-<li><p>在VectorCrash在线44，我们坠毁矢量的 <code class="docutils literal notranslate"><span class="pre">at()</span></code> 方法输入 <code class="docutils literal notranslate"><span class="pre">100</span></code> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1212">[校准&#64;fish]</a></p></li>
-<li><p>坠毁在 <code class="docutils literal notranslate"><span class="pre">at()</span></code> STL矢量线1091投掷豁免范围检查失败。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1213">[校准&#64;fish]</a></p></li>
+<li><p>在main函数中，在第25行，我们调用函数VectorCrash。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1211">[校准&#64;fish]</a></p></li>
+<li><p>在VectorCrash在线44，我们坠毁矢量的 <code class="docutils literal notranslate"><span class="pre">at()</span></code> 方法输入 <code class="docutils literal notranslate"><span class="pre">100</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1212">[校准&#64;fish]</a></p></li>
+<li><p>坠毁在 <code class="docutils literal notranslate"><span class="pre">at()</span></code> STL矢量线1091投掷豁免范围检查失败。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1213">[校准&#64;fish]</a></p></li>
 </ul>
-<p>这些跟踪需要一些时间来适应阅读，但总的来说，从底部开始，沿着堆栈往上走，直到你看到它崩溃的那条线。然后你可以推断出它崩溃的原因。使用完GDB后，键入 <code class="docutils literal notranslate"><span class="pre">quit</span></code> ，它将退出会话并终止任何仍在运行的进程。它可能会问你是否想在最后杀死一些线程，说是。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1214">[校准&#64;fish]</a></p>
+<p>这些跟踪需要一些时间来适应阅读，但总的来说，从底部开始，沿着堆栈往上走，直到你看到它崩溃的那条线。然后你可以推断出它崩溃的原因。使用完GDB后，键入 <code class="docutils literal notranslate"><span class="pre">quit</span></code> ，它将退出会话并终止任何仍在运行的进程。它可能会问你是否想在最后杀死一些线程，说是。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1214">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="from-a-launch-file">
 <h2>从启动文件<a class="headerlink" href="#from-a-launch-file" title="永久链接至标题"></a></h2>
-<p>就像在非ROS示例中一样，我们需要在启动ROS 2启动文件之前设置GDB会话。虽然我们可以通过命令行来设置它，但是我们可以使用与在 <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span></code> 节点示例中相同的机制，现在使用启动文件。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1216">[校准&#64;fish]</a></p>
-<p>在启动文件中，找到您对调试感兴趣的节点。对于本节，我们假设您的启动文件仅包含一个节点 (以及可能的其他信息)。 <code class="docutils literal notranslate"><span class="pre">launch_ros</span></code> 包中使用的 <code class="docutils literal notranslate"><span class="pre">Node</span></code> 函数将采用一个字段 <code class="docutils literal notranslate"><span class="pre">prefix</span></code> ，其中包含前缀参数列表。我们将在这里插入GDB片段，其中包含我们节点示例的一个更改，即 <code class="docutils literal notranslate"><span class="pre">xterm</span></code> 的使用。 <code class="docutils literal notranslate"><span class="pre">xterm</span></code> 将弹出一个新的终端窗口来显示GDB并与之互动。我们这样做是因为在处理启动文件上的 <code class="docutils literal notranslate"><span class="pre">stdin</span></code> 时出现了问题 (例如，如果你点击了控制 + C，你是在和GDB说话还是在启动？)。有关更多信息，请参见 <a class="reference external" href="https://github.com/ros2/launch_ros/issues/165">this ticket</a> 。有关调试SLAM工具箱的示例，请参见下文。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1217">[校准&#64;fish]</a></p>
+<p>就像在非ROS示例中一样，我们需要在启动ROS 2启动文件之前设置GDB会话。虽然我们可以通过命令行来设置它，但是我们可以使用与在 <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span></code> 节点示例中相同的机制，现在使用启动文件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1216">[校准&#64;fish]</a></p>
+<p>在启动文件中，找到您对调试感兴趣的节点。对于本节，我们假设您的启动文件仅包含一个节点 (以及可能的其他信息)。 <code class="docutils literal notranslate"><span class="pre">launch_ros</span></code> 包中使用的 <code class="docutils literal notranslate"><span class="pre">Node</span></code> 函数将采用一个字段 <code class="docutils literal notranslate"><span class="pre">prefix</span></code> ，其中包含前缀参数列表。我们将在这里插入GDB片段，其中包含我们节点示例的一个更改，即 <code class="docutils literal notranslate"><span class="pre">xterm</span></code> 的使用。 <code class="docutils literal notranslate"><span class="pre">xterm</span></code> 将弹出一个新的终端窗口来显示GDB并与之互动。我们这样做是因为在处理启动文件上的 <code class="docutils literal notranslate"><span class="pre">stdin</span></code> 时出现了问题 (例如，如果你点击了控制 + C，你是在和GDB说话还是在启动？)。有关更多信息，请参见 <a class="reference external" href="https://github.com/ros2/launch_ros/issues/165">this ticket</a> 。有关调试SLAM工具箱的示例，请参见下文。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1217">[校准&#64;fish]</a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">start_sync_slam_toolbox_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>
     <span class="n">parameters</span><span class="o">=</span><span class="p">[</span>
       <span class="n">get_package_share_directory</span><span class="p">(</span><span class="s2">&quot;slam_toolbox&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/config/mapper_params_online_sync.yaml&#39;</span><span class="p">,</span>
@@ -821,48 +821,48 @@
     <span class="n">output</span><span class="o">=</span><span class="s1">&#39;screen&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>正如之前，此前缀将推出GDB会话，现在 <code class="docutils literal notranslate"><span class="pre">xterm</span></code> 运行启动文件要求所有额外启动参数定义。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1218">[校准&#64;fish]</a></p>
-<p>一旦服务器崩溃，你会看到提示如下，现在在 <code class="docutils literal notranslate"><span class="pre">xterm</span></code> 会话。此时你可以现在回溯。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1219">[校准&#64;fish]</a></p>
+<p>正如之前，此前缀将推出GDB会话，现在 <code class="docutils literal notranslate"><span class="pre">xterm</span></code> 运行启动文件要求所有额外启动参数定义。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1218">[校准&#64;fish]</a></p>
+<p>一旦服务器崩溃，你会看到提示如下，现在在 <code class="docutils literal notranslate"><span class="pre">xterm</span></code> 会话。此时你可以现在回溯。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1219">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span>
 </pre></div>
 </div>
-<p>在本课程中，键入 <code class="docutils literal notranslate"><span class="pre">backtrace</span></code> ，它将为您提供回溯。根据您的需要复制此文件。有关示例，请参见上面部分中的示例跟踪。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1220">[校准&#64;fish]</a></p>
-<p>这些跟踪需要一些时间来适应阅读，但总的来说，从底部开始，沿着堆栈往上走，直到你看到它崩溃的那条线。然后你可以推断出它崩溃的原因。使用完GDB后，键入 <code class="docutils literal notranslate"><span class="pre">quit</span></code> ，它将退出会话并终止任何仍在运行的进程。它可能会问你是否想在最后杀死一些线程，说是。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1214">[校准&#64;fish]</a></p>
+<p>在本课程中，键入 <code class="docutils literal notranslate"><span class="pre">backtrace</span></code> ，它将为您提供回溯。根据您的需要复制此文件。有关示例，请参见上面部分中的示例跟踪。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1220">[校准&#64;fish]</a></p>
+<p>这些跟踪需要一些时间来适应阅读，但总的来说，从底部开始，沿着堆栈往上走，直到你看到它崩溃的那条线。然后你可以推断出它崩溃的原因。使用完GDB后，键入 <code class="docutils literal notranslate"><span class="pre">quit</span></code> ，它将退出会话并终止任何仍在运行的进程。它可能会问你是否想在最后杀死一些线程，说是。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1214">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="from-nav2-bringup">
-<h2>来自Nav2 Bringup     <a class="reference external" href="http://www.fishros.com/calib#msgid=1221">[校准&#64;fish]</a><a class="headerlink" href="#from-nav2-bringup" title="永久链接至标题"></a></h2>
-<p>使用具有多个节点的启动文件略有不同，因此您可以与GDB会话进行交互，而不会被同一终端中的其他登录所困扰。因此，在处理较大的启动文件时，最好拉出您感兴趣的特定服务器并单独启动它。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1222">[校准&#64;fish]</a></p>
-<p>因此，在这种情况下，当您看到要调查的崩溃时，将此服务器与其他服务器分开是有益的。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1223">[校准&#64;fish]</a></p>
-<p>如果服务器利息从嵌套启动文件 (例如包含启动文件) 你可以做以下:     <a class="reference external" href="http://www.fishros.com/calib#msgid=1224">[校准&#64;fish]</a></p>
+<h2>来自Nav2 Bringup     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1221">[校准&#64;fish]</a><a class="headerlink" href="#from-nav2-bringup" title="永久链接至标题"></a></h2>
+<p>使用具有多个节点的启动文件略有不同，因此您可以与GDB会话进行交互，而不会被同一终端中的其他登录所困扰。因此，在处理较大的启动文件时，最好拉出您感兴趣的特定服务器并单独启动它。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1222">[校准&#64;fish]</a></p>
+<p>因此，在这种情况下，当您看到要调查的崩溃时，将此服务器与其他服务器分开是有益的。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1223">[校准&#64;fish]</a></p>
+<p>如果服务器利息从嵌套启动文件 (例如包含启动文件) 你可以做以下:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1224">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p>注释掉启动文件包含从父启动文件     <a class="reference external" href="http://www.fishros.com/calib#msgid=1225">[校准&#64;fish]</a></p></li>
-<li><p>使用用于调试符号的 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 标志重新编译感兴趣的包     <a class="reference external" href="http://www.fishros.com/calib#msgid=1226">[校准&#64;fish]</a></p></li>
-<li><p>在终端中启动父启动文件     <a class="reference external" href="http://www.fishros.com/calib#msgid=1227">[校准&#64;fish]</a></p></li>
-<li><p>按照 <a class="reference internal" href="#from-a-launch-file">From a Launch File</a> 中的说明，在另一个终端中启动服务器的启动文件。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1228">[校准&#64;fish]</a></p></li>
+<li><p>注释掉启动文件包含从父启动文件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1225">[校准&#64;fish]</a></p></li>
+<li><p>使用用于调试符号的 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 标志重新编译感兴趣的包     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1226">[校准&#64;fish]</a></p></li>
+<li><p>在终端中启动父启动文件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1227">[校准&#64;fish]</a></p></li>
+<li><p>按照 <a class="reference internal" href="#from-a-launch-file">From a Launch File</a> 中的说明，在另一个终端中启动服务器的启动文件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1228">[校准&#64;fish]</a></p></li>
 </ul>
-<p>或者，如果您感兴趣的服务器正在这些文件中直接启动 (例如g.你看到 <code class="docutils literal notranslate"><span class="pre">Node</span></code> 、 <code class="docutils literal notranslate"><span class="pre">LifecycleNode</span></code> 或 <code class="docutils literal notranslate"><span class="pre">ComponentContainer</span></code> )，你需要把它和其他的分开:     <a class="reference external" href="http://www.fishros.com/calib#msgid=1229">[校准&#64;fish]</a></p>
+<p>或者，如果您感兴趣的服务器正在这些文件中直接启动 (例如g.你看到 <code class="docutils literal notranslate"><span class="pre">Node</span></code> 、 <code class="docutils literal notranslate"><span class="pre">LifecycleNode</span></code> 或 <code class="docutils literal notranslate"><span class="pre">ComponentContainer</span></code> )，你需要把它和其他的分开:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1229">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p>从父启动文件中注释掉节点的包含     <a class="reference external" href="http://www.fishros.com/calib#msgid=1230">[校准&#64;fish]</a></p></li>
-<li><p>使用用于调试符号的 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 标志重新编译感兴趣的包     <a class="reference external" href="http://www.fishros.com/calib#msgid=1226">[校准&#64;fish]</a></p></li>
-<li><p>在终端中启动父启动文件     <a class="reference external" href="http://www.fishros.com/calib#msgid=1227">[校准&#64;fish]</a></p></li>
-<li><p>启动服务器的节点在另一个终端中的说明 <a class="reference internal" href="#from-a-node">From a Node</a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1231">[校准&#64;fish]</a></p></li>
+<li><p>从父启动文件中注释掉节点的包含     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1230">[校准&#64;fish]</a></p></li>
+<li><p>使用用于调试符号的 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 标志重新编译感兴趣的包     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1226">[校准&#64;fish]</a></p></li>
+<li><p>在终端中启动父启动文件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1227">[校准&#64;fish]</a></p></li>
+<li><p>启动服务器的节点在另一个终端中的说明 <a class="reference internal" href="#from-a-node">From a Node</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1231">[校准&#64;fish]</a></p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>请注意，在这种情况下，您可能需要重新映射或提供参数文件到此节点 (如果启动文件先前提供了该节点)。使用 <code class="docutils literal notranslate"><span class="pre">--ros-args</span></code> ，您可以为它提供新参数文件、重映射或名称的路径。有关所需的命令行参数，请参见 <a class="reference external" href="https://docs.ros.org/en/rolling/Guides/Node-arguments.html">this ROS 2 tutorial</a> 。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1232">[校准&#64;fish]</a></p>
-<p>我们理解这可能是一个痛苦，可能鼓励你宁愿每个节点可能单独包括启动文件使调试更容易。实例的参数可能 ”-- ros args -r _ _ 节点 :=&lt; node_name&gt; -- params文件/绝对/路径/参数。yaml'' (模板)。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1233">[校准&#64;fish]</a></p>
+<p>请注意，在这种情况下，您可能需要重新映射或提供参数文件到此节点 (如果启动文件先前提供了该节点)。使用 <code class="docutils literal notranslate"><span class="pre">--ros-args</span></code> ，您可以为它提供新参数文件、重映射或名称的路径。有关所需的命令行参数，请参见 <a class="reference external" href="https://docs.ros.org/en/rolling/Guides/Node-arguments.html">this ROS 2 tutorial</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1232">[校准&#64;fish]</a></p>
+<p>我们理解这可能是一个痛苦，可能鼓励你宁愿每个节点可能单独包括启动文件使调试更容易。实例的参数可能 ”-- ros args -r _ _ 节点 :=&lt; node_name&gt; -- params文件/绝对/路径/参数。yaml'' (模板)。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1233">[校准&#64;fish]</a></p>
 </div>
-<p>一旦你的服务器崩溃，你就会看到'll see a prompt like below in the specific server'的终端。此时，您可以获取回溯。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1234">[校准&#64;fish]</a></p>
+<p>一旦你的服务器崩溃，你就会看到'll see a prompt like below in the specific server'的终端。此时，您可以获取回溯。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1234">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span>
 </pre></div>
 </div>
-<p>在本课程中，键入 <code class="docutils literal notranslate"><span class="pre">backtrace</span></code> ，它将为您提供回溯。根据您的需要复制此文件。有关示例，请参见上面部分中的示例跟踪。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1220">[校准&#64;fish]</a></p>
-<p>这些跟踪需要一些时间来适应阅读，但总的来说，从底部开始，沿着堆栈往上走，直到你看到它崩溃的那条线。然后你可以推断出它崩溃的原因。使用完GDB后，键入 <code class="docutils literal notranslate"><span class="pre">quit</span></code> ，它将退出会话并终止任何仍在运行的进程。它可能会问你是否想在最后杀死一些线程，说是。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1214">[校准&#64;fish]</a></p>
+<p>在本课程中，键入 <code class="docutils literal notranslate"><span class="pre">backtrace</span></code> ，它将为您提供回溯。根据您的需要复制此文件。有关示例，请参见上面部分中的示例跟踪。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1220">[校准&#64;fish]</a></p>
+<p>这些跟踪需要一些时间来适应阅读，但总的来说，从底部开始，沿着堆栈往上走，直到你看到它崩溃的那条线。然后你可以推断出它崩溃的原因。使用完GDB后，键入 <code class="docutils literal notranslate"><span class="pre">quit</span></code> ，它将退出会话并终止任何仍在运行的进程。它可能会问你是否想在最后杀死一些线程，说是。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1214">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="automatic-backtrace-on-crash">
 <h2>自动回溯碰撞<a class="headerlink" href="#automatic-backtrace-on-crash" title="永久链接至标题"></a></h2>
-<p>的 <a class="reference external" href="https://github.com/bombela/backward-cpp">backward-cpp</a> 图书馆提供美丽堆栈跟踪， <a class="reference external" href="https://github.com/pal-robotics/backward_ros/tree/foxy-devel">backward_ros</a> 包装简化集成。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1236">[校准&#64;fish]</a></p>
-<p>只需将其添加为依赖项，并在您的cmakelist中 <cite>find_package</cite> ，后向库将被注入到您的所有可执行文件和库中。     <a class="reference external" href="http://www.fishros.com/calib#msgid=1237">[校准&#64;fish]</a></p>
+<p>的 <a class="reference external" href="https://github.com/bombela/backward-cpp">backward-cpp</a> 图书馆提供美丽堆栈跟踪， <a class="reference external" href="https://github.com/pal-robotics/backward_ros/tree/foxy-devel">backward_ros</a> 包装简化集成。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1236">[校准&#64;fish]</a></p>
+<p>只需将其添加为依赖项，并在您的cmakelist中 <cite>find_package</cite> ，后向库将被注入到您的所有可执行文件和库中。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1237">[校准&#64;fish]</a></p>
 </div>
 </div>
 
