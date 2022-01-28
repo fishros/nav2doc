@@ -736,12 +736,12 @@
              
   <div class="section" id="planner-server">
 <span id="configuring-planner-server"></span><h1>规划器服务器<a class="headerlink" href="#planner-server" title="永久链接至标题"></a></h1>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_planner">Github</a> 上的源代码。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2425">[校准&#64;fish]</a></p>
-<p>规划器服务器实现服务器，用于处理对堆栈的planner请求，并托管插件实现的映射。它将采用一个目标和一个planner插件名称来使用，并调用适当的插件来计算到达目标的路径。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2740">[校准&#64;fish]</a></p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_planner">Github</a> 上的源代码。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2425">[校准&#64;fish]</a></p>
+<p>规划器服务器实现服务器，用于处理对堆栈的planner请求，并托管插件实现的映射。它将采用一个目标和一个planner插件名称来使用，并调用适当的插件来计算到达目标的路径。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2740">[校准&#64;fish]</a></p>
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">planner_plugins     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2741">[校准&#64;fish]</a></dt>
+<dt class="field-odd">planner_plugins     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2741">[校准&#64;fish]</a></dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
@@ -751,15 +751,15 @@
 <tr class="row-odd"><td><p>Type</p></td>
 <td><p>Default</p></td>
 </tr>
-<tr class="row-even"><td><p>vector&lt;string&gt;     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2537">[校准&#64;fish]</a></p></td>
-<td><p>['GridBased']     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2742">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>vector&lt;string&gt;     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2537">[校准&#64;fish]</a></p></td>
+<td><p>['GridBased']     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2742">[校准&#64;fish]</a></p></td>
 </tr>
 </tbody>
 </table>
 <dl>
-<dt>描述</dt><dd><p>参数和处理请求的映射插件名称列表。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2743">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>参数和处理请求的映射插件名称列表。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2743">[校准&#64;fish]</a></p>
 </dd>
-<dt>Note</dt><dd><p>此列表中定义的每个插件命名空间都需要有一个: 代码:  <cite>plugin</cite> 参数，用于定义要在命名空间中加载的插件的类型。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2582">[校准&#64;fish]</a></p>
+<dt>Note</dt><dd><p>此列表中定义的每个插件命名空间都需要有一个: 代码:  <cite>plugin</cite> 参数，用于定义要在命名空间中加载的插件的类型。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2582">[校准&#64;fish]</a></p>
 <p>示例:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">planner_server</span><span class="p">:</span>
   <span class="nt">ros__parameters</span><span class="p">:</span>
@@ -771,7 +771,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-even">expected_planner_frequency     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2744">[校准&#64;fish]</a></dt>
+<dt class="field-even">expected_planner_frequency     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2744">[校准&#64;fish]</a></dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 64%" />
@@ -787,7 +787,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>预期planner频率。如果当前频率小于预期频率，则显示警告消息。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2746">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>预期planner频率。如果当前频率小于预期频率，则显示警告消息。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2746">[校准&#64;fish]</a></p>
 </dd>
 </dl>
 </dd>
@@ -795,7 +795,7 @@
 </div>
 <div class="section" id="default-plugins">
 <h2>默认插件<a class="headerlink" href="#default-plugins" title="永久链接至标题"></a></h2>
-<p>当: code: <cite>planner_plugins</cite> 参数未重写时，将加载以下默认插件:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2747">[校准&#64;fish]</a></p>
+<p>当: code: <cite>planner_plugins</cite> 参数未重写时，将加载以下默认插件:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2747">[校准&#64;fish]</a></p>
 <blockquote>
 <div><table class="docutils align-default">
 <colgroup>

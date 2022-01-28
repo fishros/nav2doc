@@ -737,24 +737,24 @@
   <div class="section" id="build-troubleshooting-guide">
 <span id="id1"></span><h1>构建故障排除指南<a class="headerlink" href="#build-troubleshooting-guide" title="永久链接至标题"></a></h1>
 <div class="section" id="common-nav2-dependencies-build-failures">
-<h2>常见的Nav2依赖项构建失败     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1522">[校准&#64;fish]</a><a class="headerlink" href="#common-nav2-dependencies-build-failures" title="永久链接至标题"></a></h2>
+<h2>常见的Nav2依赖项构建失败     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1522">[校准&#64;fish]</a><a class="headerlink" href="#common-nav2-dependencies-build-failures" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p>确保。bashrc文件中没有ROS环境变量。打开新的终端，然后尝试重新构建包。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1523">[校准&#64;fish]</a></p></li>
-<li><p>确保为正确的ROS 2发行版运行rosdep。 <code class="docutils literal notranslate"><span class="pre">rosdep</span> <span class="pre">install</span> <span class="pre">-y</span> <span class="pre">-r</span> <span class="pre">-q</span> <span class="pre">--from-paths</span> <span class="pre">src</span> <span class="pre">--ignore-src</span> <span class="pre">--rosdistro</span> <span class="pre">&lt;ros2-distro&gt;</span></code>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=1524">[校准&#64;fish]</a></p></li>
-<li><p>确保 <code class="docutils literal notranslate"><span class="pre">setup.bash</span></code> 来自ROS 2安装或ROS 2主构建工作区 (如果适用)。检查是否可以运行talker和listen节点。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1525">[校准&#64;fish]</a></p></li>
-<li><p>确保 <code class="docutils literal notranslate"><span class="pre">nav2_depend_ws/install</span></code> 中的 <code class="docutils literal notranslate"><span class="pre">setup.bash</span></code> 来源。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1526">[校准&#64;fish]</a></p></li>
-<li><p>检查您是否有正确的ROS版本和发行版。项目完结，系统自动填充内容     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1527">[校准&#64;fish]</a></p></li>
-<li><p>如果你在启动时发现一堆关于 <code class="docutils literal notranslate"><span class="pre">map</span></code> 或 <code class="docutils literal notranslate"><span class="pre">odom</span></code> 框架不存在的错误，记得激活驱动程序 (或用于模拟的露台) 并在 <code class="docutils literal notranslate"><span class="pre">map</span></code> 框架中设置一个初始姿势。代价地图2D将阻止激活，直到有一个完整的TF树可用。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1528">[校准&#64;fish]</a></p></li>
-<li><p>如果你没有看到转换或服务器运行，请确保你已经激活了生命周期节点。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1529">[校准&#64;fish]</a></p></li>
-<li><p>搜索 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues">GitHub Issues</a>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=1530">[校准&#64;fish]</a></p></li>
-<li><p>确保您为您的分配使用了正确的分支。没有十字架支持分支 <code class="docutils literal notranslate"><span class="pre">DistroA</span></code> 在 <code class="docutils literal notranslate"><span class="pre">DistroB</span></code> 。主要开发分支使用滚动分布。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1531">[校准&#64;fish]</a></p></li>
+<li><p>确保。bashrc文件中没有ROS环境变量。打开新的终端，然后尝试重新构建包。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1523">[校准&#64;fish]</a></p></li>
+<li><p>确保为正确的ROS 2发行版运行rosdep。 <code class="docutils literal notranslate"><span class="pre">rosdep</span> <span class="pre">install</span> <span class="pre">-y</span> <span class="pre">-r</span> <span class="pre">-q</span> <span class="pre">--from-paths</span> <span class="pre">src</span> <span class="pre">--ignore-src</span> <span class="pre">--rosdistro</span> <span class="pre">&lt;ros2-distro&gt;</span></code>      <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1524">[校准&#64;fish]</a></p></li>
+<li><p>确保 <code class="docutils literal notranslate"><span class="pre">setup.bash</span></code> 来自ROS 2安装或ROS 2主构建工作区 (如果适用)。检查是否可以运行talker和listen节点。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1525">[校准&#64;fish]</a></p></li>
+<li><p>确保 <code class="docutils literal notranslate"><span class="pre">nav2_depend_ws/install</span></code> 中的 <code class="docutils literal notranslate"><span class="pre">setup.bash</span></code> 来源。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1526">[校准&#64;fish]</a></p></li>
+<li><p>检查您是否有正确的ROS版本和发行版。项目完结，系统自动填充内容     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1527">[校准&#64;fish]</a></p></li>
+<li><p>如果你在启动时发现一堆关于 <code class="docutils literal notranslate"><span class="pre">map</span></code> 或 <code class="docutils literal notranslate"><span class="pre">odom</span></code> 框架不存在的错误，记得激活驱动程序 (或用于模拟的露台) 并在 <code class="docutils literal notranslate"><span class="pre">map</span></code> 框架中设置一个初始姿势。代价地图2D将阻止激活，直到有一个完整的TF树可用。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1528">[校准&#64;fish]</a></p></li>
+<li><p>如果你没有看到转换或服务器运行，请确保你已经激活了生命周期节点。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1529">[校准&#64;fish]</a></p></li>
+<li><p>搜索 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues">GitHub Issues</a>      <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1530">[校准&#64;fish]</a></p></li>
+<li><p>确保您为您的分配使用了正确的分支。没有十字架支持分支 <code class="docutils literal notranslate"><span class="pre">DistroA</span></code> 在 <code class="docutils literal notranslate"><span class="pre">DistroB</span></code> 。主要开发分支使用滚动分布。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1531">[校准&#64;fish]</a></p></li>
 </ul>
-<p>还是解决不了？让我们知道您的问题。 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/new">Open a ticket</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1532">[校准&#64;fish]</a></p>
+<p>还是解决不了？让我们知道您的问题。 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/new">Open a ticket</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1532">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="reporting-issue">
 <h2>报告问题<a class="headerlink" href="#reporting-issue" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p>如果您在构建导航2时遇到任何问题，您可以使用 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues">GitHub</a> and always feel free to <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/new">open a ticket</a> 问题选项卡中的搜索工具。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1534">[校准&#64;fish]</a></p></li>
+<li><p>如果您在构建导航2时遇到任何问题，您可以使用 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues">GitHub</a> and always feel free to <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/new">open a ticket</a> 问题选项卡中的搜索工具。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1534">[校准&#64;fish]</a></p></li>
 </ul>
 </div>
 </div>

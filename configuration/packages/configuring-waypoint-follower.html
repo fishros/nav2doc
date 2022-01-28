@@ -736,12 +736,12 @@
              
   <div class="section" id="waypoint-follower">
 <span id="configuring-waypoint-follower"></span><h1>路点追踪<a class="headerlink" href="#waypoint-follower" title="永久链接至标题"></a></h1>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_waypoint_follower">Github</a> 上的源代码。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2425">[校准&#64;fish]</a></p>
-<p>路点追踪模块实现了一种使用导航操作服务器执行路点追踪的方法。它将采用一组有序的航路点，然后尝试按顺序导航到它们。它还托管一个航点任务执行程序插件，可用于在航点执行自定义行为，如等待用户指令、拍照或拿起盒子。如果无法实现航点，则 <code class="docutils literal notranslate"><span class="pre">stop_on_failure</span></code> 参数将决定是继续到下一个航点还是停止。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2876">[校准&#64;fish]</a></p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_waypoint_follower">Github</a> 上的源代码。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2425">[校准&#64;fish]</a></p>
+<p>路点追踪模块实现了一种使用导航操作服务器执行路点追踪的方法。它将采用一组有序的航路点，然后尝试按顺序导航到它们。它还托管一个航点任务执行程序插件，可用于在航点执行自定义行为，如等待用户指令、拍照或拿起盒子。如果无法实现航点，则 <code class="docutils literal notranslate"><span class="pre">stop_on_failure</span></code> 参数将决定是继续到下一个航点还是停止。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2876">[校准&#64;fish]</a></p>
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">stop_on_failure     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2877">[校准&#64;fish]</a></dt>
+<dt class="field-odd">stop_on_failure     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2877">[校准&#64;fish]</a></dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 36%" />
@@ -757,7 +757,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>如果单个航点失败，是否失败。如果为false，将继续前往下一个航路点。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2878">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>如果单个航点失败，是否失败。如果为false，将继续前往下一个航路点。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2878">[校准&#64;fish]</a></p>
 </dd>
 </dl>
 </dd>
@@ -777,11 +777,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>检查当前导航任务结果的速率。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2880">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>检查当前导航任务结果的速率。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2880">[校准&#64;fish]</a></p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">waypoint_task_executor_plugin     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2881">[校准&#64;fish]</a></dt>
+<dt class="field-odd">waypoint_task_executor_plugin     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2881">[校准&#64;fish]</a></dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 37%" />
@@ -792,14 +792,14 @@
 <td><p>Default</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
-<td><p>'wait_at_waypoint'     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2882">[校准&#64;fish]</a></p></td>
+<td><p>'wait_at_waypoint'     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2882">[校准&#64;fish]</a></p></td>
 </tr>
 </tbody>
 </table>
 <dl>
-<dt>描述</dt><dd><p>一个插件，用于定义机器人到达航路点时要执行的任务。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2883">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>一个插件，用于定义机器人到达航路点时要执行的任务。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2883">[校准&#64;fish]</a></p>
 </dd>
-<dt>Note</dt><dd><p>定义的插件命名空间需要有一个: 代码:  <cite>plugin</cite> 参数，定义要在命名空间中加载的插件的类型。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2587">[校准&#64;fish]</a></p>
+<dt>Note</dt><dd><p>定义的插件命名空间需要有一个: 代码:  <cite>plugin</cite> 参数，定义要在命名空间中加载的插件的类型。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2587">[校准&#64;fish]</a></p>
 <p>示例:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">waypoint_follower</span><span class="p">:</span>
   <span class="nt">ros__parameters</span><span class="p">:</span>
@@ -818,7 +818,7 @@
 <div class="section" id="provided-plugins">
 <h2>提供的插件<a class="headerlink" href="#provided-plugins" title="永久链接至标题"></a></h2>
 <blockquote>
-<div><p>下面列出的插件在 <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> 命名空间内。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2884">[校准&#64;fish]</a></p>
+<div><p>下面列出的插件在 <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> 命名空间内。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2884">[校准&#64;fish]</a></p>
 </div></blockquote>
 <div class="toctree-wrapper compound">
 <ul>

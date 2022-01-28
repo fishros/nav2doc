@@ -732,31 +732,31 @@
            <div itemprop="articleBody">
              
   <div class="section" id="d-3d-localization-improvements">
-<span id="localization"></span><h1>6.2d/3D本地化改进     <a class="reference external" href="http://10.55.23.25:3000/#msgid=421">[校准&#64;fish]</a><a class="headerlink" href="#d-3d-localization-improvements" title="永久链接至标题"></a></h1>
+<span id="localization"></span><h1>6.2d/3D本地化改进     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=421">[校准&#64;fish]</a><a class="headerlink" href="#d-3d-localization-improvements" title="永久链接至标题"></a></h1>
 <p>任务描述</p>
-<p>Navigation2堆栈使用AMCL作为其主要本地化引擎。在过去的10年里，基本上没有对AMCL进行任何更新。这是由于自适应蒙特查理定位器的这种实现的代码库是用嵌入式C编写的，结构不好，并且对变化非常敏感。十多年来，a-mcl实现一直是本地化的标志，但应弃用此特定实现。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=422">[校准&#64;fish]</a></p>
-<p>您的目标包括为Nav2堆栈设计和创建新的本地化引擎。这样做的要求是:-支持2D激光扫描仪-支持3D激光扫描仪，其中2D案例可能是简化案例-准确跟踪机器人在给定占用网格中的定位     <a class="reference external" href="http://10.55.23.25:3000/#msgid=423">[校准&#64;fish]</a></p>
-<p>特定方法保持开放式的原因是为了允许创造力、新颖性或重新实现你认为最好的东西。然而，我们已经分析了其他MCL变体是好的选择。这可能包括重新实现设计为使用模块化组件进行修改并支持从3D lidar采样的a-mcl。另一种选择是使用NDT 2D/3D扫描匹配的ndt-mcl。在申请阶段，可以提出其他选择并与导师讨论。由于ROS 2中还没有标准的3D定位器，因此该任务也涉及3D，并且在过去的两年中出现了越来越多的强大3DSLAM库。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=424">[校准&#64;fish]</a></p>
-<p>这项工作的一个可选但推荐的特点是也接受来自多个激光扫描仪的输入。然而，这并不是严格要求的。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=425">[校准&#64;fish]</a></p>
-<p>Project项目难度: 高High     <a class="reference external" href="http://10.55.23.25:3000/#msgid=371">[校准&#64;fish]</a></p>
-<p>Project项目社区导师: 史蒂夫·麦肯斯基 <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=345">[校准&#64;fish]</a></p>
-<p>Mentor导师联系方式: [请参阅上面的链接，GitHub个人资料描述中的链接] **     <a class="reference external" href="http://10.55.23.25:3000/#msgid=346">[校准&#64;fish]</a></p>
-<p>项目输出要求 -- 基于激光扫描仪的2D和3D定位系统 -- 65% 或更高的测试覆盖率 -- 设计有模块化组件，可以随着时间的推移进行可靠的修改     <a class="reference external" href="http://10.55.23.25:3000/#msgid=426">[校准&#64;fish]</a></p>
+<p>Navigation2堆栈使用AMCL作为其主要本地化引擎。在过去的10年里，基本上没有对AMCL进行任何更新。这是由于自适应蒙特查理定位器的这种实现的代码库是用嵌入式C编写的，结构不好，并且对变化非常敏感。十多年来，a-mcl实现一直是本地化的标志，但应弃用此特定实现。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=422">[校准&#64;fish]</a></p>
+<p>您的目标包括为Nav2堆栈设计和创建新的本地化引擎。这样做的要求是:-支持2D激光扫描仪-支持3D激光扫描仪，其中2D案例可能是简化案例-准确跟踪机器人在给定占用网格中的定位     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=423">[校准&#64;fish]</a></p>
+<p>特定方法保持开放式的原因是为了允许创造力、新颖性或重新实现你认为最好的东西。然而，我们已经分析了其他MCL变体是好的选择。这可能包括重新实现设计为使用模块化组件进行修改并支持从3D lidar采样的a-mcl。另一种选择是使用NDT 2D/3D扫描匹配的ndt-mcl。在申请阶段，可以提出其他选择并与导师讨论。由于ROS 2中还没有标准的3D定位器，因此该任务也涉及3D，并且在过去的两年中出现了越来越多的强大3DSLAM库。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=424">[校准&#64;fish]</a></p>
+<p>这项工作的一个可选但推荐的特点是也接受来自多个激光扫描仪的输入。然而，这并不是严格要求的。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=425">[校准&#64;fish]</a></p>
+<p>Project项目难度: 高High     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=371">[校准&#64;fish]</a></p>
+<p>Project项目社区导师: 史蒂夫·麦肯斯基 <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a>      <a class="reference external" href="http://10.55.23.25:3000/#?msgid=345">[校准&#64;fish]</a></p>
+<p>Mentor导师联系方式: [请参阅上面的链接，GitHub个人资料描述中的链接] **     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=346">[校准&#64;fish]</a></p>
+<p>项目输出要求 -- 基于激光扫描仪的2D和3D定位系统 -- 65% 或更高的测试覆盖率 -- 设计有模块化组件，可以随着时间的推移进行可靠的修改     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=426">[校准&#64;fish]</a></p>
 <p>所需技能</p>
 <ul class="simple">
 <li><p>C/C ++</p></li>
-<li><p>定位、粒子过滤或SLAM技术     <a class="reference external" href="http://10.55.23.25:3000/#msgid=428">[校准&#64;fish]</a></p></li>
-<li><p>阅读和实施学术作品的能力     <a class="reference external" href="http://10.55.23.25:3000/#msgid=429">[校准&#64;fish]</a></p></li>
-<li><p>推荐: Gazebo模拟和导航体验     <a class="reference external" href="http://10.55.23.25:3000/#msgid=394">[校准&#64;fish]</a></p></li>
+<li><p>定位、粒子过滤或SLAM技术     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=428">[校准&#64;fish]</a></p></li>
+<li><p>阅读和实施学术作品的能力     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=429">[校准&#64;fish]</a></p></li>
+<li><p>推荐: Gazebo模拟和导航体验     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=394">[校准&#64;fish]</a></p></li>
 </ul>
-<p>相关开源软件存储库和参考文献列表     <a class="reference external" href="http://10.55.23.25:3000/#msgid=352">[校准&#64;fish]</a></p>
+<p>相关开源软件存储库和参考文献列表     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=352">[校准&#64;fish]</a></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ros.org/">ROS</a></p></li>
 <li><p><a class="reference external" href="http://gazebosim.org/">Gazebo Simulator</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1391">Original Github Issue</a></p></li>
 <li><p><a class="reference external" href="https://navigation.ros.org/">Navigation2</a></p></li>
 </ul>
-<p>许可-所有贡献将在Apache 2.0许可下进行。-不需要其他CLA。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=357">[校准&#64;fish]</a></p>
+<p>许可-所有贡献将在Apache 2.0许可下进行。-不需要其他CLA。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=357">[校准&#64;fish]</a></p>
 </div>
 
 

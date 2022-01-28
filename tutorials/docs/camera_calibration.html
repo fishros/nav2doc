@@ -743,40 +743,40 @@
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>本教程演示如何获取标定参数单目相机。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1153">[校准&#64;fish]</a></p>
+<p>本教程演示如何获取标定参数单目相机。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1153">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
-<p>1-安装相机校准解析器、相机信息管理器，并使用操作系统的包管理器启动测试组件:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1155">[校准&#64;fish]</a></p>
+<p>1-安装相机校准解析器、相机信息管理器，并使用操作系统的包管理器启动测试组件:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1155">[校准&#64;fish]</a></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;ros2-distro&gt;-camera-calibration-parsers</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1156">[校准&#64;fish]</a></p>
-<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;ros2-distro&gt;-camera-info-manager</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1157">[校准&#64;fish]</a></p>
-<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;ros2-distro&gt;-launch-testing-ament-cmake</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1158">[校准&#64;fish]</a></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;ros2-distro&gt;-camera-calibration-parsers</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1156">[校准&#64;fish]</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;ros2-distro&gt;-camera-info-manager</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1157">[校准&#64;fish]</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;ros2-distro&gt;-launch-testing-ament-cmake</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1158">[校准&#64;fish]</a></p>
 </div></blockquote>
-<p>2-图像管道需要从工作区中的源构建，具有:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1159">[校准&#64;fish]</a></p>
+<p>2-图像管道需要从工作区中的源构建，具有:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1159">[校准&#64;fish]</a></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–</span> <span class="pre">b</span> <span class="pre">&lt;ros2-distro&gt;</span> <span class="pre">git&#64;github.com:ros-perception/image_pipeline.git</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1160">[校准&#64;fish]</a></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–</span> <span class="pre">b</span> <span class="pre">&lt;ros2-distro&gt;</span> <span class="pre">git&#64;github.com:ros-perception/image_pipeline.git</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1160">[校准&#64;fish]</a></p>
 </div></blockquote>
-<p>Also另外，请确保您具有以下内容: Also     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1161">[校准&#64;fish]</a></p>
+<p>Also另外，请确保您具有以下内容: Also     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1161">[校准&#64;fish]</a></p>
 <blockquote>
 <div><ul class="simple">
-<li><p>A大棋盘已知尺寸。本教程使用7x9棋盘200毫米广场。* * 校准使用interior顶点的棋盘，所以  &quot;8x10&quot; 板使用内部顶点参数  &quot;7x9&quot; 如下例所示。* * 棋盘具有设定尺寸可以从 <a class="reference external" href="https://calib.io/pages/camera-calibration-pattern-generator">here</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1162">[校准&#64;fish]</a></p></li>
-<li><p>一个光线充足的5米 × 5米区域，没有障碍物和检查板图案     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1163">[校准&#64;fish]</a></p></li>
-<li><p>单筒摄像机在ROS上发布图像     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1164">[校准&#64;fish]</a></p></li>
+<li><p>A大棋盘已知尺寸。本教程使用7x9棋盘200毫米广场。* * 校准使用interior顶点的棋盘，所以  &quot;8x10&quot; 板使用内部顶点参数  &quot;7x9&quot; 如下例所示。* * 棋盘具有设定尺寸可以从 <a class="reference external" href="https://calib.io/pages/camera-calibration-pattern-generator">here</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1162">[校准&#64;fish]</a></p></li>
+<li><p>一个光线充足的5米 × 5米区域，没有障碍物和检查板图案     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1163">[校准&#64;fish]</a></p></li>
+<li><p>单筒摄像机在ROS上发布图像     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1164">[校准&#64;fish]</a></p></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="tutorial-steps">
 <h2>教程步骤<a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
-<p>1-在GUI中启动终端     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1166">[校准&#64;fish]</a></p>
-<p>2-为您的特定相机启动ROS驱动程序。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1167">[校准&#64;fish]</a></p>
-<p>3-确保相机通过ROS发布图像。这可以通过运行来测试:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1168">[校准&#64;fish]</a></p>
+<p>1-在GUI中启动终端     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1166">[校准&#64;fish]</a></p>
+<p>2-为您的特定相机启动ROS驱动程序。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1167">[校准&#64;fish]</a></p>
+<p>3-确保相机通过ROS发布图像。这可以通过运行来测试:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1168">[校准&#64;fish]</a></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">topic</span> <span class="pre">list</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1169">[校准&#64;fish]</a></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">topic</span> <span class="pre">list</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1169">[校准&#64;fish]</a></p>
 </div></blockquote>
-<p>4-这将显示你所有主题发表确保一个image_raw主题/相机/image_raw。确认其真正话题实际上出版检查主题hz:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1170">[校准&#64;fish]</a></p>
+<p>4-这将显示你所有主题发表确保一个image_raw主题/相机/image_raw。确认其真正话题实际上出版检查主题hz:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1170">[校准&#64;fish]</a></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">topic</span> <span class="pre">hz</span> <span class="pre">/camera/image_raw</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1171">[校准&#64;fish]</a></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">topic</span> <span class="pre">hz</span> <span class="pre">/camera/image_raw</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1171">[校准&#64;fish]</a></p>
 </div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -789,7 +789,7 @@
 </div>
 <p>5启动摄像机标定节点</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">camera_calibration</span> <span class="pre">cameracalibrator</span> <span class="pre">--size</span> <span class="pre">7x9</span> <span class="pre">--square</span> <span class="pre">0.20</span> <span class="pre">image:=/my_camera/image_raw</span> <span class="pre">camera:=/my_camera</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1173">[校准&#64;fish]</a></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">camera_calibration</span> <span class="pre">cameracalibrator</span> <span class="pre">--size</span> <span class="pre">7x9</span> <span class="pre">--square</span> <span class="pre">0.20</span> <span class="pre">image:=/my_camera/image_raw</span> <span class="pre">camera:=/my_camera</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1173">[校准&#64;fish]</a></p>
 </div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Camera</span> <span class="n">Name</span><span class="p">:</span>
 
@@ -842,18 +842,18 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>6为了良好校准你需要移动棋盘在相机骨架，:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1174">[校准&#64;fish]</a></p>
+<p>6为了良好校准你需要移动棋盘在相机骨架，:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1174">[校准&#64;fish]</a></p>
 <blockquote>
 <div><ul>
 <li><dl>
-<dt>相机视野左侧、右侧、顶部和底部的棋盘     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1175">[校准&#64;fish]</a></dt><dd><p>◦ X酒吧左/右在视场     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1176">[校准&#64;fish]</a></p>
-<p>Y条-视野中的顶部/底部     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1177">[校准&#64;fish]</a></p>
-<p>尺寸条-朝向/远离并从相机倾斜     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1178">[校准&#64;fish]</a></p>
+<dt>相机视野左侧、右侧、顶部和底部的棋盘     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1175">[校准&#64;fish]</a></dt><dd><p>◦ X酒吧左/右在视场     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1176">[校准&#64;fish]</a></p>
+<p>Y条-视野中的顶部/底部     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1177">[校准&#64;fish]</a></p>
+<p>尺寸条-朝向/远离并从相机倾斜     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1178">[校准&#64;fish]</a></p>
 </dd>
 </dl>
 </li>
 <li><p>棋盘填满整个视野</p></li>
-<li><p>棋盘向左、向右、顶部和底部倾斜 (倾斜)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1180">[校准&#64;fish]</a></p></li>
+<li><p>棋盘向左、向右、顶部和底部倾斜 (倾斜)     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1180">[校准&#64;fish]</a></p></li>
 </ul>
 </div></blockquote>
 <div class="line-block">
@@ -865,7 +865,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>7作为棋盘格移动4酒吧标定侧边栏增加长度。当所有然后4酒吧绿色足够数据校准校准按钮会亮起。单击查看结果。大约需要一分钟校准发生。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1181">[校准&#64;fish]</a></p>
+<p>7作为棋盘格移动4酒吧标定侧边栏增加长度。当所有然后4酒吧绿色足够数据校准校准按钮会亮起。单击查看结果。大约需要一分钟校准发生。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1181">[校准&#64;fish]</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -875,7 +875,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>8-校准完成后，保存和提交按钮亮起。您还可以在终端中看到结果。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1182">[校准&#64;fish]</a></p>
+<p>8-校准完成后，保存和提交按钮亮起。您还可以在终端中看到结果。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1182">[校准&#64;fish]</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -894,12 +894,12 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>9-按保存按钮查看结果。数据保存到 “/tmp/校准数据.Tar.gz”     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1183">[校准&#64;fish]</a></p>
+<p>9-按保存按钮查看结果。数据保存到 “/tmp/校准数据.Tar.gz”     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1183">[校准&#64;fish]</a></p>
 <dl class="simple">
-<dt>10-使用校准文件解压缩calibration.tar.gz     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1184">[校准&#64;fish]</a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-xvf</span> <span class="pre">calibration.tar.gz</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1185">[校准&#64;fish]</a></p>
+<dt>10-使用校准文件解压缩calibration.tar.gz     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1184">[校准&#64;fish]</a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-xvf</span> <span class="pre">calibration.tar.gz</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1185">[校准&#64;fish]</a></p>
 </dd>
 </dl>
-<p>11-在用于校准的文件夹中，图像以及 “ost.yaml” 和 “ost.txt” 都可用。您可以使用yaml文件，该文件包含相机驱动程序指示的校准参数。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1186">[校准&#64;fish]</a></p>
+<p>11-在用于校准的文件夹中，图像以及 “ost.yaml” 和 “ost.txt” 都可用。您可以使用yaml文件，该文件包含相机驱动程序指示的校准参数。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1186">[校准&#64;fish]</a></p>
 </div>
 </div>
 

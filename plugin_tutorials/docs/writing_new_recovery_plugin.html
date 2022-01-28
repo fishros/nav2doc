@@ -743,13 +743,13 @@
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>本教程演示如何创建自己的恢复插件。恢复插件位于恢复服务器中。与planner和控制器服务器不同，每个恢复都将托管自己独特的操作服务器。planner和控制器在完成相同任务时具有相同的API。但是，恢复可用于执行各种各样的任务，因此每个恢复都可以有自己独特的操作消息定义和服务器。这允许恢复服务器的巨大灵活性，实现任何可想象的不需要其他重用的恢复操作。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2181">[校准&#64;fish]</a></p>
+<p>本教程演示如何创建自己的恢复插件。恢复插件位于恢复服务器中。与planner和控制器服务器不同，每个恢复都将托管自己独特的操作服务器。planner和控制器在完成相同任务时具有相同的API。但是，恢复可用于执行各种各样的任务，因此每个恢复都可以有自己独特的操作消息定义和服务器。这允许恢复服务器的巨大灵活性，实现任何可想象的不需要其他重用的恢复操作。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2181">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p>ROS 2 (二进制或从源代码构建)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1995">[校准&#64;fish]</a></p></li>
-<li><p>Nav2 (包括依赖项)     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1996">[校准&#64;fish]</a></p></li>
+<li><p>ROS 2 (二进制或从源代码构建)     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1995">[校准&#64;fish]</a></p></li>
+<li><p>Nav2 (包括依赖项)     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1996">[校准&#64;fish]</a></p></li>
 <li><p>Gazebo</p></li>
 <li><p>Turtlebot3</p></li>
 </ul>
@@ -757,10 +757,10 @@
 <div class="section" id="tutorial-steps">
 <h2>教程步骤<a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="creating-a-new-recovery-plugin">
-<h3>1-创建一个新的恢复插件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2182">[校准&#64;fish]</a><a class="headerlink" href="#creating-a-new-recovery-plugin" title="永久链接至标题"></a></h3>
-<p>我们将创建一个简单呼救回收行为。它将使用Twilio发送消息通过短信远程操作中心。本教程中的代码在 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials">navigation_tutorials</a> 库 <code class="docutils literal notranslate"><span class="pre">nav2_sms_recovery</span></code> 。这个包可以参考写作回收插件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2183">[校准&#64;fish]</a></p>
-<p>我们例子插件实现插件的 <code class="docutils literal notranslate"><span class="pre">nav2_core::Recovery</span></code>。然而，我们愉快包装行动 <code class="docutils literal notranslate"><span class="pre">nav2_recoveries</span></code> ，所以我们使用  <code class="docutils literal notranslate"><span class="pre">nav2_recoveries::Recovery</span></code> 底座类应用程序。此包装类来自 <code class="docutils literal notranslate"><span class="pre">nav2_core</span></code> 类，可以作为一个插件，但处理绝大多数ROS 2动作服务器锅炉板需要。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2184">[校准&#64;fish]</a></p>
-<p>基类 <code class="docutils literal notranslate"><span class="pre">nav2_core</span></code> 提供4纯虚拟方法执行恢复插件。插件将使用恢复服务器主机插件，但每个插件提供自己独特动作服务器接口。让学习更方法需要写恢复插件 * * 如果你没有使用 <code class="docutils literal notranslate"><span class="pre">nav2_recoveries</span></code> 包装 * <a href="#id1"><span class="problematic" id="id2">*</span></a>。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2185">[校准&#64;fish]</a></p>
+<h3>1-创建一个新的恢复插件     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2182">[校准&#64;fish]</a><a class="headerlink" href="#creating-a-new-recovery-plugin" title="永久链接至标题"></a></h3>
+<p>我们将创建一个简单呼救回收行为。它将使用Twilio发送消息通过短信远程操作中心。本教程中的代码在 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials">navigation_tutorials</a> 库 <code class="docutils literal notranslate"><span class="pre">nav2_sms_recovery</span></code> 。这个包可以参考写作回收插件。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2183">[校准&#64;fish]</a></p>
+<p>我们例子插件实现插件的 <code class="docutils literal notranslate"><span class="pre">nav2_core::Recovery</span></code>。然而，我们愉快包装行动 <code class="docutils literal notranslate"><span class="pre">nav2_recoveries</span></code> ，所以我们使用  <code class="docutils literal notranslate"><span class="pre">nav2_recoveries::Recovery</span></code> 底座类应用程序。此包装类来自 <code class="docutils literal notranslate"><span class="pre">nav2_core</span></code> 类，可以作为一个插件，但处理绝大多数ROS 2动作服务器锅炉板需要。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2184">[校准&#64;fish]</a></p>
+<p>基类 <code class="docutils literal notranslate"><span class="pre">nav2_core</span></code> 提供4纯虚拟方法执行恢复插件。插件将使用恢复服务器主机插件，但每个插件提供自己独特动作服务器接口。让学习更方法需要写恢复插件 * * 如果你没有使用 <code class="docutils literal notranslate"><span class="pre">nav2_recoveries</span></code> 包装 * <a href="#id1"><span class="problematic" id="id2">*</span></a>。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2185">[校准&#64;fish]</a></p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -770,27 +770,27 @@
 <tbody>
 <tr class="row-odd"><td><p>虚拟方法</p></td>
 <td><p>方法描述</p></td>
-<td><p>Requires需要覆盖？**     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2052">[校准&#64;fish]</a></p></td>
+<td><p>Requires需要覆盖？**     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2052">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-even"><td><p>configure()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2108">[校准&#64;fish]</a></p></td>
-<td><p>方法在服务器进入on_configure状态。理想这方法执行声明ROS参数初始化回收的成员变量。该方法输入4个参数: 共享指针父节点，恢复名称，tf缓冲区指针共享指针碰撞检查     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2186">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>configure()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2108">[校准&#64;fish]</a></p></td>
+<td><p>方法在服务器进入on_configure状态。理想这方法执行声明ROS参数初始化回收的成员变量。该方法输入4个参数: 共享指针父节点，恢复名称，tf缓冲区指针共享指针碰撞检查     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2186">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
 <tr class="row-odd"><td><p>activate()</p></td>
-<td><p>在恢复服务器进入on_activate状态时调用方法。理想情况下，该方法应在恢复到活动状态之前实现必要的操作。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2187">[校准&#64;fish]</a></p></td>
+<td><p>在恢复服务器进入on_activate状态时调用方法。理想情况下，该方法应在恢复到活动状态之前实现必要的操作。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2187">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
-<tr class="row-even"><td><p>deactivate()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2112">[校准&#64;fish]</a></p></td>
-<td><p>在恢复服务器进入on_deactivate状态时调用方法。理想情况下，该方法应在恢复进入非活动状态之前实现必要的操作。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2188">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>deactivate()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2112">[校准&#64;fish]</a></p></td>
+<td><p>在恢复服务器进入on_deactivate状态时调用方法。理想情况下，该方法应在恢复进入非活动状态之前实现必要的操作。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2188">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
 <tr class="row-odd"><td><p>cleanup()</p></td>
-<td><p>在恢复服务器进入on_clean状态时调用方法。理想情况下，该方法应清理为恢复而创建的资源。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2189">[校准&#64;fish]</a></p></td>
+<td><p>在恢复服务器进入on_clean状态时调用方法。理想情况下，该方法应清理为恢复而创建的资源。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2189">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
 </tbody>
 </table>
-<p>的 <code class="docutils literal notranslate"><span class="pre">nav2_recoveries</span></code> 包装，提供ROS 2动作接口和样板，我们4虚拟方法实施。本教程使用此包装这些是主要元素将地址。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2190">[校准&#64;fish]</a></p>
+<p>的 <code class="docutils literal notranslate"><span class="pre">nav2_recoveries</span></code> 包装，提供ROS 2动作接口和样板，我们4虚拟方法实施。本教程使用此包装这些是主要元素将地址。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2190">[校准&#64;fish]</a></p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -800,28 +800,28 @@
 <tbody>
 <tr class="row-odd"><td><p>虚拟方法</p></td>
 <td><p>方法描述</p></td>
-<td><p>Requires需要覆盖？**     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2052">[校准&#64;fish]</a></p></td>
+<td><p>Requires需要覆盖？**     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2052">[校准&#64;fish]</a></p></td>
 </tr>
 <tr class="row-even"><td><p>onRun()</p></td>
-<td><p>方法立即新恢复动作收到请求。给出了运动目标过程应该启动恢复初始化/过程。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2192">[校准&#64;fish]</a></p></td>
+<td><p>方法立即新恢复动作收到请求。给出了运动目标过程应该启动恢复初始化/过程。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2192">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
-<tr class="row-odd"><td><p>onCycleUpdate()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2193">[校准&#64;fish]</a></p></td>
-<td><p>方法以恢复更新速率调用，并应完成任何必要的更新。旋转的一个例子是计算当前周期的命令速度，发布它并检查完成情况。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2194">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>onCycleUpdate()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2193">[校准&#64;fish]</a></p></td>
+<td><p>方法以恢复更新速率调用，并应完成任何必要的更新。旋转的一个例子是计算当前周期的命令速度，发布它并检查完成情况。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2194">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
-<tr class="row-even"><td><p>Onconfiguration()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2195">[校准&#64;fish]</a></p></td>
-<td><p>在恢复服务器进入on_configure状态时调用方法。理想情况下，该方法应在恢复进入配置状态 (获取参数等) 之前实现必要的操作。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2196">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>Onconfiguration()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2195">[校准&#64;fish]</a></p></td>
+<td><p>在恢复服务器进入on_configure状态时调用方法。理想情况下，该方法应在恢复进入配置状态 (获取参数等) 之前实现必要的操作。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2196">[校准&#64;fish]</a></p></td>
 <td><p>不</p></td>
 </tr>
-<tr class="row-odd"><td><p>onCleanup()     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2197">[校准&#64;fish]</a></p></td>
-<td><p>在恢复服务器进入on_clean状态时调用方法。理想情况下，该方法应清理为恢复而创建的资源。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2189">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>onCleanup()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2197">[校准&#64;fish]</a></p></td>
+<td><p>在恢复服务器进入on_clean状态时调用方法。理想情况下，该方法应清理为恢复而创建的资源。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2189">[校准&#64;fish]</a></p></td>
 <td><p>不</p></td>
 </tr>
 </tbody>
 </table>
-<p>在本教程中，我们将使用方法 <code class="docutils literal notranslate"><span class="pre">onRun()</span></code> 、 <code class="docutils literal notranslate"><span class="pre">onCycleUpdate()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">onConfigure()</span></code> 来创建SMS恢复。为了简洁起见，将跳过 <code class="docutils literal notranslate"><span class="pre">onConfigure()</span></code> ，但只包括参数声明。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2198">[校准&#64;fish]</a></p>
-<p>在恢复中， <code class="docutils literal notranslate"><span class="pre">onRun()</span></code> 法必须设置任何初始状态并开始恢复行为。对于我们寻求帮助恢复行为的情况，我们可以用这种方法简单地计算我们所有的需求。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2199">[校准&#64;fish]</a></p>
+<p>在本教程中，我们将使用方法 <code class="docutils literal notranslate"><span class="pre">onRun()</span></code> 、 <code class="docutils literal notranslate"><span class="pre">onCycleUpdate()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">onConfigure()</span></code> 来创建SMS恢复。为了简洁起见，将跳过 <code class="docutils literal notranslate"><span class="pre">onConfigure()</span></code> ，但只包括参数声明。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2198">[校准&#64;fish]</a></p>
+<p>在恢复中， <code class="docutils literal notranslate"><span class="pre">onRun()</span></code> 法必须设置任何初始状态并开始恢复行为。对于我们寻求帮助恢复行为的情况，我们可以用这种方法简单地计算我们所有的需求。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2199">[校准&#64;fish]</a></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Status</span><span class="w"> </span><span class="nf">SMSRecovery::onRun</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">Action</span><span class="o">::</span><span class="n">Goal</span><span class="o">&gt;</span><span class="w"> </span><span class="n">command</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">response</span><span class="p">;</span><span class="w"></span>
@@ -843,41 +843,41 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>我们收到一个行动目标， <code class="docutils literal notranslate"><span class="pre">command</span></code> ，我们想在其中进行处理。 <code class="docutils literal notranslate"><span class="pre">command</span></code> 包含一个 <code class="docutils literal notranslate"><span class="pre">message</span></code> 字段，其中包含我们想要传达给我们母亲的信息。这是我们想通过短信发送给行动中心的战友的  &quot;call for help&quot; 信息。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2200">[校准&#64;fish]</a></p>
-<p>我们使用服务Twilio完成此任务。请 <a class="reference external" href="https://www.twilio.com/">create an account</a> 和所有相关信息需要创建服务 (例如 <code class="docutils literal notranslate"><span class="pre">account_sid</span></code> ， <code class="docutils literal notranslate"><span class="pre">auth_token</span></code> ，电话号码)。你可以设置这些值参数配置文件对应 <code class="docutils literal notranslate"><span class="pre">onConfigure()</span></code> 参数声明。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2201">[校准&#64;fish]</a></p>
-<p>我们使用 <code class="docutils literal notranslate"><span class="pre">_twilio</span></code> 对象从配置文件中发送包含您的帐户信息的消息。我们发送消息并登录以筛选消息是否发送成功。我们根据要返回给动作客户端的值返回 <code class="docutils literal notranslate"><span class="pre">FAILED</span></code> 或 <code class="docutils literal notranslate"><span class="pre">SUCCEEDED</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2202">[校准&#64;fish]</a></p>
-<p><code class="docutils literal notranslate"><span class="pre">onCycleUpdate()</span></code> is trivially simple as a result of our short-running recovery behavior. If the recovery was instead longer running like spinning, navigating to a safe area, or getting out of a bad spot and waiting for help, then this function would be checking for timeouts or computing control values. For our example, we simply return success because we already completed our mission in <code class="docutils literal notranslate"><span class="pre">onRun()</span></code>.     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2203">[校准&#64;fish]</a></p>
+<p>我们收到一个行动目标， <code class="docutils literal notranslate"><span class="pre">command</span></code> ，我们想在其中进行处理。 <code class="docutils literal notranslate"><span class="pre">command</span></code> 包含一个 <code class="docutils literal notranslate"><span class="pre">message</span></code> 字段，其中包含我们想要传达给我们母亲的信息。这是我们想通过短信发送给行动中心的战友的  &quot;call for help&quot; 信息。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2200">[校准&#64;fish]</a></p>
+<p>我们使用服务Twilio完成此任务。请 <a class="reference external" href="https://www.twilio.com/">create an account</a> 和所有相关信息需要创建服务 (例如 <code class="docutils literal notranslate"><span class="pre">account_sid</span></code> ， <code class="docutils literal notranslate"><span class="pre">auth_token</span></code> ，电话号码)。你可以设置这些值参数配置文件对应 <code class="docutils literal notranslate"><span class="pre">onConfigure()</span></code> 参数声明。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2201">[校准&#64;fish]</a></p>
+<p>我们使用 <code class="docutils literal notranslate"><span class="pre">_twilio</span></code> 对象从配置文件中发送包含您的帐户信息的消息。我们发送消息并登录以筛选消息是否发送成功。我们根据要返回给动作客户端的值返回 <code class="docutils literal notranslate"><span class="pre">FAILED</span></code> 或 <code class="docutils literal notranslate"><span class="pre">SUCCEEDED</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2202">[校准&#64;fish]</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">onCycleUpdate()</span></code> is trivially simple as a result of our short-running recovery behavior. If the recovery was instead longer running like spinning, navigating to a safe area, or getting out of a bad spot and waiting for help, then this function would be checking for timeouts or computing control values. For our example, we simply return success because we already completed our mission in <code class="docutils literal notranslate"><span class="pre">onRun()</span></code>.     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2203">[校准&#64;fish]</a></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Status</span><span class="w"> </span><span class="nf">SMSRecovery::onCycleUpdate</span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Status</span><span class="o">::</span><span class="n">SUCCEEDED</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>不使用其余方法，也不强制重写它们。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2204">[校准&#64;fish]</a></p>
+<p>不使用其余方法，也不强制重写它们。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2204">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="exporting-the-recovery-plugin">
 <h3>2-导出恢复插件<a class="headerlink" href="#exporting-the-recovery-plugin" title="永久链接至标题"></a></h3>
-<p>现在我们创建定制回收，我们需要导出恢复插件，可见到恢复服务器。插件加载运行时如果不可见，然后我们恢复服务器将无法加载。在ROS 2中，导出和加载插件由 <code class="docutils literal notranslate"><span class="pre">pluginlib</span></code> 处理。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2206">[校准&#64;fish]</a></p>
-<p>来到我们的教程，类 “nav2_sms_recovery::SMSRecovery `` is loaded dynamically as `` nav2_core:: recovery” 是我们的基类。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2207">[校准&#64;fish]</a></p>
+<p>现在我们创建定制回收，我们需要导出恢复插件，可见到恢复服务器。插件加载运行时如果不可见，然后我们恢复服务器将无法加载。在ROS 2中，导出和加载插件由 <code class="docutils literal notranslate"><span class="pre">pluginlib</span></code> 处理。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2206">[校准&#64;fish]</a></p>
+<p>来到我们的教程，类 “nav2_sms_recovery::SMSRecovery `` is loaded dynamically as `` nav2_core:: recovery” 是我们的基类。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2207">[校准&#64;fish]</a></p>
 <ol class="arabic simple">
-<li><p>导出恢复，我们需要提供两行     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2208">[校准&#64;fish]</a></p></li>
+<li><p>导出恢复，我们需要提供两行     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2208">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pluginlib/class_list_macros.hpp&quot;</span><span class="cp"></span>
 <span class="n">PLUGINLIB_EXPORT_CLASS</span><span class="p">(</span><span class="n">nav2_sms_recovery</span><span class="o">::</span><span class="n">SMSRecovery</span><span class="p">,</span><span class="w"> </span><span class="n">nav2_core</span><span class="o">::</span><span class="n">Recovery</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
-<p>请注意，它需要pluginlib导出插件的类。Pluginlib将提供作为宏的 <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code> ，它负责所有的导出工作。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2167">[校准&#64;fish]</a></p>
-<p>它最好地方这些诗句结束文件但技术，你也可以写顶部。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2168">[校准&#64;fish]</a></p>
+<p>请注意，它需要pluginlib导出插件的类。Pluginlib将提供作为宏的 <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code> ，它负责所有的导出工作。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2167">[校准&#64;fish]</a></p>
+<p>它最好地方这些诗句结束文件但技术，你也可以写顶部。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2168">[校准&#64;fish]</a></p>
 <ol class="arabic simple" start="2">
-<li><p>下一步是在包的根目录中创建插件的描述文件。例如，我们的教程包中的 <code class="docutils literal notranslate"><span class="pre">recovery_plugin.xml</span></code> 文件。此文件包含以下信息     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2209">[校准&#64;fish]</a></p></li>
+<li><p>下一步是在包的根目录中创建插件的描述文件。例如，我们的教程包中的 <code class="docutils literal notranslate"><span class="pre">recovery_plugin.xml</span></code> 文件。此文件包含以下信息     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2209">[校准&#64;fish]</a></p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li><p>参数``library path``:插件的库名和它的位置。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2134">[校准&#64;fish]</a></p></li>
-<li><p>参数``class name``:class的名称。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2135">[校准&#64;fish]</a></p></li>
-<li><p>参数``class type``:类的类型     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2136">[校准&#64;fish]</a></p></li>
-<li><p>参数``base class``:基类的名称。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2137">[校准&#64;fish]</a></p></li>
-<li><p>参数``description``:插件的描述。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2138">[校准&#64;fish]</a></p></li>
+<li><p>参数``library path``:插件的库名和它的位置。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2134">[校准&#64;fish]</a></p></li>
+<li><p>参数``class name``:class的名称。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2135">[校准&#64;fish]</a></p></li>
+<li><p>参数``class type``:类的类型     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2136">[校准&#64;fish]</a></p></li>
+<li><p>参数``base class``:基类的名称。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2137">[校准&#64;fish]</a></p></li>
+<li><p>参数``description``:插件的描述。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2138">[校准&#64;fish]</a></p></li>
 </ul>
 </div></blockquote>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;library</span> <span class="na">path=</span><span class="s">&quot;nav2_sms_recovery_plugin&quot;</span><span class="nt">&gt;</span>
@@ -888,13 +888,13 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>下一步是导出插件使用 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> 使用cmake功能 <code class="docutils literal notranslate"><span class="pre">pluginlib_export_plugin_description_file()</span></code> 。此函数将插件描述文件安装到 <code class="docutils literal notranslate"><span class="pre">share</span></code> 目录，并设置属性索引以使其可被发现。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2170">[校准&#64;fish]</a></p></li>
+<li><p>下一步是导出插件使用 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> 使用cmake功能 <code class="docutils literal notranslate"><span class="pre">pluginlib_export_plugin_description_file()</span></code> 。此函数将插件描述文件安装到 <code class="docutils literal notranslate"><span class="pre">share</span></code> 目录，并设置属性索引以使其可被发现。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2170">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pluginlib_export_plugin_description_file(nav2_core recovery_plugin.xml)
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>插件描述文件也应添加到 <code class="docutils literal notranslate"><span class="pre">package.xml</span></code>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=2171">[校准&#64;fish]</a></p></li>
+<li><p>插件描述文件也应添加到 <code class="docutils literal notranslate"><span class="pre">package.xml</span></code>      <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2171">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;export&gt;</span>
   <span class="nt">&lt;build_type&gt;</span>ament_cmake<span class="nt">&lt;/build_type&gt;</span>
@@ -903,12 +903,12 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>编译并注册。接下来，我们将使用这个插件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2172">[校准&#64;fish]</a></p></li>
+<li><p>编译并注册。接下来，我们将使用这个插件。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2172">[校准&#64;fish]</a></p></li>
 </ol>
 </div>
 <div class="section" id="pass-the-plugin-name-through-params-file">
-<h3>3通过插件名称通过params文件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2173">[校准&#64;fish]</a><a class="headerlink" href="#pass-the-plugin-name-through-params-file" title="永久链接至标题"></a></h3>
-<p>要启用插件，我们需要如下修改 <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> 文件以替换以下参数     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2210">[校准&#64;fish]</a></p>
+<h3>3通过插件名称通过params文件     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2173">[校准&#64;fish]</a><a class="headerlink" href="#pass-the-plugin-name-through-params-file" title="永久链接至标题"></a></h3>
+<p>要启用插件，我们需要如下修改 <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> 文件以替换以下参数     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2210">[校准&#64;fish]</a></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>recoveries_server:
   ros__parameters:
     costmap_topic: local_costmap/costmap_raw
@@ -960,11 +960,11 @@
     rotational_acc_lim: 3.2
 </pre></div>
 </div>
-<p>在上面的片段中，您可以观察到我们在 <code class="docutils literal notranslate"><span class="pre">call_for_help</span></code> ROS 2操作服务器名称下添加了SMS恢复。我们还告诉恢复服务器 <code class="docutils literal notranslate"><span class="pre">call_for_help</span></code> 是 <code class="docutils literal notranslate"><span class="pre">SMSRecovery</span></code> 型的，并为您的Twilio帐户提供我们的参数。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2211">[校准&#64;fish]</a></p>
+<p>在上面的片段中，您可以观察到我们在 <code class="docutils literal notranslate"><span class="pre">call_for_help</span></code> ROS 2操作服务器名称下添加了SMS恢复。我们还告诉恢复服务器 <code class="docutils literal notranslate"><span class="pre">call_for_help</span></code> 是 <code class="docutils literal notranslate"><span class="pre">SMSRecovery</span></code> 型的，并为您的Twilio帐户提供我们的参数。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2211">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="run-recovery-plugin">
 <h3>4运行恢复插件<a class="headerlink" href="#run-recovery-plugin" title="永久链接至标题"></a></h3>
-<p>运行Turtlebot3 仿真启用Nav2。如何制作它的详细说明写在 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 。下面是该命令的快捷方式:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=2213">[校准&#64;fish]</a></p>
+<p>运行Turtlebot3 仿真启用Nav2。如何制作它的详细说明写在 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 。下面是该命令的快捷方式:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2213">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ros2 launch nav2_bringup tb3_simulation_launch.py params_file:<span class="o">=</span>/path/to/your_params_file.yaml
 </pre></div>
 </div>

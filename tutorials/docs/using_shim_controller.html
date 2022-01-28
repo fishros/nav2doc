@@ -745,29 +745,29 @@
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>本教程将讨论如何设置您的机器人使用 <code class="docutils literal notranslate"><span class="pre">RotationShimController</span></code> 来帮助您的机器人在开始跟踪路径时创建直观的就地旋转行为。本教程的目的是向读者解释控制器的值，如何配置它，如何用它配置主控制器，最后是使用它的一个例子。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1468">[校准&#64;fish]</a></p>
-<p>在开始本教程之前，强烈建议您完成 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> ，尤其是如果您是ROS和Nav2的新手。要求是最新安装的Nav2/ROS 2包含这个包。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1469">[校准&#64;fish]</a></p>
+<p>本教程将讨论如何设置您的机器人使用 <code class="docutils literal notranslate"><span class="pre">RotationShimController</span></code> 来帮助您的机器人在开始跟踪路径时创建直观的就地旋转行为。本教程的目的是向读者解释控制器的值，如何配置它，如何用它配置主控制器，最后是使用它的一个例子。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1468">[校准&#64;fish]</a></p>
+<p>在开始本教程之前，强烈建议您完成 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> ，尤其是如果您是ROS和Nav2的新手。要求是最新安装的Nav2/ROS 2包含这个包。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1469">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="what-is-the-rotation-shim-controller">
-<h2>什么是旋转微调控制器？     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1470">[校准&#64;fish]</a><a class="headerlink" href="#what-is-the-rotation-shim-controller" title="永久链接至标题"></a></h2>
-<p>这是开发由于怪癖TEB和DWB，但适用于任何其他控制器插件类型想旋转到位行为。 <code class="docutils literal notranslate"><span class="pre">TEB</span></code> 的行为往往鞭机器人小结果，或当路径开始非常不同标题比电流在一个有点奇怪方式由于松紧带方法。 <code class="docutils literal notranslate"><span class="pre">DWB</span></code> 可以调整到有任何类型的行为，但通常调整它是一个优秀路径追随者还少优化能够平滑过渡到新路径远标题 -- 总是权衡。同时给出TEB和DWB更好起点开始跟踪路径调整控制器显着容易创建更直观结果作壁上观。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1471">[校准&#64;fish]</a></p>
-<p>请注意，不需要在任何插件中使用它。许多用户在不使用该控制器的情况下是完全成功的，但是如果机器人可以在开始其路径跟踪任务 (或其他任务) 之前就地旋转，这样做是有利的。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1472">[校准&#64;fish]</a></p>
-<p>参数 <code class="docutils literal notranslate"><span class="pre">nav2_rotation_shim_controller</span></code> 将检查机器人和新接收路径的大致航向差异。如果在阈值内，它将把请求传递给 <code class="docutils literal notranslate"><span class="pre">primary_controller</span></code> 执行任务。如果超出阈值，该控制器将机器人旋转至该路径方向的适当位置。一旦它在公差范围内，它就会将控制执行从这个旋转微调控制器传递到主控制器插件上。此时，机器人的主插件将控制顺利完成任务。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1473">[校准&#64;fish]</a></p>
+<h2>什么是旋转微调控制器？     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1470">[校准&#64;fish]</a><a class="headerlink" href="#what-is-the-rotation-shim-controller" title="永久链接至标题"></a></h2>
+<p>这是开发由于怪癖TEB和DWB，但适用于任何其他控制器插件类型想旋转到位行为。 <code class="docutils literal notranslate"><span class="pre">TEB</span></code> 的行为往往鞭机器人小结果，或当路径开始非常不同标题比电流在一个有点奇怪方式由于松紧带方法。 <code class="docutils literal notranslate"><span class="pre">DWB</span></code> 可以调整到有任何类型的行为，但通常调整它是一个优秀路径追随者还少优化能够平滑过渡到新路径远标题 -- 总是权衡。同时给出TEB和DWB更好起点开始跟踪路径调整控制器显着容易创建更直观结果作壁上观。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1471">[校准&#64;fish]</a></p>
+<p>请注意，不需要在任何插件中使用它。许多用户在不使用该控制器的情况下是完全成功的，但是如果机器人可以在开始其路径跟踪任务 (或其他任务) 之前就地旋转，这样做是有利的。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1472">[校准&#64;fish]</a></p>
+<p>参数 <code class="docutils literal notranslate"><span class="pre">nav2_rotation_shim_controller</span></code> 将检查机器人和新接收路径的大致航向差异。如果在阈值内，它将把请求传递给 <code class="docutils literal notranslate"><span class="pre">primary_controller</span></code> 执行任务。如果超出阈值，该控制器将机器人旋转至该路径方向的适当位置。一旦它在公差范围内，它就会将控制执行从这个旋转微调控制器传递到主控制器插件上。此时，机器人的主插件将控制顺利完成任务。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1473">[校准&#64;fish]</a></p>
 <p>The <code class="docutils literal notranslate"><span class="pre">RotationShimController</span></code> is most suitable for:</p>
 <ul class="simple">
-<li><p>可以就地旋转的机器人，如差分和全向机器人。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1475">[校准&#64;fish]</a></p></li>
-<li><p>当开始跟踪与机器人当前航向明显不同的航向的新路径时，或者当为其任务调整控制器时，优先选择旋转。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1476">[校准&#64;fish]</a></p></li>
-<li><p>使用非运动学上可行的planner，如NavFn、Theta <a href="#id1"><span class="problematic" id="id2">*</span></a>，或Smac 2D (可行planner等Smac Hybrid-A*和点阵将启动搜索机器人的实际启动标题，无需旋转以来路径保证驱动物理约束)。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1477">[校准&#64;fish]</a></p></li>
+<li><p>可以就地旋转的机器人，如差分和全向机器人。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1475">[校准&#64;fish]</a></p></li>
+<li><p>当开始跟踪与机器人当前航向明显不同的航向的新路径时，或者当为其任务调整控制器时，优先选择旋转。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1476">[校准&#64;fish]</a></p></li>
+<li><p>使用非运动学上可行的planner，如NavFn、Theta <a href="#id1"><span class="problematic" id="id2">*</span></a>，或Smac 2D (可行planner等Smac Hybrid-A*和点阵将启动搜索机器人的实际启动标题，无需旋转以来路径保证驱动物理约束)。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1477">[校准&#64;fish]</a></p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>稳压纯追求此内置因此不必对RPP。然而，它适用于所有其他。看到 <a class="reference internal" href="../../plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a> 的完整列表电流控制器插件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1478">[校准&#64;fish]</a></p>
+<p>稳压纯追求此内置因此不必对RPP。然而，它适用于所有其他。看到 <a class="reference internal" href="../../plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a> 的完整列表电流控制器插件。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1478">[校准&#64;fish]</a></p>
 </div>
 </div>
 <div class="section" id="configuring-rotation-shim-controller">
 <h2>配置旋转微调控制器<a class="headerlink" href="#configuring-rotation-shim-controller" title="永久链接至标题"></a></h2>
-<p>该控制器是 <em>shim</em>，因为它位于主控制器插件和控制器服务器之间。它需要命令并对其进行预处理以旋转到标题，然后在满足该条件后将执行控制传递给主插件-充当简单的传递。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1480">[校准&#64;fish]</a></p>
-<p>因此，它的配置看起来与任何其他插件非常相似。在下面的代码块中，您可以看到我们已经添加了 <code class="docutils literal notranslate"><span class="pre">RotationShimController</span></code> 作为控制器服务器中路径跟踪的插件。你可以看到我们也在下面配置了它的内部参数， <code class="docutils literal notranslate"><span class="pre">angular_dist_threshold</span></code> 到 <code class="docutils literal notranslate"><span class="pre">max_angular_accel</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1481">[校准&#64;fish]</a></p>
+<p>该控制器是 <em>shim</em>，因为它位于主控制器插件和控制器服务器之间。它需要命令并对其进行预处理以旋转到标题，然后在满足该条件后将执行控制传递给主插件-充当简单的传递。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1480">[校准&#64;fish]</a></p>
+<p>因此，它的配置看起来与任何其他插件非常相似。在下面的代码块中，您可以看到我们已经添加了 <code class="docutils literal notranslate"><span class="pre">RotationShimController</span></code> 作为控制器服务器中路径跟踪的插件。你可以看到我们也在下面配置了它的内部参数， <code class="docutils literal notranslate"><span class="pre">angular_dist_threshold</span></code> 到 <code class="docutils literal notranslate"><span class="pre">max_angular_accel</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1481">[校准&#64;fish]</a></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_server</span><span class="p">:</span>
   <span class="nt">ros__parameters</span><span class="p">:</span>
     <span class="nt">use_sim_time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -796,18 +796,18 @@
       <span class="nt">simulate_ahead_time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0</span>
 </pre></div>
 </div>
-<p>旋转微调控制器很简单只有几个参数决定条件应颁布。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1482">[校准&#64;fish]</a></p>
+<p>旋转微调控制器很简单只有几个参数决定条件应颁布。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1482">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p>参数``angular_dist_threshold``:角距离 (弧度) 除了机器人的电流标题和近似路径前往触发旋转行为。一旦机器人在这个门槛，控制交给初级控制器插件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1483">[校准&#64;fish]</a></p></li>
-<li><p>参数``forward_sampling_distance``:距离机器人的距离 (以米为单位)，以选择路径上的一个点来近似路径的开始方向。这类似于  &quot;lookahead&quot; 乙。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1484">[校准&#64;fish]</a></p></li>
-<li><p>参数``rotate_to_heading_angular_vel``:角速度 (rad/s) 机器人旋转标题，当行为制定。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1485">[校准&#64;fish]</a></p></li>
-<li><p>参数``max_angular_accel``:角加速度 (rad/s) 机器人旋转标题，当行为制定。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1486">[校准&#64;fish]</a></p></li>
-<li><p>参数``simulate_ahead_time``:前进的时间项目旋转命令来检查碰撞     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1487">[校准&#64;fish]</a></p></li>
+<li><p>参数``angular_dist_threshold``:角距离 (弧度) 除了机器人的电流标题和近似路径前往触发旋转行为。一旦机器人在这个门槛，控制交给初级控制器插件。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1483">[校准&#64;fish]</a></p></li>
+<li><p>参数``forward_sampling_distance``:距离机器人的距离 (以米为单位)，以选择路径上的一个点来近似路径的开始方向。这类似于  &quot;lookahead&quot; 乙。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1484">[校准&#64;fish]</a></p></li>
+<li><p>参数``rotate_to_heading_angular_vel``:角速度 (rad/s) 机器人旋转标题，当行为制定。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1485">[校准&#64;fish]</a></p></li>
+<li><p>参数``max_angular_accel``:角加速度 (rad/s) 机器人旋转标题，当行为制定。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1486">[校准&#64;fish]</a></p></li>
+<li><p>参数``simulate_ahead_time``:前进的时间项目旋转命令来检查碰撞     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1487">[校准&#64;fish]</a></p></li>
 </ul>
 </div>
 <div class="section" id="configuring-primary-controller">
 <h2>配置主控制器<a class="headerlink" href="#configuring-primary-controller" title="永久链接至标题"></a></h2>
-<p>还有一个上面没有提到的 <code class="docutils literal notranslate"><span class="pre">RotationShimController</span></code> 的剩余参数， <code class="docutils literal notranslate"><span class="pre">primary_controller</span></code> 。这是应用程序希望用作主要操作方式的控制器类型。它将与shim插件共享相同的名称和yaml命名空间。在主控制器设置 <code class="docutils literal notranslate"><span class="pre">DWB</span></code> 的情况下，你可以观察到这一点 (为简洁起见，移除进度和目标检查员)。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1489">[校准&#64;fish]</a></p>
+<p>还有一个上面没有提到的 <code class="docutils literal notranslate"><span class="pre">RotationShimController</span></code> 的剩余参数， <code class="docutils literal notranslate"><span class="pre">primary_controller</span></code> 。这是应用程序希望用作主要操作方式的控制器类型。它将与shim插件共享相同的名称和yaml命名空间。在主控制器设置 <code class="docutils literal notranslate"><span class="pre">DWB</span></code> 的情况下，你可以观察到这一点 (为简洁起见，移除进度和目标检查员)。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1489">[校准&#64;fish]</a></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_server</span><span class="p">:</span>
   <span class="nt">ros__parameters</span><span class="p">:</span>
     <span class="nt">use_sim_time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -831,7 +831,7 @@
       <span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
-<p>重要的一点是，在同一个yaml命名空间中，您还可以包括机器人所需的任何 <code class="docutils literal notranslate"><span class="pre">primary_controller</span></code> 特定参数。因此，在 <code class="docutils literal notranslate"><span class="pre">max_angular_accel</span></code> 之后，你可以为你的平台包括 <code class="docutils literal notranslate"><span class="pre">DWB</span></code> 的任何参数。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1490">[校准&#64;fish]</a></p>
+<p>重要的一点是，在同一个yaml命名空间中，您还可以包括机器人所需的任何 <code class="docutils literal notranslate"><span class="pre">primary_controller</span></code> 特定参数。因此，在 <code class="docutils literal notranslate"><span class="pre">max_angular_accel</span></code> 之后，你可以为你的平台包括 <code class="docutils literal notranslate"><span class="pre">DWB</span></code> 的任何参数。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1490">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="demo-execution">
 <h2>演示执行<a class="headerlink" href="#demo-execution" title="永久链接至标题"></a></h2>

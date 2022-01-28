@@ -732,39 +732,39 @@
            <div itemprop="articleBody">
              
   <div class="section" id="create-new-planner-and-controller-plugins">
-<span id="create-plugins"></span><h1>2.创建新的规划器和控制器插件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=382">[校准&#64;fish]</a><a class="headerlink" href="#create-new-planner-and-controller-plugins" title="永久链接至标题"></a></h1>
+<span id="create-plugins"></span><h1>2.创建新的规划器和控制器插件     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=382">[校准&#64;fish]</a><a class="headerlink" href="#create-new-planner-and-controller-plugins" title="永久链接至标题"></a></h1>
 <p>任务描述</p>
-<p>ROS 2导航栈具有许多插件界面，可帮助用户创建或选择特定的插件来规划、控制和恢复其应用程序。Nav2堆栈可以使用更多算法插件的两个特定区域用于路径规划 (称为planner插件) 和本地轨迹生成 (称为控制器插件)。简单教程创建 <a class="reference external" href="https://navigation.ros.org/tutorials/docs/writing_new_nav2planner_plugin.html">planner plugin can be found here.</a> 目前，我们有一个planner，NavFn实现一个A*和Dijkstra的planner。它还有两个控制器，DWB和TEB，它们实现了DWA和定时弹性带优化技术。还有一个混合-A*和OMPLplanner正在开发中。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=383">[校准&#64;fish]</a></p>
-<p>您的任务是为Nav2插件接口创建以下算法之一的高质量实现。在批准后也可以考虑替代算法，请在申请阶段询问 &#64; steve。请只选择一个进行讨论。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=384">[校准&#64;fish]</a></p>
+<p>ROS 2导航栈具有许多插件界面，可帮助用户创建或选择特定的插件来规划、控制和恢复其应用程序。Nav2堆栈可以使用更多算法插件的两个特定区域用于路径规划 (称为planner插件) 和本地轨迹生成 (称为控制器插件)。简单教程创建 <a class="reference external" href="https://navigation.ros.org/tutorials/docs/writing_new_nav2planner_plugin.html">planner plugin can be found here.</a> 目前，我们有一个planner，NavFn实现一个A*和Dijkstra的planner。它还有两个控制器，DWB和TEB，它们实现了DWA和定时弹性带优化技术。还有一个混合-A*和OMPLplanner正在开发中。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=383">[校准&#64;fish]</a></p>
+<p>您的任务是为Nav2插件接口创建以下算法之一的高质量实现。在批准后也可以考虑替代算法，请在申请阶段询问 &#64; steve。请只选择一个进行讨论。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=384">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p>规划器插件选项: D * 或变体、沃尔诺伊planner、导航图路线planner、国家晶格planner、动态planner以及任何给定一组动态和静态障碍的规划方法。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=385">[校准&#64;fish]</a></p></li>
-<li><p>控制器插件选项: CiLQR、iLQR、MPC、样条线、路径跟随或动态障碍物跟随控制器。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=386">[校准&#64;fish]</a></p></li>
-<li><p>附加选项: 帮助完成OMPL或混合-A*planner。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=387">[校准&#64;fish]</a></p></li>
+<li><p>规划器插件选项: D * 或变体、沃尔诺伊planner、导航图路线planner、国家晶格planner、动态planner以及任何给定一组动态和静态障碍的规划方法。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=385">[校准&#64;fish]</a></p></li>
+<li><p>控制器插件选项: CiLQR、iLQR、MPC、样条线、路径跟随或动态障碍物跟随控制器。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=386">[校准&#64;fish]</a></p></li>
+<li><p>附加选项: 帮助完成OMPL或混合-A*planner。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=387">[校准&#64;fish]</a></p></li>
 </ul>
-<p>Project项目难度: 高High     <a class="reference external" href="http://10.55.23.25:3000/#msgid=371">[校准&#64;fish]</a></p>
-<p>Project项目社区导师: 史蒂夫·麦肯斯基 <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a>      <a class="reference external" href="http://10.55.23.25:3000/#msgid=345">[校准&#64;fish]</a></p>
-<p>Mentor导师联系方式: [请参阅上面的链接，GitHub个人资料描述中的链接] **     <a class="reference external" href="http://10.55.23.25:3000/#msgid=346">[校准&#64;fish]</a></p>
+<p>Project项目难度: 高High     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=371">[校准&#64;fish]</a></p>
+<p>Project项目社区导师: 史蒂夫·麦肯斯基 <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a>      <a class="reference external" href="http://10.55.23.25:3000/#?msgid=345">[校准&#64;fish]</a></p>
+<p>Mentor导师联系方式: [请参阅上面的链接，GitHub个人资料描述中的链接] **     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=346">[校准&#64;fish]</a></p>
 <p>项目输出要求</p>
 <ul class="simple">
-<li><p>用于Nav2堆栈的功能性planner或控制器插件     <a class="reference external" href="http://10.55.23.25:3000/#msgid=388">[校准&#64;fish]</a></p></li>
-<li><p>插件应针对50% 或更高测试覆盖率的运行时性能进行优化     <a class="reference external" href="http://10.55.23.25:3000/#msgid=389">[校准&#64;fish]</a></p></li>
+<li><p>用于Nav2堆栈的功能性planner或控制器插件     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=388">[校准&#64;fish]</a></p></li>
+<li><p>插件应针对50% 或更高测试覆盖率的运行时性能进行优化     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=389">[校准&#64;fish]</a></p></li>
 </ul>
 <p>所需技能</p>
 <ul class="simple">
 <li><p>C++</p></li>
 <li><p>路径规划或运动规划</p></li>
 <li><p>算法优化</p></li>
-<li><p>ROS / Pluginlib     <a class="reference external" href="http://10.55.23.25:3000/#msgid=393">[校准&#64;fish]</a></p></li>
-<li><p>推荐: Gazebo模拟和导航体验     <a class="reference external" href="http://10.55.23.25:3000/#msgid=394">[校准&#64;fish]</a></p></li>
+<li><p>ROS / Pluginlib     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=393">[校准&#64;fish]</a></p></li>
+<li><p>推荐: Gazebo模拟和导航体验     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=394">[校准&#64;fish]</a></p></li>
 </ul>
-<p>相关开源软件存储库和参考文献列表     <a class="reference external" href="http://10.55.23.25:3000/#msgid=352">[校准&#64;fish]</a></p>
+<p>相关开源软件存储库和参考文献列表     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=352">[校准&#64;fish]</a></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ros.org/">ROS</a></p></li>
 <li><p><a class="reference external" href="http://gazebosim.org/">Gazebo Simulator</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1710">Github issue page</a></p></li>
 <li><p><a class="reference external" href="https://navigation.ros.org/">Nav2</a></p></li>
 </ul>
-<p>许可-所有贡献将在Apache 2.0许可下进行。-不需要其他CLA。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=357">[校准&#64;fish]</a></p>
+<p>许可-所有贡献将在Apache 2.0许可下进行。-不需要其他CLA。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=357">[校准&#64;fish]</a></p>
 </div>
 
 

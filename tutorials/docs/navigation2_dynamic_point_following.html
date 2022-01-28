@@ -746,8 +746,8 @@
   </div>
 </h1><div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>本教程演示如何使用Nav2不同任务其他比从a到B。在这种情况下，我们将使用Nav2跟随移动对象距离无限期。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1239">[校准&#64;fish]</a></p>
-<p>此任务在跟踪一个人或另一个机器人的情况下非常有用。以下是可以使用此功能创建的应用程序的一些示例视频。  &quot;Carry My Luggage&quot; RoboCup &#64; Home测试，其中 <a class="reference external" href="https://robotics.catie.fr/">CATIE Robotics</a> 团队成功执行测试和这个真实的 (未来的) 世界应用:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1240">[校准&#64;fish]</a></p>
+<p>本教程演示如何使用Nav2不同任务其他比从a到B。在这种情况下，我们将使用Nav2跟随移动对象距离无限期。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1239">[校准&#64;fish]</a></p>
+<p>此任务在跟踪一个人或另一个机器人的情况下非常有用。以下是可以使用此功能创建的应用程序的一些示例视频。  &quot;Carry My Luggage&quot; RoboCup &#64; Home测试，其中 <a class="reference external" href="https://robotics.catie.fr/">CATIE Robotics</a> 团队成功执行测试和这个真实的 (未来的) 世界应用:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1240">[校准&#64;fish]</a></p>
 <h1 align="center">
   <div>
     <div style="position: relative; padding-bottom: 0%; overflow: hidden; max-width: 100%; height: auto;">
@@ -757,18 +757,18 @@
   </div>
 </h1><p>此任务的要求如下:</p>
 <ul class="simple">
-<li><p>变化有限行为树用于导航。这行为树可以选择在 <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code> 行动需要，或可以默认行为树。它由运行时配置插件。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1242">[校准&#64;fish]</a></p></li>
-<li><p>配置的planner控制器不会改性。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1243">[校准&#64;fish]</a></p></li>
-<li><p>该操作将无限期运行，直到由谁发起取消。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1244">[校准&#64;fish]</a></p></li>
+<li><p>变化有限行为树用于导航。这行为树可以选择在 <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code> 行动需要，或可以默认行为树。它由运行时配置插件。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1242">[校准&#64;fish]</a></p></li>
+<li><p>配置的planner控制器不会改性。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1243">[校准&#64;fish]</a></p></li>
+<li><p>该操作将无限期运行，直到由谁发起取消。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1244">[校准&#64;fish]</a></p></li>
 </ul>
-<p>要遵循的动态对象 (如人) 的检测不在本教程的范围内。如下图所示，您的应用程序应该为感兴趣的对象提供一个检测器，将初始姿势发送到 <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code> 动作，并在任务期间更新主题。存在许多不同类型的检测器，您可以利用这些检测器用于此应用:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1245">[校准&#64;fish]</a></p>
+<p>要遵循的动态对象 (如人) 的检测不在本教程的范围内。如下图所示，您的应用程序应该为感兴趣的对象提供一个检测器，将初始姿势发送到 <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code> 动作，并在任务期间更新主题。存在许多不同类型的检测器，您可以利用这些检测器用于此应用:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1245">[校准&#64;fish]</a></p>
 <a class="reference internal image-reference" href="../../_images/main_diagram.png"><img alt="../../_images/main_diagram.png" src="../../_images/main_diagram.png" style="width: 48%;" /></a>
 </div>
 <div class="section" id="tutorial-steps">
 <h2>教程步骤<a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="create-the-behavior-tree">
 <h3>0-创建行为树<a class="headerlink" href="#create-the-behavior-tree" title="永久链接至标题"></a></h3>
-<p>让我们从这个简单的行为树开始。此行为树以1 hz重新规划新路径，并将该路径传递给控制器以遵循:     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1247">[校准&#64;fish]</a></p>
+<p>让我们从这个简单的行为树开始。此行为树以1 hz重新规划新路径，并将该路径传递给控制器以遵循:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1247">[校准&#64;fish]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span> <span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;BehaviorTree</span> <span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;PipelineSequence</span> <span class="na">name=</span><span class="s">&quot;NavigateWithReplanning&quot;</span><span class="nt">&gt;</span>
@@ -781,7 +781,7 @@
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 </div>
-<p>首先，让's make this behavior run until there'失败。为此，我们将使用 <code class="docutils literal notranslate"><span class="pre">KeepRunningUntilFailure</span></code> 控制节点。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1248">[校准&#64;fish]</a></p>
+<p>首先，让's make this behavior run until there'失败。为此，我们将使用 <code class="docutils literal notranslate"><span class="pre">KeepRunningUntilFailure</span></code> 控制节点。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1248">[校准&#64;fish]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span> <span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;BehaviorTree</span> <span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;PipelineSequence</span> <span class="na">name=</span><span class="s">&quot;NavigateWithReplanning&quot;</span><span class="nt">&gt;</span>
@@ -796,7 +796,7 @@
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 </div>
-<p>然后，我们将使用装饰器 <code class="docutils literal notranslate"><span class="pre">GoalUpdater</span></code> 来接受我们试图遵循的动态对象姿势的更新。该节点将当前目标作为输入，并订阅主题 <code class="docutils literal notranslate"><span class="pre">/goal_update</span></code> 。如果收到关于这个主题的新目标，它将新目标定为 <code class="docutils literal notranslate"><span class="pre">updated_goal</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1249">[校准&#64;fish]</a></p>
+<p>然后，我们将使用装饰器 <code class="docutils literal notranslate"><span class="pre">GoalUpdater</span></code> 来接受我们试图遵循的动态对象姿势的更新。该节点将当前目标作为输入，并订阅主题 <code class="docutils literal notranslate"><span class="pre">/goal_update</span></code> 。如果收到关于这个主题的新目标，它将新目标定为 <code class="docutils literal notranslate"><span class="pre">updated_goal</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1249">[校准&#64;fish]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span> <span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;BehaviorTree</span> <span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;PipelineSequence</span> <span class="na">name=</span><span class="s">&quot;NavigateWithReplanning&quot;</span><span class="nt">&gt;</span>
@@ -813,7 +813,7 @@
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 </div>
-<p>为了与目标保持一定距离，我们将使用动作节点 <code class="docutils literal notranslate"><span class="pre">TruncatePath</span></code> 。此节点修改路径，使其更短，因此我们不会尝试导航到感兴趣的对象。我们可以使用输入端口 <code class="docutils literal notranslate"><span class="pre">distance</span></code> 设置到目标的所需距离。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1250">[校准&#64;fish]</a></p>
+<p>为了与目标保持一定距离，我们将使用动作节点 <code class="docutils literal notranslate"><span class="pre">TruncatePath</span></code> 。此节点修改路径，使其更短，因此我们不会尝试导航到感兴趣的对象。我们可以使用输入端口 <code class="docutils literal notranslate"><span class="pre">distance</span></code> 设置到目标的所需距离。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1250">[校准&#64;fish]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span> <span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;BehaviorTree</span> <span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;PipelineSequence</span> <span class="na">name=</span><span class="s">&quot;NavigateWithReplanning&quot;</span><span class="nt">&gt;</span>
@@ -833,21 +833,21 @@
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 </div>
-<p>现在，你可以保存此行为树用它导航任务。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1251">[校准&#64;fish]</a></p>
-<p>用参考，这个行为树 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_bt_navigator/behavior_trees/follow_point.xml">made available</a> 你电池列入 <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator</span></code> 包。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1252">[校准&#64;fish]</a></p>
+<p>现在，你可以保存此行为树用它导航任务。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1251">[校准&#64;fish]</a></p>
+<p>用参考，这个行为树 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_bt_navigator/behavior_trees/follow_point.xml">made available</a> 你电池列入 <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator</span></code> 包。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1252">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="setup-rviz-clicked-point">
-<h3>1- 设置Rviz点选     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1253">[校准&#64;fish]</a><a class="headerlink" href="#setup-rviz-clicked-point" title="永久链接至标题"></a></h3>
-<p>我们将使用RViz，而不是一个完整的应用程序，这样你就可以在家里测试，而不用找到一个探测器来开始。我们将使用工具栏上的 “  &quot;clicked point&quot; ” 按钮替换对象检测，以向Nav2提供目标更新。这个按钮允许你发布主题 <code class="docutils literal notranslate"><span class="pre">/clicked_point</span></code> 的坐标。这一点需要使用来自 <a class="reference external" href="https://github.com/fmrico/nav2_test_utils">this repo</a> 的程序 <code class="docutils literal notranslate"><span class="pre">clicked_point_to_pose</span></code> 发送到行为树。在工作区中克隆此存储库，构建并键入终端。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1254">[校准&#64;fish]</a></p>
-<p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">nav2_test_utils</span> <span class="pre">clicked_point_to_pose</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1255">[校准&#64;fish]</a></p>
-<p>或者，您可以重新映射此课题你rviz配置文件 <code class="docutils literal notranslate"><span class="pre">goal_updates</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1256">[校准&#64;fish]</a></p>
+<h3>1- 设置Rviz点选     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1253">[校准&#64;fish]</a><a class="headerlink" href="#setup-rviz-clicked-point" title="永久链接至标题"></a></h3>
+<p>我们将使用RViz，而不是一个完整的应用程序，这样你就可以在家里测试，而不用找到一个探测器来开始。我们将使用工具栏上的 “  &quot;clicked point&quot; ” 按钮替换对象检测，以向Nav2提供目标更新。这个按钮允许你发布主题 <code class="docutils literal notranslate"><span class="pre">/clicked_point</span></code> 的坐标。这一点需要使用来自 <a class="reference external" href="https://github.com/fmrico/nav2_test_utils">this repo</a> 的程序 <code class="docutils literal notranslate"><span class="pre">clicked_point_to_pose</span></code> 发送到行为树。在工作区中克隆此存储库，构建并键入终端。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1254">[校准&#64;fish]</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">nav2_test_utils</span> <span class="pre">clicked_point_to_pose</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1255">[校准&#64;fish]</a></p>
+<p>或者，您可以重新映射此课题你rviz配置文件 <code class="docutils literal notranslate"><span class="pre">goal_updates</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1256">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="run-dynamic-object-following-in-nav2-simulation">
-<h3>Nav2模拟中的双运行动态目标追踪     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1257">[校准&#64;fish]</a><a class="headerlink" href="#run-dynamic-object-following-in-nav2-simulation" title="永久链接至标题"></a></h3>
+<h3>Nav2模拟中的双运行动态目标追踪     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1257">[校准&#64;fish]</a><a class="headerlink" href="#run-dynamic-object-following-in-nav2-simulation" title="永久链接至标题"></a></h3>
 <p>启动Nav2在终端:</p>
-<p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">nav2_bringup</span> <span class="pre">tb3_simulation_launch.py</span> <span class="pre">default_bt_xml_filename:=/path/to/bt.xml</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1259">[校准&#64;fish]</a></p>
-<p>打开RViz，在初始化机器人位置后，命令机器人导航到任何位置。使用单击的按钮点模拟对感兴趣对象的新检测，如本教程开头的视频所示。     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1260">[校准&#64;fish]</a></p>
-<p>当你有探测器检测障碍率较高 (1 hz，10 hz，100 hz) 你会看到更加活性机器人的检测对象的!     <a class="reference external" href="http://10.55.23.25:3000/#msgid=1261">[校准&#64;fish]</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">nav2_bringup</span> <span class="pre">tb3_simulation_launch.py</span> <span class="pre">default_bt_xml_filename:=/path/to/bt.xml</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1259">[校准&#64;fish]</a></p>
+<p>打开RViz，在初始化机器人位置后，命令机器人导航到任何位置。使用单击的按钮点模拟对感兴趣对象的新检测，如本教程开头的视频所示。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1260">[校准&#64;fish]</a></p>
+<p>当你有探测器检测障碍率较高 (1 hz，10 hz，100 hz) 你会看到更加活性机器人的检测对象的!     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1261">[校准&#64;fish]</a></p>
 <h1 align="center">
   <div style="position: relative; padding-bottom: 0%; overflow: hidden; max-width: 100%; height: auto;">
     <iframe width="700" height="450" src="https://www.youtube.com/embed/r4fIkcktZUM?autoplay=1" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
