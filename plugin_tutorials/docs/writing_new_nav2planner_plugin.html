@@ -741,16 +741,16 @@
 <li><p><a class="reference internal" href="#requirements">Requirements</a></p></li>
 <li><p><a class="reference internal" href="#tutorial-steps">Tutorial Steps</a></p></li>
 </ul>
-<a class="reference internal image-reference" href="../../_images/nav2_straightline_gif.gif"><img alt="带有渐变演示的动画gif     `[校准&#64;fish] &lt;http://10.55.23.25:3000/#?msgid=2043&gt;`_ " class="align-center" src="../../_images/nav2_straightline_gif.gif" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/nav2_straightline_gif.gif"><img alt="带有渐变演示的动画gif     `[校准&#64;fish] &lt;http://dev.nav2.fishros.com/calibpage/#/home?msgid=2043&gt;`_ " class="align-center" src="../../_images/nav2_straightline_gif.gif" style="width: 700px;" /></a>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>本教程展示了如何创建自己的planner插件。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2149">[校准&#64;fish]</a></p>
+<p>本教程展示了如何创建自己的planner插件。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2149">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p>ROS 2 (二进制或从源代码构建)     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1995">[校准&#64;fish]</a></p></li>
-<li><p>Nav2 (包括依赖项)     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1996">[校准&#64;fish]</a></p></li>
+<li><p>ROS 2 (二进制或从源代码构建)     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1995">[校准&#64;fish]</a></p></li>
+<li><p>Nav2 (包括依赖项)     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1996">[校准&#64;fish]</a></p></li>
 <li><p>Gazebo</p></li>
 <li><p>Turtlebot3</p></li>
 </ul>
@@ -759,8 +759,8 @@
 <h2>教程步骤<a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="creating-a-new-planner-plugin">
 <h3>1创建新规划器插件<a class="headerlink" href="#creating-a-new-planner-plugin" title="永久链接至标题"></a></h3>
-<p>我们将创建一条简单的直线planner。本教程中的注释代码可以在 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials">navigation_tutorials</a> 库中找到，因为 <code class="docutils literal notranslate"><span class="pre">nav2_straightline_planner</span></code> 这个包可以被认为是编写planner插件的参考。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2151">[校准&#64;fish]</a></p>
-<p>我们的示例插件继承自基类 “nav2_core::Global规划器”。基类提供5种纯虚拟方法来实现planner插件。该插件将被planner服务器用来计算轨迹。让我们进一步了解编写planner插件所需的方法。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2152">[校准&#64;fish]</a></p>
+<p>我们将创建一条简单的直线planner。本教程中的注释代码可以在 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials">navigation_tutorials</a> 库中找到，因为 <code class="docutils literal notranslate"><span class="pre">nav2_straightline_planner</span></code> 这个包可以被认为是编写planner插件的参考。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2151">[校准&#64;fish]</a></p>
+<p>我们的示例插件继承自基类 “nav2_core::Global规划器”。基类提供5种纯虚拟方法来实现planner插件。该插件将被planner服务器用来计算轨迹。让我们进一步了解编写planner插件所需的方法。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2152">[校准&#64;fish]</a></p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -770,32 +770,32 @@
 <tbody>
 <tr class="row-odd"><td><p>虚拟方法</p></td>
 <td><p>方法描述</p></td>
-<td><p>Requires需要覆盖？**     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2052">[校准&#64;fish]</a></p></td>
+<td><p>Requires需要覆盖？**     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2052">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-even"><td><p>configure()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2108">[校准&#64;fish]</a></p></td>
-<td><p>方法时planner服务器进入on_configure状态。理想这方法执行声明ROS参数初始化planner的成员变量。该方法4输入参数: 共享指针父节点，planner名称，tf缓冲区指针共享指针costmap。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2153">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>configure()     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2108">[校准&#64;fish]</a></p></td>
+<td><p>方法时planner服务器进入on_configure状态。理想这方法执行声明ROS参数初始化planner的成员变量。该方法4输入参数: 共享指针父节点，planner名称，tf缓冲区指针共享指针costmap。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2153">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
 <tr class="row-odd"><td><p>activate()</p></td>
-<td><p>方法当planner服务器进入on_activate状态。理想此方法执行的操作必要之前planner去活动状态。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2154">[校准&#64;fish]</a></p></td>
+<td><p>方法当planner服务器进入on_activate状态。理想此方法执行的操作必要之前planner去活动状态。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2154">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
-<tr class="row-even"><td><p>deactivate()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2112">[校准&#64;fish]</a></p></td>
-<td><p>方法在planner服务器进入on_deactivate状态时调用。理想情况下，这种方法应该在planner进入非活动状态之前实施必要的操作。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2155">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>deactivate()     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2112">[校准&#64;fish]</a></p></td>
+<td><p>方法在planner服务器进入on_deactivate状态时调用。理想情况下，这种方法应该在planner进入非活动状态之前实施必要的操作。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2155">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
 <tr class="row-odd"><td><p>cleanup()</p></td>
-<td><p>方法在planner服务器进入on_clean状态时调用。理想情况下，这种方法应该清理为planner创造的资源。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2156">[校准&#64;fish]</a></p></td>
+<td><p>方法在planner服务器进入on_clean状态时调用。理想情况下，这种方法应该清理为planner创造的资源。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2156">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
-<tr class="row-even"><td><p>createPlan()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2157">[校准&#64;fish]</a></p></td>
-<td><p>当planner服务器要求为指定的开始姿势和目标姿势制定全局计划时，调用方法。此方法返回携带全局计划的 “nav_msgs::msg:: path”。该方法需要2个输入参数: 开始姿势和目标姿势。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2158">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>createPlan()     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2157">[校准&#64;fish]</a></p></td>
+<td><p>当planner服务器要求为指定的开始姿势和目标姿势制定全局计划时，调用方法。此方法返回携带全局计划的 “nav_msgs::msg:: path”。该方法需要2个输入参数: 开始姿势和目标姿势。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2158">[校准&#64;fish]</a></p></td>
 <td><p>是的</p></td>
 </tr>
 </tbody>
 </table>
-<p>对于本教程，我们将使用方法 <code class="docutils literal notranslate"><span class="pre">StraightLine::configure()</span></code>  和 <code class="docutils literal notranslate"><span class="pre">StraightLine::createPlan()</span></code> 创建直线规划器。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2159">[校准&#64;fish]</a></p>
-<p>在planner， <code class="docutils literal notranslate"><span class="pre">configure()</span></code> 方法必须员变量ROS参数和任何初始化，     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2160">[校准&#64;fish]</a></p>
+<p>对于本教程，我们将使用方法 <code class="docutils literal notranslate"><span class="pre">StraightLine::configure()</span></code>  和 <code class="docutils literal notranslate"><span class="pre">StraightLine::createPlan()</span></code> 创建直线规划器。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2159">[校准&#64;fish]</a></p>
+<p>在planner， <code class="docutils literal notranslate"><span class="pre">configure()</span></code> 方法必须员变量ROS参数和任何初始化，     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2160">[校准&#64;fish]</a></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">node_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parent</span><span class="p">;</span><span class="w"></span>
 <span class="n">tf_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf</span><span class="p">;</span><span class="w"></span>
 <span class="n">name_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
@@ -807,8 +807,8 @@
 <span class="n">node_</span><span class="o">-&gt;</span><span class="n">get_parameter</span><span class="p">(</span><span class="n">name_</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.interpolation_resolution&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">interpolation_resolution_</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>这里，''name _ + ”。interpolation_resolution ” 是获取ROS参数 <code class="docutils literal notranslate"><span class="pre">interpolation_resolution</span></code> 特定于我们planner。Navigation2允许加载多插件并保持组织每个插件映射到一些账号/名称。现在如果我们想检索参数特定插件，我们使用 <code class="docutils literal notranslate"><span class="pre">&lt;mapped_name_of_plugin&gt;.&lt;name_of_parameter&gt;</span></code> 作为完成上述片段。例如，示例planner映射名称  &quot;GridBased&quot; 并检索 <code class="docutils literal notranslate"><span class="pre">interpolation_resolution</span></code> 参数特定  &quot;GridBased&quot; ，我们使用 <code class="docutils literal notranslate"><span class="pre">Gridbased.interpolation_resolution</span></code> 。换句话说， <code class="docutils literal notranslate"><span class="pre">GridBased</span></code> 作为命名空间插件特定参数。当我们讨论参数文件 (或params文件) 时，我们将看到更多有关此的信息。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2161">[校准&#64;fish]</a></p>
-<p>在 <code class="docutils literal notranslate"><span class="pre">createPlan()</span></code> 法中，我们需要创建一条从给定的开始到目标姿势的路径。使用开始姿态和目标姿态调用 “直线::createPlan()” 来解决全局路径规划问题。成功后，它将路径转换为 “nav_msgs::msg:: path” 并返回到planner服务器。下面的注释显示了此方法的实现。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2162">[校准&#64;fish]</a></p>
+<p>这里，''name _ + ”。interpolation_resolution ” 是获取ROS参数 <code class="docutils literal notranslate"><span class="pre">interpolation_resolution</span></code> 特定于我们planner。Navigation2允许加载多插件并保持组织每个插件映射到一些账号/名称。现在如果我们想检索参数特定插件，我们使用 <code class="docutils literal notranslate"><span class="pre">&lt;mapped_name_of_plugin&gt;.&lt;name_of_parameter&gt;</span></code> 作为完成上述片段。例如，示例planner映射名称  &quot;GridBased&quot; 并检索 <code class="docutils literal notranslate"><span class="pre">interpolation_resolution</span></code> 参数特定  &quot;GridBased&quot; ，我们使用 <code class="docutils literal notranslate"><span class="pre">Gridbased.interpolation_resolution</span></code> 。换句话说， <code class="docutils literal notranslate"><span class="pre">GridBased</span></code> 作为命名空间插件特定参数。当我们讨论参数文件 (或params文件) 时，我们将看到更多有关此的信息。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2161">[校准&#64;fish]</a></p>
+<p>在 <code class="docutils literal notranslate"><span class="pre">createPlan()</span></code> 法中，我们需要创建一条从给定的开始到目标姿势的路径。使用开始姿态和目标姿态调用 “直线::createPlan()” 来解决全局路径规划问题。成功后，它将路径转换为 “nav_msgs::msg:: path” 并返回到planner服务器。下面的注释显示了此方法的实现。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2162">[校准&#64;fish]</a></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">nav_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Path</span><span class="w"> </span><span class="n">global_path</span><span class="p">;</span><span class="w"></span>
 
 <span class="c1">// Checking if the goal and start state is in the global frame</span>
@@ -856,31 +856,31 @@
 <span class="k">return</span><span class="w"> </span><span class="n">global_path</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-<p>其余方法不使用但强制性覆盖它们。根据规则，我们覆盖所有但留在空白。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2163">[校准&#64;fish]</a></p>
+<p>其余方法不使用但强制性覆盖它们。根据规则，我们覆盖所有但留在空白。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2163">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="exporting-the-planner-plugin">
-<h3>2-导出planner插件     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2033">[校准&#64;fish]</a><a class="headerlink" href="#exporting-the-planner-plugin" title="永久链接至标题"></a></h3>
-<p>既然我们已经创建了我们的自定义planner，我们需要导出我们的planner插件，以便它对planner服务器可见。插件在运行时加载，如果它们不可见，那么我们的planner服务器将无法加载它。在ROS 2中，导出和加载插件由 <code class="docutils literal notranslate"><span class="pre">pluginlib</span></code> 处理。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2164">[校准&#64;fish]</a></p>
-<p>在我们的教程里，类  <code class="docutils literal notranslate"><span class="pre">nav2_straightline_planner::StraightLine</span></code> 被动态加载为 <code class="docutils literal notranslate"><span class="pre">nav2_core::GlobalPlanner</span></code>      <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2165">[校准&#64;fish]</a></p>
+<h3>2-导出planner插件     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2033">[校准&#64;fish]</a><a class="headerlink" href="#exporting-the-planner-plugin" title="永久链接至标题"></a></h3>
+<p>既然我们已经创建了我们的自定义planner，我们需要导出我们的planner插件，以便它对planner服务器可见。插件在运行时加载，如果它们不可见，那么我们的planner服务器将无法加载它。在ROS 2中，导出和加载插件由 <code class="docutils literal notranslate"><span class="pre">pluginlib</span></code> 处理。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2164">[校准&#64;fish]</a></p>
+<p>在我们的教程里，类  <code class="docutils literal notranslate"><span class="pre">nav2_straightline_planner::StraightLine</span></code> 被动态加载为 <code class="docutils literal notranslate"><span class="pre">nav2_core::GlobalPlanner</span></code>      <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2165">[校准&#64;fish]</a></p>
 <ol class="arabic simple">
-<li><p>为了导出planner，我们需要提供两条生产线     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2166">[校准&#64;fish]</a></p></li>
+<li><p>为了导出planner，我们需要提供两条生产线     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2166">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pluginlib/class_list_macros.hpp&quot;</span><span class="cp"></span>
 <span class="n">PLUGINLIB_EXPORT_CLASS</span><span class="p">(</span><span class="n">nav2_straightline_planner</span><span class="o">::</span><span class="n">StraightLine</span><span class="p">,</span><span class="w"> </span><span class="n">nav2_core</span><span class="o">::</span><span class="n">GlobalPlanner</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
-<p>请注意，它需要pluginlib导出插件的类。Pluginlib将提供作为宏的 <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code> ，它负责所有的导出工作。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2167">[校准&#64;fish]</a></p>
-<p>它最好地方这些诗句结束文件但技术，你也可以写顶部。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2168">[校准&#64;fish]</a></p>
+<p>请注意，它需要pluginlib导出插件的类。Pluginlib将提供作为宏的 <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code> ，它负责所有的导出工作。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2167">[校准&#64;fish]</a></p>
+<p>它最好地方这些诗句结束文件但技术，你也可以写顶部。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2168">[校准&#64;fish]</a></p>
 <ol class="arabic simple" start="2">
-<li><p>下一步是创建插件的说明文件根目录的包。例如，我们的教程包中的 <code class="docutils literal notranslate"><span class="pre">global_planner_plugin.xml</span></code> 文件。此文件包含以下信息     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2169">[校准&#64;fish]</a></p></li>
+<li><p>下一步是创建插件的说明文件根目录的包。例如，我们的教程包中的 <code class="docutils literal notranslate"><span class="pre">global_planner_plugin.xml</span></code> 文件。此文件包含以下信息     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2169">[校准&#64;fish]</a></p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li><p>参数``library path``:插件的库名和它的位置。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2134">[校准&#64;fish]</a></p></li>
-<li><p>参数``class name``:class的名称。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2135">[校准&#64;fish]</a></p></li>
-<li><p>参数``class type``:类的类型     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2136">[校准&#64;fish]</a></p></li>
-<li><p>参数``base class``:基类的名称。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2137">[校准&#64;fish]</a></p></li>
-<li><p>参数``description``:插件的描述。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2138">[校准&#64;fish]</a></p></li>
+<li><p>参数``library path``:插件的库名和它的位置。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2134">[校准&#64;fish]</a></p></li>
+<li><p>参数``class name``:class的名称。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2135">[校准&#64;fish]</a></p></li>
+<li><p>参数``class type``:类的类型     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2136">[校准&#64;fish]</a></p></li>
+<li><p>参数``base class``:基类的名称。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2137">[校准&#64;fish]</a></p></li>
+<li><p>参数``description``:插件的描述。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2138">[校准&#64;fish]</a></p></li>
 </ul>
 </div></blockquote>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;library</span> <span class="na">path=</span><span class="s">&quot;nav2_straightline_planner_plugin&quot;</span><span class="nt">&gt;</span>
@@ -891,13 +891,13 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>下一步是导出插件使用 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> 使用cmake功能 <code class="docutils literal notranslate"><span class="pre">pluginlib_export_plugin_description_file()</span></code> 。此函数将插件描述文件安装到 <code class="docutils literal notranslate"><span class="pre">share</span></code> 目录，并设置属性索引以使其可被发现。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2170">[校准&#64;fish]</a></p></li>
+<li><p>下一步是导出插件使用 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> 使用cmake功能 <code class="docutils literal notranslate"><span class="pre">pluginlib_export_plugin_description_file()</span></code> 。此函数将插件描述文件安装到 <code class="docutils literal notranslate"><span class="pre">share</span></code> 目录，并设置属性索引以使其可被发现。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2170">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pluginlib_export_plugin_description_file(nav2_core global_planner_plugin.xml)
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>插件描述文件也应添加到 <code class="docutils literal notranslate"><span class="pre">package.xml</span></code>      <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2171">[校准&#64;fish]</a></p></li>
+<li><p>插件描述文件也应添加到 <code class="docutils literal notranslate"><span class="pre">package.xml</span></code>      <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2171">[校准&#64;fish]</a></p></li>
 </ol>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;export&gt;</span>
   <span class="nt">&lt;build_type&gt;</span>ament_cmake<span class="nt">&lt;/build_type&gt;</span>
@@ -906,15 +906,15 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>编译并注册。接下来，我们将使用这个插件。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2172">[校准&#64;fish]</a></p></li>
+<li><p>编译并注册。接下来，我们将使用这个插件。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2172">[校准&#64;fish]</a></p></li>
 </ol>
 </div>
 <div class="section" id="pass-the-plugin-name-through-params-file">
-<h3>3通过插件名称通过params文件     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2173">[校准&#64;fish]</a><a class="headerlink" href="#pass-the-plugin-name-through-params-file" title="永久链接至标题"></a></h3>
-<p>要启用插件，我们需要将 <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> 文件修改为以下内容，以替换以下参数     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2174">[校准&#64;fish]</a></p>
+<h3>3通过插件名称通过params文件     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2173">[校准&#64;fish]</a><a class="headerlink" href="#pass-the-plugin-name-through-params-file" title="永久链接至标题"></a></h3>
+<p>要启用插件，我们需要将 <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> 文件修改为以下内容，以替换以下参数     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2174">[校准&#64;fish]</a></p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>用Galactic或后， <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 替换单个 <code class="docutils literal notranslate"><span class="pre">plugins</span></code> string载体插件名称。类型现在定义在 <code class="docutils literal notranslate"><span class="pre">plugin_name</span></code> 命名空间 ''plugin: `` field (e.g. `` 插件: MyPlugin: Plugin'')。内联注释代码块将帮助您通过这个。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2091">[校准&#64;fish]</a></p>
+<p>用Galactic或后， <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 替换单个 <code class="docutils literal notranslate"><span class="pre">plugins</span></code> string载体插件名称。类型现在定义在 <code class="docutils literal notranslate"><span class="pre">plugin_name</span></code> 命名空间 ''plugin: `` field (e.g. `` 插件: MyPlugin: Plugin'')。内联注释代码块将帮助您通过这个。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2091">[校准&#64;fish]</a></p>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>planner_server:
 ros__parameters:
@@ -941,15 +941,15 @@ ros__parameters:
     interpolation_resolution: 0.1
 </pre></div>
 </div>
-<p>在上述片段，你可以观察映射的 <code class="docutils literal notranslate"><span class="pre">nav2_straightline_planner/StraightLine</span></code> planner其账号 <code class="docutils literal notranslate"><span class="pre">GridBased</span></code> 。为了传递插件特定的参数，我们使用了 <code class="docutils literal notranslate"><span class="pre">&lt;plugin_id&gt;.&lt;plugin_specific_parameter&gt;</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2176">[校准&#64;fish]</a></p>
+<p>在上述片段，你可以观察映射的 <code class="docutils literal notranslate"><span class="pre">nav2_straightline_planner/StraightLine</span></code> planner其账号 <code class="docutils literal notranslate"><span class="pre">GridBased</span></code> 。为了传递插件特定的参数，我们使用了 <code class="docutils literal notranslate"><span class="pre">&lt;plugin_id&gt;.&lt;plugin_specific_parameter&gt;</span></code> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2176">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="run-straightline-plugin">
 <h3>4-运行直线插件<a class="headerlink" href="#run-straightline-plugin" title="永久链接至标题"></a></h3>
-<p>在启用导航的情况下运行Turtlebot3 模拟2。如何制作它的详细说明写在 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 。下面是该命令的快捷方式:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2178">[校准&#64;fish]</a></p>
+<p>在启用导航的情况下运行Turtlebot3 模拟2。如何制作它的详细说明写在 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 。下面是该命令的快捷方式:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2178">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ros2 launch nav2_bringup tb3_simulation_launch.py params_file:<span class="o">=</span>/path/to/your_params_file.yaml
 </pre></div>
 </div>
-<p>然后转到RViz，点击顶部的  &quot;2D Pose Estimate&quot; 按钮，指出地图上的位置，就像 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 中描述的那样。机器人将在地图上定位，然后点击  &quot;Navigation2 goal&quot; ，点击你想让你的planner考虑目标姿势的姿势。之后，planner将规划路径，机器人将开始向目标移动。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2179">[校准&#64;fish]</a></p>
+<p>然后转到RViz，点击顶部的  &quot;2D Pose Estimate&quot; 按钮，指出地图上的位置，就像 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 中描述的那样。机器人将在地图上定位，然后点击  &quot;Navigation2 goal&quot; ，点击你想让你的planner考虑目标姿势的姿势。之后，planner将规划路径，机器人将开始向目标移动。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2179">[校准&#64;fish]</a></p>
 </div>
 </div>
 </div>

@@ -735,7 +735,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="stvl-using-an-external-costmap-plugin">
-<span id="stvl"></span><h1>(STVL) 使用外部代价地图插件     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1405">[校准&#64;fish]</a><a class="headerlink" href="#stvl-using-an-external-costmap-plugin" title="永久链接至标题"></a></h1>
+<span id="stvl"></span><h1>(STVL) 使用外部代价地图插件     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1405">[校准&#64;fish]</a><a class="headerlink" href="#stvl-using-an-external-costmap-plugin" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">Overview</a></p></li>
 <li><p><a class="reference internal" href="#costmap2d-and-stvl">Costmap2D and STVL</a></p></li>
@@ -747,39 +747,39 @@
   </div>
 </h1><div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>本教程演示如何加载和使用外部插件。此示例使用 <a class="reference external" href="https://github.com/SteveMacenski/spatio_temporal_voxel_layer/">Spatio Temporal Voxel Layer</a> (STVL) costmap <a class="reference external" href="http://wiki.ros.org/pluginlib/">pluginlib</a> 插件为例。STVL是指示pluginlib插件的过程也可以用于其他costmap插件以及插件planners、控制器和回收率。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1407">[校准&#64;fish]</a></p>
-<p>在完成本教程之前，请查看前两个关于模拟导航和物理硬件导航的教程 (如果有)。本教程假设导航知识和对成本图的基本理解。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1408">[校准&#64;fish]</a></p>
+<p>本教程演示如何加载和使用外部插件。此示例使用 <a class="reference external" href="https://github.com/SteveMacenski/spatio_temporal_voxel_layer/">Spatio Temporal Voxel Layer</a> (STVL) costmap <a class="reference external" href="http://wiki.ros.org/pluginlib/">pluginlib</a> 插件为例。STVL是指示pluginlib插件的过程也可以用于其他costmap插件以及插件planners、控制器和回收率。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1407">[校准&#64;fish]</a></p>
+<p>在完成本教程之前，请查看前两个关于模拟导航和物理硬件导航的教程 (如果有)。本教程假设导航知识和对成本图的基本理解。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1408">[校准&#64;fish]</a></p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>对于2021年12月之前的Ubuntu 20.04用户，OpenVDB及其带有 <code class="docutils literal notranslate"><span class="pre">libjmalloc</span></code> 的二进制文件存在一个已知问题。如果您看到诸如 “无法加载库LoadLibrary错误: /usr/lib/x86_64-linux-gnu/libjemalloc” 之类的错误。so.2: 无法在静态TLS块” 中分配内存，可以使用 <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.2</span></code> 解析，直到OpenVDB释放新的二进制文件。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1409">[校准&#64;fish]</a></p>
+<p>对于2021年12月之前的Ubuntu 20.04用户，OpenVDB及其带有 <code class="docutils literal notranslate"><span class="pre">libjmalloc</span></code> 的二进制文件存在一个已知问题。如果您看到诸如 “无法加载库LoadLibrary错误: /usr/lib/x86_64-linux-gnu/libjemalloc” 之类的错误。so.2: 无法在静态TLS块” 中分配内存，可以使用 <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.2</span></code> 解析，直到OpenVDB释放新的二进制文件。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1409">[校准&#64;fish]</a></p>
 </div>
 </div>
 <div class="section" id="costmap2d-and-stvl">
-<h2>代价地图2D和STVL     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1410">[校准&#64;fish]</a><a class="headerlink" href="#costmap2d-and-stvl" title="永久链接至标题"></a></h2>
-<p>代价地图2D是我们用来将传感器信息缓冲到全局视图中的数据对象，机器人将用它来创建计划和控制工作。在代价地图2D中，有插件接口可用于创建自定义行为，可在运行时加载。包含的用于代价地图2D的pluginlib插件的示例是障碍层、体素层、静态层和膨胀层。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1411">[校准&#64;fish]</a></p>
-<p>但是，这些只是基本实现提供的示例插件。导航2中代价地图2D的另一个可用插件是STVL。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1412">[校准&#64;fish]</a></p>
-<p>STVL是另一个3D感知插件类似体素层。更详细地概述如何它可以发现 <a class="reference external" href="https://github.com/SteveMacenski/spatio_temporal_voxel_layer/">in this repo</a> ，但缓冲区3D数据深度相机，声纳，雷达，进入稀疏充气世界模型和删除像素时间比例传感器模型和基于时间过期。这可以有效机器人高动态马氏键方面降低资源利用3D传感器加工高达2x。STVL也对待3D激光雷达和雷达作为一等公民支持。的ROSCon聊STVL可以发现 <a class="reference external" href="https://vimeo.com/292699571">in this video</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1413">[校准&#64;fish]</a></p>
+<h2>代价地图2D和STVL     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1410">[校准&#64;fish]</a><a class="headerlink" href="#costmap2d-and-stvl" title="永久链接至标题"></a></h2>
+<p>代价地图2D是我们用来将传感器信息缓冲到全局视图中的数据对象，机器人将用它来创建计划和控制工作。在代价地图2D中，有插件接口可用于创建自定义行为，可在运行时加载。包含的用于代价地图2D的pluginlib插件的示例是障碍层、体素层、静态层和膨胀层。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1411">[校准&#64;fish]</a></p>
+<p>但是，这些只是基本实现提供的示例插件。导航2中代价地图2D的另一个可用插件是STVL。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1412">[校准&#64;fish]</a></p>
+<p>STVL是另一个3D感知插件类似体素层。更详细地概述如何它可以发现 <a class="reference external" href="https://github.com/SteveMacenski/spatio_temporal_voxel_layer/">in this repo</a> ，但缓冲区3D数据深度相机，声纳，雷达，进入稀疏充气世界模型和删除像素时间比例传感器模型和基于时间过期。这可以有效机器人高动态马氏键方面降低资源利用3D传感器加工高达2x。STVL也对待3D激光雷达和雷达作为一等公民支持。的ROSCon聊STVL可以发现 <a class="reference external" href="https://vimeo.com/292699571">in this video</a> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1413">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="tutorial-steps">
 <h2>教程步骤<a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="setup">
 <h3>0-设置<a class="headerlink" href="#setup" title="永久链接至标题"></a></h3>
-<p>遵循相同的过程在 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 安装和设置机器人硬件测试或仿真适用。确保ROS 2，Navigation2，Gazebo安装。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1415">[校准&#64;fish]</a></p>
+<p>遵循相同的过程在 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 安装和设置机器人硬件测试或仿真适用。确保ROS 2，Navigation2，Gazebo安装。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1415">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="install-stvl">
 <h3>1-安装STVL<a class="headerlink" href="#install-stvl" title="永久链接至标题"></a></h3>
-<p>STVL可以安装ROS 2通过ROS构建农场:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1417">[校准&#64;fish]</a></p>
+<p>STVL可以安装ROS 2通过ROS构建农场:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1417">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;ros2-distro&gt;-spatio-temporal-voxel-layer</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1418">[校准&#64;fish]</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;ros2-distro&gt;-spatio-temporal-voxel-layer</span></code>     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1418">[校准&#64;fish]</a></p></li>
 </ul>
-<p>也可以通过将存储库克隆到您的Navigation2工作区中来从源代码构建它:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1419">[校准&#64;fish]</a></p>
+<p>也可以通过将存储库克隆到您的Navigation2工作区中来从源代码构建它:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1419">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">-b</span> <span class="pre">&lt;ros2-distro&gt;-devel</span> <span class="pre">git&#64;github.com:stevemacenski/spatio_temporal_voxel_layer</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1420">[校准&#64;fish]</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">-b</span> <span class="pre">&lt;ros2-distro&gt;-devel</span> <span class="pre">git&#64;github.com:stevemacenski/spatio_temporal_voxel_layer</span></code>     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1420">[校准&#64;fish]</a></p></li>
 </ul>
 </div>
 <div class="section" id="modify-navigation2-parameter">
-<h3>1修改Navigation2参数     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1421">[校准&#64;fish]</a><a class="headerlink" href="#modify-navigation2-parameter" title="永久链接至标题"></a></h3>
-<p>STVL是一个可选插件，像所有插件一样，在代价地图2D中。导航2中的代价地图插件被加载到它们各自的成本图中的 <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 变量中。例如，下面将静态和障碍层插件分别加载到名称 <code class="docutils literal notranslate"><span class="pre">static_layer</span></code> 和 <code class="docutils literal notranslate"><span class="pre">obstacle_layer</span></code> 中:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1422">[校准&#64;fish]</a></p>
+<h3>1修改Navigation2参数     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1421">[校准&#64;fish]</a><a class="headerlink" href="#modify-navigation2-parameter" title="永久链接至标题"></a></h3>
+<p>STVL是一个可选插件，像所有插件一样，在代价地图2D中。导航2中的代价地图插件被加载到它们各自的成本图中的 <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 变量中。例如，下面将静态和障碍层插件分别加载到名称 <code class="docutils literal notranslate"><span class="pre">static_layer</span></code> 和 <code class="docutils literal notranslate"><span class="pre">obstacle_layer</span></code> 中:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1422">[校准&#64;fish]</a></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">global_costmap</span><span class="p">:</span>
   <span class="nt">global_costmap</span><span class="p">:</span>
     <span class="nt">ros__parameters</span><span class="p">:</span>
@@ -791,9 +791,9 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>用Galactic或后， <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 替换单个 <code class="docutils literal notranslate"><span class="pre">plugins</span></code> string载体插件名称。类型现在定义在 <code class="docutils literal notranslate"><span class="pre">plugin_name</span></code> 命名空间 ''plugin: `` field (e.g. `` 插件: MyPlugin: Plugin'')。内联注释代码块将帮助您通过这个。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1423">[校准&#64;fish]</a></p>
+<p>用Galactic或后， <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 替换单个 <code class="docutils literal notranslate"><span class="pre">plugins</span></code> string载体插件名称。类型现在定义在 <code class="docutils literal notranslate"><span class="pre">plugin_name</span></code> 命名空间 ''plugin: `` field (e.g. `` 插件: MyPlugin: Plugin'')。内联注释代码块将帮助您通过这个。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1423">[校准&#64;fish]</a></p>
 </div>
-<p>加载STVL插件，插件名称和类型必须添加。例如，如果应用需要STVL层无障碍层，文件将:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1424">[校准&#64;fish]</a></p>
+<p>加载STVL插件，插件名称和类型必须添加。例如，如果应用需要STVL层无障碍层，文件将:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1424">[校准&#64;fish]</a></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">global_costmap</span><span class="p">:</span>
   <span class="nt">global_costmap</span><span class="p">:</span>
     <span class="nt">ros__parameters</span><span class="p">:</span>
@@ -803,7 +803,7 @@
       <span class="nt">plugin_types</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;nav2_costmap_2d::StaticLayer&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer&quot;</span><span class="p p-Indicator">]</span> <span class="c1"># For Eloquent and earlier</span>
 </pre></div>
 </div>
-<p>类似体素层，后注册插件，我们可以添加配置STVL层命名空间 <code class="docutils literal notranslate"><span class="pre">stvl_layer</span></code> 。为例全描述参数化的STVL配置:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1425">[校准&#64;fish]</a></p>
+<p>类似体素层，后注册插件，我们可以添加配置STVL层命名空间 <code class="docutils literal notranslate"><span class="pre">stvl_layer</span></code> 。为例全描述参数化的STVL配置:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1425">[校准&#64;fish]</a></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">stvl_layer</span><span class="p">:</span>
   <span class="nt">plugin</span><span class="p">:</span> <span class="s">&quot;spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer&quot;</span> <span class="c1"># For Foxy and later</span>
   <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -843,16 +843,16 @@
     <span class="nt">model_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
 </pre></div>
 </div>
-<p>请将上面带有 <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 注册的文本复制粘贴到您的 <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> 中，以便在您的应用程序中启用STVL。确保同时更改本地和全球成本图。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1426">[校准&#64;fish]</a></p>
-<p>注意: Pluginlib插件其他Navigation2服务器规划、恢复和控制可以设置一样。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1427">[校准&#64;fish]</a></p>
+<p>请将上面带有 <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 注册的文本复制粘贴到您的 <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> 中，以便在您的应用程序中启用STVL。确保同时更改本地和全球成本图。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1426">[校准&#64;fish]</a></p>
+<p>注意: Pluginlib插件其他Navigation2服务器规划、恢复和控制可以设置一样。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1427">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="launch-navigation2">
-<h3>2-Launch Navigation2     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1428">[校准&#64;fish]</a><a class="headerlink" href="#launch-navigation2" title="永久链接至标题"></a></h3>
-<p>遵循相同的过程在 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 启动模拟机器人凉亭Navigation2.Navigation2现在使用STVL为3D传感costmap层。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1429">[校准&#64;fish]</a></p>
+<h3>2-Launch Navigation2     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1428">[校准&#64;fish]</a><a class="headerlink" href="#launch-navigation2" title="永久链接至标题"></a></h3>
+<p>遵循相同的过程在 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 启动模拟机器人凉亭Navigation2.Navigation2现在使用STVL为3D传感costmap层。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1429">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="rviz">
 <h3>3-  RVIZ<a class="headerlink" href="#rviz" title="永久链接至标题"></a></h3>
-<p>带RViz开放 ”publish_voxel_map: true''，可以可视化底层数据结构的3D网格使用” {本地，全球} _ costmap/voxel_grid ”主题。注意: 建议在RViz设置 <code class="docutils literal notranslate"><span class="pre">PointCloud2</span></code> 大小你体素大小和风格 <code class="docutils literal notranslate"><span class="pre">Boxes</span></code> 中性色最佳可视化。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1431">[校准&#64;fish]</a></p>
+<p>带RViz开放 ”publish_voxel_map: true''，可以可视化底层数据结构的3D网格使用” {本地，全球} _ costmap/voxel_grid ”主题。注意: 建议在RViz设置 <code class="docutils literal notranslate"><span class="pre">PointCloud2</span></code> 大小你体素大小和风格 <code class="docutils literal notranslate"><span class="pre">Boxes</span></code> 中性色最佳可视化。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1431">[校准&#64;fish]</a></p>
 </div>
 </div>
 </div>

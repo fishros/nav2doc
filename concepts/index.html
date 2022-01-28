@@ -735,134 +735,134 @@
              
   <div class="section" id="navigation-concepts">
 <span id="concepts"></span><h1>导航相关概念<a class="headerlink" href="#navigation-concepts" title="永久链接至标题"></a></h1>
-<p>此页面旨在帮助新的机器人专家熟悉移动机器人导航的概念，尤其是欣赏和使用此项目所需的概念。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2">[校准&#64;fish]</a></p>
+<p>此页面旨在帮助新的机器人专家熟悉移动机器人导航的概念，尤其是欣赏和使用此项目所需的概念。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2">[校准&#64;fish]</a></p>
 <div class="section" id="ros-2">
 <h2>ROS 2<a class="headerlink" href="#ros-2" title="永久链接至标题"></a></h2>
-<p>Nav2使用ROS2作为核心中间件。如果您对此不熟悉，请在继续阅读本文档前访问 <a class="reference external" href="https://docs.ros.org/en/rolling/">ROS2文档</a> ,对于国内用户推荐看看小鱼的 <a href="#id1"><span class="problematic" id="id2">`动手学ROS2课程文档&lt;https://fishros.com/d2lros2foxy/&gt;`_</span></a> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=4">[校准&#64;fishros]</a></p>
+<p>Nav2使用ROS2作为核心中间件。如果您对此不熟悉，请在继续阅读本文档前访问 <a class="reference external" href="https://docs.ros.org/en/rolling/">ROS2文档</a> ,对于国内用户推荐看看小鱼的 <a href="#id1"><span class="problematic" id="id2">`动手学ROS2课程文档&lt;https://fishros.com/d2lros2foxy/&gt;`_</span></a> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=4">[校准&#64;fishros]</a></p>
 <div class="section" id="action-server">
 <h3>Action服务器<a class="headerlink" href="#action-server" title="永久链接至标题"></a></h3>
-<p>就像在ROS中一样，动作服务器是控制导航等长时间运行任务的常见方式。这个堆栈更广泛地使用动作，在某些情况下，没有简单的主题界面。在ROS 2中，了解动作服务器作为开发人员更为重要。一些简单的CLI示例可以在 <a class="reference external" href="https://docs.ros.org/en/rolling/Tutorials/Understanding-ROS2-Actions.html">ROS 2 documementation</a> 中找到。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=6">[校准&#64;fish]</a></p>
-<p>这个Action服务器类似于服务通信中的Service。客户端会要求服务端完成一些任务，但此任务可能需要很长时间。比如说：移动推土机的铲子或者让机器人向右移动10米。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=7">[校准&#64;fishros]</a></p>
-<p>在这种情况下，动作服务器和客户端允许我们在另一个进程或线程中调用长时间运行的任务，并为其结果返回未来。此时允许阻止直到操作完成，但是，您可能需要偶尔检查操作是否完成，并继续在客户端线程中处理工作。由于运行时间长，动作服务器还将向其客户端提供反馈。该反馈可以是任何东西，并在ROS <code class="docutils literal notranslate"><span class="pre">.action</span></code> 中定义，以及请求和结果类型。在推土机示例中，请求可以是一个角度，反馈可以是要移动的剩余角度，并且结果是带有末端角度的成功或失败boolean。在导航示例中，请求可以是位置，反馈可以是其导航的时间和到目标的距离，结果是成功的bool。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=8">[校准&#64;fish]</a></p>
-<p>通过向Action客户端注册回调函数，可以同步的收到反馈和结果。它们也可以通过无意识地从shared future对象中的require信息来获取。两者都需要对客户端节点进行spin来处理回调组。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=9">[校准&#64;fishros]</a></p>
-<p>该堆栈中使用Action服务器通过 <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code> 操作消息与最高级别的BT导航器通信。它们还用于BT navigator与随后的较小动作服务器通信，以计算计划、控制工作和恢复。每个都有自己的独特 <code class="docutils literal notranslate"><span class="pre">.action</span></code> 类型 <code class="docutils literal notranslate"><span class="pre">nav2_msgs</span></code> 交互与服务器。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=10">[校准&#64;fish]</a></p>
+<p>就像在ROS中一样，动作服务器是控制导航等长时间运行任务的常见方式。这个堆栈更广泛地使用动作，在某些情况下，没有简单的主题界面。在ROS 2中，了解动作服务器作为开发人员更为重要。一些简单的CLI示例可以在 <a class="reference external" href="https://docs.ros.org/en/rolling/Tutorials/Understanding-ROS2-Actions.html">ROS 2 documementation</a> 中找到。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=6">[校准&#64;fish]</a></p>
+<p>这个Action服务器类似于服务通信中的Service。客户端会要求服务端完成一些任务，但此任务可能需要很长时间。比如说：移动推土机的铲子或者让机器人向右移动10米。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=7">[校准&#64;fishros]</a></p>
+<p>在这种情况下，动作服务器和客户端允许我们在另一个进程或线程中调用长时间运行的任务，并为其结果返回未来。此时允许阻止直到操作完成，但是，您可能需要偶尔检查操作是否完成，并继续在客户端线程中处理工作。由于运行时间长，动作服务器还将向其客户端提供反馈。该反馈可以是任何东西，并在ROS <code class="docutils literal notranslate"><span class="pre">.action</span></code> 中定义，以及请求和结果类型。在推土机示例中，请求可以是一个角度，反馈可以是要移动的剩余角度，并且结果是带有末端角度的成功或失败boolean。在导航示例中，请求可以是位置，反馈可以是其导航的时间和到目标的距离，结果是成功的bool。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=8">[校准&#64;fish]</a></p>
+<p>通过向Action客户端注册回调函数，可以同步的收到反馈和结果。它们也可以通过无意识地从shared future对象中的require信息来获取。两者都需要对客户端节点进行spin来处理回调组。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=9">[校准&#64;fishros]</a></p>
+<p>该堆栈中使用Action服务器通过 <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code> 操作消息与最高级别的BT导航器通信。它们还用于BT navigator与随后的较小动作服务器通信，以计算计划、控制工作和恢复。每个都有自己的独特 <code class="docutils literal notranslate"><span class="pre">.action</span></code> 类型 <code class="docutils literal notranslate"><span class="pre">nav2_msgs</span></code> 交互与服务器。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=10">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="lifecycle-nodes-and-bond">
 <h3>生命周期节点和绑定<a class="headerlink" href="#lifecycle-nodes-and-bond" title="永久链接至标题"></a></h3>
-<p>生命周期 (或被管理的，更正确的) 节点是ROS 2独有的。更多信息可以是 <a class="reference external" href="https://design.ros2.org/articles/node_lifecycle.html">在这里</a> 。它们是包含用于加载和拆卸ROS 2服务器的状态机转换的节点。这有助于ROS系统在启动和关闭时的确定性行为。它还帮助用户以合理的方式构建他们的程序，用于商业用途和调试。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=12">[校准&#64;fish]</a></p>
-<p>启动节点时，它处于未配置状态，仅处理节点的构造函数，该构造函数不应包含任何ROS网络设置或参数读取。通过启动系统或提供的生命周期管理器，需要通过配置将节点转换为非活动状态。之后，可以通过过渡到活动阶段来激活节点。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=13">[校准&#64;fish]</a></p>
-<p>这种状态将允许节点处理信息，并完全设置为运行状态。在配置阶段，触发 <code class="docutils literal notranslate"><span class="pre">on_configure()</span></code> 方法，将设置所有参数、ROS网络接口，以及安全系统，所有动态内存的分配。在激活阶段、触发 <code class="docutils literal notranslate"><span class="pre">on_activate()</span></code> 方法的将激活ROS网络接口，并设置程序中的任何状态以开始处理信息。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=14">[校准&#64;fishros]</a></p>
-<p>要关闭，我们过渡到停用、清理、关闭，并以最终状态结束。网络接口分别在这些阶段被停用并停止处理、释放内存、干净地退出。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=15">[校准&#64;fish]</a></p>
-<p>生命周期节点框架在整个项目中被广泛使用，所有服务器都使用它。如果可能的话，所有ROS系统最好使用生命周期节点。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=16">[校准&#64;fish]</a></p>
-<p>在Nav2中，我们使用生命周期节点的包装， <code class="docutils literal notranslate"><span class="pre">nav2_util</span> <span class="pre">LifecycleNode</span></code> 。这种包装包装了典型应用的生命周期节点的许多复杂性。它还包括生命周期管理器的 <code class="docutils literal notranslate"><span class="pre">bond</span></code> 连接，以确保服务器转换后，它也保持活动状态。如果服务器崩溃，它会让生命周期管理器知道并向下转换系统，以防止严重故障。详见 <a class="reference internal" href="../migration/Eloquent.html#eloquent-migration"><span class="std std-ref">Eloquent到Eloquent     [校准&#64;fish]</span></a> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=17">[校准&#64;fish]</a></p>
+<p>生命周期 (或被管理的，更正确的) 节点是ROS 2独有的。更多信息可以是 <a class="reference external" href="https://design.ros2.org/articles/node_lifecycle.html">在这里</a> 。它们是包含用于加载和拆卸ROS 2服务器的状态机转换的节点。这有助于ROS系统在启动和关闭时的确定性行为。它还帮助用户以合理的方式构建他们的程序，用于商业用途和调试。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=12">[校准&#64;fish]</a></p>
+<p>启动节点时，它处于未配置状态，仅处理节点的构造函数，该构造函数不应包含任何ROS网络设置或参数读取。通过启动系统或提供的生命周期管理器，需要通过配置将节点转换为非活动状态。之后，可以通过过渡到活动阶段来激活节点。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=13">[校准&#64;fish]</a></p>
+<p>这种状态将允许节点处理信息，并完全设置为运行状态。在配置阶段，触发 <code class="docutils literal notranslate"><span class="pre">on_configure()</span></code> 方法，将设置所有参数、ROS网络接口，以及安全系统，所有动态内存的分配。在激活阶段、触发 <code class="docutils literal notranslate"><span class="pre">on_activate()</span></code> 方法的将激活ROS网络接口，并设置程序中的任何状态以开始处理信息。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=14">[校准&#64;fishros]</a></p>
+<p>要关闭，我们过渡到停用、清理、关闭，并以最终状态结束。网络接口分别在这些阶段被停用并停止处理、释放内存、干净地退出。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=15">[校准&#64;fish]</a></p>
+<p>生命周期节点框架在整个项目中被广泛使用，所有服务器都使用它。如果可能的话，所有ROS系统最好使用生命周期节点。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=16">[校准&#64;fish]</a></p>
+<p>在Nav2中，我们使用生命周期节点的包装， <code class="docutils literal notranslate"><span class="pre">nav2_util</span> <span class="pre">LifecycleNode</span></code> 。这种包装包装了典型应用的生命周期节点的许多复杂性。它还包括生命周期管理器的 <code class="docutils literal notranslate"><span class="pre">bond</span></code> 连接，以确保服务器转换后，它也保持活动状态。如果服务器崩溃，它会让生命周期管理器知道并向下转换系统，以防止严重故障。详见 <a class="reference internal" href="../migration/Eloquent.html#eloquent-migration"><span class="std std-ref">Eloquent到Eloquent     [校准&#64;fish]</span></a> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=17">[校准&#64;fish]</a></p>
 </div>
 </div>
 <div class="section" id="behavior-trees">
 <h2>行为树<a class="headerlink" href="#behavior-trees" title="永久链接至标题"></a></h2>
-<p>行为树 (BT) 在复杂的机器人任务中变得越来越普遍。它们是要完成的任务的树形结构。它为定义多步骤或许多状态应用程序创建了一个更具可扩展性和人类易懂的框架。这与有限状态机 (FSM) 相反，后者可能具有数十个或数百个状态和数百个转换。一个例子就是一个踢足球的机器人。将足球比赛的逻辑嵌入FSM将具有挑战性，并且有许多可能的状态和规则容易出错。此外，像从左、右或中间射门这样的建模选择尤其不清楚。有了BT，像  &quot;kick&quot;   &quot;walk&quot;   &quot;go to ball&quot; 这样的基本原语可以被创建并用于许多行为。更多信息可以找到 <a class="reference external" href="https://arxiv.org/abs/1709.00084">in this book</a> 。我强烈建议阅读第1-3章，以更好地理解术语和工作流程。应该只需要大约30分钟。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=19">[校准&#64;fish]</a></p>
-<p>对于这个项目，我们使用 <a class="reference external" href="https://www.behaviortree.dev/">BehaviorTree CPP V3</a> 作为行为树库。我们创建节点插件，它可以被构造成一棵树，在 <code class="docutils literal notranslate"><span class="pre">BT</span> <span class="pre">Navigator</span></code> 内部。将节点插件加载到BT中，并且在解析树的XML文件时，将关联注册的名称。此时，我们可以通过行为树进行导航。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=20">[校准&#64;fish]</a></p>
-<p>使用此库的一个原因是它能够加载子树。这意味着可以将Nav2行为树加载到另一个更高级别的BT中，以将此项目用作节点插件。一个例子是在足球比赛中，使用Nav2行为树作为  &quot;go to ball&quot; 节点，球检测作为更大任务的一部分。此外，我们为BT提供了一个 <code class="docutils literal notranslate"><span class="pre">NavigateToPoseAction</span></code> 插件，因此可以通过通常的操作接口从客户端应用程序调用Nav2栈。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=21">[校准&#64;fish]</a></p>
+<p>行为树 (BT) 在复杂的机器人任务中变得越来越普遍。它们是要完成的任务的树形结构。它为定义多步骤或许多状态应用程序创建了一个更具可扩展性和人类易懂的框架。这与有限状态机 (FSM) 相反，后者可能具有数十个或数百个状态和数百个转换。一个例子就是一个踢足球的机器人。将足球比赛的逻辑嵌入FSM将具有挑战性，并且有许多可能的状态和规则容易出错。此外，像从左、右或中间射门这样的建模选择尤其不清楚。有了BT，像  &quot;kick&quot;   &quot;walk&quot;   &quot;go to ball&quot; 这样的基本原语可以被创建并用于许多行为。更多信息可以找到 <a class="reference external" href="https://arxiv.org/abs/1709.00084">in this book</a> 。我强烈建议阅读第1-3章，以更好地理解术语和工作流程。应该只需要大约30分钟。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=19">[校准&#64;fish]</a></p>
+<p>对于这个项目，我们使用 <a class="reference external" href="https://www.behaviortree.dev/">BehaviorTree CPP V3</a> 作为行为树库。我们创建节点插件，它可以被构造成一棵树，在 <code class="docutils literal notranslate"><span class="pre">BT</span> <span class="pre">Navigator</span></code> 内部。将节点插件加载到BT中，并且在解析树的XML文件时，将关联注册的名称。此时，我们可以通过行为树进行导航。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=20">[校准&#64;fish]</a></p>
+<p>使用此库的一个原因是它能够加载子树。这意味着可以将Nav2行为树加载到另一个更高级别的BT中，以将此项目用作节点插件。一个例子是在足球比赛中，使用Nav2行为树作为  &quot;go to ball&quot; 节点，球检测作为更大任务的一部分。此外，我们为BT提供了一个 <code class="docutils literal notranslate"><span class="pre">NavigateToPoseAction</span></code> 插件，因此可以通过通常的操作接口从客户端应用程序调用Nav2栈。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=21">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="navigation-servers">
 <h2>导航服务器<a class="headerlink" href="#navigation-servers" title="永久链接至标题"></a></h2>
-<p>规划器和控制器是导航任务的核心。恢复用于使机器人摆脱困境或尝试处理各种形式的问题，以使系统容错。在本节中，分析了围绕它们的一般概念及其在本项目中的用途。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=23">[校准&#64;fish]</a></p>
+<p>规划器和控制器是导航任务的核心。恢复用于使机器人摆脱困境或尝试处理各种形式的问题，以使系统容错。在本节中，分析了围绕它们的一般概念及其在本项目中的用途。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=23">[校准&#64;fish]</a></p>
 <div class="section" id="planner-controller-and-recovery-servers">
-<h3>规划器，控制器，恢复服务     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=24">[校准&#64;fish]</a><a class="headerlink" href="#planner-controller-and-recovery-servers" title="永久链接至标题"></a></h3>
-<p>该项目中的三个动作服务器是planner、恢复和控制器服务器。这些动作服务器用于托管算法插件图，以完成各种任务。它们还托管算法插件用来计算其输出的环境表示。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=25">[校准&#64;fish]</a></p>
-<p>这个planner和控制器服务器将在运行时配置名称 (别名) 和要使用的算法类型。这些类型是已注册的pluginlib名称，这些名称是任务的别名。一个例子是使用名称为 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 的DWB控制器，因为它遵循参考路径。在这种情况下，DWB的所有参数都将放置在该命名空间中，例如 <code class="docutils literal notranslate"><span class="pre">FollowPath.&lt;param&gt;</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=26">[校准&#64;fish]</a></p>
-<p>然后，这两个服务器会公开与其任务相对应的操作接口。当行为树勾选相应的BT节点时，它将调用操作服务器来处理其任务。服务器内部的动作服务器回调将通过映射到特定算法的名称 (例如 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> ) 来调用所选算法。这允许用户将行为树中使用的算法抽象为算法类。例如，你可以让 <code class="docutils literal notranslate"><span class="pre">N</span></code> 插件控制器跟随路径，与充电器对接，避免动态障碍，或与工具接口。将所有这些插件放在同一个服务器中允许用户使用单个环境表示对象，复制成本很高。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=27">[校准&#64;fish]</a></p>
-<p>对于恢复服务器，每个恢复也包含自己的名称，但是，每个插件也将公开其自己的特殊操作服务器。这样做是因为可能创建的恢复操作种类繁多，无法共享单个简单接口。恢复服务器还包含本地costmap订阅者，从控制器服务器接收实时更新，以计算其任务。我们这样做是为了避免本地成本图的多个实例，这些实例在计算上复制成本很高。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=28">[校准&#64;fish]</a></p>
-<p>或者，由于BT节点是调用操作的琐碎插件，因此可以创建新的BT节点来调用具有其他操作类型的其他动作服务器。如果可能的话，建议始终使用提供的服务器。如果由于插件或操作界面的原因，需要一个新的服务器，则可以通过框架来维持。新服务器应使用新类型和插件接口，类似于提供的服务器。需要创建一个新的BT节点插件来调用新的操作服务器 -- 然而，通过广泛使用服务器和插件，Nav2存储库本身不需要分叉或修改。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=29">[校准&#64;fish]</a></p>
-<p>如果您发现需要一个新的插件库定义或操作类型接口，请提交一张票证，看看我们是否可以在相同的接口中纠正这一点。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=30">[校准&#64;fish]</a></p>
+<h3>规划器，控制器，恢复服务     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=24">[校准&#64;fish]</a><a class="headerlink" href="#planner-controller-and-recovery-servers" title="永久链接至标题"></a></h3>
+<p>该项目中的三个动作服务器是planner、恢复和控制器服务器。这些动作服务器用于托管算法插件图，以完成各种任务。它们还托管算法插件用来计算其输出的环境表示。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=25">[校准&#64;fish]</a></p>
+<p>这个planner和控制器服务器将在运行时配置名称 (别名) 和要使用的算法类型。这些类型是已注册的pluginlib名称，这些名称是任务的别名。一个例子是使用名称为 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 的DWB控制器，因为它遵循参考路径。在这种情况下，DWB的所有参数都将放置在该命名空间中，例如 <code class="docutils literal notranslate"><span class="pre">FollowPath.&lt;param&gt;</span></code> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=26">[校准&#64;fish]</a></p>
+<p>然后，这两个服务器会公开与其任务相对应的操作接口。当行为树勾选相应的BT节点时，它将调用操作服务器来处理其任务。服务器内部的动作服务器回调将通过映射到特定算法的名称 (例如 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> ) 来调用所选算法。这允许用户将行为树中使用的算法抽象为算法类。例如，你可以让 <code class="docutils literal notranslate"><span class="pre">N</span></code> 插件控制器跟随路径，与充电器对接，避免动态障碍，或与工具接口。将所有这些插件放在同一个服务器中允许用户使用单个环境表示对象，复制成本很高。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=27">[校准&#64;fish]</a></p>
+<p>对于恢复服务器，每个恢复也包含自己的名称，但是，每个插件也将公开其自己的特殊操作服务器。这样做是因为可能创建的恢复操作种类繁多，无法共享单个简单接口。恢复服务器还包含本地costmap订阅者，从控制器服务器接收实时更新，以计算其任务。我们这样做是为了避免本地成本图的多个实例，这些实例在计算上复制成本很高。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=28">[校准&#64;fish]</a></p>
+<p>或者，由于BT节点是调用操作的琐碎插件，因此可以创建新的BT节点来调用具有其他操作类型的其他动作服务器。如果可能的话，建议始终使用提供的服务器。如果由于插件或操作界面的原因，需要一个新的服务器，则可以通过框架来维持。新服务器应使用新类型和插件接口，类似于提供的服务器。需要创建一个新的BT节点插件来调用新的操作服务器 -- 然而，通过广泛使用服务器和插件，Nav2存储库本身不需要分叉或修改。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=29">[校准&#64;fish]</a></p>
+<p>如果您发现需要一个新的插件库定义或操作类型接口，请提交一张票证，看看我们是否可以在相同的接口中纠正这一点。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=30">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="planners">
 <h3>规划器<a class="headerlink" href="#planners" title="永久链接至标题"></a></h3>
-<p>这个planner的任务是计算完成一些目标函数的路径。根据所选的命名和算法，该路径也可以称为路由。两个规范示例是计算目标的计划 (例如，从当前位置到目标) 或完全覆盖 (例如，计划覆盖所有可用空间)。这个planner将获得全球环境代表和缓冲的传感器数据。规划器可以写入:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=32">[校准&#64;fish]</a></p>
+<p>这个planner的任务是计算完成一些目标函数的路径。根据所选的命名和算法，该路径也可以称为路由。两个规范示例是计算目标的计划 (例如，从当前位置到目标) 或完全覆盖 (例如，计划覆盖所有可用空间)。这个planner将获得全球环境代表和缓冲的传感器数据。规划器可以写入:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=32">[校准&#64;fish]</a></p>
 <ul class="simple">
 <li><p>计算最短路径</p></li>
 <li><p>计算完整覆盖路径</p></li>
-<li><p>沿稀疏或预定义路由计算路径     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=35">[校准&#64;fish]</a></p></li>
+<li><p>沿稀疏或预定义路由计算路径     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=35">[校准&#64;fish]</a></p></li>
 </ul>
-<p>一般任务Nav2的planner是计算有效，潜在最优路径从电流对目标构成。然而，存在许多支持的计划和路线类别。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=36">[校准&#64;fish]</a></p>
+<p>一般任务Nav2的planner是计算有效，潜在最优路径从电流对目标构成。然而，存在许多支持的计划和路线类别。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=36">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="controllers">
 <h3>控制器<a class="headerlink" href="#controllers" title="永久链接至标题"></a></h3>
-<p>控制器，在ROS 1中也被称为local planners，是我们遵循全局计算路径或完成局部任务的方式。控制器将可以访问本地环境表示，以尝试为基础计算可行的控制工作。许多控制器将在空间中投射机器人，并在每次更新迭代时计算局部可行路径。控制器可以写入:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=38">[校准&#64;fish]</a></p>
+<p>控制器，在ROS 1中也被称为local planners，是我们遵循全局计算路径或完成局部任务的方式。控制器将可以访问本地环境表示，以尝试为基础计算可行的控制工作。许多控制器将在空间中投射机器人，并在每次更新迭代时计算局部可行路径。控制器可以写入:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=38">[校准&#64;fish]</a></p>
 <ul class="simple">
 <li><p>走一条路</p></li>
-<li><p>使用里程作为与充电桩对接时的参考数据 <a class="reference external" href="http://10.55.23.25:3000/#?msgid=40">[校准&#64;fishros]</a></p></li>
+<li><p>使用里程作为与充电桩对接时的参考数据 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=40">[校准&#64;fishros]</a></p></li>
 <li><p>登上电梯</p></li>
 <li><p>与工具的接口</p></li>
 </ul>
-<p>在Nav2中，控制器的一般任务是计算符合全球计划的有效控制努力。然而，存在许多类别的控制器和local planners。该项目的目标是，所有控制器算法都可以作为该服务器中的插件，用于常见的研究和工业任务。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=43">[校准&#64;fish]</a></p>
+<p>在Nav2中，控制器的一般任务是计算符合全球计划的有效控制努力。然而，存在许多类别的控制器和local planners。该项目的目标是，所有控制器算法都可以作为该服务器中的插件，用于常见的研究和工业任务。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=43">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="recoveries">
 <h3>恢复<a class="headerlink" href="#recoveries" title="永久链接至标题"></a></h3>
-<p>恢复是容错系统的支柱。恢复的目标是处理未知或系统故障情况并自主处理。示例可能包括导致环境表征充满虚假障碍的感知系统故障。然后将触发清晰的成本图恢复，以允许机器人移动。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=45">[校准&#64;fish]</a></p>
-<p>另一个例子是，如果机器人由于动态障碍或控制不良而卡住。如果允许，备份或旋转到位，允许机器人从一个糟糕的位置移动到它可以成功导航的自由空间。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=46">[校准&#64;fish]</a></p>
-<p>最后，在完全故障的情况下，可以实施恢复以引起操作员的注意以寻求帮助。这可以通过电子邮件、短信、Slack、Matrix等来完成。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=47">[校准&#64;fish]</a></p>
+<p>恢复是容错系统的支柱。恢复的目标是处理未知或系统故障情况并自主处理。示例可能包括导致环境表征充满虚假障碍的感知系统故障。然后将触发清晰的成本图恢复，以允许机器人移动。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=45">[校准&#64;fish]</a></p>
+<p>另一个例子是，如果机器人由于动态障碍或控制不良而卡住。如果允许，备份或旋转到位，允许机器人从一个糟糕的位置移动到它可以成功导航的自由空间。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=46">[校准&#64;fish]</a></p>
+<p>最后，在完全故障的情况下，可以实施恢复以引起操作员的注意以寻求帮助。这可以通过电子邮件、短信、Slack、Matrix等来完成。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=47">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="waypoint-following">
 <h3>路点追踪<a class="headerlink" href="#waypoint-following" title="永久链接至标题"></a></h3>
-<p>路点以下是导航系统的基本特征。它告诉我们的系统如何使用导航到达多个目的地。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=49">[校准&#64;fish]</a></p>
-<p>这个 <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> 包含一个航路点跟踪程序，该程序具有特定任务执行程序的插件接口。如果您需要去给定的位置并完成特定的任务，如拍照、拿起盒子或等待用户输入，这将非常有用。这是一个很好的演示应用程序，说明了如何在示例应用程序中使用Nav2。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=50">[校准&#64;fish]</a></p>
-<p>但是，它不仅可以用于示例应用程序。车队经理/调度员有两个思想流派。-哑机器人; 智能集中调度员-智能机器人; 哑集中调度员     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=51">[校准&#64;fish]</a></p>
-<p>首先， <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> 足以创造一个生产级的机器人解决方案。由于自治系统/调度员在分配任务时会考虑机器人的姿势、电池电量、当前任务等因素，机器人上的应用只需要担心手头的任务，而不是系统的其他复杂性来完成所请求的任务。在这种情况下，您应该将对航路点追随者的请求视为1个工作单元 (例如g. 1在仓库中挑选，1个安全补丁循环，1个过道等) 来执行任务，然后返回调度员进行下一个任务或请求充值。在这个学派中，航路点跟随应用程序仅比导航和系统自治应用程序低一步。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=52">[校准&#64;fish]</a></p>
-<p>第二， <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> 是一个很好的应用程序示例/概念验证，但是你真的需要你的机器人航路点跟随/自治系统来承载更大的重量来做出一个强大的解决方案。在这种情况下，您应该使用 <code class="docutils literal notranslate"><span class="pre">nav2_behavior_tree</span></code> 包使用导航创建自定义应用程序级行为树来完成任务。这可以包括子树，如检查返回码头的中间任务的充电状态或在更复杂的任务中处理超过1个工作单元。很快，将会有一个 <code class="docutils literal notranslate"><span class="pre">nav2_bt_waypoint_follower</span></code>  (名称有待调整)，它将允许你更容易地创建这个应用程序。在这个学派中，航路点跟随应用程序与系统自治更紧密地联系在一起，或者在许多情况下，是系统自治。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=53">[校准&#64;fish]</a></p>
-<p>两者都不比另一个好，它在很大程度上取决于您的机器人正在完成的任务、在什么类型的环境中以及使用什么可用的云资源。对于一个给定的商业案例来说，这种区别通常是非常明显的。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=54">[校准&#64;fish]</a></p>
+<p>路点以下是导航系统的基本特征。它告诉我们的系统如何使用导航到达多个目的地。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=49">[校准&#64;fish]</a></p>
+<p>这个 <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> 包含一个航路点跟踪程序，该程序具有特定任务执行程序的插件接口。如果您需要去给定的位置并完成特定的任务，如拍照、拿起盒子或等待用户输入，这将非常有用。这是一个很好的演示应用程序，说明了如何在示例应用程序中使用Nav2。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=50">[校准&#64;fish]</a></p>
+<p>但是，它不仅可以用于示例应用程序。车队经理/调度员有两个思想流派。-哑机器人; 智能集中调度员-智能机器人; 哑集中调度员     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=51">[校准&#64;fish]</a></p>
+<p>首先， <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> 足以创造一个生产级的机器人解决方案。由于自治系统/调度员在分配任务时会考虑机器人的姿势、电池电量、当前任务等因素，机器人上的应用只需要担心手头的任务，而不是系统的其他复杂性来完成所请求的任务。在这种情况下，您应该将对航路点追随者的请求视为1个工作单元 (例如g. 1在仓库中挑选，1个安全补丁循环，1个过道等) 来执行任务，然后返回调度员进行下一个任务或请求充值。在这个学派中，航路点跟随应用程序仅比导航和系统自治应用程序低一步。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=52">[校准&#64;fish]</a></p>
+<p>第二， <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> 是一个很好的应用程序示例/概念验证，但是你真的需要你的机器人航路点跟随/自治系统来承载更大的重量来做出一个强大的解决方案。在这种情况下，您应该使用 <code class="docutils literal notranslate"><span class="pre">nav2_behavior_tree</span></code> 包使用导航创建自定义应用程序级行为树来完成任务。这可以包括子树，如检查返回码头的中间任务的充电状态或在更复杂的任务中处理超过1个工作单元。很快，将会有一个 <code class="docutils literal notranslate"><span class="pre">nav2_bt_waypoint_follower</span></code>  (名称有待调整)，它将允许你更容易地创建这个应用程序。在这个学派中，航路点跟随应用程序与系统自治更紧密地联系在一起，或者在许多情况下，是系统自治。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=53">[校准&#64;fish]</a></p>
+<p>两者都不比另一个好，它在很大程度上取决于您的机器人正在完成的任务、在什么类型的环境中以及使用什么可用的云资源。对于一个给定的商业案例来说，这种区别通常是非常明显的。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=54">[校准&#64;fish]</a></p>
 </div>
 </div>
 <div class="section" id="state-estimation">
 <h2>状态估计<a class="headerlink" href="#state-estimation" title="永久链接至标题"></a></h2>
-<p>在导航项目中，根据社区标准，需要提供两个主要的转变。的 <code class="docutils literal notranslate"><span class="pre">map</span></code> 转 <code class="docutils literal notranslate"><span class="pre">odom</span></code> 变换提供定位系统 (定位映射SLAM)  <code class="docutils literal notranslate"><span class="pre">odom</span></code> 转 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 的里程计系统。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=56">[校准&#64;fish]</a></p>
+<p>在导航项目中，根据社区标准，需要提供两个主要的转变。的 <code class="docutils literal notranslate"><span class="pre">map</span></code> 转 <code class="docutils literal notranslate"><span class="pre">odom</span></code> 变换提供定位系统 (定位映射SLAM)  <code class="docutils literal notranslate"><span class="pre">odom</span></code> 转 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 的里程计系统。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=56">[校准&#64;fish]</a></p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>不需要在你的机器人上使用激光雷达来使用导航系统。不需要使用基于lidar的碰撞避免、定位或大满贯。然而，我们确实提供了使用lidars的这些东西的指令和支持。使用基于视觉或深度的定位系统和使用其他传感器避免碰撞同样成功。唯一的要求是您在选择实施时遵循以下标准。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=57">[校准&#64;fish]</a></p>
+<p>不需要在你的机器人上使用激光雷达来使用导航系统。不需要使用基于lidar的碰撞避免、定位或大满贯。然而，我们确实提供了使用lidars的这些东西的指令和支持。使用基于视觉或深度的定位系统和使用其他传感器避免碰撞同样成功。唯一的要求是您在选择实施时遵循以下标准。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=57">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="standards">
 <h3>标准<a class="headerlink" href="#standards" title="永久链接至标题"></a></h3>
-<p>这个 <a class="reference external" href="https://www.ros.org/reps/rep-0105.html">REP 105</a> 定义了导航和更大的ROS生态系统所需的框架和约定。应始终遵循这些约定，以利用社区中丰富的定位、里程表和大满贯项目。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=59">[校准&#64;fish]</a></p>
-<p>简而言之，REP-105说你至少必须为你的机器人建造一个包含完整 <code class="docutils literal notranslate"><span class="pre">map</span></code>  -&gt;  <code class="docutils literal notranslate"><span class="pre">odom</span></code>  -&gt;  <code class="docutils literal notranslate"><span class="pre">base_link</span></code>  -&gt;  <code class="docutils literal notranslate"><span class="pre">[sensor</span> <span class="pre">frames]</span></code> 的TF树。TF2是我们用来表示和获得时间同步转换的ROS 2中的时变转换库。全球定位系统 (全球定位系统、SLAM、运动捕捉) 的工作是至少提供 <code class="docutils literal notranslate"><span class="pre">map</span></code>  -&gt;  <code class="docutils literal notranslate"><span class="pre">odom</span></code> 的转换。然后，里程计系统的作用是提供 <code class="docutils literal notranslate"><span class="pre">odom</span></code>  -&gt;  <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 转化。关于 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 的其余转化应该是静态的，并在你的 <a class="reference external" href="http://wiki.ros.org/urdf">URDF</a> 中定义。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=60">[校准&#64;fish]</a></p>
+<p>这个 <a class="reference external" href="https://www.ros.org/reps/rep-0105.html">REP 105</a> 定义了导航和更大的ROS生态系统所需的框架和约定。应始终遵循这些约定，以利用社区中丰富的定位、里程表和大满贯项目。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=59">[校准&#64;fish]</a></p>
+<p>简而言之，REP-105说你至少必须为你的机器人建造一个包含完整 <code class="docutils literal notranslate"><span class="pre">map</span></code>  -&gt;  <code class="docutils literal notranslate"><span class="pre">odom</span></code>  -&gt;  <code class="docutils literal notranslate"><span class="pre">base_link</span></code>  -&gt;  <code class="docutils literal notranslate"><span class="pre">[sensor</span> <span class="pre">frames]</span></code> 的TF树。TF2是我们用来表示和获得时间同步转换的ROS 2中的时变转换库。全球定位系统 (全球定位系统、SLAM、运动捕捉) 的工作是至少提供 <code class="docutils literal notranslate"><span class="pre">map</span></code>  -&gt;  <code class="docutils literal notranslate"><span class="pre">odom</span></code> 的转换。然后，里程计系统的作用是提供 <code class="docutils literal notranslate"><span class="pre">odom</span></code>  -&gt;  <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 转化。关于 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 的其余转化应该是静态的，并在你的 <a class="reference external" href="http://wiki.ros.org/urdf">URDF</a> 中定义。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=60">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="global-positioning-localization-and-slam">
-<h3>全球定位: 本地化与SLAM     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=61">[校准&#64;fish]</a><a class="headerlink" href="#global-positioning-localization-and-slam" title="永久链接至标题"></a></h3>
-<p>全球定位系统 (GPS、SLAM、运动捕捉) 的工作是至少提供 <code class="docutils literal notranslate"><span class="pre">map</span></code>  -&gt;  <code class="docutils literal notranslate"><span class="pre">odom</span></code> 的转换。我们提供 <code class="docutils literal notranslate"><span class="pre">amcl</span></code> 是一种自适应蒙特查理定位技术粒子滤波定位静态地图。我们还提供SLAM工具箱作为默认的SLAM算法，用于定位和生成静态映射。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=62">[校准&#64;fish]</a></p>
-<p>这些方法还可能产生其他输出，包括位置主题、地图或其他元数据，但它们必须提供该转换才能有效。使用机器人定位可以将多种定位方法融合在一起，下面将详细讨论。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=63">[校准&#64;fish]</a></p>
+<h3>全球定位: 本地化与SLAM     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=61">[校准&#64;fish]</a><a class="headerlink" href="#global-positioning-localization-and-slam" title="永久链接至标题"></a></h3>
+<p>全球定位系统 (GPS、SLAM、运动捕捉) 的工作是至少提供 <code class="docutils literal notranslate"><span class="pre">map</span></code>  -&gt;  <code class="docutils literal notranslate"><span class="pre">odom</span></code> 的转换。我们提供 <code class="docutils literal notranslate"><span class="pre">amcl</span></code> 是一种自适应蒙特查理定位技术粒子滤波定位静态地图。我们还提供SLAM工具箱作为默认的SLAM算法，用于定位和生成静态映射。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=62">[校准&#64;fish]</a></p>
+<p>这些方法还可能产生其他输出，包括位置主题、地图或其他元数据，但它们必须提供该转换才能有效。使用机器人定位可以将多种定位方法融合在一起，下面将详细讨论。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=63">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="odometry">
 <h3>里程计<a class="headerlink" href="#odometry" title="永久链接至标题"></a></h3>
-<p>里程计系统的作用是提供 <code class="docutils literal notranslate"><span class="pre">odom</span></code>  -&gt;  <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 的转变。里程计可以来自许多来源，包括激光雷达、车轮编码器、VIO和IMUs。里程计的目标是提供基于机器人运动的平滑和连续的局部框架。全球定位系统将更新相对于全球框架的变换，以解释里程计的漂移。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=65">[校准&#64;fish]</a></p>
-<p>这个 <a class="reference external" href="https://github.com/cra-ros-pkg/robot_localization/">Robot Localization</a> 通常用于这种融合。它将采用各种类型的 <code class="docutils literal notranslate"><span class="pre">N</span></code> 传感器，并为TF和主题提供连续平滑的里程计。一个典型的移动机器人装置可能有车轮编码器、IMUs和视觉融合在这个庄园中的里程计。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=66">[校准&#64;fish]</a></p>
-<p>然后，平滑输出可用于精确运动的航点计算，并在全局位置更新之间准确更新机器人的位置。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=67">[校准&#64;fish]</a></p>
+<p>里程计系统的作用是提供 <code class="docutils literal notranslate"><span class="pre">odom</span></code>  -&gt;  <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 的转变。里程计可以来自许多来源，包括激光雷达、车轮编码器、VIO和IMUs。里程计的目标是提供基于机器人运动的平滑和连续的局部框架。全球定位系统将更新相对于全球框架的变换，以解释里程计的漂移。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=65">[校准&#64;fish]</a></p>
+<p>这个 <a class="reference external" href="https://github.com/cra-ros-pkg/robot_localization/">Robot Localization</a> 通常用于这种融合。它将采用各种类型的 <code class="docutils literal notranslate"><span class="pre">N</span></code> 传感器，并为TF和主题提供连续平滑的里程计。一个典型的移动机器人装置可能有车轮编码器、IMUs和视觉融合在这个庄园中的里程计。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=66">[校准&#64;fish]</a></p>
+<p>然后，平滑输出可用于精确运动的航点计算，并在全局位置更新之间准确更新机器人的位置。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=67">[校准&#64;fish]</a></p>
 </div>
 </div>
 <div class="section" id="environmental-representation">
 <h2>环境表征<a class="headerlink" href="#environmental-representation" title="永久链接至标题"></a></h2>
-<p>环境表征是机器人感知环境的方式。它还充当各种算法和数据源的中心定位，以将它们的信息组合到一个空间中。然后这个空间被控制器、planner和恢复系统用来安全有效地计算他们的任务。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=69">[校准&#64;fish]</a></p>
+<p>环境表征是机器人感知环境的方式。它还充当各种算法和数据源的中心定位，以将它们的信息组合到一个空间中。然后这个空间被控制器、planner和恢复系统用来安全有效地计算他们的任务。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=69">[校准&#64;fish]</a></p>
 <div class="section" id="costmaps-and-layers">
 <h3>代价地图和图层<a class="headerlink" href="#costmaps-and-layers" title="永久链接至标题"></a></h3>
-<p>当前的环境表征是一个成本图。costmap是包含来自未知、免费、占用或膨胀成本的单元格的常规2D网格。然后搜索该costmap以计算全局计划或采样以计算本地控制工作。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=71">[校准&#64;fish]</a></p>
-<p>各种costmap层被实现为pluginlib插件，以将信息缓冲到costmap中。这包括来自激光雷达、声纳、深度、图像等的信息。在输入costmap层之前处理传感器数据可能是明智的，但这取决于开发人员。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=72">[校准&#64;fish]</a></p>
-<p>可以使用相机或深度传感器创建代价地图层来检测和跟踪场景中的障碍物，以避免碰撞。此外，可以创建层来基于一些规则或启发式算法来改变基础成本图。最后，它们可用于将实时数据缓冲到2D或3D世界中，用于二进制障碍物标记。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=73">[校准&#64;fish]</a></p>
+<p>当前的环境表征是一个成本图。costmap是包含来自未知、免费、占用或膨胀成本的单元格的常规2D网格。然后搜索该costmap以计算全局计划或采样以计算本地控制工作。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=71">[校准&#64;fish]</a></p>
+<p>各种costmap层被实现为pluginlib插件，以将信息缓冲到costmap中。这包括来自激光雷达、声纳、深度、图像等的信息。在输入costmap层之前处理传感器数据可能是明智的，但这取决于开发人员。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=72">[校准&#64;fish]</a></p>
+<p>可以使用相机或深度传感器创建代价地图层来检测和跟踪场景中的障碍物，以避免碰撞。此外，可以创建层来基于一些规则或启发式算法来改变基础成本图。最后，它们可用于将实时数据缓冲到2D或3D世界中，用于二进制障碍物标记。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=73">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="costmap-filters">
 <h3>代价地图过滤器<a class="headerlink" href="#costmap-filters" title="永久链接至标题"></a></h3>
-<p>想象一下，您正在注释地图文件 (或任何图像文件)，以便根据注释地图中的位置执行特定操作。标记/注释的示例可能是保留区域以避免在内部进行规划，或者使像素属于标记区域的最大速度。这个带注释的地图叫做  &quot;filter mask&quot; 。就像覆盖在表面上的蒙版一样，它的大小、姿势和比例可以或不能与主图相同。过滤器蒙版的主要目标-是提供在地图上标记具有一些附加特征或行为变化的区域的能力。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=75">[校准&#64;fish]</a></p>
-<p>代价地图过滤器-是一种基于成本地图层的方法，将过滤器蒙版中注释的空间相关行为变化应用到Nav2堆栈中。代价地图过滤器实现为costmap插件。这些插件被称为  &quot;filters&quot; ，因为它们通过过滤蒙版上标记的空间注释过滤成本图。为了制作过滤后的成本图并改变机器人在注释区域的行为，过滤器插件读取来自过滤器蒙版的数据。该数据正在线性转换为过滤器空间中的特征图。有了这个转换后的特征图和一个地图/成本图，任何传感器数据和当前机器人坐标过滤器都可以更新底层的成本图，并根据机器人的位置改变它的行为。例如，可以通过使用costmap筛选器来实现以下功能:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=76">[校准&#64;fish]</a></p>
+<p>想象一下，您正在注释地图文件 (或任何图像文件)，以便根据注释地图中的位置执行特定操作。标记/注释的示例可能是保留区域以避免在内部进行规划，或者使像素属于标记区域的最大速度。这个带注释的地图叫做  &quot;filter mask&quot; 。就像覆盖在表面上的蒙版一样，它的大小、姿势和比例可以或不能与主图相同。过滤器蒙版的主要目标-是提供在地图上标记具有一些附加特征或行为变化的区域的能力。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=75">[校准&#64;fish]</a></p>
+<p>代价地图过滤器-是一种基于成本地图层的方法，将过滤器蒙版中注释的空间相关行为变化应用到Nav2堆栈中。代价地图过滤器实现为costmap插件。这些插件被称为  &quot;filters&quot; ，因为它们通过过滤蒙版上标记的空间注释过滤成本图。为了制作过滤后的成本图并改变机器人在注释区域的行为，过滤器插件读取来自过滤器蒙版的数据。该数据正在线性转换为过滤器空间中的特征图。有了这个转换后的特征图和一个地图/成本图，任何传感器数据和当前机器人坐标过滤器都可以更新底层的成本图，并根据机器人的位置改变它的行为。例如，可以通过使用costmap筛选器来实现以下功能:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=76">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p>机器人永远不会进入的隔离/安全区。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=77">[校准&#64;fish]</a></p></li>
-<li><p>限速区域。机器人进入这些区域的最大速度将受到限制。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=78">[校准&#64;fish]</a></p></li>
-<li><p>机器人在工业环境和仓库中移动的首选车道。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=79">[校准&#64;fish]</a></p></li>
+<li><p>机器人永远不会进入的隔离/安全区。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=77">[校准&#64;fish]</a></p></li>
+<li><p>限速区域。机器人进入这些区域的最大速度将受到限制。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=78">[校准&#64;fish]</a></p></li>
+<li><p>机器人在工业环境和仓库中移动的首选车道。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=79">[校准&#64;fish]</a></p></li>
 </ul>
 </div>
 <div class="section" id="other-forms">
 <h3>其他形式<a class="headerlink" href="#other-forms" title="永久链接至标题"></a></h3>
-<p>存在各种其他形式的环境表征。这些包括:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=81">[校准&#64;fish]</a></p>
+<p>存在各种其他形式的环境表征。这些包括:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=81">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p>梯度图，类似于成本图，但表示表面梯度以检查     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=82">[校准&#64;fish]</a></p></li>
-<li><p>3D成本图，代表3D空间，但也需要3D规划和碰撞检查     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=83">[校准&#64;fish]</a></p></li>
-<li><p>网格图，类似于梯度图，但表面网格有许多角度     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=84">[校准&#64;fish]</a></p></li>
-<li><p>这个  &quot;Vector space&quot; ，吸收传感器信息，使用机器学习来检测单个项目和位置，以跟踪而不是缓冲离散点。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=85">[校准&#64;fish]</a></p></li>
+<li><p>梯度图，类似于成本图，但表示表面梯度以检查     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=82">[校准&#64;fish]</a></p></li>
+<li><p>3D成本图，代表3D空间，但也需要3D规划和碰撞检查     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=83">[校准&#64;fish]</a></p></li>
+<li><p>网格图，类似于梯度图，但表面网格有许多角度     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=84">[校准&#64;fish]</a></p></li>
+<li><p>这个  &quot;Vector space&quot; ，吸收传感器信息，使用机器学习来检测单个项目和位置，以跟踪而不是缓冲离散点。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=85">[校准&#64;fish]</a></p></li>
 </ul>
 </div>
 </div>

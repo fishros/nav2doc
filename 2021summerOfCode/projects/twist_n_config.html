@@ -732,24 +732,24 @@
            <div itemprop="articleBody">
              
   <div class="section" id="convert-twist-to-twiststamped-in-ecosystem-and-run-time-configuration">
-<span id="spinners"></span><h1>8.在生态系统和运行时配置中将Twist转换为TwistStamped     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=488">[校准&#64;fish]</a><a class="headerlink" href="#convert-twist-to-twiststamped-in-ecosystem-and-run-time-configuration" title="永久链接至标题"></a></h1>
+<span id="spinners"></span><h1>8.在生态系统和运行时配置中将Twist转换为TwistStamped     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=488">[校准&#64;fish]</a><a class="headerlink" href="#convert-twist-to-twiststamped-in-ecosystem-and-run-time-configuration" title="永久链接至标题"></a></h1>
 <p>任务描述</p>
-<p>该项目由两个较小的项目组成，可以很容易地并行进行。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=489">[校准&#64;fish]</a></p>
-<p>子项目A: 在生态系统中将扭曲转换为扭曲标记     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=490">[校准&#64;fish]</a></p>
-<p>这个项目的目的是确定在ROS生态系统利用 <code class="docutils literal notranslate"><span class="pre">Twist</span></code> 的 <code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code> 的导航。这包括Nav2、ROS 2控制、GazeboROS插件、Yuk速度滤波器、主要机器人驱动器等。一组先前确定的位置显示在下面链接的票证中。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=491">[校准&#64;fish]</a></p>
-<p>一旦你在生态系统中创建了一个使用它的地方的列表，你的项目将是在他们的ROS 2分支上提交PRs，以改变界面，使用 <code class="docutils literal notranslate"><span class="pre">TwistStamped</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">Twist</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=492">[校准&#64;fish]</a></p>
-<p>子项目B: 参数的运行时重新配置     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=493">[校准&#64;fish]</a></p>
-<p>同时在等待PRs合并或阻止评论转换所有生态系统 <code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code> 使用 <code class="docutils literal notranslate"><span class="pre">Twist</span></code> 转 <code class="docutils literal notranslate"><span class="pre">TwistStamped</span></code> ，您的项目将在运行时重新配置Nav2中的主要参数。在ROS 2中，这是通过参数更改事件回调完成的。有关需要添加动态可重新配置参数支持的插件或服务器的列表，请参阅下面的票证。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=494">[校准&#64;fish]</a></p>
-<p>Project项目难度: 中型difficulty     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=344">[校准&#64;fish]</a></p>
-<p>Project项目社区导师: 史蒂夫·麦肯斯基 <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a>      <a class="reference external" href="http://10.55.23.25:3000/#?msgid=345">[校准&#64;fish]</a></p>
-<p>Mentor导师联系方式: [请参阅上面的链接，GitHub个人资料描述中的链接] **     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=346">[校准&#64;fish]</a></p>
-<p>项目输出要求-将所有主要的生态系统项目转换为扭曲的盖章-启用运行时重新配置缺少Nav2的其余插件和服务器-通过使用锁确保重新配置是线程安全的，原子变量或回调组     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=495">[校准&#64;fish]</a></p>
+<p>该项目由两个较小的项目组成，可以很容易地并行进行。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=489">[校准&#64;fish]</a></p>
+<p>子项目A: 在生态系统中将扭曲转换为扭曲标记     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=490">[校准&#64;fish]</a></p>
+<p>这个项目的目的是确定在ROS生态系统利用 <code class="docutils literal notranslate"><span class="pre">Twist</span></code> 的 <code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code> 的导航。这包括Nav2、ROS 2控制、GazeboROS插件、Yuk速度滤波器、主要机器人驱动器等。一组先前确定的位置显示在下面链接的票证中。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=491">[校准&#64;fish]</a></p>
+<p>一旦你在生态系统中创建了一个使用它的地方的列表，你的项目将是在他们的ROS 2分支上提交PRs，以改变界面，使用 <code class="docutils literal notranslate"><span class="pre">TwistStamped</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">Twist</span></code> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=492">[校准&#64;fish]</a></p>
+<p>子项目B: 参数的运行时重新配置     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=493">[校准&#64;fish]</a></p>
+<p>同时在等待PRs合并或阻止评论转换所有生态系统 <code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code> 使用 <code class="docutils literal notranslate"><span class="pre">Twist</span></code> 转 <code class="docutils literal notranslate"><span class="pre">TwistStamped</span></code> ，您的项目将在运行时重新配置Nav2中的主要参数。在ROS 2中，这是通过参数更改事件回调完成的。有关需要添加动态可重新配置参数支持的插件或服务器的列表，请参阅下面的票证。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=494">[校准&#64;fish]</a></p>
+<p>Project项目难度: 中型difficulty     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=344">[校准&#64;fish]</a></p>
+<p>Project项目社区导师: 史蒂夫·麦肯斯基 <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a>      <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=345">[校准&#64;fish]</a></p>
+<p>Mentor导师联系方式: [请参阅上面的链接，GitHub个人资料描述中的链接] **     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=346">[校准&#64;fish]</a></p>
+<p>项目输出要求-将所有主要的生态系统项目转换为扭曲的盖章-启用运行时重新配置缺少Nav2的其余插件和服务器-通过使用锁确保重新配置是线程安全的，原子变量或回调组     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=495">[校准&#64;fish]</a></p>
 <p>所需技能</p>
 <ul class="simple">
-<li><p>C ++，python 3     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=496">[校准&#64;fish]</a></p></li>
+<li><p>C ++，python 3     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=496">[校准&#64;fish]</a></p></li>
 <li><p>ROS 2</p></li>
 </ul>
-<p>相关开源软件存储库和参考文献列表     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=352">[校准&#64;fish]</a></p>
+<p>相关开源软件存储库和参考文献列表     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=352">[校准&#64;fish]</a></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ros.org/">ROS</a></p></li>
 <li><p><a class="reference external" href="http://gazebosim.org/">Gazebo Simulator</a></p></li>
@@ -758,7 +758,7 @@
 <li><p><a class="reference external" href="https://navigation.ros.org/">Navigation2</a></p></li>
 <li><p><a class="reference external" href="https://alyssapierson.files.wordpress.com/2018/05/pierson2018.pdf">Some related works</a></p></li>
 </ul>
-<p>许可-所有贡献将在Apache 2.0许可下进行。-不需要其他CLA。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=357">[校准&#64;fish]</a></p>
+<p>许可-所有贡献将在Apache 2.0许可下进行。-不需要其他CLA。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=357">[校准&#64;fish]</a></p>
 </div>
 
 

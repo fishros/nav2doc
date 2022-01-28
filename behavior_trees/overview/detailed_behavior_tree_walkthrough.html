@@ -745,26 +745,26 @@
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>本文件作为Nav2中使用的主要行为树 (BT) 的参考指南。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=107">[校准&#64;fish]</a></p>
-<p>在 <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator/behavior_trees</span></code> 中提供了许多示例行为树，但是这些树有时必须基于机器人的应用进行重新配置。以下文档将详细介绍当前的主要默认BT <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery.xml</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=108">[校准&#64;fish]</a></p>
+<p>本文件作为Nav2中使用的主要行为树 (BT) 的参考指南。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=107">[校准&#64;fish]</a></p>
+<p>在 <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator/behavior_trees</span></code> 中提供了许多示例行为树，但是这些树有时必须基于机器人的应用进行重新配置。以下文档将详细介绍当前的主要默认BT <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery.xml</span></code> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=108">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="prerequisites">
 <h2>先决条件<a class="headerlink" href="#prerequisites" title="永久链接至标题"></a></h2>
 <ul>
-<li><p>在继续本演练之前，熟悉行为树的概念     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=110">[校准&#64;fish]</a></p>
+<li><p>在继续本演练之前，熟悉行为树的概念     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=110">[校准&#64;fish]</a></p>
 <blockquote>
 <div><ul class="simple">
-<li><p>阅读 <a class="reference external" href="../../concepts/index.html">navigation concepts</a> 的简短解释     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=111">[校准&#64;fish]</a></p></li>
-<li><p>阅读 <a class="reference external" href="https://www.behaviortree.dev/">BehaviorTree CPP V3</a> 网站上的一般教程和指南 (非Nav2专用)。具体来说，行为树CPP V3网站上的  &quot;Learn the Basics&quot; 部分解释了本指南将基于的基本通用节点。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=112">[校准&#64;fish]</a></p></li>
+<li><p>阅读 <a class="reference external" href="../../concepts/index.html">navigation concepts</a> 的简短解释     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=111">[校准&#64;fish]</a></p></li>
+<li><p>阅读 <a class="reference external" href="https://www.behaviortree.dev/">BehaviorTree CPP V3</a> 网站上的一般教程和指南 (非Nav2专用)。具体来说，行为树CPP V3网站上的  &quot;Learn the Basics&quot; 部分解释了本指南将基于的基本通用节点。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=112">[校准&#64;fish]</a></p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>熟悉习惯 <a class="reference external" href="nav2_specific_nodes.html">Nav2 specific BT nodes</a>      <a class="reference external" href="http://10.55.23.25:3000/#?msgid=113">[校准&#64;fish]</a></p></li>
+<li><p>熟悉习惯 <a class="reference external" href="nav2_specific_nodes.html">Nav2 specific BT nodes</a>      <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=113">[校准&#64;fish]</a></p></li>
 </ul>
 </div>
 <div class="section" id="navigate-to-pose-with-replanning-and-recovery">
-<h2>通过重新规划和恢复导航到点     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=114">[校准&#64;fish]</a><a class="headerlink" href="#navigate-to-pose-with-replanning-and-recovery" title="永久链接至标题"></a></h2>
-<p>以下部分将详细描述目前在Nav2、 <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery.xml</span></code> 中使用的主要和默认BT的概念。此行为树定期以1Hz重新规划全局路径，并且它还具有恢复操作。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=115">[校准&#64;fish]</a></p>
+<h2>通过重新规划和恢复导航到点     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=114">[校准&#64;fish]</a><a class="headerlink" href="#navigate-to-pose-with-replanning-and-recovery" title="永久链接至标题"></a></h2>
+<p>以下部分将详细描述目前在Nav2、 <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery.xml</span></code> 中使用的主要和默认BT的概念。此行为树定期以1Hz重新规划全局路径，并且它还具有恢复操作。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=115">[校准&#64;fish]</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -774,7 +774,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>BTs主要在XML中定义。上面显示的树用XML表示，如下所示。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=116">[校准&#64;fish]</a></p>
+<p>BTs主要在XML中定义。上面显示的树用XML表示，如下所示。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=116">[校准&#64;fish]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span> <span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;BehaviorTree</span> <span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;RecoveryNode</span> <span class="na">number_of_retries=</span><span class="s">&quot;6&quot;</span> <span class="na">name=</span><span class="s">&quot;NavigateRecovery&quot;</span><span class="nt">&gt;</span>
@@ -813,7 +813,7 @@
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 </div>
-<p>这可能仍然有点难以承受，但是这棵树可以被分成两个较小的子树，我们可以一次关注一个。这些较小的子树是最上面的 <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> 的子树。从这一点开始， <code class="docutils literal notranslate"><span class="pre">NavigateWithReplanning</span></code> 子树将被称为 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树， <code class="docutils literal notranslate"><span class="pre">RecoveryFallback</span></code> 子树将被称为 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树。这可以用以下方式表示:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=117">[校准&#64;fish]</a></p>
+<p>这可能仍然有点难以承受，但是这棵树可以被分成两个较小的子树，我们可以一次关注一个。这些较小的子树是最上面的 <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> 的子树。从这一点开始， <code class="docutils literal notranslate"><span class="pre">NavigateWithReplanning</span></code> 子树将被称为 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树， <code class="docutils literal notranslate"><span class="pre">RecoveryFallback</span></code> 子树将被称为 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树。这可以用以下方式表示:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=117">[校准&#64;fish]</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -823,23 +823,23 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>这个 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树主要涉及实际导航行为:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=118">[校准&#64;fish]</a></p>
+<p>这个 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树主要涉及实际导航行为:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=118">[校准&#64;fish]</a></p>
 <ul class="simple">
 <li><p>计算路径</p></li>
 <li><p>沿着一条路径</p></li>
-<li><p>上述每个主要导航行为的上下文恢复行为     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=121">[校准&#64;fish]</a></p></li>
+<li><p>上述每个主要导航行为的上下文恢复行为     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=121">[校准&#64;fish]</a></p></li>
 </ul>
-<p>这个 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树包括系统级故障或内部不易处理的项目的恢复行为。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=122">[校准&#64;fish]</a></p>
-<p>整个英国电信公司 (希望) 将大部分时间花在 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树上。如果 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树中的两个主要行为中的任何一个失败 (路径计算或路径跟随)，将尝试上下文恢复。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=123">[校准&#64;fish]</a></p>
-<p>如果上下文恢复仍然不够， <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树将返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。系统将移动到 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树，试图清除任何系统级导航故障。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=124">[校准&#64;fish]</a></p>
-<p>这种情况发生直到超过母体 <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> 的 <code class="docutils literal notranslate"><span class="pre">number_of_retries</span></code>  (默认情况下为6)。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=125">[校准&#64;fish]</a></p>
+<p>这个 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树包括系统级故障或内部不易处理的项目的恢复行为。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=122">[校准&#64;fish]</a></p>
+<p>整个英国电信公司 (希望) 将大部分时间花在 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树上。如果 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树中的两个主要行为中的任何一个失败 (路径计算或路径跟随)，将尝试上下文恢复。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=123">[校准&#64;fish]</a></p>
+<p>如果上下文恢复仍然不够， <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树将返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。系统将移动到 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树，试图清除任何系统级导航故障。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=124">[校准&#64;fish]</a></p>
+<p>这种情况发生直到超过母体 <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> 的 <code class="docutils literal notranslate"><span class="pre">number_of_retries</span></code>  (默认情况下为6)。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=125">[校准&#64;fish]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;RecoveryNode</span> <span class="na">number_of_retries=</span><span class="s">&quot;6&quot;</span> <span class="na">name=</span><span class="s">&quot;NavigateRecovery&quot;</span><span class="nt">&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="navigation-subtree">
 <h2>导航子树<a class="headerlink" href="#navigation-subtree" title="永久链接至标题"></a></h2>
-<p>既然我们已经讨论了 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树和 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树之间的控制流，让我们关注导航子树。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=127">[校准&#64;fish]</a></p>
+<p>既然我们已经讨论了 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树和 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树之间的控制流，让我们关注导航子树。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=127">[校准&#64;fish]</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -849,7 +849,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>该子树的XML如下所示:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=128">[校准&#64;fish]</a></p>
+<p>该子树的XML如下所示:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=128">[校准&#64;fish]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;PipelineSequence</span> <span class="na">name=</span><span class="s">&quot;NavigateWithReplanning&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;RateController</span> <span class="na">hz=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;RecoveryNode</span> <span class="na">number_of_retries=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;ComputePathToPose&quot;</span><span class="nt">&gt;</span>
@@ -870,7 +870,7 @@
 <span class="nt">&lt;/PipelineSequence&gt;</span>
 </pre></div>
 </div>
-<p>树有 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 和 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 两个主要作用。如果这两个操作中的任何一个失败，他们将尝试根据上下文清除失败。树的症结只能用一个父节点和两个子节点来表示，如下所示:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=129">[校准&#64;fish]</a></p>
+<p>树有 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 和 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 两个主要作用。如果这两个操作中的任何一个失败，他们将尝试根据上下文清除失败。树的症结只能用一个父节点和两个子节点来表示，如下所示:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=129">[校准&#64;fish]</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -880,13 +880,13 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>母 <code class="docutils literal notranslate"><span class="pre">PipelineSequence</span></code> 节点允许 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 被勾选，一旦成功， <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 被勾选。当 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 子树被勾选时， <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 子树也将被勾选。这允许在机器人四处移动时重新计算路径。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=130">[校准&#64;fish]</a></p>
-<p>这个 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 和 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 都遵循相同的总体结构。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=131">[校准&#64;fish]</a></p>
+<p>母 <code class="docutils literal notranslate"><span class="pre">PipelineSequence</span></code> 节点允许 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 被勾选，一旦成功， <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 被勾选。当 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 子树被勾选时， <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 子树也将被勾选。这允许在机器人四处移动时重新计算路径。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=130">[校准&#64;fish]</a></p>
+<p>这个 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 和 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 都遵循相同的总体结构。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=131">[校准&#64;fish]</a></p>
 <ul class="simple">
 <li><p>做这个动作</p></li>
-<li><p>如果操作失败，请尝试查看我们是否可以上下文恢复     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=133">[校准&#64;fish]</a></p></li>
+<li><p>如果操作失败，请尝试查看我们是否可以上下文恢复     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=133">[校准&#64;fish]</a></p></li>
 </ul>
-<p>下面是 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 子树:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=134">[校准&#64;fish]</a></p>
+<p>下面是 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 子树:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=134">[校准&#64;fish]</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -896,27 +896,27 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>父级 <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> 控制动作和上下文恢复子树之间的流程。 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 和 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 的上下文恢复包括检查目标是否已经更新，并包括清除相关的成本图。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=135">[校准&#64;fish]</a></p>
-<p>考虑改变 <code class="docutils literal notranslate"><span class="pre">number_of_retries</span></code> 参数父 <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> 控制节点应用程序可以容忍更尝试上下文回收率之前系统级回收率。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=136">[校准&#64;fish]</a></p>
-<p>这个 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 和 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 的BT子树的唯一区别概述如下:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=137">[校准&#64;fish]</a></p>
+<p>父级 <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> 控制动作和上下文恢复子树之间的流程。 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 和 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 的上下文恢复包括检查目标是否已经更新，并包括清除相关的成本图。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=135">[校准&#64;fish]</a></p>
+<p>考虑改变 <code class="docutils literal notranslate"><span class="pre">number_of_retries</span></code> 参数父 <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> 控制节点应用程序可以容忍更尝试上下文回收率之前系统级回收率。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=136">[校准&#64;fish]</a></p>
+<p>这个 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 和 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 的BT子树的唯一区别概述如下:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=137">[校准&#64;fish]</a></p>
 <ul class="simple">
 <li><dl class="simple">
 <dt>子树中的操作节点:</dt><dd><ul>
-<li><p>这个 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 子树以这个 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 行动为中心。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=139">[校准&#64;fish]</a></p></li>
-<li><p>这个 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 子树以这个 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 行动为中心。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=140">[校准&#64;fish]</a></p></li>
+<li><p>这个 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 子树以这个 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 行动为中心。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=139">[校准&#64;fish]</a></p></li>
+<li><p>这个 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 子树以这个 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 行动为中心。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=140">[校准&#64;fish]</a></p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>装饰 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 亚树的 <code class="docutils literal notranslate"><span class="pre">RateController</span></code>      <a class="reference external" href="http://10.55.23.25:3000/#?msgid=141">[校准&#64;fish]</a></dt><dd><p>这个 <code class="docutils literal notranslate"><span class="pre">RateController</span></code> 装饰 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 子树以保持规划在指定的频率。该BT的默认频率是1 hz。这样做是为了防止BT以树更新速率 (100Hz) 用太多无用的请求淹没规划服务器。根据应用和计算路径的计算成本，考虑将该频率更改为更高或更低的频率。还有其他装饰可以用来代替这个 <code class="docutils literal notranslate"><span class="pre">RateController</span></code> 。如果合适，考虑使用 <code class="docutils literal notranslate"><span class="pre">SpeedController</span></code> 或 <code class="docutils literal notranslate"><span class="pre">DistanceController</span></code> 装饰器。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=142">[校准&#64;fish]</a></p>
+<dt>装饰 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 亚树的 <code class="docutils literal notranslate"><span class="pre">RateController</span></code>      <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=141">[校准&#64;fish]</a></dt><dd><p>这个 <code class="docutils literal notranslate"><span class="pre">RateController</span></code> 装饰 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 子树以保持规划在指定的频率。该BT的默认频率是1 hz。这样做是为了防止BT以树更新速率 (100Hz) 用太多无用的请求淹没规划服务器。根据应用和计算路径的计算成本，考虑将该频率更改为更高或更低的频率。还有其他装饰可以用来代替这个 <code class="docutils literal notranslate"><span class="pre">RateController</span></code> 。如果合适，考虑使用 <code class="docutils literal notranslate"><span class="pre">SpeedController</span></code> 或 <code class="docutils literal notranslate"><span class="pre">DistanceController</span></code> 装饰器。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=142">[校准&#64;fish]</a></p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>在上下文恢复中清除的costmap:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=143">[校准&#64;fish]</a></dt><dd><ul>
-<li><p>这个 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 子树清除全球成本图。全球成本图是planner背景下的相关成本图     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=144">[校准&#64;fish]</a></p></li>
-<li><p>这个 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 子树清除了当地的成本图。本地costmap是控制者上下文中的相关costmap     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=145">[校准&#64;fish]</a></p></li>
+<dt>在上下文恢复中清除的costmap:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=143">[校准&#64;fish]</a></dt><dd><ul>
+<li><p>这个 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 子树清除全球成本图。全球成本图是planner背景下的相关成本图     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=144">[校准&#64;fish]</a></p></li>
+<li><p>这个 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 子树清除了当地的成本图。本地costmap是控制者上下文中的相关costmap     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=145">[校准&#64;fish]</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -925,7 +925,7 @@
 </div>
 <div class="section" id="recovery-subtree">
 <h2>恢复子树<a class="headerlink" href="#recovery-subtree" title="永久链接至标题"></a></h2>
-<p>这个 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树是Nav2默认 <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery.xml</span></code> 树的第二大  &quot;half&quot; 。简而言之，当 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 控制系统级别的恢复时，就会触发这个子树 (在这种情况下， <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树中的上下文恢复是不够的)。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=147">[校准&#64;fish]</a></p>
+<p>这个 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树是Nav2默认 <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery.xml</span></code> 树的第二大  &quot;half&quot; 。简而言之，当 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 控制系统级别的恢复时，就会触发这个子树 (在这种情况下， <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树中的上下文恢复是不够的)。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=147">[校准&#64;fish]</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -950,26 +950,26 @@
 <span class="nt">&lt;/ReactiveFallback&gt;</span>
 </pre></div>
 </div>
-<p>最顶级的父级， <code class="docutils literal notranslate"><span class="pre">ReactiveFallback</span></code> 控制系统范围内其余恢复之间的流程，并异步检查是否收到新目标。如果在任何时候目标被更新，这个子树将停止所有的孩子并返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。这允许对新目标的快速反应和抢占当前执行恢复。对于 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树的上下文恢复部分来说，这应该是熟悉的。这是处理这种情况的常见BT模式，“除非发生'this condition'，否则请采取行动”。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=149">[校准&#64;fish]</a></p>
-<p>这些条件节点非常强大，通常与 <code class="docutils literal notranslate"><span class="pre">ReactiveFallback</span></code> 配对。可以很容易地想象用 <code class="docutils literal notranslate"><span class="pre">isBatteryLow</span></code> 条件将整个 <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery</span></code> 树包裹在 <code class="docutils literal notranslate"><span class="pre">ReactiveFallback</span></code> 中 -- 这意味着 <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery</span></code> 树将执行 * 除非 * 电池电量变低 (然后整个不同的子树对接充电)。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=150">[校准&#64;fish]</a></p>
-<p>如果目标从未更新，行为树将继续到 <code class="docutils literal notranslate"><span class="pre">RoundRobin</span></code> 节点。以下是BT中默认的四个系统级恢复:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=151">[校准&#64;fish]</a></p>
+<p>最顶级的父级， <code class="docutils literal notranslate"><span class="pre">ReactiveFallback</span></code> 控制系统范围内其余恢复之间的流程，并异步检查是否收到新目标。如果在任何时候目标被更新，这个子树将停止所有的孩子并返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。这允许对新目标的快速反应和抢占当前执行恢复。对于 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树的上下文恢复部分来说，这应该是熟悉的。这是处理这种情况的常见BT模式，“除非发生'this condition'，否则请采取行动”。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=149">[校准&#64;fish]</a></p>
+<p>这些条件节点非常强大，通常与 <code class="docutils literal notranslate"><span class="pre">ReactiveFallback</span></code> 配对。可以很容易地想象用 <code class="docutils literal notranslate"><span class="pre">isBatteryLow</span></code> 条件将整个 <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery</span></code> 树包裹在 <code class="docutils literal notranslate"><span class="pre">ReactiveFallback</span></code> 中 -- 这意味着 <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery</span></code> 树将执行 * 除非 * 电池电量变低 (然后整个不同的子树对接充电)。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=150">[校准&#64;fish]</a></p>
+<p>如果目标从未更新，行为树将继续到 <code class="docutils literal notranslate"><span class="pre">RoundRobin</span></code> 节点。以下是BT中默认的四个系统级恢复:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=151">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p>清除两个成本图 (本地和全局) 的序列     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=152">[校准&#64;fish]</a></p></li>
+<li><p>清除两个成本图 (本地和全局) 的序列     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=152">[校准&#64;fish]</a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Spin</span></code> recovery action</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Wait</span></code> recovery action</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">BackUp</span></code> recovery action</p></li>
 </ul>
-<p>在 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 的四个孩子父 <code class="docutils literal notranslate"><span class="pre">RoundRobin</span></code> ，机器人将尝试renavigate在 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树。如果重新隔离不成功， <code class="docutils literal notranslate"><span class="pre">RoundRobin</span></code> 的下一个孩子将被勾选。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=156">[校准&#64;fish]</a></p>
-<p>例如，假设机器人被卡住， <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>  :( 为了这个例子，让我们假设目标从未更新)。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=157">[校准&#64;fish]</a></p>
+<p>在 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 的四个孩子父 <code class="docutils literal notranslate"><span class="pre">RoundRobin</span></code> ，机器人将尝试renavigate在 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树。如果重新隔离不成功， <code class="docutils literal notranslate"><span class="pre">RoundRobin</span></code> 的下一个孩子将被勾选。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=156">[校准&#64;fish]</a></p>
+<p>例如，假设机器人被卡住， <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>  :( 为了这个例子，让我们假设目标从未更新)。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=157">[校准&#64;fish]</a></p>
 <ol class="arabic simple">
-<li><p>尝试使用 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树中的代价地图清除序列，并返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。机器人现在再次移动到 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=158">[校准&#64;fish]</a></p></li>
-<li><p>让我们假设清除两个成本图是不够的，并且 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树再次返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。机器人现在滴答 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=159">[校准&#64;fish]</a></p></li>
-<li><p>在 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树中， <code class="docutils literal notranslate"><span class="pre">Spin</span></code> 的作用将被勾选。如果这返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ，那么机器人将返回到主 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树 * 但是 * 让我们假设 <code class="docutils literal notranslate"><span class="pre">Spin</span></code> 的恢复返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。在这种情况下，树将 * 保留 * 在 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树中     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=160">[校准&#64;fish]</a></p></li>
-<li><p>假设下一个恢复行动， <code class="docutils literal notranslate"><span class="pre">Wait</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。然后机器人将移动到 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=161">[校准&#64;fish]</a></p></li>
-<li><p>假设 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>  (清除成本图，尝试旋转，等待仍然不足以恢复系统。机器人将移动到 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树上并尝试 <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> 行动。假设机器人尝试了 <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> 动作，并且能够成功完成动作。 <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> 动作节点返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ，所以现在我们再次进入导航子树。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=162">[校准&#64;fish]</a></p></li>
-<li><p>在这个假设的场景中，让我们假设 <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> 的动作允许机器人在 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树中成功导航，并且机器人到达目标。在这种情况下，整个英国电信仍将返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=163">[校准&#64;fish]</a></p></li>
+<li><p>尝试使用 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树中的代价地图清除序列，并返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。机器人现在再次移动到 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=158">[校准&#64;fish]</a></p></li>
+<li><p>让我们假设清除两个成本图是不够的，并且 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树再次返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。机器人现在滴答 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=159">[校准&#64;fish]</a></p></li>
+<li><p>在 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树中， <code class="docutils literal notranslate"><span class="pre">Spin</span></code> 的作用将被勾选。如果这返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ，那么机器人将返回到主 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树 * 但是 * 让我们假设 <code class="docutils literal notranslate"><span class="pre">Spin</span></code> 的恢复返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。在这种情况下，树将 * 保留 * 在 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树中     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=160">[校准&#64;fish]</a></p></li>
+<li><p>假设下一个恢复行动， <code class="docutils literal notranslate"><span class="pre">Wait</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。然后机器人将移动到 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=161">[校准&#64;fish]</a></p></li>
+<li><p>假设 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>  (清除成本图，尝试旋转，等待仍然不足以恢复系统。机器人将移动到 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树上并尝试 <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> 行动。假设机器人尝试了 <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> 动作，并且能够成功完成动作。 <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> 动作节点返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> ，所以现在我们再次进入导航子树。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=162">[校准&#64;fish]</a></p></li>
+<li><p>在这个假设的场景中，让我们假设 <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> 的动作允许机器人在 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树中成功导航，并且机器人到达目标。在这种情况下，整个英国电信仍将返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=163">[校准&#64;fish]</a></p></li>
 </ol>
-<p>如果 <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> 的作用不足以让机器人不卡住，上述逻辑将无限期地继续下去，直到 <code class="docutils literal notranslate"><span class="pre">Navigate</span></code> 子树和 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树的母树中的 <code class="docutils literal notranslate"><span class="pre">number_of_retries</span></code> 被超越，或者如果 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树中的所有系统范围的恢复都返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>  (这不太可能，并且可能指向其他一些系统故障)。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=164">[校准&#64;fish]</a></p>
+<p>如果 <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> 的作用不足以让机器人不卡住，上述逻辑将无限期地继续下去，直到 <code class="docutils literal notranslate"><span class="pre">Navigate</span></code> 子树和 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树的母树中的 <code class="docutils literal notranslate"><span class="pre">number_of_retries</span></code> 被超越，或者如果 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树中的所有系统范围的恢复都返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>  (这不太可能，并且可能指向其他一些系统故障)。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=164">[校准&#64;fish]</a></p>
 </div>
 </div>
 

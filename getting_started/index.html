@@ -735,26 +735,26 @@
              
   <div class="section" id="getting-started">
 <span id="id1"></span><h1>入门<a class="headerlink" href="#getting-started" title="永久链接至标题"></a></h1>
-<p>本文将你经由过程安装Nav2二进制文件和浏览模拟Turtlebot 3在Gazebo模拟器。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=501">[校准&#64;fish]</a></p>
+<p>本文将你经由过程安装Nav2二进制文件和浏览模拟Turtlebot 3在Gazebo模拟器。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=501">[校准&#64;fish]</a></p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>有关其他情况，例如从源头构建或与其他类型的机器人一起工作，请参阅 <a class="reference internal" href="../build_instructions/index.html#build-instructions"><span class="std std-ref">构建和安装</span></a> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=502">[校准&#64;fish]</a></p>
+<p>有关其他情况，例如从源头构建或与其他类型的机器人一起工作，请参阅 <a class="reference internal" href="../build_instructions/index.html#build-instructions"><span class="std std-ref">构建和安装</span></a> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=502">[校准&#64;fish]</a></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
-<p>这是一个简化版本的Turtlebot 3说明。我们高度建议你遵循 <a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/">official Turtlebot 3 manual</a> 如果你打算继续使用此机器人超越最小提供这里。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=503">[校准&#64;fish]</a></p>
+<p>这是一个简化版本的Turtlebot 3说明。我们高度建议你遵循 <a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/">official Turtlebot 3 manual</a> 如果你打算继续使用此机器人超越最小提供这里。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=503">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="installation">
 <h2>安装<a class="headerlink" href="#installation" title="永久链接至标题"></a></h2>
 <ol class="arabic">
-<li><p>按照官方文件中的说明安装 <a class="reference external" href="https://docs.ros.org/en/rolling/Installation/Ubuntu-Install-Binary.html">ROS 2 binary packages</a>      <a class="reference external" href="http://10.55.23.25:3000/#?msgid=505">[校准&#64;fish]</a></p></li>
-<li><p>安装Nav2包使用操作系统安装包:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=506">[校准&#64;fish]</a></p>
+<li><p>按照官方文件中的说明安装 <a class="reference external" href="https://docs.ros.org/en/rolling/Installation/Ubuntu-Install-Binary.html">ROS 2 binary packages</a>      <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=505">[校准&#64;fish]</a></p></li>
+<li><p>安装Nav2包使用操作系统安装包:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=506">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install ros-&lt;ros2-distro&gt;-navigation2
 sudo apt install ros-&lt;ros2-distro&gt;-nav2-bringup
 </pre></div>
 </div>
 </li>
-<li><p>安装Turtlebot 3包:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=507">[校准&#64;fish]</a></p>
+<li><p>安装Turtlebot 3包:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=507">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install ros-&lt;ros2-distro&gt;-turtlebot3*
 </pre></div>
 </div>
@@ -778,36 +778,36 @@ sudo apt install ros-&lt;ros2-distro&gt;-nav2-bringup
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>用 <code class="docutils literal notranslate"><span class="pre">ROS</span> <span class="pre">2</span> <span class="pre">Dashing</span> <span class="pre">Diademata</span></code> 或更早，使用 <code class="docutils literal notranslate"><span class="pre">nav2_simulation_launch.py</span></code> 。然而，建议使用最近 <a class="reference external" href="https://ros.org/reps/rep-2000.html">ROS2长期支持发行版</a> 改善稳定性和完整性。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=512">[校准&#64;fish]</a></p>
+<p>用 <code class="docutils literal notranslate"><span class="pre">ROS</span> <span class="pre">2</span> <span class="pre">Dashing</span> <span class="pre">Diademata</span></code> 或更早，使用 <code class="docutils literal notranslate"><span class="pre">nav2_simulation_launch.py</span></code> 。然而，建议使用最近 <a class="reference external" href="https://ros.org/reps/rep-2000.html">ROS2长期支持发行版</a> 改善稳定性和完整性。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=512">[校准&#64;fish]</a></p>
 </div>
-<p>这启动文件将启动Nav2与AMCL定位器在 <code class="docutils literal notranslate"><span class="pre">turtlebot3_world</span></code> 世界。它还将推出一个robot state publisher提供转化，一个Gazebo实例与Turtlebot3 URDF，和RVIZ。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=513">[校准&#64;fish]</a></p>
-<p>如果一切正确启动，你会看到RViz和Gazebogui这样:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=514">[校准&#64;fish]</a></p>
+<p>这启动文件将启动Nav2与AMCL定位器在 <code class="docutils literal notranslate"><span class="pre">turtlebot3_world</span></code> 世界。它还将推出一个robot state publisher提供转化，一个Gazebo实例与Turtlebot3 URDF，和RVIZ。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=513">[校准&#64;fish]</a></p>
+<p>如果一切正确启动，你会看到RViz和Gazebogui这样:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=514">[校准&#64;fish]</a></p>
 <a class="reference internal image-reference" href="../_images/rviz-not-started.png"><img alt="../_images/rviz-not-started.png" src="../_images/rviz-not-started.png" style="width: 45%;" /></a>
 <a class="reference internal image-reference" href="../_images/gazebo_turtlebot1.png"><img alt="../_images/gazebo_turtlebot1.png" src="../_images/gazebo_turtlebot1.png" style="width: 46%;" /></a>
 </li>
-<li><p>单击  &quot;Startup&quot; 按钮左下角的RViz。这将导致Nav2变为活跃状态。它应该改变外观以显示地图。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=515">[校准&#64;fish]</a></p>
-<a class="reference internal image-reference" href="../_images/rviz_initial.png"><img alt="这个RViz过渡到活跃状态的初始出现     `[校准&#64;fish] &lt;http://10.55.23.25:3000/#?msgid=516&gt;`_ " class="align-center" src="../_images/rviz_initial.png" style="width: 700px;" /></a>
+<li><p>单击  &quot;Startup&quot; 按钮左下角的RViz。这将导致Nav2变为活跃状态。它应该改变外观以显示地图。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=515">[校准&#64;fish]</a></p>
+<a class="reference internal image-reference" href="../_images/rviz_initial.png"><img alt="这个RViz过渡到活跃状态的初始出现     `[校准&#64;fish] &lt;http://dev.nav2.fishros.com/calibpage/#/home?msgid=516&gt;`_ " class="align-center" src="../_images/rviz_initial.png" style="width: 700px;" /></a>
 </li>
 </ol>
 </div>
 <div class="section" id="navigating">
 <h2>导航<a class="headerlink" href="#navigating" title="永久链接至标题"></a></h2>
-<p>启动后，机器人最初不知道它在哪里。默认情况下，Nav2会等你给它一个大概的起始位置。看看机器人在Gazebo世界的什么地方，在地图上找到那个地方。设置初始姿势单击  &quot;2D Pose Estimate&quot; 按钮RViz，然后羽绒点击地图位置。通过向下单击向前拖动来设置方向。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=518">[校准&#64;fish]</a></p>
-<p>如果使用默认值迄今为止，机器人应该这样粗略。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=519">[校准&#64;fish]</a></p>
+<p>启动后，机器人最初不知道它在哪里。默认情况下，Nav2会等你给它一个大概的起始位置。看看机器人在Gazebo世界的什么地方，在地图上找到那个地方。设置初始姿势单击  &quot;2D Pose Estimate&quot; 按钮RViz，然后羽绒点击地图位置。通过向下单击向前拖动来设置方向。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=518">[校准&#64;fish]</a></p>
+<p>如果使用默认值迄今为止，机器人应该这样粗略。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=519">[校准&#64;fish]</a></p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../_images/rviz-set-initial-pose.png"><img alt="Turtlebot的大概起始位置     `[校准&#64;fish] &lt;http://10.55.23.25:3000/#?msgid=520&gt;`_ " class="align-center" src="../_images/rviz-set-initial-pose.png" style="width: 700px;" /></a>
+<div><a class="reference internal image-reference" href="../_images/rviz-set-initial-pose.png"><img alt="Turtlebot的大概起始位置     `[校准&#64;fish] &lt;http://dev.nav2.fishros.com/calibpage/#/home?msgid=520&gt;`_ " class="align-center" src="../_images/rviz-set-initial-pose.png" style="width: 700px;" /></a>
 </div></blockquote>
-<p>如果你没有得到位置正确，很好。Nav2将细化地位导航。您还可以单击  &quot;2D Pose Estimate&quot; 按钮重试，如果你喜欢。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=521">[校准&#64;fish]</a></p>
-<p>一旦你设置了初始姿势，变换树将完成，Nav2完全激活并准备就绪。你现在应该可以看到机器人和粒子云了。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=522">[校准&#64;fish]</a></p>
+<p>如果你没有得到位置正确，很好。Nav2将细化地位导航。您还可以单击  &quot;2D Pose Estimate&quot; 按钮重试，如果你喜欢。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=521">[校准&#64;fish]</a></p>
+<p>一旦你设置了初始姿势，变换树将完成，Nav2完全激活并准备就绪。你现在应该可以看到机器人和粒子云了。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=522">[校准&#64;fish]</a></p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../_images/navstack-ready.png"><img alt="这个Nav2准备好了。转换和代价地图显示在RViz。     `[校准&#64;fish] &lt;http://10.55.23.25:3000/#?msgid=523&gt;`_ " class="align-center" src="../_images/navstack-ready.png" style="width: 700px;" /></a>
+<div><a class="reference internal image-reference" href="../_images/navstack-ready.png"><img alt="这个Nav2准备好了。转换和代价地图显示在RViz。     `[校准&#64;fish] &lt;http://dev.nav2.fishros.com/calibpage/#/home?msgid=523&gt;`_ " class="align-center" src="../_images/navstack-ready.png" style="width: 700px;" /></a>
 </div></blockquote>
-<p>接下来，点击  &quot;Navigaton2 Goal&quot; 按钮并选择一个目的地。这将调用BT navigator通过操作服务器转到该目标。您可以通过所示的Nav2rviz插件暂停 (取消) 或重置操作。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=524">[校准&#64;fish]</a></p>
+<p>接下来，点击  &quot;Navigaton2 Goal&quot; 按钮并选择一个目的地。这将调用BT navigator通过操作服务器转到该目标。您可以通过所示的Nav2rviz插件暂停 (取消) 或重置操作。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=524">[校准&#64;fish]</a></p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../_images/navigate-to-pose.png"><img alt="设置目标姿势RViz。     `[校准&#64;fish] &lt;http://10.55.23.25:3000/#?msgid=525&gt;`_ " class="align-center" src="../_images/navigate-to-pose.png" style="width: 700px;" /></a>
+<div><a class="reference internal image-reference" href="../_images/navigate-to-pose.png"><img alt="设置目标姿势RViz。     `[校准&#64;fish] &lt;http://dev.nav2.fishros.com/calibpage/#/home?msgid=525&gt;`_ " class="align-center" src="../_images/navigate-to-pose.png" style="width: 700px;" /></a>
 </div></blockquote>
-<p>现在看机器人前往目标!     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=526">[校准&#64;fish]</a></p>
-<a class="reference internal image-reference" href="../_images/navigation_with_recovery_behaviours.gif"><img alt="Navigation2带Turtlebot3演示     `[校准&#64;fish] &lt;http://10.55.23.25:3000/#?msgid=527&gt;`_ " class="align-center" src="../_images/navigation_with_recovery_behaviours.gif" style="width: 700px;" /></a>
+<p>现在看机器人前往目标!     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=526">[校准&#64;fish]</a></p>
+<a class="reference internal image-reference" href="../_images/navigation_with_recovery_behaviours.gif"><img alt="Navigation2带Turtlebot3演示     `[校准&#64;fish] &lt;http://dev.nav2.fishros.com/calibpage/#/home?msgid=527&gt;`_ " class="align-center" src="../_images/navigation_with_recovery_behaviours.gif" style="width: 700px;" /></a>
 </div>
 </div>
 

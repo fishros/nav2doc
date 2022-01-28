@@ -737,27 +737,27 @@
 <span id="build-instructions"></span><h1>构建和安装<a class="headerlink" href="#build-and-install" title="永久链接至标题"></a></h1>
 <div class="section" id="install">
 <h2>安装<a class="headerlink" href="#install" title="永久链接至标题"></a></h2>
-<p>这个Nav2及其依赖项作为二进制文件发布。您可以通过以下方式安装它，以获得最新的稳定发布版本:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1537">[校准&#64;fish]</a></p>
+<p>这个Nav2及其依赖项作为二进制文件发布。您可以通过以下方式安装它，以获得最新的稳定发布版本:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1537">[校准&#64;fish]</a></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;distro&gt;-navigation2</span> <span class="pre">ros-&lt;distro&gt;-nav2-bringup</span> <span class="pre">ros-&lt;distro&gt;-turtlebot3*</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1538">[校准&#64;fish]</a></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;distro&gt;-navigation2</span> <span class="pre">ros-&lt;distro&gt;-nav2-bringup</span> <span class="pre">ros-&lt;distro&gt;-turtlebot3*</span></code>     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1538">[校准&#64;fish]</a></p>
 </div></blockquote>
-<p>(对于Ubuntu 20.04，使用此命令作为对通配符的解析已更改:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1539">[校准&#64;fish]</a></p>
+<p>(对于Ubuntu 20.04，使用此命令作为对通配符的解析已更改:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1539">[校准&#64;fish]</a></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;distro&gt;-navigation2</span> <span class="pre">ros-&lt;distro&gt;-nav2-bringup</span> <span class="pre">'~ros-&lt;distro&gt;-turtlebot3-.*'</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1540">[校准&#64;fish]</a></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;distro&gt;-navigation2</span> <span class="pre">ros-&lt;distro&gt;-nav2-bringup</span> <span class="pre">'~ros-&lt;distro&gt;-turtlebot3-.*'</span></code>     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1540">[校准&#64;fish]</a></p>
 </div></blockquote>
 </div>
 <div class="section" id="build">
 <h2>构建<a class="headerlink" href="#build" title="永久链接至标题"></a></h2>
-<p>建造Nav2有三种方法。为特定发布的发行版 (例如 <code class="docutils literal notranslate"><span class="pre">foxy</span></code> ， <code class="docutils literal notranslate"><span class="pre">galactic</span></code> ) 构建，使用快速入门设置脚本在主分支上构建Nav2，或手动构建主分支。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1542">[校准&#64;fish]</a></p>
+<p>建造Nav2有三种方法。为特定发布的发行版 (例如 <code class="docutils literal notranslate"><span class="pre">foxy</span></code> ， <code class="docutils literal notranslate"><span class="pre">galactic</span></code> ) 构建，使用快速入门设置脚本在主分支上构建Nav2，或手动构建主分支。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1542">[校准&#64;fish]</a></p>
 <div class="content-collapse section" id="for-released-distributions">
 <h3>用于发行分发<a class="headerlink" href="#for-released-distributions" title="永久链接至标题"></a></h3>
 <div class="section" id="install-ros">
 <h4>安装ROS<a class="headerlink" href="#install-ros" title="永久链接至标题"></a></h4>
-<p>请通过通常的 <a class="reference external" href="https://docs.ros.org/en/rolling/Installation/Ubuntu-Install-Binary.html">install instructions</a> 安装ROS 2，以实现所需的分配。注:  <code class="docutils literal notranslate"><span class="pre">&lt;ros2-distro&gt;-devel</span></code> 是命名模式前的分支-<code class="docutils literal notranslate"><span class="pre">galactic</span></code> 。对于Galactic的和更新的，它是 <code class="docutils literal notranslate"><span class="pre">&lt;ros2-distro&gt;</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1545">[校准&#64;fish]</a></p>
+<p>请通过通常的 <a class="reference external" href="https://docs.ros.org/en/rolling/Installation/Ubuntu-Install-Binary.html">install instructions</a> 安装ROS 2，以实现所需的分配。注:  <code class="docutils literal notranslate"><span class="pre">&lt;ros2-distro&gt;-devel</span></code> 是命名模式前的分支-<code class="docutils literal notranslate"><span class="pre">galactic</span></code> 。对于Galactic的和更新的，它是 <code class="docutils literal notranslate"><span class="pre">&lt;ros2-distro&gt;</span></code> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1545">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="build-nav2">
 <h4>建造Nav2<a class="headerlink" href="#build-nav2" title="永久链接至标题"></a></h4>
-<p>我们将创建一个新的工作区， <code class="docutils literal notranslate"><span class="pre">nav2_ws</span></code> ，将我们的Nav2分支克隆到其中，然后构建。 <code class="docutils literal notranslate"><span class="pre">rosdep</span></code> 将用于获取您特定分布中Nav2的依赖二进制文件。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1547">[校准&#64;fish]</a></p>
+<p>我们将创建一个新的工作区， <code class="docutils literal notranslate"><span class="pre">nav2_ws</span></code> ，将我们的Nav2分支克隆到其中，然后构建。 <code class="docutils literal notranslate"><span class="pre">rosdep</span></code> 将用于获取您特定分布中Nav2的依赖二进制文件。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1547">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p ~/nav2_ws/src
 <span class="nb">cd</span> ~/nav2_ws/src
 git clone https://github.com/ros-planning/navigation2.git --branch &lt;ros2-distro&gt;-devel
@@ -766,18 +766,18 @@ rosdep install -y -r -q --from-paths src --ignore-src --rosdistro &lt;ros2-distr
 colcon build --symlink-install
 </pre></div>
 </div>
-<p>注意: 您需要将 <code class="docutils literal notranslate"><span class="pre">--rosdistro</span></code> 改为选定的ROS 2分布名称 (例如 <code class="docutils literal notranslate"><span class="pre">foxy</span></code> 、 <code class="docutils literal notranslate"><span class="pre">galactic</span></code> )。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1548">[校准&#64;fish]</a></p>
+<p>注意: 您需要将 <code class="docutils literal notranslate"><span class="pre">--rosdistro</span></code> 改为选定的ROS 2分布名称 (例如 <code class="docutils literal notranslate"><span class="pre">foxy</span></code> 、 <code class="docutils literal notranslate"><span class="pre">galactic</span></code> )。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1548">[校准&#64;fish]</a></p>
 </div>
 </div>
 <div class="content-collapse section" id="for-main-branch-development">
 <h3>用于主分支开发<a class="headerlink" href="#for-main-branch-development" title="永久链接至标题"></a></h3>
 <div class="section" id="build-ros-2-main">
 <h4>构建ROS 2主<a class="headerlink" href="#build-ros-2-main" title="永久链接至标题"></a></h4>
-<p>使用ROS 2文件中提供的 <a class="reference external" href="https://docs.ros.org/en/rolling/Installation/Ubuntu-Development-Setup.html">build instructions</a> 建造或安装ROS 2 <code class="docutils literal notranslate"><span class="pre">rolling</span></code> 。所有发展使用 <code class="docutils literal notranslate"><span class="pre">rolling</span></code> 分布Nav2的 <code class="docutils literal notranslate"><span class="pre">main</span></code> 分支挑选到布分布同步 (如果ABI兼容)。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1551">[校准&#64;fish]</a></p>
+<p>使用ROS 2文件中提供的 <a class="reference external" href="https://docs.ros.org/en/rolling/Installation/Ubuntu-Development-Setup.html">build instructions</a> 建造或安装ROS 2 <code class="docutils literal notranslate"><span class="pre">rolling</span></code> 。所有发展使用 <code class="docutils literal notranslate"><span class="pre">rolling</span></code> 分布Nav2的 <code class="docutils literal notranslate"><span class="pre">main</span></code> 分支挑选到布分布同步 (如果ABI兼容)。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1551">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="build-nav2-main">
 <h4>建造Nav2主<a class="headerlink" href="#build-nav2-main" title="永久链接至标题"></a></h4>
-<p>现在安装了ROS 2 <code class="docutils literal notranslate"><span class="pre">rolling</span></code> ，我们必须安装依赖项并自行构建Nav2。我们将创建一个新的工作区， <code class="docutils literal notranslate"><span class="pre">nav2_ws</span></code> ，并将Nav2项目克隆到其中。之后，我们将使用 <code class="docutils literal notranslate"><span class="pre">rosdep</span></code> 自动查找并安装核心ROS 2安装本身中未包含的依赖项 ( <code class="docutils literal notranslate"><span class="pre">behaviortree.CPP</span></code> 、 <code class="docutils literal notranslate"><span class="pre">ompl</span></code> 等)。如果您想使用任何这些依赖项的自定义版本，只需将它们覆盖在您的 <code class="docutils literal notranslate"><span class="pre">nav2_ws</span></code> 中，它将使用这些版本，而不是二进制安装版本。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1553">[校准&#64;fish]</a></p>
+<p>现在安装了ROS 2 <code class="docutils literal notranslate"><span class="pre">rolling</span></code> ，我们必须安装依赖项并自行构建Nav2。我们将创建一个新的工作区， <code class="docutils literal notranslate"><span class="pre">nav2_ws</span></code> ，并将Nav2项目克隆到其中。之后，我们将使用 <code class="docutils literal notranslate"><span class="pre">rosdep</span></code> 自动查找并安装核心ROS 2安装本身中未包含的依赖项 ( <code class="docutils literal notranslate"><span class="pre">behaviortree.CPP</span></code> 、 <code class="docutils literal notranslate"><span class="pre">ompl</span></code> 等)。如果您想使用任何这些依赖项的自定义版本，只需将它们覆盖在您的 <code class="docutils literal notranslate"><span class="pre">nav2_ws</span></code> 中，它将使用这些版本，而不是二进制安装版本。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1553">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p ~/nav2_ws/src
 <span class="nb">cd</span> ~/nav2_ws/src
 git clone https://github.com/ros-planning/navigation2.git --branch main
@@ -793,11 +793,11 @@ colcon build --symlink-install
 </div>
 <div class="section" id="docker">
 <h2>Docker<a class="headerlink" href="#docker" title="永久链接至标题"></a></h2>
-<p>Dockerhub的官方条目主要用于Nav2CI，但也可以用于开发。有一个跟踪Nav2 <code class="docutils literal notranslate"><span class="pre">main</span></code> 分支的docker映像非常有用。推荐将存储库根中的 <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> 用于生产用途，设置为您选择的分布。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1556">[校准&#64;fish]</a></p>
-<p>如果您想使用我们发布的二进制文件，通常建议在容器内安装apt存储库中的Nav2版本。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1557">[校准&#64;fish]</a></p>
+<p>Dockerhub的官方条目主要用于Nav2CI，但也可以用于开发。有一个跟踪Nav2 <code class="docutils literal notranslate"><span class="pre">main</span></code> 分支的docker映像非常有用。推荐将存储库根中的 <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> 用于生产用途，设置为您选择的分布。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1556">[校准&#64;fish]</a></p>
+<p>如果您想使用我们发布的二进制文件，通常建议在容器内安装apt存储库中的Nav2版本。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1557">[校准&#64;fish]</a></p>
 <div class="content-collapse section" id="building-docker-container">
 <h3>构建Docker容器<a class="headerlink" href="#building-docker-container" title="永久链接至标题"></a></h3>
-<p>要从Nav2文件夹中的Dockerfile构建映像: 首先，将存储库克隆到本地系统 (或参见上面的构建源)     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1559">[校准&#64;fish]</a></p>
+<p>要从Nav2文件夹中的Dockerfile构建映像: 首先，将存储库克隆到本地系统 (或参见上面的构建源)     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1559">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker build -t nav2/latest .
 </pre></div>
 </div>
@@ -805,16 +805,16 @@ colcon build --symlink-install
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker build -t nav2/latest --build-arg <span class="nv">http_proxy</span><span class="o">=</span>http://proxy.my.com:### --build-arg <span class="nv">https_proxy</span><span class="o">=</span>http://proxy.my.com:### .
 </pre></div>
 </div>
-<p>注意: 您可能还需要配置docker以使DNS正常工作。见文章此处: <a class="reference external" href="https://development.robinwinslow.uk/2016/06/23">https://development.robinwinslow.uk/2016/06/23</a>/固定docker网络dns/     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1561">[校准&#64;fish]</a></p>
-<p>如果您想从dockerhub缓存构建以加快构建速度     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1562">[校准&#64;fish]</a></p>
+<p>注意: 您可能还需要配置docker以使DNS正常工作。见文章此处: <a class="reference external" href="https://development.robinwinslow.uk/2016/06/23">https://development.robinwinslow.uk/2016/06/23</a>/固定docker网络dns/     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1561">[校准&#64;fish]</a></p>
+<p>如果您想从dockerhub缓存构建以加快构建速度     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1562">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker pull rosplanning/navigation2:main
 sudo docker build -t nav2/latest --cache-from rosplanning/navigation2:main .
 </pre></div>
 </div>
 </div>
 <div class="content-collapse section" id="using-dockerhub-container">
-<h3>使用DockerHub容器     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1563">[校准&#64;fish]</a><a class="headerlink" href="#using-dockerhub-container" title="永久链接至标题"></a></h3>
-<p>我们允许您随时从主分支中提取最新的docker映像。随着新版本和标签的发布，docker hub上的docker容器也将被版本化以供选择。此docker映像将不包含构建的覆盖，您必须自己构建覆盖Nav2工作区 (请参阅上面的构建Nav2主工作区)。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1564">[校准&#64;fish]</a></p>
+<h3>使用DockerHub容器     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1563">[校准&#64;fish]</a><a class="headerlink" href="#using-dockerhub-container" title="永久链接至标题"></a></h3>
+<p>我们允许您随时从主分支中提取最新的docker映像。随着新版本和标签的发布，docker hub上的docker容器也将被版本化以供选择。此docker映像将不包含构建的覆盖，您必须自己构建覆盖Nav2工作区 (请参阅上面的构建Nav2主工作区)。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1564">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker pull rosplanning/navigation2:main
 </pre></div>
 </div>
@@ -823,7 +823,7 @@ sudo docker build -t nav2/latest --cache-from rosplanning/navigation2:main .
 <hr class="docutils" />
 <div class="section" id="generate-doxygen">
 <h2>生成Doxygen<a class="headerlink" href="#generate-doxygen" title="永久链接至标题"></a></h2>
-<p>在Nav2库的根目录下运行 <code class="docutils literal notranslate"><span class="pre">doxygen</span></code> 。它将生成包含文档的 <code class="docutils literal notranslate"><span class="pre">/doc/*</span></code> 目录。浏览器中的文档入口点是index.html。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1566">[校准&#64;fish]</a></p>
+<p>在Nav2库的根目录下运行 <code class="docutils literal notranslate"><span class="pre">doxygen</span></code> 。它将生成包含文档的 <code class="docutils literal notranslate"><span class="pre">/doc/*</span></code> 目录。浏览器中的文档入口点是index.html。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1566">[校准&#64;fish]</a></p>
 </div>
 <hr class="docutils" />
 <div class="section" id="help">

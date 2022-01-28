@@ -735,7 +735,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="slam-navigating-while-mapping">
-<span id="navigation2-with-slam"></span><h1>(SLAM) 建图时导航     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1341">[校准&#64;fish]</a><a class="headerlink" href="#slam-navigating-while-mapping" title="永久链接至标题"></a></h1>
+<span id="navigation2-with-slam"></span><h1>(SLAM) 建图时导航     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1341">[校准&#64;fish]</a><a class="headerlink" href="#slam-navigating-while-mapping" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">Overview</a></p></li>
 <li><p><a class="reference internal" href="#requirements">Requirements</a></p></li>
@@ -743,66 +743,66 @@
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>本文件解释了如何使用Nav2与SLAM。下面的步骤向ROS 2用户展示了如何生成占用网格图并使用Nav2来移动他们的机器人。本教程适用于模拟机器人和物理机器人，但在此将在物理机器人上完成。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1342">[校准&#64;fish]</a></p>
-<p>前完成本教程，完成 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 。高度推荐如果你新ROS Navigation2.     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1343">[校准&#64;fish]</a></p>
-<p>在本教程中，我们将使用SLAM工具箱。更多信息可以在 <a class="reference external" href="https://vimeo.com/378682207">ROSCon talk for SLAM Toolbox</a> 中找到     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1344">[校准&#64;fish]</a></p>
+<p>本文件解释了如何使用Nav2与SLAM。下面的步骤向ROS 2用户展示了如何生成占用网格图并使用Nav2来移动他们的机器人。本教程适用于模拟机器人和物理机器人，但在此将在物理机器人上完成。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1342">[校准&#64;fish]</a></p>
+<p>前完成本教程，完成 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 。高度推荐如果你新ROS Navigation2.     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1343">[校准&#64;fish]</a></p>
+<p>在本教程中，我们将使用SLAM工具箱。更多信息可以在 <a class="reference external" href="https://vimeo.com/378682207">ROSCon talk for SLAM Toolbox</a> 中找到     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1344">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
-<p>您必须安装Navigation2、Turtlebot3和SLAM工具箱。如果你没有安装它们，请遵循 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1345">[校准&#64;fish]</a></p>
-<p>SLAM工具箱可以通过以下方式安装:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1346">[校准&#64;fish]</a></p>
+<p>您必须安装Navigation2、Turtlebot3和SLAM工具箱。如果你没有安装它们，请遵循 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">入门</span></a> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1345">[校准&#64;fish]</a></p>
+<p>SLAM工具箱可以通过以下方式安装:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1346">[校准&#64;fish]</a></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;ros2-distro&gt;-slam-toolbox</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1347">[校准&#64;fish]</a></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;ros2-distro&gt;-slam-toolbox</span></code>     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1347">[校准&#64;fish]</a></p>
 </div></blockquote>
-<p>或通过以下方式从工作区中的源构建:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1348">[校准&#64;fish]</a></p>
+<p>或通过以下方式从工作区中的源构建:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1348">[校准&#64;fish]</a></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">-b</span> <span class="pre">&lt;ros2-distro&gt;-devel</span> <span class="pre">git&#64;github.com:stevemacenski/slam_toolbox.git</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1349">[校准&#64;fish]</a></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">-b</span> <span class="pre">&lt;ros2-distro&gt;-devel</span> <span class="pre">git&#64;github.com:stevemacenski/slam_toolbox.git</span></code>     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1349">[校准&#64;fish]</a></p>
 </div></blockquote>
 </div>
 <div class="section" id="tutorial-steps">
 <h2>教程步骤<a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="launch-robot-interfaces">
 <h3>0-启动机器人界面<a class="headerlink" href="#launch-robot-interfaces" title="永久链接至标题"></a></h3>
-<p>对于本教程，我们将使用turtlebot3.如果你有另一个机器人，替换机器人特定接口。通常，这包括robot state publisher的URDF，模拟或物理机器人接口、控制器安全节点等。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1351">[校准&#64;fish]</a></p>
-<p>在本教程中，每当您打开新终端时，请先运行以下命令。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1267">[校准&#64;fish]</a></p>
+<p>对于本教程，我们将使用turtlebot3.如果你有另一个机器人，替换机器人特定接口。通常，这包括robot state publisher的URDF，模拟或物理机器人接口、控制器安全节点等。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1351">[校准&#64;fish]</a></p>
+<p>在本教程中，每当您打开新终端时，请先运行以下命令。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1267">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/opt/ros/&lt;ros2-distro&gt;/setup.bash</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1268">[校准&#64;fish]</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">TURTLEBOT3_MODEL=waffle</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1269">[校准&#64;fish]</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/opt/ros/&lt;ros2-distro&gt;/setup.bash</span></code>     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1268">[校准&#64;fish]</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">TURTLEBOT3_MODEL=waffle</span></code>     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1269">[校准&#64;fish]</a></p></li>
 </ul>
-<p>启动机器人界面和robot state publisher，     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1352">[校准&#64;fish]</a></p>
+<p>启动机器人界面和robot state publisher，     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1352">[校准&#64;fish]</a></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">turtlebot3_bringup</span> <span class="pre">robot.launch.py</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1353">[校准&#64;fish]</a></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">turtlebot3_bringup</span> <span class="pre">robot.launch.py</span></code>     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1353">[校准&#64;fish]</a></p>
 </div></blockquote>
 </div>
 <div class="section" id="launch-navigation2">
-<h3>1- 启动Navigation2     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1354">[校准&#64;fish]</a><a class="headerlink" href="#launch-navigation2" title="永久链接至标题"></a></h3>
-<p>在没有nav2_amcl和nav2_map_server的情况下启动导航。假设SLAM节点将发布到/映射主题并提供map-&gt;odom转换。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1355">[校准&#64;fish]</a></p>
+<h3>1- 启动Navigation2     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1354">[校准&#64;fish]</a><a class="headerlink" href="#launch-navigation2" title="永久链接至标题"></a></h3>
+<p>在没有nav2_amcl和nav2_map_server的情况下启动导航。假设SLAM节点将发布到/映射主题并提供map-&gt;odom转换。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1355">[校准&#64;fish]</a></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">nav2_bringup</span> <span class="pre">navigation_launch.py</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1356">[校准&#64;fish]</a></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">nav2_bringup</span> <span class="pre">navigation_launch.py</span></code>     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1356">[校准&#64;fish]</a></p>
 </div></blockquote>
 </div>
 <div class="section" id="launch-slam">
-<h3>2-Launch SLAM     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1357">[校准&#64;fish]</a><a class="headerlink" href="#launch-slam" title="永久链接至标题"></a></h3>
-<p>带来你选择SLAM实施。确保提供地图-&gt; 奥多姆变换/地图主题。运行Rviz添加主题要可视化等/地图/tf/laserscan等。本教程，我们将使用 <a class="reference external" href="https://github.com/SteveMacenski/slam_toolbox">SLAM Toolbox</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1358">[校准&#64;fish]</a></p>
+<h3>2-Launch SLAM     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1357">[校准&#64;fish]</a><a class="headerlink" href="#launch-slam" title="永久链接至标题"></a></h3>
+<p>带来你选择SLAM实施。确保提供地图-&gt; 奥多姆变换/地图主题。运行Rviz添加主题要可视化等/地图/tf/laserscan等。本教程，我们将使用 <a class="reference external" href="https://github.com/SteveMacenski/slam_toolbox">SLAM Toolbox</a> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1358">[校准&#64;fish]</a></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">slam_toolbox</span> <span class="pre">online_async_launch.py</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1359">[校准&#64;fish]</a></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">slam_toolbox</span> <span class="pre">online_async_launch.py</span></code>     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1359">[校准&#64;fish]</a></p>
 </div></blockquote>
 </div>
 <div class="section" id="working-with-slam">
 <h3>3-与SLAM合作<a class="headerlink" href="#working-with-slam" title="永久链接至标题"></a></h3>
-<p>通过RViz或ROS 2命令行界面请求目标来移动机器人，即:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1361">[校准&#64;fish]</a></p>
+<p>通过RViz或ROS 2命令行界面请求目标来移动机器人，即:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1361">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2 topic pub /goal_pose geometry_msgs/PoseStamped <span class="s2">&quot;{header: {stamp: {sec: 0}, frame_id: &#39;map&#39;}, pose: {position: {x: 0.2, y: 0.0, z: 0.0}, orientation: {w: 1.0}}}&quot;</span>
 </pre></div>
 </div>
-<p>你应该看到地图更新活!保存此地图文件:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1362">[校准&#64;fish]</a></p>
+<p>你应该看到地图更新活!保存此地图文件:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1362">[校准&#64;fish]</a></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">nav2_map_server</span> <span class="pre">map_saver_cli</span> <span class="pre">-f</span> <span class="pre">~/map</span></code>     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1363">[校准&#64;fish]</a></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">nav2_map_server</span> <span class="pre">map_saver_cli</span> <span class="pre">-f</span> <span class="pre">~/map</span></code>     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1363">[校准&#64;fish]</a></p>
 </div></blockquote>
 <a class="reference internal image-reference" href="../../_images/navigation2_with_slam.gif"><img alt="带SLAM的导航2" class="align-center" src="../../_images/navigation2_with_slam.gif" style="width: 700px;" /></a>
 </div>
 <div class="section" id="getting-started-simplification">
 <h3>4-开始简化<a class="headerlink" href="#getting-started-simplification" title="永久链接至标题"></a></h3>
-<p>如果你只想在运行SLAM在turtlebot3开始沙箱世界，我们也提供简易方式使SLAM作为启动配置。而不是单独启动接口，导航，SLAM，你可以继续使用 <code class="docutils literal notranslate"><span class="pre">tb3_simulation_launch.py</span></code> 带 <code class="docutils literal notranslate"><span class="pre">slam</span></code> 配置设置为true。我们提供上述说明假定您想运行SLAM自己机器人会分离仿真/机器人接口和导航启动文件组合 <code class="docutils literal notranslate"><span class="pre">tb3_simulation_launch.py</span></code> 而言容易测试。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1366">[校准&#64;fish]</a></p>
+<p>如果你只想在运行SLAM在turtlebot3开始沙箱世界，我们也提供简易方式使SLAM作为启动配置。而不是单独启动接口，导航，SLAM，你可以继续使用 <code class="docutils literal notranslate"><span class="pre">tb3_simulation_launch.py</span></code> 带 <code class="docutils literal notranslate"><span class="pre">slam</span></code> 配置设置为true。我们提供上述说明假定您想运行SLAM自己机器人会分离仿真/机器人接口和导航启动文件组合 <code class="docutils literal notranslate"><span class="pre">tb3_simulation_launch.py</span></code> 而言容易测试。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1366">[校准&#64;fish]</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2 launch nav2_bringup tb3_simulation_launch.py slam:<span class="o">=</span>True
 </pre></div>
 </div>

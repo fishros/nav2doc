@@ -736,9 +736,9 @@
            <div itemprop="articleBody">
              
   <div class="section" id="plannerselector">
-<span id="bt-planner-selector-node"></span><h1>PlannerSelector     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2304">[校准&#64;fish]</a><a class="headerlink" href="#plannerselector" title="永久链接至标题"></a></h1>
-<p>它用于选择将由planner服务器使用的planner。它订阅了 <code class="docutils literal notranslate"><span class="pre">planner_selector</span></code> 主题以接收带有要使用的planner名称的命令消息。它通常在ComputePathToPoseAction之前使用。 <code class="docutils literal notranslate"><span class="pre">selected_planner</span></code> 输出端口传递给ComputePathToPoseAction的 <code class="docutils literal notranslate"><span class="pre">planner_id</span></code> 输入端口。如果没有提供关于主题的内容，则使用 <code class="docutils literal notranslate"><span class="pre">default_planner</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2305">[校准&#64;fish]</a></p>
-<p>本主题的任何发布者都需要配置一些定义为 <code class="docutils literal notranslate"><span class="pre">reliable</span></code> 和 <code class="docutils literal notranslate"><span class="pre">transient</span> <span class="pre">local</span></code> 的QoS。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2275">[校准&#64;fish]</a></p>
+<span id="bt-planner-selector-node"></span><h1>PlannerSelector     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2304">[校准&#64;fish]</a><a class="headerlink" href="#plannerselector" title="永久链接至标题"></a></h1>
+<p>它用于选择将由planner服务器使用的planner。它订阅了 <code class="docutils literal notranslate"><span class="pre">planner_selector</span></code> 主题以接收带有要使用的planner名称的命令消息。它通常在ComputePathToPoseAction之前使用。 <code class="docutils literal notranslate"><span class="pre">selected_planner</span></code> 输出端口传递给ComputePathToPoseAction的 <code class="docutils literal notranslate"><span class="pre">planner_id</span></code> 输入端口。如果没有提供关于主题的内容，则使用 <code class="docutils literal notranslate"><span class="pre">default_planner</span></code> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2305">[校准&#64;fish]</a></p>
+<p>本主题的任何发布者都需要配置一些定义为 <code class="docutils literal notranslate"><span class="pre">reliable</span></code> 和 <code class="docutils literal notranslate"><span class="pre">transient</span> <span class="pre">local</span></code> 的QoS。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2275">[校准&#64;fish]</a></p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
@@ -753,16 +753,16 @@
 <td><p>Default</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
-<td><p>planner_selector     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2306">[校准&#64;fish]</a></p></td>
+<td><p>planner_selector     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2306">[校准&#64;fish]</a></p></td>
 </tr>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>用于接收select命令消息的主题的名称。这用于支持多个规划器选择器节点。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2307">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>用于接收select命令消息的主题的名称。这用于支持多个规划器选择器节点。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2307">[校准&#64;fish]</a></p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">default_planner     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2308">[校准&#64;fish]</a></dt>
+<dt class="field-even">default_planner     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2308">[校准&#64;fish]</a></dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -778,7 +778,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>如果未从输入主题收到消息，则为所选planner的默认值。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2309">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>如果未从输入主题收到消息，则为所选planner的默认值。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2309">[校准&#64;fish]</a></p>
 </dd>
 </dl>
 </dd>
@@ -787,7 +787,7 @@
 <div class="section" id="output-ports">
 <h2>输出端口<a class="headerlink" href="#output-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">selected_planner     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2310">[校准&#64;fish]</a></dt>
+<dt class="field-odd">selected_planner     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2310">[校准&#64;fish]</a></dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -803,7 +803,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>输出选择planner账号。这个选定的 _ plannerstring通常通过planner _ 账号输入端口传递给ComputePathToPose行为。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2311">[校准&#64;fish]</a></p>
+<dt>描述</dt><dd><p>输出选择planner账号。这个选定的 _ plannerstring通常通过planner _ 账号输入端口传递给ComputePathToPose行为。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2311">[校准&#64;fish]</a></p>
 </dd>
 </dl>
 </dd>

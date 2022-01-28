@@ -744,8 +744,8 @@
 <li class="toctree-l1"><a class="reference internal" href="trees/follow_point.html">动态点跟随</a></li>
 </ul>
 </div>
-<p>Nav2是一个令人难以置信的可重构项目。它允许用户设置许多不同的插件类型，跨行为树、核心算法、状态检查器等等!本节重点介绍项目中默认提供的一些示例行为树xml文件，用于执行有趣的任务。应该注意的是，这些可以针对您的特定应用程序进行修改，或者用作构建您自己的特定于应用程序的行为树的指南。这些是如何通过使用行为树显著地重新配置导航行为的一些示例性示例。其他行为树提供这个Nav2在 <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator</span></code> 包，但本节突出重要的。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=88">[校准&#64;fish]</a></p>
-<p>一个 <strong>非常</strong> 基本但实用的导航器可以在下面看到。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=89">[校准&#64;fish]</a></p>
+<p>Nav2是一个令人难以置信的可重构项目。它允许用户设置许多不同的插件类型，跨行为树、核心算法、状态检查器等等!本节重点介绍项目中默认提供的一些示例行为树xml文件，用于执行有趣的任务。应该注意的是，这些可以针对您的特定应用程序进行修改，或者用作构建您自己的特定于应用程序的行为树的指南。这些是如何通过使用行为树显著地重新配置导航行为的一些示例性示例。其他行为树提供这个Nav2在 <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator</span></code> 包，但本节突出重要的。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=88">[校准&#64;fish]</a></p>
+<p>一个 <strong>非常</strong> 基本但实用的导航器可以在下面看到。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=89">[校准&#64;fish]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span> <span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;BehaviorTree</span> <span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;PipelineSequence</span> <span class="na">name=</span><span class="s">&quot;NavigateWithReplanning&quot;</span><span class="nt">&gt;</span>
@@ -758,18 +758,18 @@
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 </div>
-<p>为树将简单地使用 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> ，每1米 (由 <code class="docutils literal notranslate"><span class="pre">DistanceController</span></code> 设定) 规划一条通往 <code class="docutils literal notranslate"><span class="pre">goal</span></code> 的新路径。如果在 <code class="docutils literal notranslate"><span class="pre">path</span></code> 黑板变量上计算了一个新路径， <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 将采用这个 <code class="docutils literal notranslate"><span class="pre">path</span></code> ，并使用服务器的默认算法来遵循它。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=90">[校准&#64;fish]</a></p>
+<p>为树将简单地使用 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> ，每1米 (由 <code class="docutils literal notranslate"><span class="pre">DistanceController</span></code> 设定) 规划一条通往 <code class="docutils literal notranslate"><span class="pre">goal</span></code> 的新路径。如果在 <code class="docutils literal notranslate"><span class="pre">path</span></code> 黑板变量上计算了一个新路径， <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 将采用这个 <code class="docutils literal notranslate"><span class="pre">path</span></code> ，并使用服务器的默认算法来遵循它。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=90">[校准&#64;fish]</a></p>
 <p>此树包含:</p>
 <ul class="simple">
 <li><p>无恢复方法</p></li>
 <li><p>失败时不重试</p></li>
-<li><p>没有选择planner或控制器算法     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=94">[校准&#64;fish]</a></p></li>
-<li><p>无节点可根据上下文更改设置以实现最佳性能     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=95">[校准&#64;fish]</a></p></li>
-<li><p>不与自动门、电梯或其他api集成     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=96">[校准&#64;fish]</a></p></li>
-<li><p>没有用户提供自定义BT节点     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=97">[校准&#64;fish]</a></p></li>
-<li><p>没有其他行为的子树，如对接、跟随等。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=98">[校准&#64;fish]</a></p></li>
+<li><p>没有选择planner或控制器算法     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=94">[校准&#64;fish]</a></p></li>
+<li><p>无节点可根据上下文更改设置以实现最佳性能     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=95">[校准&#64;fish]</a></p></li>
+<li><p>不与自动门、电梯或其他api集成     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=96">[校准&#64;fish]</a></p></li>
+<li><p>没有用户提供自定义BT节点     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=97">[校准&#64;fish]</a></p></li>
+<li><p>没有其他行为的子树，如对接、跟随等。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=98">[校准&#64;fish]</a></p></li>
 </ul>
-<p>所有这些，以及更多，都可以为您在Nav2中自定义的导航逻辑进行设置和配置。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=99">[校准&#64;fish]</a></p>
+<p>所有这些，以及更多，都可以为您在Nav2中自定义的导航逻辑进行设置和配置。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=99">[校准&#64;fish]</a></p>
 </div>
 
 

@@ -736,12 +736,12 @@
              
   <div class="section" id="smac-planner">
 <span id="configuring-smac-planner"></span><h1>Smac规划器<a class="headerlink" href="#smac-planner" title="永久链接至标题"></a></h1>
-<p>源代码和带有设计、解释和指标的 <code class="docutils literal notranslate"><span class="pre">README</span></code> 可以在Github _ 上找到。简要说明可以在下面找到，但是 <code class="docutils literal notranslate"><span class="pre">README</span></code> 包含了框架和planner实施的最详细概述。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2849">[校准&#64;fish]</a></p>
-<p>Smac规划器插件实现了一个基于3、A*的规划算法: 2DA*、混合A*和州晶格路径planner重要的是要知道，在2021年6月和2021年12月，该软件包收到了几次重大更新，将路径质量和运行时间提高了2-3倍。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2850">[校准&#64;fish]</a></p>
+<p>源代码和带有设计、解释和指标的 <code class="docutils literal notranslate"><span class="pre">README</span></code> 可以在Github _ 上找到。简要说明可以在下面找到，但是 <code class="docutils literal notranslate"><span class="pre">README</span></code> 包含了框架和planner实施的最详细概述。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2849">[校准&#64;fish]</a></p>
+<p>Smac规划器插件实现了一个基于3、A*的规划算法: 2DA*、混合A*和州晶格路径planner重要的是要知道，在2021年6月和2021年12月，该软件包收到了几次重大更新，将路径质量和运行时间提高了2-3倍。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2850">[校准&#64;fish]</a></p>
 <div class="section" id="provided-plugins">
 <h2>提供的插件<a class="headerlink" href="#provided-plugins" title="永久链接至标题"></a></h2>
 <blockquote>
-<div><p>下面列出的插件在 <code class="docutils literal notranslate"><span class="pre">nav2_smac_planner</span></code> 包内。有关单个配置信息，请参阅页面。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2851">[校准&#64;fish]</a></p>
+<div><p>下面列出的插件在 <code class="docutils literal notranslate"><span class="pre">nav2_smac_planner</span></code> 包内。有关单个配置信息，请参阅页面。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2851">[校准&#64;fish]</a></p>
 </div></blockquote>
 <div class="toctree-wrapper compound">
 <ul>
@@ -753,19 +753,19 @@
 </div>
 <div class="section" id="description">
 <h2>描述<a class="headerlink" href="#description" title="永久链接至标题"></a></h2>
-<p>参数 <code class="docutils literal notranslate"><span class="pre">nav2_smac_planner</span></code> 包包含一个优化的模板化A*搜索算法，用于为多种类型的机器人平台创建多个基于A*的planner。它使用模板节点类型来开发不同的基于搜索的planner。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2852">[校准&#64;fish]</a></p>
-<p>我们支持循环差速全方位驱动机器人使用 <code class="docutils literal notranslate"><span class="pre">SmacPlanner2D</span></code> planner实现成本感知A*planner。我们使用实现混合-A*planner的 <code class="docutils literal notranslate"><span class="pre">SmacPlannerHybrid</span></code> 插件来支持类似汽车 (阿克曼) 和有腿汽车。我们支持非圆形、任意形状的任何使用 <code class="docutils literal notranslate"><span class="pre">SmacPlannerLattice</span></code> 插件的模型车辆，该插件实现了状态晶格planner (例如omni、diff、ackermann、legged、custom)。它包含用于阿克曼，腿，差动驱动和全向车辆的控制装置和发电机，但您可以为其他机器人类型提供自己的控制装置或具有不同的规划行为。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2853">[校准&#64;fish]</a></p>
-<p>最后两个插件在运动学上是可行的，并且支持逆转。通过高度优化的启发式函数和高效的编程，它们的性能与2D-A*和NavFn等2D计数器部分相似。3planner的一个例子可以在下面看到，规划一条大约75米的路径。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2854">[校准&#64;fish]</a></p>
+<p>参数 <code class="docutils literal notranslate"><span class="pre">nav2_smac_planner</span></code> 包包含一个优化的模板化A*搜索算法，用于为多种类型的机器人平台创建多个基于A*的planner。它使用模板节点类型来开发不同的基于搜索的planner。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2852">[校准&#64;fish]</a></p>
+<p>我们支持循环差速全方位驱动机器人使用 <code class="docutils literal notranslate"><span class="pre">SmacPlanner2D</span></code> planner实现成本感知A*planner。我们使用实现混合-A*planner的 <code class="docutils literal notranslate"><span class="pre">SmacPlannerHybrid</span></code> 插件来支持类似汽车 (阿克曼) 和有腿汽车。我们支持非圆形、任意形状的任何使用 <code class="docutils literal notranslate"><span class="pre">SmacPlannerLattice</span></code> 插件的模型车辆，该插件实现了状态晶格planner (例如omni、diff、ackermann、legged、custom)。它包含用于阿克曼，腿，差动驱动和全向车辆的控制装置和发电机，但您可以为其他机器人类型提供自己的控制装置或具有不同的规划行为。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2853">[校准&#64;fish]</a></p>
+<p>最后两个插件在运动学上是可行的，并且支持逆转。通过高度优化的启发式函数和高效的编程，它们的性能与2D-A*和NavFn等2D计数器部分相似。3planner的一个例子可以在下面看到，规划一条大约75米的路径。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2854">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p>混合-A*在144毫秒内计算出路径     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2855">[校准&#64;fish]</a></p></li>
-<li><p>态晶格计算了113毫秒内的路径     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2856">[校准&#64;fish]</a></p></li>
-<li><p>2DA*计算了243毫秒内的路径     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2857">[校准&#64;fish]</a></p></li>
-<li><p>供参考: NavFn在146毫秒内计算路径，包括一些讨厌的路径不连续性伪像     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2858">[校准&#64;fish]</a></p></li>
+<li><p>混合-A*在144毫秒内计算出路径     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2855">[校准&#64;fish]</a></p></li>
+<li><p>态晶格计算了113毫秒内的路径     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2856">[校准&#64;fish]</a></p></li>
+<li><p>2DA*计算了243毫秒内的路径     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2857">[校准&#64;fish]</a></p></li>
+<li><p>供参考: NavFn在146毫秒内计算路径，包括一些讨厌的路径不连续性伪像     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2858">[校准&#64;fish]</a></p></li>
 </ul>
-<p>对于某些环境，通常的计划时间低于100毫秒，有时接近200毫秒。所有3个planner的性能大致可与天真的2D搜索算法相媲美，这些算法长期以来一直是ROS导航生态系统的支柱，但也实现了运动学的可行性，支持换向，并使用现代最先进的技术。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2859">[校准&#64;fish]</a></p>
+<p>对于某些环境，通常的计划时间低于100毫秒，有时接近200毫秒。所有3个planner的性能大致可与天真的2D搜索算法相媲美，这些算法长期以来一直是ROS导航生态系统的支柱，但也实现了运动学的可行性，支持换向，并使用现代最先进的技术。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2859">[校准&#64;fish]</a></p>
 <div class="figure align-center" id="id1">
-<img alt="由Smac规划器生成的路径     `[校准&#64;fish] &lt;http://10.55.23.25:3000/#?msgid=2860&gt;`_ " src="../../_images/3planners.png" />
-<p class="caption"><span class="caption-number">Figure 7 </span><span class="caption-text">2DA* (面板1) 、混合-A* (面板2) 、国格 (面板3)     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=2861">[校准&#64;fish]</a></span><a class="headerlink" href="#id1" title="永久链接至图片"></a></p>
+<img alt="由Smac规划器生成的路径     `[校准&#64;fish] &lt;http://dev.nav2.fishros.com/calibpage/#/home?msgid=2860&gt;`_ " src="../../_images/3planners.png" />
+<p class="caption"><span class="caption-number">Figure 7 </span><span class="caption-text">2DA* (面板1) 、混合-A* (面板2) 、国格 (面板3)     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2861">[校准&#64;fish]</a></span><a class="headerlink" href="#id1" title="永久链接至图片"></a></p>
 </div>
 </div>
 </div>

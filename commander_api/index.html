@@ -737,9 +737,9 @@
 <span id="commander-api"></span><h1>简单控制命令API<a class="headerlink" href="#simple-commander-api" title="永久链接至标题"></a></h1>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>这个Nav2简单 (python 3) 控制命令的目标是为python 3用户提供  &quot;navigation as a library&quot; 功能。我们为您提供了一个处理所有ROS 2和Action服务器任务的API，这样您就可以专注于利用这个Nav2的功能构建应用程序 (在您根据自己的喜好配置它之后你选择的插件)。 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander">我们还为您提供API使用的演示和实例</a> 在 <code class="docutils literal notranslate"><span class="pre">nav2_simple_commander</span></code> 包中构建自主移动机器人的共同基本功能。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1092">[校准&#64;fish]</a></p>
-<p>下面是一个简单的演示。注意:  <code class="docutils literal notranslate"><span class="pre">goToPose()</span></code> 、 <code class="docutils literal notranslate"><span class="pre">goThroughPoses()</span></code> 、 <code class="docutils literal notranslate"><span class="pre">followWaypoints()</span></code> 等是非阻塞的，因此您可以在单线程应用程序中接收和处理反馈。因此，在等待任务完成时， <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">not</span> <span class="pre">nav.isNavComplete()</span></code> 的设计对于轮询导航完成的变化是必要的，如果你没有完成一些你的应用程序感兴趣的任务 (比如处理反馈，用机器人正在收集的数据做一些事情，或者检查故障)。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1093">[校准&#64;fish]</a></p>
-<p>您可以使用相同类型的简单指挥官抢先命令 (例如g.你可以先用另一 <code class="docutils literal notranslate"><span class="pre">goToPose()</span></code> 抢占 <code class="docutils literal notranslate"><span class="pre">goToPose()</span></code> )，但如果在 <code class="docutils literal notranslate"><span class="pre">goToPose()</span></code> 、 <code class="docutils literal notranslate"><span class="pre">goThroughPoses()</span></code> 或 <code class="docutils literal notranslate"><span class="pre">followWaypoints()</span></code> 之间切换，你必须明确取消当前命令并发出新命令。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1094">[校准&#64;fish]</a></p>
+<p>这个Nav2简单 (python 3) 控制命令的目标是为python 3用户提供  &quot;navigation as a library&quot; 功能。我们为您提供了一个处理所有ROS 2和Action服务器任务的API，这样您就可以专注于利用这个Nav2的功能构建应用程序 (在您根据自己的喜好配置它之后你选择的插件)。 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander">我们还为您提供API使用的演示和实例</a> 在 <code class="docutils literal notranslate"><span class="pre">nav2_simple_commander</span></code> 包中构建自主移动机器人的共同基本功能。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1092">[校准&#64;fish]</a></p>
+<p>下面是一个简单的演示。注意:  <code class="docutils literal notranslate"><span class="pre">goToPose()</span></code> 、 <code class="docutils literal notranslate"><span class="pre">goThroughPoses()</span></code> 、 <code class="docutils literal notranslate"><span class="pre">followWaypoints()</span></code> 等是非阻塞的，因此您可以在单线程应用程序中接收和处理反馈。因此，在等待任务完成时， <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">not</span> <span class="pre">nav.isNavComplete()</span></code> 的设计对于轮询导航完成的变化是必要的，如果你没有完成一些你的应用程序感兴趣的任务 (比如处理反馈，用机器人正在收集的数据做一些事情，或者检查故障)。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1093">[校准&#64;fish]</a></p>
+<p>您可以使用相同类型的简单指挥官抢先命令 (例如g.你可以先用另一 <code class="docutils literal notranslate"><span class="pre">goToPose()</span></code> 抢占 <code class="docutils literal notranslate"><span class="pre">goToPose()</span></code> )，但如果在 <code class="docutils literal notranslate"><span class="pre">goToPose()</span></code> 、 <code class="docutils literal notranslate"><span class="pre">goThroughPoses()</span></code> 或 <code class="docutils literal notranslate"><span class="pre">followWaypoints()</span></code> 之间切换，你必须明确取消当前命令并发出新命令。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1094">[校准&#64;fish]</a></p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nav2_simple_commander.robot_navigator</span> <span class="kn">import</span> <span class="n">BasicNavigator</span>
 <span class="kn">import</span> <span class="nn">rclpy</span>
 
@@ -773,7 +773,7 @@
 </div>
 <div class="section" id="id1">
 <h2>控制命令API<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
-<p>基本导航器提供的方法如下所示，包括输入和预期收益。如果服务器出现故障，它可能会引发异常或返回 <cite>None</cite> 对象，因此请确保在try/catch中正确包装导航调用，并检查 <cite>None</cite> 类型的返回。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1096">[校准&#64;fish]</a></p>
+<p>基本导航器提供的方法如下所示，包括输入和预期收益。如果服务器出现故障，它可能会引发异常或返回 <cite>None</cite> 对象，因此请确保在try/catch中正确包装导航调用，并检查 <cite>None</cite> 类型的返回。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1096">[校准&#64;fish]</a></p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 32%" />
@@ -781,85 +781,85 @@
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>机器人导航方法</p></th>
-<th class="head"><p>Description     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1098">[校准&#64;fish]</a></p></th>
+<th class="head"><p>Description     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1098">[校准&#64;fish]</a></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>setInitialPose(initial_pose)     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1099">[校准&#64;fish]</a></p></td>
-<td><p>将机器人的初始姿势 ( <code class="docutils literal notranslate"><span class="pre">PoseStamped</span></code> ) 设置为定位。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1100">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>setInitialPose(initial_pose)     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1099">[校准&#64;fish]</a></p></td>
+<td><p>将机器人的初始姿势 ( <code class="docutils literal notranslate"><span class="pre">PoseStamped</span></code> ) 设置为定位。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1100">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>goThroughPoses(poses)     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1101">[校准&#64;fish]</a></p></td>
-<td><p>要求机器人驾驶通过一组姿势 ( <code class="docutils literal notranslate"><span class="pre">PoseStamped</span></code> 列表)。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1102">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>goThroughPoses(poses)     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1101">[校准&#64;fish]</a></p></td>
+<td><p>要求机器人驾驶通过一组姿势 ( <code class="docutils literal notranslate"><span class="pre">PoseStamped</span></code> 列表)。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1102">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-even"><td><p>goToPose(pose)     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1103">[校准&#64;fish]</a></p></td>
-<td><p>要求机器人驾驶到一个姿势 ( <code class="docutils literal notranslate"><span class="pre">PoseStamped</span></code> )。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1104">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>goToPose(pose)     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1103">[校准&#64;fish]</a></p></td>
+<td><p>要求机器人驾驶到一个姿势 ( <code class="docutils literal notranslate"><span class="pre">PoseStamped</span></code> )。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1104">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>followWaypoints(poses)     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1105">[校准&#64;fish]</a></p></td>
-<td><p>要求机器人遵循一组航路点 ( <code class="docutils literal notranslate"><span class="pre">PoseStamped</span></code> 列表)。这将在每个姿势执行选择的 <code class="docutils literal notranslate"><span class="pre">TaskExecutor</span></code> 插件。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1106">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>followWaypoints(poses)     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1105">[校准&#64;fish]</a></p></td>
+<td><p>要求机器人遵循一组航路点 ( <code class="docutils literal notranslate"><span class="pre">PoseStamped</span></code> 列表)。这将在每个姿势执行选择的 <code class="docutils literal notranslate"><span class="pre">TaskExecutor</span></code> 插件。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1106">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-even"><td><p>cancelNav()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1107">[校准&#64;fish]</a></p></td>
-<td><p>取消正在进行的 <code class="docutils literal notranslate"><span class="pre">goThroughPoses</span></code>  <code class="docutils literal notranslate"><span class="pre">goToPose</span></code> 或 <code class="docutils literal notranslate"><span class="pre">followWaypoints</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1108">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>cancelNav()     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1107">[校准&#64;fish]</a></p></td>
+<td><p>取消正在进行的 <code class="docutils literal notranslate"><span class="pre">goThroughPoses</span></code>  <code class="docutils literal notranslate"><span class="pre">goToPose</span></code> 或 <code class="docutils literal notranslate"><span class="pre">followWaypoints</span></code> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1108">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>isNavComplete()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1109">[校准&#64;fish]</a></p></td>
-<td><p>检查导航是否完成，在 <code class="docutils literal notranslate"><span class="pre">100ms</span></code> 超时。如果完成则返回 <code class="docutils literal notranslate"><span class="pre">True</span></code> ，如果继续，则返回 <code class="docutils literal notranslate"><span class="pre">False</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1110">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>isNavComplete()     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1109">[校准&#64;fish]</a></p></td>
+<td><p>检查导航是否完成，在 <code class="docutils literal notranslate"><span class="pre">100ms</span></code> 超时。如果完成则返回 <code class="docutils literal notranslate"><span class="pre">True</span></code> ，如果继续，则返回 <code class="docutils literal notranslate"><span class="pre">False</span></code> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1110">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-even"><td><p>getFeedback()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1111">[校准&#64;fish]</a></p></td>
-<td><p>从导航任务获取反馈，返回操作服务器反馈消息。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1112">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>getFeedback()     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1111">[校准&#64;fish]</a></p></td>
+<td><p>从导航任务获取反馈，返回操作服务器反馈消息。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1112">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>getResult()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1113">[校准&#64;fish]</a></p></td>
-<td><p>获取导航任务的最终结果，在 <code class="docutils literal notranslate"><span class="pre">isNavComplete</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">True</span></code> 后调用。返回操作服务器结果消息。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1114">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>getResult()     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1113">[校准&#64;fish]</a></p></td>
+<td><p>获取导航任务的最终结果，在 <code class="docutils literal notranslate"><span class="pre">isNavComplete</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">True</span></code> 后调用。返回操作服务器结果消息。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1114">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-even"><td><p>getPath(start, goal)     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1115">[校准&#64;fish]</a></p></td>
-<td><p>从起点到目标的路径 <code class="docutils literal notranslate"><span class="pre">PoseStamped</span></code> ， <code class="docutils literal notranslate"><span class="pre">nav_msgs/Path</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1116">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>getPath(start, goal)     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1115">[校准&#64;fish]</a></p></td>
+<td><p>从起点到目标的路径 <code class="docutils literal notranslate"><span class="pre">PoseStamped</span></code> ， <code class="docutils literal notranslate"><span class="pre">nav_msgs/Path</span></code> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1116">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>getPathThroughPoses(start, goals)     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1117">[校准&#64;fish]</a></p></td>
-<td><p>通过一组目标的开始，一组 <code class="docutils literal notranslate"><span class="pre">PoseStamped</span></code> ， <code class="docutils literal notranslate"><span class="pre">nav_msgs/Path</span></code> 的列表获得一条路径。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1118">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>getPathThroughPoses(start, goals)     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1117">[校准&#64;fish]</a></p></td>
+<td><p>通过一组目标的开始，一组 <code class="docutils literal notranslate"><span class="pre">PoseStamped</span></code> ， <code class="docutils literal notranslate"><span class="pre">nav_msgs/Path</span></code> 的列表获得一条路径。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1118">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-even"><td><p>changeMap(map_filepath)     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1119">[校准&#64;fish]</a></p></td>
-<td><p>请求将当前地图更改为 <cite>map_filepath</cite> 的yaml。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1120">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>changeMap(map_filepath)     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1119">[校准&#64;fish]</a></p></td>
+<td><p>请求将当前地图更改为 <cite>map_filepath</cite> 的yaml。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1120">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>clearAllCostmaps()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1121">[校准&#64;fish]</a></p></td>
-<td><p>清除全球和本地成本图。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1122">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>clearAllCostmaps()     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1121">[校准&#64;fish]</a></p></td>
+<td><p>清除全球和本地成本图。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1122">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-even"><td><p>clearLocalCostmap()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1123">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>clearLocalCostmap()     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1123">[校准&#64;fish]</a></p></td>
 <td><p>清除本地成本图。</p></td>
 </tr>
-<tr class="row-odd"><td><p>clearGlobalCostmap()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1125">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>clearGlobalCostmap()     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1125">[校准&#64;fish]</a></p></td>
 <td><p>清除全球成本图。</p></td>
 </tr>
-<tr class="row-even"><td><p>getGlobalCostmap()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1127">[校准&#64;fish]</a></p></td>
-<td><p>返回全局costmap， <code class="docutils literal notranslate"><span class="pre">nav2_msgs/Costmap</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1128">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>getGlobalCostmap()     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1127">[校准&#64;fish]</a></p></td>
+<td><p>返回全局costmap， <code class="docutils literal notranslate"><span class="pre">nav2_msgs/Costmap</span></code> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1128">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>getLocalCostmap()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1129">[校准&#64;fish]</a></p></td>
-<td><p>返回本地costmap， <code class="docutils literal notranslate"><span class="pre">nav2_msgs/Costmap</span></code> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1130">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>getLocalCostmap()     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1129">[校准&#64;fish]</a></p></td>
+<td><p>返回本地costmap， <code class="docutils literal notranslate"><span class="pre">nav2_msgs/Costmap</span></code> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1130">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-even"><td><p>waitUntilNav2Active()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1131">[校准&#64;fish]</a></p></td>
-<td><p>阻塞直到Nav2完全在线并且生命周期节点处于活动状态。与自动启动或外部生命周期启动结合使用。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1132">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>waitUntilNav2Active()     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1131">[校准&#64;fish]</a></p></td>
+<td><p>阻塞直到Nav2完全在线并且生命周期节点处于活动状态。与自动启动或外部生命周期启动结合使用。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1132">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>lifecycleStartup()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1133">[校准&#64;fish]</a></p></td>
-<td><p>向所有生命周期管理服务器发送请求，使它们进入活动状态，如果自动启动是 <code class="docutils literal notranslate"><span class="pre">False</span></code> ，并且您希望此程序控制Nav2的生命周期，则使用该请求。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1134">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>lifecycleStartup()     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1133">[校准&#64;fish]</a></p></td>
+<td><p>向所有生命周期管理服务器发送请求，使它们进入活动状态，如果自动启动是 <code class="docutils literal notranslate"><span class="pre">False</span></code> ，并且您希望此程序控制Nav2的生命周期，则使用该请求。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1134">[校准&#64;fish]</a></p></td>
 </tr>
-<tr class="row-even"><td><p>lifecycleShutdown()     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1135">[校准&#64;fish]</a></p></td>
-<td><p>向所有生命周期管理服务器发送关闭它们的请求。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1136">[校准&#64;fish]</a></p></td>
+<tr class="row-even"><td><p>lifecycleShutdown()     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1135">[校准&#64;fish]</a></p></td>
+<td><p>向所有生命周期管理服务器发送关闭它们的请求。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1136">[校准&#64;fish]</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="examples-and-demos">
 <h2>示例和演示<a class="headerlink" href="#examples-and-demos" title="永久链接至标题"></a></h2>
-<p>所有这些都可以在 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander">package</a> 中找到。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1138">[校准&#64;fish]</a></p>
+<p>所有这些都可以在 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander">package</a> 中找到。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1138">[校准&#64;fish]</a></p>
 <a class="reference internal image-reference" href="../_images/readme.gif"><img alt="备选文本" class="align-center" src="../_images/readme.gif" style="width: 800px;" /></a>
-<p>这个 <code class="docutils literal notranslate"><span class="pre">nav2_simple_commander</span></code> 有几个示例来突出显示用户可用的API函数:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1140">[校准&#64;fish]</a></p>
+<p>这个 <code class="docutils literal notranslate"><span class="pre">nav2_simple_commander</span></code> 有几个示例来突出显示用户可用的API函数:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1140">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p>这个 <code class="docutils literal notranslate"><span class="pre">example_nav_to_pose.py</span></code> -演示导航器的导航姿势能力，以及许多辅助方法。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1141">[校准&#64;fish]</a></p></li>
-<li><p>这个 <code class="docutils literal notranslate"><span class="pre">example_nav_through_poses.py</span></code> -演示导航器的导航姿势能力，以及许多辅助方法。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1142">[校准&#64;fish]</a></p></li>
-<li><p>这个 <code class="docutils literal notranslate"><span class="pre">example_waypoint_follower.py</span></code> -演示导航器的航路点跟踪功能，以及许多所需的辅助方法。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1143">[校准&#64;fish]</a></p></li>
+<li><p>这个 <code class="docutils literal notranslate"><span class="pre">example_nav_to_pose.py</span></code> -演示导航器的导航姿势能力，以及许多辅助方法。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1141">[校准&#64;fish]</a></p></li>
+<li><p>这个 <code class="docutils literal notranslate"><span class="pre">example_nav_through_poses.py</span></code> -演示导航器的导航姿势能力，以及许多辅助方法。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1142">[校准&#64;fish]</a></p></li>
+<li><p>这个 <code class="docutils literal notranslate"><span class="pre">example_waypoint_follower.py</span></code> -演示导航器的航路点跟踪功能，以及许多所需的辅助方法。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1143">[校准&#64;fish]</a></p></li>
 </ul>
-<p>这个 <code class="docutils literal notranslate"><span class="pre">nav2_simple_commander</span></code> 有一些演示来突出几个简单的自治应用程序，您可以使用API来构建:     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1144">[校准&#64;fish]</a></p>
+<p>这个 <code class="docutils literal notranslate"><span class="pre">nav2_simple_commander</span></code> 有一些演示来突出几个简单的自治应用程序，您可以使用API来构建:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1144">[校准&#64;fish]</a></p>
 <ul class="simple">
-<li><p>这个 <code class="docutils literal notranslate"><span class="pre">demo_security.py</span></code>  -- 一个简单的安全机器人应用程序，展示了如何让机器人使用导航姿势无限期地沿着安全路线巡逻。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1145">[校准&#64;fish]</a></p></li>
-<li><p>这个 <code class="docutils literal notranslate"><span class="pre">demo_picking.py</span></code>  -- 一个简单的项目挑选应用，展示如何让机器人开车到仓库的特定货架上挑选物品，或者让一个人将物品放入篮子中，然后使用导航到姿势。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1146">[校准&#64;fish]</a></p></li>
-<li><p>这个 <code class="docutils literal notranslate"><span class="pre">demo_inspection.py</span></code> -一个简单的货架检查应用，展示如何使用路点追踪和任务执行者拍照，射频识别扫描，货架等分析当前货架状态并定位仓库中的物品。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1147">[校准&#64;fish]</a></p></li>
+<li><p>这个 <code class="docutils literal notranslate"><span class="pre">demo_security.py</span></code>  -- 一个简单的安全机器人应用程序，展示了如何让机器人使用导航姿势无限期地沿着安全路线巡逻。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1145">[校准&#64;fish]</a></p></li>
+<li><p>这个 <code class="docutils literal notranslate"><span class="pre">demo_picking.py</span></code>  -- 一个简单的项目挑选应用，展示如何让机器人开车到仓库的特定货架上挑选物品，或者让一个人将物品放入篮子中，然后使用导航到姿势。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1146">[校准&#64;fish]</a></p></li>
+<li><p>这个 <code class="docutils literal notranslate"><span class="pre">demo_inspection.py</span></code> -一个简单的货架检查应用，展示如何使用路点追踪和任务执行者拍照，射频识别扫描，货架等分析当前货架状态并定位仓库中的物品。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1147">[校准&#64;fish]</a></p></li>
 </ul>
 </div>
 </div>

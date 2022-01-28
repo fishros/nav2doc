@@ -736,32 +736,32 @@
              
   <div class="section" id="setting-up-navigation-plugins">
 <span id="select-algorithm"></span><h1>设置导航插件<a class="headerlink" href="#setting-up-navigation-plugins" title="永久链接至标题"></a></h1>
-<p>在本指南的这一部分中，我们将讨论您的机器人如何利用不同的planner和控制器算法来完成导航任务。我们将根据您的机器人类型和环境讨论一些可用的算法插件。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1570">[校准&#64;fish]</a></p>
+<p>在本指南的这一部分中，我们将讨论您的机器人如何利用不同的planner和控制器算法来完成导航任务。我们将根据您的机器人类型和环境讨论一些可用的算法插件。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1570">[校准&#64;fish]</a></p>
 <div class="section" id="planner-and-controller-servers">
 <h2>规划器和控制器服务器<a class="headerlink" href="#planner-and-controller-servers" title="永久链接至标题"></a></h2>
-<p>导航算法通过使用ROS动作服务器上运行的插件在Nav2中实现 -- planner、控制器和恢复服务器 (以及其他服务器)。在本节中，我们将讨论作为导航堆栈核心的planner服务器和控制器服务器。这些服务器可以实现一个或多个算法插件，每个插件都有自己针对特定动作或机器人状态定制的配置。本指南将重点介绍基于机器人类型和机器人部署环境的不同算法。本指南不包括恢复、平滑等，因为这些依赖于应用而不是硬件/环境来提供一般性建议。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1572">[校准&#64;fish]</a></p>
-<p>这个planner服务器负责实现计算机器人路径的算法。例如，一个插件可以被配置为计算两个相对近的位置之间的简单最短路径，而另一个插件计算覆盖整个机器人环境的位置的路径。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1573">[校准&#64;fish]</a></p>
-<p>控制器服务器生成适当控制努力需要机器人完成任务的当地环境。这些任务包括但不限于: 道路产生planner服务器，避免动态障碍沿着这条路径，甚至充电在扩展坞。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1574">[校准&#64;fish]</a></p>
-<p>如前所述，planner和控制器服务器托管一个或多个插件的映射，其中某个插件将用于特定环境、场景或任务。例如，控制器服务器可以有一个插件，用于在长长的走廊中沿着一条路径停留在过道中间，然后是另一个插件，用于避免在拥挤的地方出现动态障碍。根据机器人的任务选择要执行的计划算法可以通过导航系统或应用服务器的行为树来完成。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1575">[校准&#64;fish]</a></p>
+<p>导航算法通过使用ROS动作服务器上运行的插件在Nav2中实现 -- planner、控制器和恢复服务器 (以及其他服务器)。在本节中，我们将讨论作为导航堆栈核心的planner服务器和控制器服务器。这些服务器可以实现一个或多个算法插件，每个插件都有自己针对特定动作或机器人状态定制的配置。本指南将重点介绍基于机器人类型和机器人部署环境的不同算法。本指南不包括恢复、平滑等，因为这些依赖于应用而不是硬件/环境来提供一般性建议。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1572">[校准&#64;fish]</a></p>
+<p>这个planner服务器负责实现计算机器人路径的算法。例如，一个插件可以被配置为计算两个相对近的位置之间的简单最短路径，而另一个插件计算覆盖整个机器人环境的位置的路径。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1573">[校准&#64;fish]</a></p>
+<p>控制器服务器生成适当控制努力需要机器人完成任务的当地环境。这些任务包括但不限于: 道路产生planner服务器，避免动态障碍沿着这条路径，甚至充电在扩展坞。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1574">[校准&#64;fish]</a></p>
+<p>如前所述，planner和控制器服务器托管一个或多个插件的映射，其中某个插件将用于特定环境、场景或任务。例如，控制器服务器可以有一个插件，用于在长长的走廊中沿着一条路径停留在过道中间，然后是另一个插件，用于避免在拥挤的地方出现动态障碍。根据机器人的任务选择要执行的计划算法可以通过导航系统或应用服务器的行为树来完成。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1575">[校准&#64;fish]</a></p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>更深入探讨导航服务器，建议看看 <a class="reference external" href="https://navigation.ros.org/concepts/index.html#navigation-servers">Navigation Servers</a> 下导航概念范畴。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1576">[校准&#64;fish]</a></p>
+<p>更深入探讨导航服务器，建议看看 <a class="reference external" href="https://navigation.ros.org/concepts/index.html#navigation-servers">Navigation Servers</a> 下导航概念范畴。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1576">[校准&#64;fish]</a></p>
 </div>
 </div>
 <div class="section" id="selecting-the-algorithm-plugins">
 <h2>选择算法插件<a class="headerlink" href="#selecting-the-algorithm-plugins" title="永久链接至标题"></a></h2>
-<p>在本节中，我们将讨论一些适用于planner和控制器服务器的可用算法插件。我们还讨论了每种算法的目的，以及推荐使用哪种类型的机器人。最后，我们展示了一些示例yaml配置，该配置指定要用于每个服务器的插件。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1578">[校准&#64;fish]</a></p>
+<p>在本节中，我们将讨论一些适用于planner和控制器服务器的可用算法插件。我们还讨论了每种算法的目的，以及推荐使用哪种类型的机器人。最后，我们展示了一些示例yaml配置，该配置指定要用于每个服务器的插件。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1578">[校准&#64;fish]</a></p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>您可以使用的算法插件不限于本节中提到的插件。你也可以创建自定义插件，新插件会定期添加到Nav2。有关如何编写自己的插件的教程，请参阅 <a class="reference external" href="https://navigation.ros.org/plugin_tutorials/docs/writing_new_nav2planner_plugin.html">Writing a New Planner Plugin</a> 和 <a class="reference external" href="https://navigation.ros.org/plugin_tutorials/docs/writing_new_nav2controller_plugin.html">Writing a New Controller Plugin</a> 。所有可用的Nav2插件的列表和它们的描述可以在 <a class="reference external" href="https://navigation.ros.org/plugins/index.html">Navigation Plugins Section</a> 中找到。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1579">[校准&#64;fish]</a></p>
+<p>您可以使用的算法插件不限于本节中提到的插件。你也可以创建自定义插件，新插件会定期添加到Nav2。有关如何编写自己的插件的教程，请参阅 <a class="reference external" href="https://navigation.ros.org/plugin_tutorials/docs/writing_new_nav2planner_plugin.html">Writing a New Planner Plugin</a> 和 <a class="reference external" href="https://navigation.ros.org/plugin_tutorials/docs/writing_new_nav2controller_plugin.html">Writing a New Controller Plugin</a> 。所有可用的Nav2插件的列表和它们的描述可以在 <a class="reference external" href="https://navigation.ros.org/plugins/index.html">Navigation Plugins Section</a> 中找到。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1579">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="planner-server">
 <h3>规划器服务器<a class="headerlink" href="#planner-server" title="永久链接至标题"></a></h3>
-<p>这个planner服务器的算法插件使用其不同传感器捕获的环境表示来查找机器人的路径。这些算法中的一些通过搜索环境's grid space while others expand the robot'的可能状态来运行，同时考虑路径可行性。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1581">[校准&#64;fish]</a></p>
-<p>如前所述，planner服务器可以利用在网格空间上工作的插件，如 <code class="docutils literal notranslate"><span class="pre">NavFn</span> <span class="pre">Planner</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Smac</span> <span class="pre">Planner</span> <span class="pre">2D</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Theta</span> <span class="pre">Star</span> <span class="pre">Planner</span></code> 。的 <a class="reference external" href="https://navigation.ros.org/configuration/packages/configuring-navfn.html">NavFn planner</a> 是导航功能planner，使用Dijkstra或A*。接下来， <a class="reference external" href="https://navigation.ros.org/configuration/packages/configuring-smac-planner.html">Smac 2D planner</a> 实现2DA*算法4或8连接社区顺畅多分辨率查询。最后， <a class="reference external" href="https://navigation.ros.org/configuration/packages/configuring-thetastar.html#">Theta Star planner</a> 是使用任一视线创建非离散定向路径段的 θ * 的实现。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1582">[校准&#64;fish]</a></p>
-<p>当使用在网格空间上工作的算法时，您可能会遇到的一个问题是，不能保证可以为任何类型的机器人生成可驱动路径。例如，不能保证 <code class="docutils literal notranslate"><span class="pre">NavFn</span> <span class="pre">Planner</span></code> 可以在狭小的空间内为非圆形机器人规划一条可行的路径，因为它使用了机器人的圆形Footprint (通过近似于机器人最大的交叉截面半径) 并检查每个costmap网格单元的冲突。此外，这些算法也不适用于阿克曼和有腿机器人，因为它们有转弯约束。也就是说，这些插件最好用于可以向任何方向驱动或在适当位置安全旋转的机器人上，例如圆形差速器和圆形全向机器人。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1583">[校准&#64;fish]</a></p>
-<p>另一个planner插件是 <a class="reference external" href="https://navigation.ros.org/configuration/packages/configuring-smac-planner.html">Smac Hybrid-A* planner</a> 支持任意形状阿克曼腿式机器人。它是高度优化和完全重构混合A*实现支持杜宾和芦苇-Shepp运动模型。该算法扩展机器人's candidate paths while considering the robot's最小转弯半径约束机器人的全Footprint避碰。因此，这个插件适用于任意形状机器人需要全Footprint碰撞检查。它也可以用于高速机器人必须导航仔细不翻转，防滑，或卸荷高速。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1584">[校准&#64;fish]</a></p>
-<p>还有 <code class="docutils literal notranslate"><span class="pre">Smac</span> <span class="pre">Lattice</span> <span class="pre">planner</span></code> 插件基于状态点阵planner。这个插件功能扩大机器人状态空间同时确保路径符合机器人的运动约束。算法提供最小控制集允许它支持 * * 微分，全向，阿克曼 * * 车辆任何形状和大小最小重构。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1585">[校准&#64;fish]</a></p>
+<p>这个planner服务器的算法插件使用其不同传感器捕获的环境表示来查找机器人的路径。这些算法中的一些通过搜索环境's grid space while others expand the robot'的可能状态来运行，同时考虑路径可行性。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1581">[校准&#64;fish]</a></p>
+<p>如前所述，planner服务器可以利用在网格空间上工作的插件，如 <code class="docutils literal notranslate"><span class="pre">NavFn</span> <span class="pre">Planner</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Smac</span> <span class="pre">Planner</span> <span class="pre">2D</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Theta</span> <span class="pre">Star</span> <span class="pre">Planner</span></code> 。的 <a class="reference external" href="https://navigation.ros.org/configuration/packages/configuring-navfn.html">NavFn planner</a> 是导航功能planner，使用Dijkstra或A*。接下来， <a class="reference external" href="https://navigation.ros.org/configuration/packages/configuring-smac-planner.html">Smac 2D planner</a> 实现2DA*算法4或8连接社区顺畅多分辨率查询。最后， <a class="reference external" href="https://navigation.ros.org/configuration/packages/configuring-thetastar.html#">Theta Star planner</a> 是使用任一视线创建非离散定向路径段的 θ * 的实现。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1582">[校准&#64;fish]</a></p>
+<p>当使用在网格空间上工作的算法时，您可能会遇到的一个问题是，不能保证可以为任何类型的机器人生成可驱动路径。例如，不能保证 <code class="docutils literal notranslate"><span class="pre">NavFn</span> <span class="pre">Planner</span></code> 可以在狭小的空间内为非圆形机器人规划一条可行的路径，因为它使用了机器人的圆形Footprint (通过近似于机器人最大的交叉截面半径) 并检查每个costmap网格单元的冲突。此外，这些算法也不适用于阿克曼和有腿机器人，因为它们有转弯约束。也就是说，这些插件最好用于可以向任何方向驱动或在适当位置安全旋转的机器人上，例如圆形差速器和圆形全向机器人。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1583">[校准&#64;fish]</a></p>
+<p>另一个planner插件是 <a class="reference external" href="https://navigation.ros.org/configuration/packages/configuring-smac-planner.html">Smac Hybrid-A* planner</a> 支持任意形状阿克曼腿式机器人。它是高度优化和完全重构混合A*实现支持杜宾和芦苇-Shepp运动模型。该算法扩展机器人's candidate paths while considering the robot's最小转弯半径约束机器人的全Footprint避碰。因此，这个插件适用于任意形状机器人需要全Footprint碰撞检查。它也可以用于高速机器人必须导航仔细不翻转，防滑，或卸荷高速。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1584">[校准&#64;fish]</a></p>
+<p>还有 <code class="docutils literal notranslate"><span class="pre">Smac</span> <span class="pre">Lattice</span> <span class="pre">planner</span></code> 插件基于状态点阵planner。这个插件功能扩大机器人状态空间同时确保路径符合机器人的运动约束。算法提供最小控制集允许它支持 * * 微分，全向，阿克曼 * * 车辆任何形状和大小最小重构。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1585">[校准&#64;fish]</a></p>
 <div class="section" id="summary">
 <h4>总结<a class="headerlink" href="#summary" title="永久链接至标题"></a></h4>
 <table class="docutils align-default">
@@ -782,11 +782,11 @@
 </tr>
 <tr class="row-even"><td><p>Theta星规划器</p></td>
 </tr>
-<tr class="row-odd"><td><p>Smac Hybrid-A*规划器     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1593">[校准&#64;fish]</a></p></td>
-<td><p>非圆形或圆形阿克曼，非圆形或圆形腿     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1594">[校准&#64;fish]</a></p></td>
+<tr class="row-odd"><td><p>Smac Hybrid-A*规划器     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1593">[校准&#64;fish]</a></p></td>
+<td><p>非圆形或圆形阿克曼，非圆形或圆形腿     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1594">[校准&#64;fish]</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Smac格子规划器</p></td>
-<td><p>非圆形微分，非圆形全向     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1596">[校准&#64;fish]</a></p></td>
+<td><p>非圆形微分，非圆形全向     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1596">[校准&#64;fish]</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -800,15 +800,15 @@
       <span class="nt">plugin</span><span class="p">:</span> <span class="s">&#39;nav2_navfn_planner/NavfnPlanner&#39;</span>
 </pre></div>
 </div>
-<p>上面显示了planner服务器的示例配置。 <code class="docutils literal notranslate"><span class="pre">planner_plugins</span></code> 参数接受映射的planner插件名称列表。对于在 <code class="docutils literal notranslate"><span class="pre">planner_plugins</span></code> 中定义的每个插件命名空间 (在我们的示例中为 <code class="docutils literal notranslate"><span class="pre">GridBased</span></code> )，我们指定要在 <code class="docutils literal notranslate"><span class="pre">plugin</span></code> 参数中加载的插件类型。然后，必须根据要使用的算法在此命名空间中指定其他配置。详情请见 <a class="reference external" href="https://navigation.ros.org/configuration/index.html">Configuration Guide</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1598">[校准&#64;fish]</a></p>
+<p>上面显示了planner服务器的示例配置。 <code class="docutils literal notranslate"><span class="pre">planner_plugins</span></code> 参数接受映射的planner插件名称列表。对于在 <code class="docutils literal notranslate"><span class="pre">planner_plugins</span></code> 中定义的每个插件命名空间 (在我们的示例中为 <code class="docutils literal notranslate"><span class="pre">GridBased</span></code> )，我们指定要在 <code class="docutils literal notranslate"><span class="pre">plugin</span></code> 参数中加载的插件类型。然后，必须根据要使用的算法在此命名空间中指定其他配置。详情请见 <a class="reference external" href="https://navigation.ros.org/configuration/index.html">Configuration Guide</a> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1598">[校准&#64;fish]</a></p>
 </div>
 </div>
 <div class="section" id="controller-server">
 <h3>控制器服务器<a class="headerlink" href="#controller-server" title="永久链接至标题"></a></h3>
-<p>默认控制器插件是 <a class="reference external" href="https://navigation.ros.org/configuration/packages/configuring-dwb-controller.html">DWB controller</a> 。它实现了改性动态窗口法 (DWA) 算法配置插件计算控制命令机器人。该控制器利用 <code class="docutils literal notranslate"><span class="pre">Trajectory</span> <span class="pre">Generator</span> <span class="pre">plugin</span></code> 生成可能的轨迹。然后评价一个或多 <code class="docutils literal notranslate"><span class="pre">Critic</span> <span class="pre">plugins</span></code> ，每一个可能给不同评分基于如何配置它们。总和分数这些 <code class="docutils literal notranslate"><span class="pre">Critic</span> <span class="pre">plugins</span></code> 确定总分轨迹。最佳得分轨迹确定输出命令速度。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1600">[校准&#64;fish]</a></p>
-<p>这个 <code class="docutils literal notranslate"><span class="pre">DWB</span> <span class="pre">controller</span></code> 可用于 * * 圆形或非圆形差速器，以及圆形或非圆形全向机器人。如果给它一个 <code class="docutils literal notranslate"><span class="pre">Trajectory</span> <span class="pre">Generation</span> <span class="pre">plugin</span></code> 乙产生一组考虑机器人最小曲率约束的可能轨迹，它也可以被配置为阿克曼和有腿的robots机器人。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1601">[校准&#64;fish]</a></p>
-<p>另一个控制器服务器插件是 <a class="reference external" href="https://github.com/rst-tu-dortmund/teb_local_planner">TEB controller</a> 的MPC时间最优控制器。实现定时松紧带 (TEB) 方法优化机器人的轨迹基于执行时间，距离障碍，可行性的机器人的运动约束。该控制器可用于 * * 微分，全向，阿克曼，腿 * * 机器人。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1602">[校准&#64;fish]</a></p>
-<p>最后例子型材是 <a class="reference external" href="https://navigation.ros.org/configuration/packages/configuring-regulated-pp.html">Regulated Pure Pursuit controller (RPP)</a> 。该控制器实现的单纯追求算法加入规制启发式功能管理碰撞速度约束。这种变化实现目标需要服务或工业机器人适用于 * * 微分，阿克曼，腿 * * 机器人。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1603">[校准&#64;fish]</a></p>
+<p>默认控制器插件是 <a class="reference external" href="https://navigation.ros.org/configuration/packages/configuring-dwb-controller.html">DWB controller</a> 。它实现了改性动态窗口法 (DWA) 算法配置插件计算控制命令机器人。该控制器利用 <code class="docutils literal notranslate"><span class="pre">Trajectory</span> <span class="pre">Generator</span> <span class="pre">plugin</span></code> 生成可能的轨迹。然后评价一个或多 <code class="docutils literal notranslate"><span class="pre">Critic</span> <span class="pre">plugins</span></code> ，每一个可能给不同评分基于如何配置它们。总和分数这些 <code class="docutils literal notranslate"><span class="pre">Critic</span> <span class="pre">plugins</span></code> 确定总分轨迹。最佳得分轨迹确定输出命令速度。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1600">[校准&#64;fish]</a></p>
+<p>这个 <code class="docutils literal notranslate"><span class="pre">DWB</span> <span class="pre">controller</span></code> 可用于 * * 圆形或非圆形差速器，以及圆形或非圆形全向机器人。如果给它一个 <code class="docutils literal notranslate"><span class="pre">Trajectory</span> <span class="pre">Generation</span> <span class="pre">plugin</span></code> 乙产生一组考虑机器人最小曲率约束的可能轨迹，它也可以被配置为阿克曼和有腿的robots机器人。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1601">[校准&#64;fish]</a></p>
+<p>另一个控制器服务器插件是 <a class="reference external" href="https://github.com/rst-tu-dortmund/teb_local_planner">TEB controller</a> 的MPC时间最优控制器。实现定时松紧带 (TEB) 方法优化机器人的轨迹基于执行时间，距离障碍，可行性的机器人的运动约束。该控制器可用于 * * 微分，全向，阿克曼，腿 * * 机器人。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1602">[校准&#64;fish]</a></p>
+<p>最后例子型材是 <a class="reference external" href="https://navigation.ros.org/configuration/packages/configuring-regulated-pp.html">Regulated Pure Pursuit controller (RPP)</a> 。该控制器实现的单纯追求算法加入规制启发式功能管理碰撞速度约束。这种变化实现目标需要服务或工业机器人适用于 * * 微分，阿克曼，腿 * * 机器人。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1603">[校准&#64;fish]</a></p>
 <div class="section" id="id1">
 <h4>总结<a class="headerlink" href="#id1" title="永久链接至标题"></a></h4>
 <table class="docutils align-default">
@@ -829,7 +829,7 @@
 <td rowspan="2"><p>动态避障</p></td>
 </tr>
 <tr class="row-odd"><td><p>TEB控制器</p></td>
-<td><p>微分，全向，阿克曼，腿     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1609">[校准&#64;fish]</a></p></td>
+<td><p>微分，全向，阿克曼，腿     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1609">[校准&#64;fish]</a></p></td>
 </tr>
 <tr class="row-even"><td><p>RPP控制器</p></td>
 <td><p>差速器，阿克曼，腿</p></td>
@@ -837,7 +837,7 @@
 </tr>
 </tbody>
 </table>
-<p>这些算法工作圆形和非圆机器人。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1613">[校准&#64;fish]</a></p>
+<p>这些算法工作圆形和非圆机器人。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1613">[校准&#64;fish]</a></p>
 </div>
 <div class="section" id="id2">
 <h4>示例配置<a class="headerlink" href="#id2" title="永久链接至标题"></a></h4>
@@ -848,17 +848,17 @@
        <span class="nt">plugin</span><span class="p">:</span> <span class="s">&quot;dwb_core::DWBLocalPlanner&quot;</span>
 </pre></div>
 </div>
-<p>上述示例基本控制器配置服务器。列表映射名称控制器插件中定义 <code class="docutils literal notranslate"><span class="pre">controller_plugins</span></code> 参数。类似planner服务器，每个命名空间中定义 <code class="docutils literal notranslate"><span class="pre">controller_plugins</span></code>  ( <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 我们) 必须定义类型插件将使用 <code class="docutils literal notranslate"><span class="pre">plugin</span></code> 参数。其他配置也必须选定算法命名空间。详情请见 <a class="reference external" href="https://navigation.ros.org/configuration/index.html">Configuration Guide</a> 。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1614">[校准&#64;fish]</a></p>
+<p>上述示例基本控制器配置服务器。列表映射名称控制器插件中定义 <code class="docutils literal notranslate"><span class="pre">controller_plugins</span></code> 参数。类似planner服务器，每个命名空间中定义 <code class="docutils literal notranslate"><span class="pre">controller_plugins</span></code>  ( <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 我们) 必须定义类型插件将使用 <code class="docutils literal notranslate"><span class="pre">plugin</span></code> 参数。其他配置也必须选定算法命名空间。详情请见 <a class="reference external" href="https://navigation.ros.org/configuration/index.html">Configuration Guide</a> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1614">[校准&#64;fish]</a></p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>这个planner服务器和控制器服务器，以及Nav2的其他服务器，通过生命周期节点在ROS 2中启动。生命周期节点允许服务器更容易启动和拆卸。生命周期节点管理将在下一个教程中讨论。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1615">[校准&#64;fish]</a></p>
+<p>这个planner服务器和控制器服务器，以及Nav2的其他服务器，通过生命周期节点在ROS 2中启动。生命周期节点允许服务器更容易启动和拆卸。生命周期节点管理将在下一个教程中讨论。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1615">[校准&#64;fish]</a></p>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="conclusion">
 <h2>结论<a class="headerlink" href="#conclusion" title="永久链接至标题"></a></h2>
-<p>在本教程讨论了角色和配置Nav2的planner和控制器服务器。总结，这些服务器主机a地图或多算法插件选择根据机器人的结构和环境。我们还介绍了一些可用的插件planner和控制器服务器帮助您识别插件适用于机器人。最后，我们也提供一些简单配置示例显示这些插件实例化服务器。你可以参考配置指南的算法插件你将选择详情其配置参数。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=1617">[校准&#64;fish]</a></p>
+<p>在本教程讨论了角色和配置Nav2的planner和控制器服务器。总结，这些服务器主机a地图或多算法插件选择根据机器人的结构和环境。我们还介绍了一些可用的插件planner和控制器服务器帮助您识别插件适用于机器人。最后，我们也提供一些简单配置示例显示这些插件实例化服务器。你可以参考配置指南的算法插件你将选择详情其配置参数。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1617">[校准&#64;fish]</a></p>
 </div>
 </div>
 

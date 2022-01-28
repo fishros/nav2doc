@@ -734,22 +734,22 @@
   <div class="section" id="navigation-dynamic-obstacle-integration">
 <span id="dynamic"></span><h1>1.导航动态障碍集成<a class="headerlink" href="#navigation-dynamic-obstacle-integration" title="永久链接至标题"></a></h1>
 <p>任务描述</p>
-<p>导航栈长期以来一直在各种环境中提供强大的导航。控制器已被开发为在存在动态障碍的情况下有效运行，而没有明确地对动态障碍的特征建模。然而，随着该领域的发展，我们看到越来越多的机器人使用部署在人满为患的空间中的活性氧簇，必须更多地考虑动态障碍，如人、车、动物和车辆。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=398">[校准&#64;fish]</a></p>
-<p>您的任务是创建与现有机器学习工具的集成，这些工具创建动态障碍信息 (ComplexYolo、Yolo3D等)，并将它们绑定到导航堆栈中使用。重新培训或以其他方式成为3D机器学习方面的专家不在您的范围之内，但是一些基本知识将会有所帮助。我们已经在下面的项目链接中有了一个需要推动完成的起点。这包括完成正在进行的工作，将yolact edge集成到这项工作中，以取代检测2，并在图形处理器上对这些功能进行基准测试，以验证足够的运行时性能，以及其他切线特性开发。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=399">[校准&#64;fish]</a></p>
-<p>这项任务将包括确定一些技术，这些技术可以产生可以在移动机器人上运行的动态障碍物的位置和速度信息 (使用大功率英特尔处理器、英伟达捷森SoC、外部图形处理器等) 让它们与ROS和导航一起运行。接下来，您将帮助创建一个新的costmap层，以使用此信息在costmap中标记动态障碍物，以确保机器人不会与障碍物的未来轨迹碰撞。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=400">[校准&#64;fish]</a></p>
-<p>如果时间允许，你也可以将这些动态信息整合到路径planner和/或控制器中，以帮助考虑直接运动。这将可能与另一个社区成员合作。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=401">[校准&#64;fish]</a></p>
-<p>Project项目难度: 高High     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=371">[校准&#64;fish]</a></p>
-<p>Project项目社区导师: 史蒂夫·麦肯斯基 <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a>      <a class="reference external" href="http://10.55.23.25:3000/#?msgid=345">[校准&#64;fish]</a></p>
-<p>Mentor导师联系方式: [请参阅上面的链接，GitHub个人资料描述中的链接] **     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=346">[校准&#64;fish]</a></p>
-<p>项目输出要求 -- 集成了ROS 2中动态障碍物检测的一种方法，使用机器学习 -- 在真实数据或活动机器人上测试这些能力以演示功能 -- 85% 或更高的测试覆盖率     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=402">[校准&#64;fish]</a></p>
+<p>导航栈长期以来一直在各种环境中提供强大的导航。控制器已被开发为在存在动态障碍的情况下有效运行，而没有明确地对动态障碍的特征建模。然而，随着该领域的发展，我们看到越来越多的机器人使用部署在人满为患的空间中的活性氧簇，必须更多地考虑动态障碍，如人、车、动物和车辆。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=398">[校准&#64;fish]</a></p>
+<p>您的任务是创建与现有机器学习工具的集成，这些工具创建动态障碍信息 (ComplexYolo、Yolo3D等)，并将它们绑定到导航堆栈中使用。重新培训或以其他方式成为3D机器学习方面的专家不在您的范围之内，但是一些基本知识将会有所帮助。我们已经在下面的项目链接中有了一个需要推动完成的起点。这包括完成正在进行的工作，将yolact edge集成到这项工作中，以取代检测2，并在图形处理器上对这些功能进行基准测试，以验证足够的运行时性能，以及其他切线特性开发。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=399">[校准&#64;fish]</a></p>
+<p>这项任务将包括确定一些技术，这些技术可以产生可以在移动机器人上运行的动态障碍物的位置和速度信息 (使用大功率英特尔处理器、英伟达捷森SoC、外部图形处理器等) 让它们与ROS和导航一起运行。接下来，您将帮助创建一个新的costmap层，以使用此信息在costmap中标记动态障碍物，以确保机器人不会与障碍物的未来轨迹碰撞。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=400">[校准&#64;fish]</a></p>
+<p>如果时间允许，你也可以将这些动态信息整合到路径planner和/或控制器中，以帮助考虑直接运动。这将可能与另一个社区成员合作。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=401">[校准&#64;fish]</a></p>
+<p>Project项目难度: 高High     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=371">[校准&#64;fish]</a></p>
+<p>Project项目社区导师: 史蒂夫·麦肯斯基 <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a>      <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=345">[校准&#64;fish]</a></p>
+<p>Mentor导师联系方式: [请参阅上面的链接，GitHub个人资料描述中的链接] **     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=346">[校准&#64;fish]</a></p>
+<p>项目输出要求 -- 集成了ROS 2中动态障碍物检测的一种方法，使用机器学习 -- 在真实数据或活动机器人上测试这些能力以演示功能 -- 85% 或更高的测试覆盖率     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=402">[校准&#64;fish]</a></p>
 <p>所需技能</p>
 <ul class="simple">
-<li><p>Cpython、Python、ROS     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=403">[校准&#64;fish]</a></p></li>
+<li><p>Cpython、Python、ROS     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=403">[校准&#64;fish]</a></p></li>
 <li><p>移动机器人导航体验</p></li>
 <li><p>几何和统计</p></li>
-<li><p>推荐: Gazebo模拟、机器学习、ROS导航     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=405">[校准&#64;fish]</a></p></li>
+<li><p>推荐: Gazebo模拟、机器学习、ROS导航     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=405">[校准&#64;fish]</a></p></li>
 </ul>
-<p>相关开源软件存储库和参考文献列表     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=352">[校准&#64;fish]</a></p>
+<p>相关开源软件存储库和参考文献列表     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=352">[校准&#64;fish]</a></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/ros-planning/navigation2_dynamic/">Starting project</a></p></li>
 <li><p><a class="reference external" href="https://www.ros.org/">ROS</a></p></li>
@@ -758,7 +758,7 @@
 <li><p><a class="reference external" href="https://navigation.ros.org/">Navigation2</a></p></li>
 <li><p><a class="reference external" href="https://alyssapierson.files.wordpress.com/2018/05/pierson2018.pdf">Some related works</a></p></li>
 </ul>
-<p>许可-所有贡献将在Apache 2.0许可下进行。-不需要其他CLA。     <a class="reference external" href="http://10.55.23.25:3000/#?msgid=357">[校准&#64;fish]</a></p>
+<p>许可-所有贡献将在Apache 2.0许可下进行。-不需要其他CLA。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=357">[校准&#64;fish]</a></p>
 </div>
 
 
