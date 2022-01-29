@@ -745,7 +745,7 @@
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
 <p>Nav2项目继承并发扬ROS导航栈的精神。该项目力求以安全的方式让移动机器人从A点移动到B点。Nav2也可以应用于其他应用，包括机器人导航，如下动态点跟踪，在这个过程中需要完成动态路径规划、计算速度电机、避免障碍、恢复行为。想要更详细的了解这个项目的相关信息，比如相关项目、使用的机器人、ROS1对比和项目的维护者，可以参考 <a class="reference internal" href="about/index.html#about"><span class="std std-ref">关于和联系</span></a> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1496">[校准&#64;fishros]</a></p>
 <p>Nav2使用行为树调用模块化服务器来完成一个动作。动作可以是计算路径、控制力、恢复或任何其他与导航相关的操作。这些都是通过ROS Action服务器与行为树 (BT) 通信的独立节点。下图可以让你对Nav2的架构有一个很好的初步了解。注意: 在每个服务器中有多个控制器、规划器和恢复的插件，并且每个服务器中都有相匹配的BT插件用于机器人恢复。这可用于创建具有上下文的导航行为。如果你想看这个项目和ROS (1) 导航之间的对比，请参考 <a class="reference internal" href="about/ros1_comparison.html#ros1-comparison"><span class="std std-ref">ROS到ROS2变化</span></a> 。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1497">[校准&#64;fishros]</a></p>
-<p>预期投入Nav2TF转换符合REP-105，地图源利用静态代价地图层，BT XML文件，任何相关传感器数据来源。它将提供有效速度命令电机完整或非完整机器人。我们目前支持所有主要机器人类型: 完整，差速，腿，阿克曼 (汽车) 底座类型!我们支持他们唯一带圆形和任意形机器人SE2碰撞检查。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1498">[校准&#64;fish]</a></p>
+<p>提供给Nav2的TF变换希望是复符合REP-105所定义的规则，对于地图来源，如果提供了一个静态的代价地图、一个BT（行为树） XML文件和任何相关的传感器数据。然后，它将提供有效的速度指令，让一个完整或非完整的机器人的电机跟随。我们目前支持主要机器人的底盘类型有 : holonomic（所有自由度都可控的）, differential-drive（差速驱动的）, legged（足式机器人）和 ackermann(car-like)（阿克曼) ! 我们用圆形和任意形状的机器人对它们进行SE2碰撞检查。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1498">[校准&#64;fishros]</a></p>
 <p>它有工具:</p>
 <ul class="simple">
 <li><p>负载、服务和存储地图 (地图服务器)     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1500">[校准&#64;fish]</a></p></li>
