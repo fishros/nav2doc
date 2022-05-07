@@ -13,7 +13,7 @@ stage:
     - rm -rf /root/nav2/master/doc/*
     - rm -rf /root/nav2/dev/doc/*
   end:
-    - cp -r ./* /root/nav2/master/doc/*
-    - cp -r ./* /root/nav2/dev/doc/*
+    - cp -r * /root/nav2/master/doc/*
+    - cp -r * /root/nav2/dev/doc/*
 # 超时
 timeout: 200
