@@ -1,0 +1,19 @@
+# fishros deploy tool 
+# 所有的操作都在工程目录进行
+# os / docker 
+mode: os
+env: os
+name: nav2doc
+tag: develop
+parallel: true
+stage:
+  prepare:
+    - echo "prepare"
+  start:
+    - rm -rf /root/nav2/master/doc/*
+    - rm -rf /root/nav2/dev/doc/*
+  end:
+    - cp -r ./* /root/nav2/master/doc/*
+    - cp -r ./* /root/nav2/dev/doc/*
+# 超时
+timeout: 200
