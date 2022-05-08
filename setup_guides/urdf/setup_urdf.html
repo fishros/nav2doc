@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Setting Up The URDF &mdash; Navigation 2 1.0.0 文档</title>
+  <title>设置URDF &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
@@ -20,7 +20,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Setting Up Odometry" href="../odom/setup_odom.html" />
+    <link rel="next" title="里程计设置" href="../odom/setup_odom.html" />
     <link rel="prev" title="Setting Up Transformations" href="../transformation/setup_transforms.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
@@ -48,667 +48,667 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#running-the-example">Running the Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#navigating">Navigating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">入门</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#installation">安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#running-the-example">运行示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#navigating">开始导航</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../build_instructions/index.html">Build and Install</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../build_instructions/index.html#install">Install</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../build_instructions/index.html#build">Build</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../build_instructions/index.html#for-released-distributions">For Released Distributions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../build_instructions/index.html#install-ros">Install ROS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../build_instructions/index.html#build-nav2">Build Nav2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build_instructions/index.html">编译和安装</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../build_instructions/index.html#install">安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../build_instructions/index.html#build">编译</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../build_instructions/index.html#for-released-distributions">编译已发行版本</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../build_instructions/index.html#install-ros">安装ROS2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../build_instructions/index.html#build-nav2">编译Nav2源码</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../build_instructions/index.html#for-main-branch-development">For Main Branch Development</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../build_instructions/index.html#for-main-branch-development">编译开发中的主分支</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../build_instructions/index.html#build-ros-2-main">Build ROS 2 Main</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../build_instructions/index.html#build-nav2-main">Build Nav2 Main</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../build_instructions/index.html#build-nav2-main">构建Nav2主程序 [校准&#64;haisenzeng]</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../build_instructions/index.html#docker">Docker</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../build_instructions/index.html#building-docker-container">Building Docker Container</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../build_instructions/index.html#using-dockerhub-container">Using DockerHub Container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../build_instructions/index.html#building-docker-container">通过Docker容器构建Nav2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../build_instructions/index.html#using-dockerhub-container">使用DockerHub已构建的容器</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../build_instructions/index.html#generate-doxygen">Generate Doxygen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../build_instructions/index.html#help">Help</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../build_instructions/build_docs/build_troubleshooting_guide.html">Build Troubleshooting Guide</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../build_instructions/build_docs/build_troubleshooting_guide.html#common-nav2-dependencies-build-failures">Common Nav2 Dependencies Build Failures</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../build_instructions/build_docs/build_troubleshooting_guide.html#reporting-issue">Reporting Issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../build_instructions/index.html#generate-doxygen">生成Doxygen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../build_instructions/index.html#help">帮助</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../build_instructions/build_docs/build_troubleshooting_guide.html">构建故障排除指南 [待校准&#64;1521]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../build_instructions/build_docs/build_troubleshooting_guide.html#common-nav2-dependencies-build-failures">常见的Nav2依赖项构建失败     [待校准&#64;1522]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../build_instructions/build_docs/build_troubleshooting_guide.html#reporting-issue">报告问题</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/index.html">Navigation Concepts</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/index.html">导航相关概念</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#ros-2">ROS 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#action-server">Action Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#lifecycle-nodes-and-bond">Lifecycle Nodes and Bond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#action-server">动作服务器（Action Server）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#lifecycle-nodes-and-bond">生命周期节点和绑定</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#behavior-trees">Behavior Trees</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#navigation-servers">Navigation Servers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#planner-controller-and-recovery-servers">Planner, Controller, and Recovery Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#behavior-trees">行为树</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#navigation-servers">导航服务器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#planner-controller-and-recovery-servers">规划器，控制器和恢复服务器 [校准&#64;haisenzeng]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#planners">Planners</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#controllers">Controllers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#recoveries">Recoveries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#waypoint-following">Waypoint Following</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#recoveries">恢复器 [校准&#64;haisenzeng]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#waypoint-following">航点跟随 [校准&#64;haisenzeng]</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#state-estimation">State Estimation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#standards">Standards</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#global-positioning-localization-and-slam">Global Positioning: Localization and SLAM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#odometry">Odometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#state-estimation">状态估计</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#standards">标准</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#global-positioning-localization-and-slam">全局定位: 定位与SLAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#odometry">里程计</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#environmental-representation">Environmental Representation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#costmaps-and-layers">Costmaps and Layers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#environmental-representation">环境表达 [校准&#64;haisenzeng]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#costmaps-and-layers">成本地图和图层</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#costmap-filters">成本地图过滤器 [校准&#64;haisenzeng]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#other-forms">Other Forms</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#nav2-academic-overview">Nav2 Academic Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#nav2-academic-overview">Nav2学术概述</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">First-Time Robot Setup Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">首次机器人安装指南</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../transformation/setup_transforms.html">Setting Up Transformations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../transformation/setup_transforms.html#transforms-introduction">Transforms Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../transformation/setup_transforms.html#static-transform-publisher-demo">Static Transform Publisher Demo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../transformation/setup_transforms.html#transforms-in-navigation2">Transforms in Navigation2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../transformation/setup_transforms.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transformation/setup_transforms.html#transforms-introduction">转换介绍 [待校准&#64;1869]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transformation/setup_transforms.html#static-transform-publisher-demo">静态转换 Publisher(发布)  演示 [校准&#64;songhuangong]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transformation/setup_transforms.html#transforms-in-navigation2">Navigation2 中的转换 [校准&#64;songhuangong]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transformation/setup_transforms.html#conclusion">小结 [校准&#64;songhuangong]</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Setting Up The URDF</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#urdf-and-the-robot-state-publisher">URDF and the Robot State Publisher</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#setting-up-the-environment">Setting Up the Environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#writing-the-urdf">Writing the URDF</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-and-launch">Build and Launch</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#visualization-using-rviz">Visualization using RVIZ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#adding-physical-properties">Adding Physical Properties</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">设置URDF</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#urdf-and-the-robot-state-publisher">URDF 和 Robot State Publisher [校准&#64;songhuangong]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-the-environment">环境设置 [校准&#64;songhuangong]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-the-urdf">编写URDF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-and-launch">Build 和 Launch [校准&#64;songhuangong]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visualization-using-rviz">使用 RVIZ 可视化 [校准&#64;songhuangong]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-physical-properties">添加物理属性 [待校准&#64;1951]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">小结 [校准&#64;songhuangong]</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../odom/setup_odom.html">Setting Up Odometry</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#odometry-introduction">Odometry Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#setting-up-odometry-on-your-robot">Setting Up Odometry on your Robot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#simulating-an-odometry-system-using-gazebo">Simulating an Odometry System using Gazebo</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#setup-and-prerequisites">Setup and Prerequisites</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#adding-gazebo-plugins-to-a-urdf">Adding Gazebo Plugins to a URDF</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#launch-and-build-files">Launch and Build Files</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#build-run-and-verification">Build, Run and Verification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../odom/setup_odom.html">里程计设置</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#odometry-introduction">里程计介绍 [校准&#64;songhuangong]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#setting-up-odometry-on-your-robot">在机器人上设置里程计</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#simulating-an-odometry-system-using-gazebo">使用Gazebo仿真一个里程计系统     [校准&#64;songhuangong]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#setup-and-prerequisites">设置和先决条件  [校准&#64;songhuangong]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#adding-gazebo-plugins-to-a-urdf">将 Gazebo 插件添加到 URDF [校准&#64;songhuangong]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#launch-and-build-files">启动和构建文件  [校准&#64;songhuangong]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#build-run-and-verification">构建、运行和验证</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#robot-localization-demo">Robot Localization Demo</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#configuring-robot-localization">Configuring Robot Localization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#id6">Launch and Build Files</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#id7">Build, Run and Verification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#robot-localization-demo">机器人定位演示 [校准&#64;songhuangong]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#configuring-robot-localization">配置Robot Localization [校准&#64;songhuangong]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#id6">启动和构建文件  [校准&#64;songhuangong]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#id7">构建、运行和验证</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#conclusion">小结 [校准&#64;songhuangong]</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../sensors/setup_sensors.html">Setting Up Sensors</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../sensors/setup_sensors.html#sensor-introduction">Sensor Introduction</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#common-sensor-messages">Common Sensor Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sensors/setup_sensors.html">设置传感器 [待校准&#64;1775]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../sensors/setup_sensors.html#sensor-introduction">传感器介绍 [待校准&#64;1778]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#common-sensor-messages">常见传感器信息 [待校准&#64;1784]</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../sensors/setup_sensors.html#simulating-sensors-using-gazebo">Simulating Sensors using Gazebo</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#adding-gazebo-plugins-to-a-urdf">Adding Gazebo Plugins to a URDF</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#launch-and-build-files">Launch and Build Files</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#build-run-and-verification">Build, Run and Verification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sensors/setup_sensors.html#simulating-sensors-using-gazebo">使用Gazebo模拟传感器     [待校准&#64;1795]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#adding-gazebo-plugins-to-a-urdf">将 Gazebo 插件添加到 URDF [校准&#64;songhuangong]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#launch-and-build-files">启动和构建文件  [校准&#64;songhuangong]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#build-run-and-verification">构建、运行和验证</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../sensors/setup_sensors.html#mapping-and-localization">Mapping and Localization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../sensors/setup_sensors.html#costmap-2d">Costmap 2D</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#configuring-nav2-costmap-2d">Configuring nav2_costmap_2d</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#id2">Build, Run and Verification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sensors/setup_sensors.html#mapping-and-localization">建图和定位 [待校准&#64;1815]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sensors/setup_sensors.html#costmap-2d">2D代价地图 [待校准&#64;1822]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#configuring-nav2-costmap-2d">配置nav2_costmap_2d     [待校准&#64;1826]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#id2">构建、运行和验证</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../sensors/setup_sensors.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sensors/setup_sensors.html#conclusion">小结 [校准&#64;songhuangong]</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../footprint/setup_footprint.html">Setting Up the Robot's Footprint</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../footprint/setup_footprint.html#footprint-introduction">Footprint Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../footprint/setup_footprint.html#configuring-the-robot-s-footprint">Configuring the Robot's Footprint</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../footprint/setup_footprint.html#build-run-and-verification">Build, Run and Verification</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../footprint/setup_footprint.html#visualizing-footprint-in-rviz">Visualizing Footprint in RViz</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../footprint/setup_footprint.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../footprint/setup_footprint.html">建立机器人的Footprint</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../footprint/setup_footprint.html#footprint-introduction">Footprint介绍 [校准&#64;songhuangong]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../footprint/setup_footprint.html#configuring-the-robot-s-footprint">配置机器人的Footprint [校准&#64;songhuangong]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../footprint/setup_footprint.html#build-run-and-verification">构建、运行和验证</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../footprint/setup_footprint.html#visualizing-footprint-in-rviz">在 RViz  可视化Footprint [校准&#64;songhuangong]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../footprint/setup_footprint.html#conclusion">小结 [校准&#64;songhuangong]</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/select_algorithm.html">Setting Up Navigation Plugins</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../algorithm/select_algorithm.html#planner-and-controller-servers">Planner and Controller Servers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../algorithm/select_algorithm.html#selecting-the-algorithm-plugins">Selecting the Algorithm Plugins</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../algorithm/select_algorithm.html#planner-server">Planner Server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../algorithm/select_algorithm.html#controller-server">Controller Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/select_algorithm.html">设置导航插件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../algorithm/select_algorithm.html#planner-and-controller-servers">规划器和控制器服务器 [待校准&#64;1571]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algorithm/select_algorithm.html#selecting-the-algorithm-plugins">选择算法插件 [待校准&#64;1577]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../algorithm/select_algorithm.html#planner-server">规划服务器 [校准&#64;首飞]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../algorithm/select_algorithm.html#controller-server">控制服务器 [校准&#64;首飞]</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../algorithm/select_algorithm.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algorithm/select_algorithm.html#conclusion">小结 [校准&#64;songhuangong]</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../lifecycle_composition/setup_lifecycle_composition.html">Setting Up Lifecycle and Composition Nodes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../lifecycle_composition/setup_lifecycle_composition.html#lifecycle">Lifecycle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../lifecycle_composition/setup_lifecycle_composition.html#composition">Composition</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../lifecycle_composition/setup_lifecycle_composition.html#manual-composition">Manual Composition</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../lifecycle_composition/setup_lifecycle_composition.html#dynamic-composition">Dynamic Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lifecycle_composition/setup_lifecycle_composition.html">设置生命周期和组合节点</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../lifecycle_composition/setup_lifecycle_composition.html#lifecycle">生命周期</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lifecycle_composition/setup_lifecycle_composition.html#composition">组成</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lifecycle_composition/setup_lifecycle_composition.html#manual-composition">手动合成 [校准&#64;songhuangong]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lifecycle_composition/setup_lifecycle_composition.html#dynamic-composition">动态组合</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../lifecycle_composition/setup_lifecycle_composition.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lifecycle_composition/setup_lifecycle_composition.html#conclusion">小结 [校准&#64;songhuangong]</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">General Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/camera_calibration.html">Camera Calibration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/camera_calibration.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/camera_calibration.html#requirements">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">普通教程</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/camera_calibration.html">相机标定</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/camera_calibration.html#overview">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/camera_calibration.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/camera_calibration.html#tutorial-steps">Tutorial Steps</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/get_backtrace.html">Get Backtrace in ROS 2 / Nav2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/get_backtrace.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/get_backtrace.html">在ROS 2/Nav2中获取回溯信息 [校准&#64;haisenzeng]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/get_backtrace.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/get_backtrace.html#preliminaries">Preliminaries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/get_backtrace.html#from-a-node">From a Node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/get_backtrace.html#from-a-launch-file">From a Launch File</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/get_backtrace.html#from-nav2-bringup">From Nav2 Bringup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/get_backtrace.html#automatic-backtrace-on-crash">Automatic backtrace on crash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/get_backtrace.html#from-a-node">从一个节点进行回溯 [校准&#64;haisenzeng]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/get_backtrace.html#from-a-launch-file">从启动文件进行回溯 [校准&#64;haisenzeng]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/get_backtrace.html#from-nav2-bringup">从Nav2 Bringup软件包中进行回溯 [校准&#64;haisenzeng]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/get_backtrace.html#automatic-backtrace-on-crash">基于系统崩溃时的自动错误回溯</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html">Navigating with a Physical Turtlebot 3</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html">用实体Turtlebot3机器人导航     [待校准&#64;1262]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#overview">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#tutorial-steps">Tutorial Steps</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#setup-your-enviroment-variables">0- Setup Your Enviroment Variables</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#launch-turtlebot-3">1- Launch Turtlebot 3</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#launch-nav2">2- Launch Nav2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#launch-rviz">3-  Launch RVIZ</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#initialize-the-location-of-turtlebot-3">4- Initialize the Location of Turtlebot 3</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#send-a-goal-pose">5-  Send a Goal Pose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#setup-your-enviroment-variables">0-设置环境变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#launch-turtlebot-3">1-运行 Turtlebot 3 [校准&#64;小鱼]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#launch-nav2">2-LaunchNav2     [待校准&#64;1273]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#launch-rviz">3-LaunchRVIZ     [待校准&#64;1283]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#initialize-the-location-of-turtlebot-3">4-初始化Turtlebot3位置     [待校准&#64;1287]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#send-a-goal-pose">5-发送一个目标位姿 [校准&#64;greg]</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html">(SLAM) Navigating While Mapping</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html">(SLAM) 建图时导航</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html#overview">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html#tutorial-steps">Tutorial Steps</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html#launch-robot-interfaces">0- Launch Robot Interfaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html#launch-robot-interfaces">0-启动机器人交互界面 [校准&#64;混沌无形]</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html#launch-navigation2">1- Launch Navigation2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html#launch-slam">2- Launch SLAM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html#working-with-slam">3- Working with SLAM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html#getting-started-simplification">4- Getting Started Simplification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html#launch-slam">2-启动 SLAM [校准&#64;混沌无形]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html#working-with-slam">3-与SLAM合作 [待校准&#64;1360]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_slam.html#getting-started-simplification">4-入门简化 [校准&#64;混沌无形]</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html">(STVL) Using an External Costmap Plugin</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html#costmap2d-and-stvl">Costmap2D and STVL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html">(STVL) 使用外部代价地图插件     [待校准&#64;1405]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html#overview">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html#costmap2d-and-stvl">代价地图2D和STVL     [待校准&#64;1410]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html#tutorial-steps">Tutorial Steps</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html#setup">0- Setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html#install-stvl">1- Install STVL</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html#modify-navigation2-parameter">1- Modify Navigation2 Parameter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html#launch-navigation2">2- Launch Navigation2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html#rviz">3-  RVIZ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html#setup">0-设置 [待校准&#64;1414]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html#install-stvl">1-安装STVL [待校准&#64;1416]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html#modify-navigation2-parameter">1修改Navigation2参数     [待校准&#64;1421]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html#launch-navigation2">2-Launch Navigation2     [待校准&#64;1428]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_stvl.html#rviz">3-  RVIZ [待校准&#64;1430]</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/navigation2_dynamic_point_following.html">Dynamic Object Following</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_dynamic_point_following.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/navigation2_dynamic_point_following.html">动态对象追踪 [待校准&#64;1238]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_dynamic_point_following.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_dynamic_point_following.html#tutorial-steps">Tutorial Steps</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_dynamic_point_following.html#create-the-behavior-tree">0- Create the Behavior Tree</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_dynamic_point_following.html#setup-rviz-clicked-point">1- Setup Rviz clicked point</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_dynamic_point_following.html#run-dynamic-object-following-in-nav2-simulation">2- Run Dynamic Object Following in Nav2 Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_dynamic_point_following.html#setup-rviz-clicked-point">1- 设置Rviz的点击点 [校准&#64;混沌无形]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_dynamic_point_following.html#run-dynamic-object-following-in-nav2-simulation">2- 在Nav2模拟中运行动态对象跟踪 [校准&#64;混沌无形]</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/navigation2_with_keepout_filter.html">Navigating with Keepout Zones</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_keepout_filter.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_keepout_filter.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/navigation2_with_keepout_filter.html">导航禁止区 [校准&#64;mzebra]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_keepout_filter.html#overview">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_keepout_filter.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_keepout_filter.html#tutorial-steps">Tutorial Steps</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_keepout_filter.html#prepare-filter-mask">1. Prepare filter mask</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_keepout_filter.html#configure-costmap-filter-info-publisher-server">2. Configure Costmap Filter Info Publisher Server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_keepout_filter.html#enable-keepout-filter">3. Enable Keepout Filter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_keepout_filter.html#run-nav2-stack">4. Run Nav2 stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_keepout_filter.html#prepare-filter-mask">1.准备过滤器掩码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_keepout_filter.html#configure-costmap-filter-info-publisher-server">2.配置成本地图过滤器信息发布服务器 [校准&#64;混沌无形]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_keepout_filter.html#enable-keepout-filter">3.启用禁止区域过滤器 [校准&#64;混沌无形]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_keepout_filter.html#run-nav2-stack">4.运行Nav2软件 [校准&#64;混沌无形]</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/navigation2_with_speed_filter.html">Navigating with Speed Limits</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_speed_filter.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_speed_filter.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/navigation2_with_speed_filter.html">导航速度限制 [待校准&#64;1367]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_speed_filter.html#overview">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_speed_filter.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_with_speed_filter.html#tutorial-steps">Tutorial Steps</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_speed_filter.html#prepare-filter-mask">1. Prepare filter mask</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_speed_filter.html#configure-costmap-filter-info-publisher-server">2. Configure Costmap Filter Info Publisher Server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_speed_filter.html#enable-speed-filter">3. Enable Speed Filter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_speed_filter.html#run-nav2-stack">4. Run Nav2 stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_speed_filter.html#prepare-filter-mask">1.准备过滤器掩码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_speed_filter.html#configure-costmap-filter-info-publisher-server">2.配置成本地图过滤器信息发布服务器 [校准&#64;混沌无形]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_speed_filter.html#enable-speed-filter">3.启用速度过滤器 [待校准&#64;1393]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/docs/navigation2_with_speed_filter.html#run-nav2-stack">4.运行Nav2软件 [校准&#64;混沌无形]</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/using_groot.html">Groot - Interacting with Behavior Trees</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_groot.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_groot.html#visualize-behavior-trees">Visualize Behavior Trees</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_groot.html#edit-behavior-trees">Edit Behavior Trees</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_groot.html#adding-a-custom-node">Adding A Custom Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/using_groot.html">Groot与行为树互动     [待校准&#64;1432]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_groot.html#overview">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_groot.html#visualize-behavior-trees">可视化行为树 [待校准&#64;1440]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_groot.html#edit-behavior-trees">编辑行为树 [待校准&#64;1452]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_groot.html#adding-a-custom-node">添加自定义节点 [待校准&#64;1455]</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html">Using Rotation Shim Controller</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#what-is-the-rotation-shim-controller">What is the Rotation Shim Controller?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#configuring-rotation-shim-controller">Configuring Rotation Shim Controller</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#configuring-primary-controller">Configuring Primary Controller</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#demo-execution">Demo Execution</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../plugin_tutorials/index.html">Plugin Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html">Writing a New Costmap2D Plugin</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#requirements">Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#tutorial-steps">Tutorial Steps</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#write-a-new-costmap2d-plugin">1- Write a new Costmap2D plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#export-and-make-gradientlayer-plugin">2- Export and make GradientLayer plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#enable-the-plugin-in-costmap2d">3- Enable the plugin in Costmap2D</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#run-gradientlayer-plugin">4- Run GradientLayer plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html">使用旋转微调控制器 [待校准&#64;1463]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#overview">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#what-is-the-rotation-shim-controller">什么是旋转微调控制器？     [待校准&#64;1470]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#configuring-rotation-shim-controller">配置旋转微调控制器 [待校准&#64;1479]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#configuring-primary-controller">配置主控制器 [待校准&#64;1488]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#demo-execution">演示执行 [待校准&#64;1491]</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html">Writing a New Planner Plugin</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#requirements">Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#tutorial-steps">Tutorial Steps</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#creating-a-new-planner-plugin">1- Creating a new Planner Plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#pass-the-plugin-name-through-params-file">3- Pass the plugin name through params file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#run-straightline-plugin">4- Run StraightLine plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugin_tutorials/index.html">插件教程</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html">编写新的二维代价地图（Costmap2D）插件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#overview">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#requirements">必要条件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#tutorial-steps">教程步骤</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#write-a-new-costmap2d-plugin">1- 写一个新代价地图2D（Costmap2D）插件 [校准&#64;小鱼]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#export-and-make-gradientlayer-plugin">2-Export GradientLayer plugin     [待校准&#64;2074]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#enable-the-plugin-in-costmap2d">3-在代价地图2D中启用插件     [待校准&#64;2089]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#run-gradientlayer-plugin">4-运行梯度层（GradientLayer ）插件 [校准&#64;小鱼]</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html">Writing a New Controller Plugin</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#requirements">Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#tutorial-steps">Tutorial Steps</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#create-a-new-controller-plugin">1- Create a new Controller Plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#exporting-the-controller-plugin">2- Exporting the controller plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#pass-the-plugin-name-through-the-params-file">3- Pass the plugin name through the params file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#run-pure-pursuit-controller-plugin">4- Run Pure Pursuit Controller plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html">编写新的规划器插件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#overview">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#requirements">必要条件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#tutorial-steps">教程步骤</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#creating-a-new-planner-plugin">1创建新规划器插件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#exporting-the-planner-plugin">2-导出planner插件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#pass-the-plugin-name-through-params-file">3-通过params文件传递插件名称</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#run-straightline-plugin">4-运行直线插件</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html">Writing a New Behavior Tree Plugin</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#requirements">Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#tutorial-steps">Tutorial Steps</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#creating-a-new-bt-plugin">1- Creating a new BT Plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#add-plugin-library-name-to-config">3- Add plugin library name to config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#run-your-custom-plugin">4- Run Your Custom plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html">编写新的控制器插件 [待校准&#64;2100]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#overview">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#requirements">必要条件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#tutorial-steps">教程步骤</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#create-a-new-controller-plugin">1-创建一个新的控制器插件     [待校准&#64;2105]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#exporting-the-controller-plugin">2-导出控制器插件 [校准&#64;混沌无形]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#pass-the-plugin-name-through-the-params-file">3-通过params文件传递插件名称     [待校准&#64;2142]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#run-pure-pursuit-controller-plugin">4-运行纯追踪控制器插件 [校准&#64;混沌无形]</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html">Writing a New Recovery Plugin</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html#requirements">Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html#tutorial-steps">Tutorial Steps</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html#creating-a-new-recovery-plugin">1- Creating a new Recovery Plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html#exporting-the-recovery-plugin">2- Exporting the recovery plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html#pass-the-plugin-name-through-params-file">3- Pass the plugin name through params file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html#run-recovery-plugin">4- Run Recovery plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html">编写新的行为树插件 [待校准&#64;1988]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#overview">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#requirements">必要条件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#tutorial-steps">教程步骤</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#creating-a-new-bt-plugin">1创建新BT插件 [待校准&#64;2000]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#exporting-the-planner-plugin">2-导出planner插件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#add-plugin-library-name-to-config">3-将插件库名称添加到配置     [待校准&#64;2037]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#run-your-custom-plugin">4运行定制插件 [待校准&#64;2039]</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html">编写新的恢复插件 [待校准&#64;2180]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html#overview">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html#requirements">必要条件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html#tutorial-steps">教程步骤</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html#creating-a-new-recovery-plugin">1-创建一个新的恢复插件     [待校准&#64;2182]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html#exporting-the-recovery-plugin">2-导出恢复插件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html#pass-the-plugin-name-through-params-file">3-通过params文件传递插件名称</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_recovery_plugin.html#run-recovery-plugin">4- 运行恢复插件 [校准&#64;混沌无形]</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../configuration/index.html">Configuration Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-waypoint-follower.html">Waypoint Follower</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-waypoint-follower.html#parameters">Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-waypoint-follower.html#provided-plugins">Provided Plugins</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../configuration/index.html">配置指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-waypoint-follower.html">路点追踪 [待校准&#64;2875]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-waypoint-follower.html#parameters">参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-waypoint-follower.html#provided-plugins">提供的插件 [待校准&#64;2604]</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/nav2_waypoint_follower-plugins/wait_at_waypoint.html">WaitAtWaypoint</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.html">PhotoAtWaypoint</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/nav2_waypoint_follower-plugins/input_at_waypoint.html">InputAtWaypoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.html">PhotoAtWaypoint     [待校准&#64;3171]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/nav2_waypoint_follower-plugins/input_at_waypoint.html">InputAtWaypoint     [待校准&#64;3161]</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-waypoint-follower.html#default-plugin">Default Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-waypoint-follower.html#default-plugin">默认插件 [待校准&#64;2885]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-waypoint-follower.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-bt-navigator.html">Behavior-Tree Navigator</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-bt-navigator.html#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-bt-navigator.html">行为树导航器 [待校准&#64;2529]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-bt-navigator.html#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-bt-navigator.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-bt-xml.html">Behavior Tree XML Nodes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-bt-xml.html#action-plugins">Action Plugins</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/Wait.html">Wait</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/Spin.html">Spin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-bt-xml.html">行为树XML节点 [待校准&#64;2564]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-bt-xml.html#action-plugins">Action插件 [待校准&#64;2568]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/Wait.html">Wait [待校准&#64;2347]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/Spin.html">Spin [待校准&#64;2331]</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/BackUp.html">BackUp</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/ComputePathToPose.html">ComputePathToPose</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/FollowPath.html">FollowPath</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/NavigateToPose.html">NavigateToPose</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/ClearEntireCostmap.html">ClearEntireCostmap</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/ClearCostmapExceptRegion.html">ClearCostmapExceptRegion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/ClearCostmapAroundRobot.html">ClearCostmapAroundRobot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/ReinitializeGlobalLocalization.html">ReinitializeGlobalLocalization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/TruncatePath.html">TruncatePath</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/PlannerSelector.html">PlannerSelector</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/ControllerSelector.html">ControllerSelector</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/GoalCheckerSelector.html">GoalCheckerSelector</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/NavigateThroughPoses.html">NavigateThroughPoses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.html">ComputePathThroughPoses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/RemovePassedGoals.html">RemovePassedGoals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/ComputePathToPose.html">ComputePathToPose     [待校准&#64;2269]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/FollowPath.html">FollowPath [待校准&#64;2283]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/NavigateToPose.html">NavigateToPose     [待校准&#64;2300]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/ClearEntireCostmap.html">ClearEntireCostmap     [待校准&#64;2253]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/ClearCostmapExceptRegion.html">ClearCostmapExceptRegion     [待校准&#64;2250]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/ClearCostmapAroundRobot.html">ClearCostmapAroundRobot     [待校准&#64;2243]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/ReinitializeGlobalLocalization.html">ReinitializeGlobalLocalization     [待校准&#64;2312]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/TruncatePath.html">TruncatePath     [待校准&#64;2336]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/PlannerSelector.html">PlannerSelector     [待校准&#64;2304]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/ControllerSelector.html">ControllerSelector     [待校准&#64;2273]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/GoalCheckerSelector.html">GoalCheckerSelector     [待校准&#64;2290]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/NavigateThroughPoses.html">NavigateThroughPoses     [待校准&#64;2298]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.html">ComputePathThroughPoses     [待校准&#64;2255]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/RemovePassedGoals.html">RemovePassedGoals     [待校准&#64;2316]</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/actions/CancelControl.html">CancelControl</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-bt-xml.html#condition-plugins">Condition Plugins</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/GoalReached.html">GoalReached</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/TransformAvailable.html">TransformAvailable</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/DistanceTraveled.html">DistanceTraveled</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/GoalUpdated.html">GoalUpdated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-bt-xml.html#condition-plugins">条件插件 [待校准&#64;2569]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/GoalReached.html">GoalReached     [待校准&#64;2357]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/TransformAvailable.html">TransformAvailable     [待校准&#64;2376]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/DistanceTraveled.html">DistanceTraveled     [待校准&#64;2351]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/GoalUpdated.html">GoalUpdated     [待校准&#64;2364]</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/GloballyUpdatedGoal.html">GloballyUpdatedGoal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/InitialPoseReceived.html">InitialPoseReceived</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/IsStuck.html">IsStuck</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/TimeExpired.html">TimeExpired</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/IsBatteryLow.html">IsBatteryLow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/InitialPoseReceived.html">InitialPoseReceived     [待校准&#64;2366]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/IsStuck.html">IsStuck [待校准&#64;2370]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/TimeExpired.html">TimeExpired     [待校准&#64;2372]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/IsBatteryLow.html">IsBatteryLow     [待校准&#64;2368]</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/conditions/IsPathValid.html">IsPathValid</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-bt-xml.html#control-plugins">Control Plugins</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/controls/PipelineSequence.html">PipelineSequence</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/controls/RoundRobin.html">RoundRobin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/controls/RecoveryNode.html">RecoveryNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-bt-xml.html#control-plugins">控制插件 [待校准&#64;2570]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/controls/PipelineSequence.html">PipelineSequence     [待校准&#64;2383]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/controls/RoundRobin.html">RoundRobin [待校准&#64;2390]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/controls/RecoveryNode.html">RecoveryNode     [待校准&#64;2385]</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-bt-xml.html#decorator-plugins">Decorator Plugins</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/decorators/RateController.html">RateController</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/decorators/DistanceController.html">DistanceController</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/decorators/SpeedController.html">SpeedController</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/decorators/GoalUpdater.html">GoalUpdater</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-bt-xml.html#decorator-plugins">装饰插件 [待校准&#64;2571]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/decorators/RateController.html">RateController     [待校准&#64;2405]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/decorators/DistanceController.html">DistanceController     [待校准&#64;2392]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/decorators/SpeedController.html">SpeedController     [待校准&#64;2409]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/bt-plugins/decorators/GoalUpdater.html">GoalUpdater     [待校准&#64;2395]</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-bt-xml.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html">Costmap 2D</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#costmap2d-ros-parameters">Costmap2D ROS Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#default-plugins">Default Plugins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#plugin-parameters">Plugin Parameters</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/static.html">Static Layer Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/inflation.html">Inflation Layer Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/obstacle.html">Obstacle Layer Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/voxel.html">Voxel Layer Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/range.html">Range Sensor Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html">2D代价地图 [待校准&#64;2616]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#costmap2d-ros-parameters">2D代价地图的ROS参数     [待校准&#64;2618]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#default-plugins">默认插件 [待校准&#64;2606]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#plugin-parameters">插件参数 [待校准&#64;2677]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/static.html">静态层参数 [待校准&#64;2984]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/inflation.html">膨胀层参数 [待校准&#64;2888]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/obstacle.html">障碍层参数 [待校准&#64;2909]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/voxel.html">体素层参数 [待校准&#64;2995]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/range.html">范围传感器参数 [待校准&#64;2952]</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#costmap-filters-parameters">Costmap Filters Parameters</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/keepout_filter.html">Keepout Filter Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/speed_filter.html">Speed Filter Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#costmap-filters-parameters">代价地图过滤器参数 [待校准&#64;2678]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/keepout_filter.html">保留过滤器参数 [待校准&#64;2901]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/speed_filter.html">速度过滤器参数 [待校准&#64;2976]</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#example">Example</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-lifecycle.html">Lifecycle Manager</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-lifecycle.html#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-lifecycle.html#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-lifecycle.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-planner-server.html">Planner Server</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-planner-server.html#parameters">Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-planner-server.html#default-plugins">Default Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-planner-server.html">规划器服务器 [待校准&#64;2739]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-planner-server.html#parameters">参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-planner-server.html#default-plugins">默认插件 [待校准&#64;2606]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-planner-server.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-navfn.html">NavFn Planner</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-navfn.html#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-navfn.html">NavFn规划器 [待校准&#64;2728]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-navfn.html#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-navfn.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-smac-planner.html">Smac Planner</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-smac-planner.html#provided-plugins">Provided Plugins</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/smac/configuring-smac-2d.html">Smac 2D Planner</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/smac/configuring-smac-hybrid.html">Smac Hybrid-A* Planner</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/smac/configuring-smac-lattice.html">Smac State Lattice Planner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-smac-planner.html">Smac规划器 [待校准&#64;2848]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-smac-planner.html#provided-plugins">提供的插件 [待校准&#64;2604]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/smac/configuring-smac-2d.html">Smac 2D规划器 [待校准&#64;3186]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/smac/configuring-smac-hybrid.html">Smac Hybrid-A*规划器     [待校准&#64;3216]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/smac/configuring-smac-lattice.html">Smac国家格规划器 [待校准&#64;3247]</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-smac-planner.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-smac-planner.html#description">描述</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-thetastar.html">Theta Star Planner</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-thetastar.html#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-thetastar.html">Theta星规划器 [待校准&#64;2862]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-thetastar.html#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-thetastar.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-controller-server.html">Controller Server</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-controller-server.html#parameters">Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-controller-server.html#provided-plugins">Provided Plugins</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/nav2_controller-plugins/simple_progress_checker.html">SimpleProgressChecker</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/nav2_controller-plugins/simple_goal_checker.html">SimpleGoalChecker</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/nav2_controller-plugins/stopped_goal_checker.html">StoppedGoalChecker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-controller-server.html">控制器服务器 [待校准&#64;2573]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-controller-server.html#parameters">参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-controller-server.html#provided-plugins">提供的插件 [待校准&#64;2604]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/nav2_controller-plugins/simple_progress_checker.html">SimpleProgressChecker     [待校准&#64;3148]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/nav2_controller-plugins/simple_goal_checker.html">SimpleGoalChecker     [待校准&#64;3139]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/nav2_controller-plugins/stopped_goal_checker.html">StoppedGoalChecker     [待校准&#64;3155]</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-controller-server.html#default-plugins">Default Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-controller-server.html#default-plugins">默认插件 [待校准&#64;2606]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-controller-server.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-dwb-controller.html">DWB Controller</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-dwb-controller.html#controller">Controller</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/dwb-params/controller.html">DWB Controller</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/dwb-params/iterator.html">XYTheta Iterator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/dwb-params/kinematic.html">Kinematic Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/dwb-params/visualization.html">Publisher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-dwb-controller.html">DWB控制器 [待校准&#64;2679]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-dwb-controller.html#controller">控制器（Controller）</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/dwb-params/controller.html">DWB控制器 [待校准&#64;2679]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/dwb-params/iterator.html">XYTheta迭代器 [待校准&#64;3073]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/dwb-params/kinematic.html">运动学参数 [待校准&#64;3080]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/dwb-params/visualization.html">Publisher [待校准&#64;3109]</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-dwb-controller.html#plugins">Plugins</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/dwb-plugins/limited_accel_generator.html">LimitedAccelGenerator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/dwb-plugins/standard_traj_generator.html">StandardTrajectoryGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-dwb-controller.html#plugins">插件 [待校准&#64;2682]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/dwb-plugins/limited_accel_generator.html">LimitedAccelGenerator     [待校准&#64;3124]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/dwb-plugins/standard_traj_generator.html">StandardTrajectoryGenerator     [待校准&#64;3128]</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-dwb-controller.html#trajectory-critics">Trajectory Critics</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/base_obstacle.html">BaseObstacleCritic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/goal_align.html">GoalAlignCritic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/goal_dist.html">GoalDistCritic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/obstacle_footprint.html">ObstacleFootprintCritic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/oscillation.html">OscillationCritic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/path_align.html">PathAlignCritic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/path_dist.html">PathDistCritic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/prefer_forward.html">PreferForwardCritic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/rotate_to_goal.html">RotateToGoalCritic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/twirling.html">TwirlingCritic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-dwb-controller.html#trajectory-critics">轨迹评论家 [待校准&#64;2684]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/base_obstacle.html">BaseObstacleCritic     [待校准&#64;3263]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/goal_align.html">GoalAlignCritic     [待校准&#64;3270]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/goal_dist.html">GoalDistCritic     [待校准&#64;3279]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/obstacle_footprint.html">ObstacleFootprintCritic     [待校准&#64;3282]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/oscillation.html">OscillationCritic     [待校准&#64;3285]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/path_align.html">PathAlignCritic     [待校准&#64;3297]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/path_dist.html">PathDistCritic     [待校准&#64;3300]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/prefer_forward.html">PreferForwardCritic     [待校准&#64;3302]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/rotate_to_goal.html">RotateToGoalCritic     [待校准&#64;3313]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/trajectory_critics/twirling.html">TwirlingCritic     [待校准&#64;3322]</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-dwb-controller.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-map-server.html">Map Server / Saver</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-map-server.html#map-saver-parameters">Map Saver Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-map-server.html#map-server-parameters">Map Server Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-map-server.html#costmap-filter-info-server-parameters">Costmap Filter Info Server Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-map-server.html">Map Server / Saver [校准&#64;songhuangong]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-map-server.html#map-saver-parameters">Map Saver 参数 [校准&#64;songhuangong]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-map-server.html#map-server-parameters">Map Server 参数 [校准&#64;songhuangong]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-map-server.html#costmap-filter-info-server-parameters">代价地图筛选器信息服务参数     [校准&#64;songhuangong]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-map-server.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-amcl.html">AMCL</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-amcl.html#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-amcl.html">AMCL（自适应蒙特卡洛定位）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-amcl.html#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-amcl.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-recovery-server.html">Recovery Server</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-recovery-server.html#recovery-server-parameters">Recovery Server Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-recovery-server.html#default-plugins">Default Plugins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-recovery-server.html#spin-recovery-parameters">Spin Recovery Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-recovery-server.html#backup-recovery-parameters">BackUp Recovery Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-recovery-server.html">恢复服务器 [待校准&#64;2750]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-recovery-server.html#recovery-server-parameters">恢复服务器参数 [待校准&#64;2753]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-recovery-server.html#default-plugins">默认插件 [待校准&#64;2606]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-recovery-server.html#spin-recovery-parameters">自旋恢复参数 [待校准&#64;2772]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-recovery-server.html#backup-recovery-parameters">备份恢复参数 [待校准&#64;2784]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-recovery-server.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-regulated-pp.html">Regulated Pure Pursuit</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-regulated-pp.html#regulated-pure-pursuit-parameters">Regulated Pure Pursuit Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-regulated-pp.html">纯追踪控制 [待校准&#64;2786]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-regulated-pp.html#regulated-pure-pursuit-parameters">纯追踪控制参数 [待校准&#64;2789]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-regulated-pp.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-rotation-shim-controller.html">Rotation Shim Controller</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-rotation-shim-controller.html#rotation-shim-controller-parameters">Rotation Shim Controller Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-rotation-shim-controller.html">旋转控制器 [待校准&#64;2832]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-rotation-shim-controller.html#rotation-shim-controller-parameters">旋转控制器参数 [待校准&#64;2838]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-rotation-shim-controller.html#example">Example</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../tuning/index.html">Tuning Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#inflation-potential-fields">Inflation Potential Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#robot-footprint-vs-radius">Robot Footprint vs Radius</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#rotate-in-place-behavior">Rotate in Place Behavior</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#planner-plugin-selection">Planner Plugin Selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#controller-plugin-selection">Controller Plugin Selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#caching-obstacle-heuristic-in-smac-planners">Caching Obstacle Heuristic in Smac Planners</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#nav2-launch-options">Nav2 Launch Options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#other-pages-we-d-love-to-offer">Other Pages We'd Love To Offer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tuning/index.html">调整指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#inflation-potential-fields">膨胀潜在领域</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#robot-footprint-vs-radius">机器人Footprint与半径 [校准&#64;首飞]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#rotate-in-place-behavior">旋转到位行为</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#planner-plugin-selection">规划器插件选择</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#controller-plugin-selection">控制器插件选择 [待校准&#64;1045]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#caching-obstacle-heuristic-in-smac-planners">Smac规划器中的缓存障碍启发式算法     [待校准&#64;1064]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#nav2-launch-options">Nav2 Launch选项     [待校准&#64;1068]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#other-pages-we-d-love-to-offer">我们希望提供的其他页面</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../behavior_trees/index.html">Nav2 Behavior Trees</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/overview/nav2_specific_nodes.html">Introduction To Nav2 Specific Nodes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/nav2_specific_nodes.html#action-nodes">Action Nodes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/nav2_specific_nodes.html#condition-nodes">Condition Nodes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/nav2_specific_nodes.html#decorator-nodes">Decorator Nodes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/nav2_specific_nodes.html#control-pipelinesequence">Control: PipelineSequence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/nav2_specific_nodes.html#control-recovery">Control: Recovery</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/nav2_specific_nodes.html#control-roundrobin">Control: RoundRobin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../behavior_trees/index.html">Nav2行为树</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/overview/nav2_specific_nodes.html">Nav2特定节点介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/nav2_specific_nodes.html#action-nodes">动作节点（Action）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/nav2_specific_nodes.html#condition-nodes">Condition节点 [校准&#64;混沌无形]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/nav2_specific_nodes.html#decorator-nodes">Decorator（装饰）节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/nav2_specific_nodes.html#control-pipelinesequence">控制（Control）: 管道序列（PipelineSequence） [校准&#64;混沌无形]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/nav2_specific_nodes.html#control-recovery">控制（Control）: 恢复（Recovery） [校准&#64;混沌无形]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/nav2_specific_nodes.html#control-roundrobin">控制（Control）: 轮询（RoundRobin）  [校准&#64;混沌无形]</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/overview/detailed_behavior_tree_walkthrough.html">Detailed Behavior Tree Walkthrough</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/detailed_behavior_tree_walkthrough.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/detailed_behavior_tree_walkthrough.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/detailed_behavior_tree_walkthrough.html#navigate-to-pose-with-replanning-and-recovery">Navigate To Pose With Replanning and Recovery</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/detailed_behavior_tree_walkthrough.html#navigation-subtree">Navigation Subtree</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/detailed_behavior_tree_walkthrough.html#recovery-subtree">Recovery Subtree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/overview/detailed_behavior_tree_walkthrough.html">详细的行为树演练</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/detailed_behavior_tree_walkthrough.html#overview">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/detailed_behavior_tree_walkthrough.html#prerequisites">前提条件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/detailed_behavior_tree_walkthrough.html#navigate-to-pose-with-replanning-and-recovery">通过重新规划和恢复导航到某个位姿</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/detailed_behavior_tree_walkthrough.html#navigation-subtree">导航子树</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../behavior_trees/overview/detailed_behavior_tree_walkthrough.html#recovery-subtree">恢复（Recovery）子树</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_to_pose_recovery.html">Navigate To Pose</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_through_poses_recovery.html">Navigate Through Poses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_to_pose_recovery.html">导航到点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_through_poses_recovery.html">指定路点导航</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_to_pose_and_replan_if_path_invalid.html">Navigate To Pose and Replan Only if Path Invalid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/follow_point.html">Follow Dynamic Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/follow_point.html">动态点跟随</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Navigation Plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-layers">Costmap Layers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-filters">Costmap Filters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#controllers">Controllers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#planners">Planners</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#recoveries">Recoveries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#waypoint-task-executors">Waypoint Task Executors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#goal-checkers">Goal Checkers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#progress-checkers">Progress Checkers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-nodes">Behavior Tree Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">导航插件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-layers">代价地图层（Costmap Layers）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-filters">代价地图过滤器（Costmap Filters）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#controllers">控制器（Controllers）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#planners">规划器（Planners）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#recoveries">恢复（Recoveries）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#waypoint-task-executors">路点任务执行器（Waypoint Task Executors）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#goal-checkers">目标检查器（Goal Checkers）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#progress-checkers">进度检查器（Progress Checkers）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-nodes">行为树节点（Behavior Tree Nodes）</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../migration/index.html">Migration Guides</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../migration/Dashing.html">Dashing to Eloquent</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Dashing.html#new-packages">New Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migration/index.html">迁移指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../migration/Dashing.html">Dashing到Eloquent [校准&#64;haisenzeng]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Dashing.html#new-packages">新软件包 [校准&#64;haisenzeng]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Dashing.html#new-plugins">New Plugins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Dashing.html#navigation2-architectural-changes">Navigation2 Architectural Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Dashing.html#navigation2-architectural-changes">导航2架构变化 [待校准&#64;724]</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../migration/Eloquent.html">Eloquent to Foxy</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Eloquent.html#general">General</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Eloquent.html#server-updates">Server Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../migration/Eloquent.html">Eloquent到Foxy  [校准&#64;小鱼]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Eloquent.html#general">综述 [待校准&#64;731]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Eloquent.html#server-updates">服务器更新 [待校准&#64;735]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Eloquent.html#new-plugins">New Plugins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Eloquent.html#map-server-re-work">Map Server Re-Work</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Eloquent.html#new-particle-filter-messages">New Particle Filter Messages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Eloquent.html#selection-of-behavior-tree-in-each-navigation-action">Selection of Behavior Tree in each navigation action</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Eloquent.html#followpoint-capability">FollowPoint Capability</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Eloquent.html#new-costmap-layer">New Costmap Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Eloquent.html#map-server-re-work">地图服务器重新工作 [待校准&#64;765]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Eloquent.html#new-particle-filter-messages">新粒子滤波消息 [待校准&#64;771]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Eloquent.html#selection-of-behavior-tree-in-each-navigation-action">选择行为树每一个导航动作中     [待校准&#64;775]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Eloquent.html#followpoint-capability">后续功能 [待校准&#64;778]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Eloquent.html#new-costmap-layer">新的代价地图层 [待校准&#64;781]</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../migration/Foxy.html">Foxy to Galactic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#navigatetopose-action-feedback-updates">NavigateToPose Action Feedback updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#navigatetopose-bt-node-interface-changes">NavigateToPose BT-node Interface Changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#navigatethroughposes-and-computepaththroughposes-actions-added">NavigateThroughPoses and ComputePathThroughPoses Actions Added</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#computepathtopose-bt-node-interface-changes">ComputePathToPose BT-node Interface Changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#computepathtopose-action-interface-changes">ComputePathToPose Action Interface Changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#backup-bt-node-interface-changes">BackUp BT-node Interface Changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#backup-recovery-interface-changes">BackUp Recovery Interface Changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#nav2-controllers-and-goal-checker-plugin-interface-changes">Nav2 Controllers and Goal Checker Plugin Interface Changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#followpath-goal-checker-id-attribute">FollowPath goal_checker_id attribute</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#groot-support">Groot Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../migration/Foxy.html">Foxy转Galactic     [待校准&#64;783]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#navigatetopose-action-feedback-updates">导航Action反馈更新     [待校准&#64;785]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#navigatetopose-bt-node-interface-changes">NavigateToPose BT节点接口变化     [待校准&#64;789]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#navigatethroughposes-and-computepaththroughposes-actions-added">NavigateThroughPoses和ComputePathThroughPosesActions添加     [待校准&#64;792]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#computepathtopose-bt-node-interface-changes">ComputePathToPose BT节点接口变化     [待校准&#64;796]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#computepathtopose-action-interface-changes">ComputePathToPoseAction界面变化     [待校准&#64;799]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#backup-bt-node-interface-changes">备份BT节点接口变化 [待校准&#64;804]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#backup-recovery-interface-changes">备份恢复界面变化 [待校准&#64;806]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#nav2-controllers-and-goal-checker-plugin-interface-changes">这个Nav2控制器和目标检查插件接口变化     [待校准&#64;808]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#followpath-goal-checker-id-attribute">FollowPath goal_checker_id 属性     [待校准&#64;811]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#groot-support">Groot支持 [待校准&#64;817]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#new-plugins">New Plugins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#costmap-filters">Costmap Filters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#smacplanner">SmacPlanner</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#thetastarplanner">ThetaStarPlanner</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#regulatedpurepursuitcontroller">RegulatedPurePursuitController</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#costmap2d-current-usage">Costmap2D <code class="docutils literal notranslate"><span class="pre">current_</span></code> Usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#standard-time-units-in-parameters">Standard time units in parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#ray-tracing-parameters">Ray Tracing Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#obstacle-marking-parameters">Obstacle Marking Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#recovery-action-changes">Recovery Action Changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#default-behavior-tree-changes">Default Behavior Tree Changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#navfn-planner-parameters">NavFn Planner Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#new-clearcostmapexceptregion-and-clearcostmaparoundrobot-bt-nodes">New ClearCostmapExceptRegion and ClearCostmapAroundRobot BT-nodes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#new-behavior-tree-nodes">New Behavior Tree Nodes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#sensor-msgs-pointcloud-to-sensor-msgs-pointcloud2-change">sensor_msgs/PointCloud to sensor_msgs/PointCloud2 Change</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#controllerserver-new-parameter-failure-tolerance">ControllerServer New Parameter failure_tolerance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#removed-bt-xml-launch-configurations">Removed BT XML Launch Configurations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#nav2-rviz-panel-action-feedback-information">Nav2 RViz Panel Action Feedback Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#costmap-filters">代价地图过滤器 [待校准&#64;827]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#smacplanner">Smac规划器 [待校准&#64;835]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#thetastarplanner">ThetaStar规划器     [待校准&#64;839]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#regulatedpurepursuitcontroller">调节pureseek控制器     [待校准&#64;842]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#costmap2d-current-usage">代价地图2D <code class="docutils literal notranslate"><span class="pre">current_</span></code> 的使用     [待校准&#64;846]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#standard-time-units-in-parameters">参数中的标准时间单位 [待校准&#64;849]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#ray-tracing-parameters">光线跟踪参数 [待校准&#64;857]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#obstacle-marking-parameters">障碍标记参数 [待校准&#64;863]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#recovery-action-changes">恢复Action变化 [待校准&#64;867]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#default-behavior-tree-changes">默认行为树变化 [待校准&#64;869]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#navfn-planner-parameters">NavFn规划器参数 [待校准&#64;871]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#new-clearcostmapexceptregion-and-clearcostmaparoundrobot-bt-nodes">新的清晰的代价地图异常和清晰的代价地图     [待校准&#64;873]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#new-behavior-tree-nodes">新行为树节点 [待校准&#64;875]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#sensor-msgs-pointcloud-to-sensor-msgs-pointcloud2-change">传感器 _ 消息/点云到传感器 _ 消息/点云2变化     [待校准&#64;885]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#controllerserver-new-parameter-failure-tolerance">控制器服务器新参数failure_tolerance     [待校准&#64;891]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#removed-bt-xml-launch-configurations">已删除BT XML启动配置     [待校准&#64;893]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#nav2-rviz-panel-action-feedback-information">这个Nav2RViz面板Action反馈信息     [待校准&#64;896]</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../migration/Galactic.html">Galactic to Humble</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#major-improvements-to-smac-planners">Major improvements to Smac Planners</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#simple-python-commander">Simple (Python) Commander</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#reduce-nodes-and-executors">Reduce Nodes and Executors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#extending-the-btservicenode-to-process-service-results">Extending the BtServiceNode to process Service-Results</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#including-new-rotation-shim-controller-plugin">Including new Rotation Shim Controller Plugin</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#spawning-the-robot-in-gazebo">Spawning the robot in Gazebo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#recovery-behavior-timeout">Recovery Behavior Timeout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#new-parameter-use-final-approach-orientation-for-the-3-2d-planners">New parameter <code class="docutils literal notranslate"><span class="pre">use_final_approach_orientation</span></code> for the 3 2D planners</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#smacplanner2d-and-theta-fix-goal-orientation-being-ignored">SmacPlanner2D and Theta*: fix goal orientation being ignored</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#smacplanner2d-navfn-and-theta-fix-small-path-corner-cases">SmacPlanner2D, NavFn and Theta*: fix small path corner cases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#change-and-fix-behavior-of-dynamic-parameter-change-detection">Change and fix behavior of dynamic parameter change detection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#dynamic-parameters">Dynamic Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#bt-action-nodes-exception-changes">BT Action Nodes Exception Changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#bt-navigator-groot-multiple-navigators">BT Navigator Groot Multiple Navigators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#removed-kinematic-limiting-in-rpp">Removed Kinematic Limiting in RPP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#removed-use-approach-velocity-scaling-param-in-rpp">Removed Use Approach Velocity Scaling Param in RPP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#refactored-amcl-motion-models-as-plugins">Refactored AMCL motion models as plugins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#dropping-support-for-live-groot-monitoring-of-nav2">Dropping Support for Live Groot Monitoring of Nav2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../migration/Galactic.html">Galactic到Humble     [待校准&#64;899]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#major-improvements-to-smac-planners">Smac规划器的主要改进     [待校准&#64;901]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#simple-python-commander">简单 (Python) 控制命令     [待校准&#64;933]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#reduce-nodes-and-executors">减少节点和执行程序 [待校准&#64;936]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#extending-the-btservicenode-to-process-service-results">延长BtServiceNode处理服务结果     [待校准&#64;945]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#including-new-rotation-shim-controller-plugin">包括新旋转垫片控制器插件     [待校准&#64;948]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#spawning-the-robot-in-gazebo">在Gazebo产生机器人     [待校准&#64;954]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#recovery-behavior-timeout">恢复行为超时 [待校准&#64;958]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#new-parameter-use-final-approach-orientation-for-the-3-2d-planners">新参数 <code class="docutils literal notranslate"><span class="pre">use_final_approach_orientation</span></code> 3 2D规划器     [待校准&#64;960]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#smacplanner2d-and-theta-fix-goal-orientation-being-ignored">Smac规划器2D和Theta*: 修复被忽略的目标方向     [待校准&#64;962]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#smacplanner2d-navfn-and-theta-fix-small-path-corner-cases">SmacPlanner2D、NavFn和Theta*: 修复小路径角案例     [待校准&#64;964]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#change-and-fix-behavior-of-dynamic-parameter-change-detection">动态参数变更检测的变更与修复行为     [待校准&#64;966]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#dynamic-parameters">动态参数 [待校准&#64;968]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#bt-action-nodes-exception-changes">BTAction节点异常更改     [待校准&#64;974]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#bt-navigator-groot-multiple-navigators">BT Navigator Groot多重导航器     [待校准&#64;976]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#removed-kinematic-limiting-in-rpp">删除运动学限制RPP [待校准&#64;979]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#removed-use-approach-velocity-scaling-param-in-rpp">删除使用方法速度缩放参数在RPP     [待校准&#64;981]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#refactored-amcl-motion-models-as-plugins">将AMCL运动模型重构为插件     [待校准&#64;983]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#dropping-support-for-live-groot-monitoring-of-nav2">放弃对Nav2实时Groot监控的支持     [待校准&#64;985]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#replanning-only-if-path-is-invalid">Replanning Only if Path is Invalid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#fix-costmaplayer-cleararea-invert-param-logic">Fix CostmapLayer clearArea invert param logic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#dynamic-composition">Dynamic Composition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#fix-costmaplayer-cleararea-invert-param-logic">Fix CostmapLayer clearArea invert param logic   [待校准&#64;989]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#dynamic-composition">Dynamic Composition   [待校准&#64;991]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#bt-cancel-node">BT Cancel Node</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../commander_api/index.html">Simple Commander API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../commander_api/index.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../commander_api/index.html#id1">Commander API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../commander_api/index.html#examples-and-demos">Examples and Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commander_api/index.html">简单控制命令API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../commander_api/index.html#overview">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commander_api/index.html#id1">控制命令(Commander )API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commander_api/index.html#examples-and-demos">示例和演示</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../roadmap/roadmap.html">Humble Roadmap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Getting Involved</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../contribute/index.html#id1">Getting Involved</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contribute/index.html#process">Process</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contribute/index.html#licensing">Licensing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contribute/index.html#developer-certification-of-origin-dco">Developer Certification of Origin (DCO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap/roadmap.html">Humble工作计划</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">参与其中</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/index.html#id1">参与其中</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/index.html#process">流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/index.html#licensing">许可</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/index.html#developer-certification-of-origin-dco">开发者认证 (DCO)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">About and Contact</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../about/related_projects.html">Related Projects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../about/ros1_comparison.html">ROS to ROS 2 Navigation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../about/index.html#id1">About</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../about/index.html#contact">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">关于和联系</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/related_projects.html">相关项目 [待校准&#64;267]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/ros1_comparison.html">ROS到ROS2变化 [待校准&#64;307]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/index.html#id1">关于Nav2 [待校准&#64;234]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/index.html#contact">联系我们 [待校准&#64;264]</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../about/robots.html">Robots Using</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/robots.html">机器人使用</a></li>
 </ul>
 
         </div>
@@ -731,8 +731,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">First-Time Robot Setup Guide</a> &raquo;</li>
-      <li>Setting Up The URDF</li>
+          <li><a href="../index.html">首次机器人安装指南</a> &raquo;</li>
+      <li>设置URDF</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -742,50 +742,50 @@
            <div itemprop="articleBody">
              
   <section id="setting-up-the-urdf">
-<span id="urdf-handson"></span><h1>Setting Up The URDF<a class="headerlink" href="#setting-up-the-urdf" title="永久链接至标题"></a></h1>
-<p>For this guide, we will be creating the Unified Robot Description Format (URDF) file for a simple differential drive robot to give you hands-on experience on working with URDF. We will also setup the robot state publisher and visualize our model in RVIZ. Lastly, we will be adding some kinematic properties to our robot URDF to prepare it for simulation purposes. These steps are necessary to represent all the sensor, hardware, and robot transforms of your robot for use in navigation.</p>
+<span id="urdf-handson"></span><h1>设置URDF<a class="headerlink" href="#setting-up-the-urdf" title="永久链接至标题"></a></h1>
+<p>在本指南中，我们将为一个简单的差动驱动机器人 创建统一机器人描述格式 的(URDF) 文件，让您亲身体验使用 URDF。我们还将设置  <code class="docutils literal notranslate"><span class="pre">robot</span> <span class="pre">state</span> <span class="pre">publisher</span></code>  并在 RVIZ 中可视化我们的模型。最后，我们将为我们的机器人 URDF 添加一些运动学属性，以便为模拟做好准备。这些步骤对于表示 用于导航的机器人 的所有传感器、硬件和机器人变换是必要的。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1908">[校准&#64;songhuangong]</a></p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>The complete source code in this tutorial can be found in <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/tree/master/sam_bot_description">navigation2_tutorials</a> repository under the <code class="docutils literal notranslate"><span class="pre">sam_bot_description</span></code> package. Note that the repository contains the full code after accomplishing all the tutorials in this guide.</p>
+<p>本教程中的完整源代码可以在 <code class="docutils literal notranslate"><span class="pre">sam_bot_description</span></code> 包下的 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/tree/master/sam_bot_description">navigation2_tutorials</a> 存储库中找到。 请注意，在完成本指南中的所有教程后，存储库包含完整的代码。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1696">[校准&#64;songhuangong]</a></p>
 </div>
 <section id="urdf-and-the-robot-state-publisher">
-<h2>URDF and the Robot State Publisher<a class="headerlink" href="#urdf-and-the-robot-state-publisher" title="永久链接至标题"></a></h2>
-<p>As discussed in the previous tutorial, one of the requirements for Navigation2 is the transformation from  <code class="docutils literal notranslate"><span class="pre">base_link</span></code> to the various sensors and reference frames. This transformation tree can range from a simple tree with only one link from the  <code class="docutils literal notranslate"><span class="pre">base_link</span></code> to <code class="docutils literal notranslate"><span class="pre">laser_link</span></code> or a tree comprised of multiple sensors located in different locations, each having their own coordinate frame. Creating multiple publishers to handle all of these coordinate frame transformations may become tedious. Therefore, we will be making use of the Robot State Publisher package to publish our transforms.</p>
-<p>The Robot State Publisher is a package of ROS 2 that interacts with the tf2 package to publish all of the necessary transforms that can be directly inferred from the geometry and structure of the robot. We need to provide it with the correct URDF and it will automatically handle publishing the transforms. This is very useful for complex transformations but it is still recommended for simpler transform trees.</p>
-<p>The Unified Robot Description Format (URDF) is an XML file that represents a robot model. In this tutorial, it will mainly be used to build transformations trees related with the robot geometry, but it also has other uses. One example is how it can be used in visualizing your robot model in RVIZ, a 3D Visualization tool for ROS, by defining visual components such as materials and meshes. Another example is how the URDF can be used to define the physical properties of the robot. These properties are then used in physics simulators such as Gazebo to simulate how your robot will interact in an environment.</p>
-<p>Another major feature of URDF is that it also supports Xacro (XML Macros) to help you create a shorter and readable XML to help in defining complex robots. We can use these macros to eliminate the need for repeating blocks of XML in our URDF. Xacro is also useful in defining configuration constants which can be reused throughout the URDF.</p>
+<h2>URDF 和 Robot State Publisher <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1909">[校准&#64;songhuangong]</a><a class="headerlink" href="#urdf-and-the-robot-state-publisher" title="永久链接至标题"></a></h2>
+<p>正如在上一教程中所讨论的，Navigation2 的要求之一是从  <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 转换为各种传感器和参考框架。这种变换树的范围可以从只有一个从  <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 到 <code class="docutils literal notranslate"><span class="pre">laser_link</span></code> 链接的简单树，也可以是由位于不同位置的多个传感器组成的树，每个传感器都有自己的坐标系。创建多个发布者来处理所有这些坐标系转换可能会变得乏味。因此，我们将使用 Robot State Publisher 包来发布我们的转换。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1910">[校准&#64;songhuangong]</a></p>
+<p>Robot State Publisher 是 ROS 2 的一个包，它与 tf2 包交互以发布所有必要的变换，这些变换可以直接从机器人的几何结构和结构中推断出来。我们需要为它提供正确的 URDF，它会自动处理发布转换。这对于复杂的转换非常有用，但仍然推荐用于简单的转换树。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1911">[校准&#64;songhuangong]</a></p>
+<p>统一机器人描述格式 (URDF) 是一个表示机器人模型的 XML 文件。在本教程中，它将主要用于构建与机器人几何相关的变换树，但它也有其他用途。一个例子是如何通过定义材料和网格等视觉组件，在 RVIZ（一种 ROS 的 3D 可视化工具）中可视化您的机器人模型。另一个例子是如何使用 URDF 来定义机器人的物理属性。然后，这些属性将用于 Gazebo 等物理模拟器中，以模拟您的机器人在环境中的交互方式。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1912">[校准&#64;songhuangong]</a></p>
+<p>URDF 的另一个主要特点是它还支持 Xacro（XML 宏），以帮助您创建更短且可读的 XML，以帮助定义复杂的机器人。我们可以使用这些宏来消除在我们的 URDF 中重复 XML 块的需要。 Xacro 在定义可在整个 URDF 中定义重用的配置常量方面也很有用。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1913">[校准&#64;songhuangong]</a></p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>If you want to learn more about the URDF and the Robot State Publisher, we encourage you to have a look at the official <a class="reference external" href="http://wiki.ros.org/urdf">URDF Documentation</a> and <a class="reference external" href="http://wiki.ros.org/robot_state_publisher">Robot State Publisher Documentation</a></p>
+<p>如果您想了解更多关于 URDF 和 Robot State Publisher 的信息，我们鼓励您查看官方的  <a class="reference external" href="http://wiki.ros.org/urdf">URDF 文档</a>  和  <a href="#id1"><span class="problematic" id="id2">`Robot State Publisher Documentation &lt; http://wiki.ros.org/robot_state_publisher&gt;`__</span></a> <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1914">[校准&#64;songhuangong]</a></p>
 </div>
 </section>
 <section id="setting-up-the-environment">
-<h2>Setting Up the Environment<a class="headerlink" href="#setting-up-the-environment" title="永久链接至标题"></a></h2>
-<p>In this guide, we are assuming that you are already familiar with ROS 2 and how to setup your development environment, so we'll breeze through the steps in this section.</p>
-<p>Let's begin by installing some additional ROS 2 packages that we will be using during this tutorial.</p>
+<h2>环境设置 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1915">[校准&#64;songhuangong]</a><a class="headerlink" href="#setting-up-the-environment" title="永久链接至标题"></a></h2>
+<p>在本指南中，我们假设您已经熟悉 ROS 2 以及如何设置您的开发环境，因此我们将轻松完成本节中的步骤。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1916">[校准&#64;songhuangong]</a></p>
+<p>让我们从安装一些额外的 ROS 2 包开始，我们将在本教程中使用这些包。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1917">[校准&#64;songhuangong]</a></p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt install ros-&lt;ros2-distro&gt;-joint-state-publisher-gui
 sudo apt install ros-&lt;ros2-distro&gt;-xacro
 </pre></div>
 </div>
-<p>Next, create a directory for your project, initialize a ROS 2 workspace and give your robot a name. For ours, we'll be calling it <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code>.</p>
+<p>接下来，为您的项目创建一个目录，初始化一个 ROS 2 工作区并为您的机器人命名。对于我们来说，我们将其称为 <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code> 。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1918">[校准&#64;songhuangong]</a></p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2 pkg create --build-type ament_cmake sam_bot_description
 </pre></div>
 </div>
 </section>
 <section id="writing-the-urdf">
-<h2>Writing the URDF<a class="headerlink" href="#writing-the-urdf" title="永久链接至标题"></a></h2>
+<h2>编写URDF<a class="headerlink" href="#writing-the-urdf" title="永久链接至标题"></a></h2>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>This section aims to provide you with a beginner-friendly introduction to building URDFs for your robot. If you would like to learn more about URDF and XAcro, we suggest for you to have a look at the official <a class="reference external" href="http://wiki.ros.org/urdf">URDF Documentation</a></p>
+<p>本节旨在为您提供一个适合初学者的关于为您的机器人构建 URDF 的介绍。如果您想了解更多关于 URDF 和 XAcro 的信息，我们建议您查看官方的 <a class="reference external" href="http://wiki.ros.org/urdf">URDF 文档</a> <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1920">[校准&#64;songhuangong]</a></p>
 </div>
-<p>Now that we have our project workspace set up, let's dive straight into writing the URDF. Below is an image of the robot we will be trying to build.</p>
+<p>现在我们已经设置了项目工作区，让我们直接开始编写 URDF。下面是我们将尝试构建的机器人的形象。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1921">[校准&#64;songhuangong]</a></p>
 <a class="reference internal image-reference" href="../../_images/base-bot_1.png"><img alt="../../_images/base-bot_1.png" src="../../_images/base-bot_1.png" style="width: 49%;" /></a>
 <a class="reference internal image-reference" href="../../_images/base-bot_2.png"><img alt="../../_images/base-bot_2.png" src="../../_images/base-bot_2.png" style="width: 49%;" /></a>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <blockquote>
-<div><p>To get started, create a file named <code class="docutils literal notranslate"><span class="pre">sam_bot_description.urdf</span></code> under <code class="docutils literal notranslate"><span class="pre">src/description</span></code> and input the following as the initial contents of the file.</p>
+<div><p>首先，在 <code class="docutils literal notranslate"><span class="pre">src/description</span></code> 下创建一个名为 <code class="docutils literal notranslate"><span class="pre">sam_bot_description.urdf</span></code> 的文件，并输入以下内容作为文件的初始内容。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1922">[校准&#64;songhuangong]</a></p>
 </div></blockquote>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
 <span class="linenos">2</span><span class="nt">&lt;robot</span> <span class="na">name=</span><span class="s">&quot;sam_bot&quot;</span> <span class="na">xmlns:xacro=</span><span class="s">&quot;http://ros.org/wiki/xacro&quot;</span><span class="nt">&gt;</span>
@@ -797,9 +797,9 @@ sudo apt install ros-&lt;ros2-distro&gt;-xacro
 </div>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
-<p>The following code snippets should be placed within the <code class="docutils literal notranslate"><span class="pre">&lt;robot&gt;</span></code> tags. We suggest to add them in the same order as introduced in this tutorial. We have also included some line numbers to give you a rough idea on where to input the code. This may differ from the actual file you are writing depending on your usage of whitespaces. Also note that the line numbers assume that you are putting in code as they appear in this guide.</p>
+<p>以下代码片段应放置在 <code class="docutils literal notranslate"><span class="pre">&lt;robot&gt;</span></code> 标签内。我们建议按照本教程中介绍的顺序添加它们。我们还提供了一些行号，让您大致了解在哪里输入代码。这可能与您正在编写的实际文件不同，具体取决于您对空格的使用。另请注意，行号假定您正在输入本指南中显示的代码。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1923">[校准&#64;songhuangong]</a></p>
 </div>
-<p>Next, let us define some constants using XAcro properties that will be reused throughout the URDF.</p>
+<p>接下来，让我们使用XAcro属性定义一些常量，这些常量将在整个 URDF 中重复使用。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1924">[校准&#64;songhuangong]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 4</span>  <span class="cm">&lt;!-- Define robot constants --&gt;</span>
 <span class="linenos"> 5</span>  <span class="nt">&lt;xacro:property</span> <span class="na">name=</span><span class="s">&quot;base_width&quot;</span> <span class="na">value=</span><span class="s">&quot;0.31&quot;</span><span class="nt">/&gt;</span>
 <span class="linenos"> 6</span>  <span class="nt">&lt;xacro:property</span> <span class="na">name=</span><span class="s">&quot;base_length&quot;</span> <span class="na">value=</span><span class="s">&quot;0.42&quot;</span><span class="nt">/&gt;</span>
@@ -814,10 +814,10 @@ sudo apt install ros-&lt;ros2-distro&gt;-xacro
 <span class="linenos">15</span>  <span class="nt">&lt;xacro:property</span> <span class="na">name=</span><span class="s">&quot;caster_xoff&quot;</span> <span class="na">value=</span><span class="s">&quot;0.14&quot;</span><span class="nt">/&gt;</span>
 </pre></div>
 </div>
-<p>Here is a brief discussion on what these properties will represent in our urdf. The <code class="docutils literal notranslate"><span class="pre">base_*</span></code> properties all define the size of hte robot's main chassis. The <code class="docutils literal notranslate"><span class="pre">wheel_radius</span></code> and <code class="docutils literal notranslate"><span class="pre">wheel_width</span></code> define the shape of the robot's two back wheels. The <code class="docutils literal notranslate"><span class="pre">wheel_ygap</span></code> adjusts the gap between the wheel and the chassis along the y-axis whilst <code class="docutils literal notranslate"><span class="pre">wheel_zoff</span></code> and <code class="docutils literal notranslate"><span class="pre">wheel_xoff</span></code> position the back wheels along the z-axis and x-axis appropriately. Lastly, the <code class="docutils literal notranslate"><span class="pre">caster_xoff</span></code> positions the front caster wheel along the x-axis.</p>
-<p>Let us then define our <code class="docutils literal notranslate"><span class="pre">base_link</span></code> - this link will be a large box and will act as the main chassis of our robot. In URDF, a <code class="docutils literal notranslate"><span class="pre">link</span></code> element describes a rigid part or component of our robot. The robot state publisher then utilizes these definitions to determine coordinate frames for each link and publish the transformations between them.</p>
-<p>We will also be defining some of the link's visual properties which can be used by tools such as Gazebo and Rviz to show us a 3D model of our robot. Amongst these properties are <code class="docutils literal notranslate"><span class="pre">&lt;geometry&gt;</span></code> which describes the link's shape and <code class="docutils literal notranslate"><span class="pre">&lt;material&gt;</span></code> which describes it's color.</p>
-<p>For the code block block below, we access the <code class="docutils literal notranslate"><span class="pre">base</span></code> properties from the robot constants sections we defined before using the <code class="docutils literal notranslate"><span class="pre">${property}</span></code> syntax. In addition, we also set the material color of the main chassis to <code class="docutils literal notranslate"><span class="pre">Cyan</span></code>. Note that we set these parameters under the <code class="docutils literal notranslate"><span class="pre">&lt;visual&gt;</span></code> tag so they will only be applied as visual parameters which dont affect any collision or physical properties.</p>
+<p>这里简要讨论一下这些特性将在我们的urdf中代表什么。 <code class="docutils literal notranslate"><span class="pre">base_*</span></code> 属性决定了机器人主底盘的尺寸。 <code class="docutils literal notranslate"><span class="pre">wheel_radius</span></code> 和 <code class="docutils literal notranslate"><span class="pre">wheel_width</span></code> 定义了机器人的两个后轮的形状。 <code class="docutils literal notranslate"><span class="pre">wheel_ygap</span></code> 沿着y轴调整车轮和底盘之间的间隙，同时 <code class="docutils literal notranslate"><span class="pre">wheel_zoff</span></code> 和 <code class="docutils literal notranslate"><span class="pre">wheel_xoff</span></code> 沿着z轴和x轴适当地定位后轮。最后， <code class="docutils literal notranslate"><span class="pre">caster_xoff</span></code> 沿着x轴定位前轮。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1925">[校准&#64;songhuangong]</a></p>
+<p>然后让我们定义我们的 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> ——这个链接将是一个大盒子，将充当我们机器人的主机架。在 URDF 中，<code class="docutils literal notranslate"><span class="pre">link</span></code> 元素描述了我们机器人的刚性部件或组件。然后 robot state publisher  利用这些定义来确定每个链接的坐标系并发布它们之间的转换。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1926">[校准&#64;songhuangong]</a></p>
+<p>我们还将定义链接的一些视觉属性，这些属性可以被 Gazebo 和 Rviz 等工具用来展示机器人的 3D 模型。这些属性包括描述链接形状的 <code class="docutils literal notranslate"><span class="pre">&lt;geometry&gt;</span></code> 和描述链接颜色的 <code class="docutils literal notranslate"><span class="pre">&lt;material&gt;</span></code> 。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1927">[校准&#64;songhuangong]</a></p>
+<p>对于下面的代码块，我们从使用之前定义的 <code class="docutils literal notranslate"><span class="pre">${property}</span></code> 语法，访问机器人常量 <code class="docutils literal notranslate"><span class="pre">base</span></code> 属性。此外，我们还将主机箱的材质颜色设置为 <code class="docutils literal notranslate"><span class="pre">Cyan</span></code> 。请注意，我们在 <code class="docutils literal notranslate"><span class="pre">&lt;visual&gt;</span></code> 标签下设置了这些参数，因此它们将仅作为不影响任何碰撞或物理属性的视觉参数应用。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1928">[校准&#64;songhuangong]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">17</span>  <span class="cm">&lt;!-- Robot Base --&gt;</span>
 <span class="linenos">18</span>  <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">&quot;base_link&quot;</span><span class="nt">&gt;</span>
 <span class="linenos">19</span>    <span class="nt">&lt;visual&gt;</span>
@@ -831,8 +831,8 @@ sudo apt install ros-&lt;ros2-distro&gt;-xacro
 <span class="linenos">27</span>  <span class="nt">&lt;/link&gt;</span>
 </pre></div>
 </div>
-<p>Next, let us define a <code class="docutils literal notranslate"><span class="pre">base_footprint</span></code> link. The <code class="docutils literal notranslate"><span class="pre">base_footprint</span></code> link is a virtual (non-physical) link which has no dimensions or collision areas. Its primary purpose is to enable various packages determine the center of a robot projected to the ground. For example, Navigation2 uses this link to determine the center of a circular footprint used in its obstacle avoidance algorithms. Again, we set this link with no dimensions and to which position the robot's center is in when it is projected to the ground plane.</p>
-<p>After defining our base_link, we then add a joint to connect it to <code class="docutils literal notranslate"><span class="pre">base_link</span></code>. In URDF, a <code class="docutils literal notranslate"><span class="pre">joint</span></code> element describes the kinematic and dynamic properties between coordinate frames. For this case, we will be defining a <code class="docutils literal notranslate"><span class="pre">fixed</span></code> joint with the appropriate offsets to place our <code class="docutils literal notranslate"><span class="pre">base_footprint</span></code> link in the proper location based on the description above. Remember that we want to set our base_footprint to be at the ground plane when projected from the center of the main chassis, hence we get the sum of the <code class="docutils literal notranslate"><span class="pre">wheel_radius</span></code> and the <code class="docutils literal notranslate"><span class="pre">wheel_zoff</span></code> to get the appropriate location along the z-axis.</p>
+<p>接下来，让我们定义一个 <code class="docutils literal notranslate"><span class="pre">base_footprint</span></code> 链接。 <code class="docutils literal notranslate"><span class="pre">base_footprint</span></code> 链是一个虚拟 (非物理) 链，没有维度或碰撞区域。其主要目的是使各种组件能够确定投影到地面的机器人的中心。例如，Navigation2使用此链接来确定其避障算法中使用的圆形Footprint的中心。同样，我们将此链接设置为无尺寸，并且将机器人的中心投影到地平面时位于的那个位置。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1929">[校准&#64;songhuangong]</a></p>
+<p>在定义了我们的 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 之后，我们添加了一个关节来将它连接到 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 。在 URDF 中， <code class="docutils literal notranslate"><span class="pre">joint</span></code> 元素描述了坐标系之间的运动学和动态特性。对于这种情况，我们将定义一个带有适当偏移量的 <code class="docutils literal notranslate"><span class="pre">fixed</span></code> 关节，以根据上面的描述将我们的 <code class="docutils literal notranslate"><span class="pre">base_footprint</span></code> 放置在适当的位置。请记住，当从地盘的中心投影时，我们想将我们的  <code class="docutils literal notranslate"><span class="pre">base_footprint</span></code> 设置为地平面，因此我们得到了 <code class="docutils literal notranslate"><span class="pre">wheel_radius</span></code> 和 <code class="docutils literal notranslate"><span class="pre">wheel_zoff</span></code> 的总和，以获得沿z轴的适当位置。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1930">[校准&#64;songhuangong]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">29</span>  <span class="cm">&lt;!-- Robot Footprint --&gt;</span>
 <span class="linenos">30</span>  <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">&quot;base_footprint&quot;</span><span class="nt">/&gt;</span>
 <span class="linenos">31</span>
@@ -843,8 +843,8 @@ sudo apt install ros-&lt;ros2-distro&gt;-xacro
 <span class="linenos">36</span>  <span class="nt">&lt;/joint&gt;</span>
 </pre></div>
 </div>
-<p>Now, we will be adding two large drive wheels to our robot. To make our code cleaner and avoid repetition, we will make use of macros to define a block of code that will be repeated with differing parameters. Our macro will have 3 params: <code class="docutils literal notranslate"><span class="pre">prefix</span></code> which simply adds a prefix to our link and joint names, and <code class="docutils literal notranslate"><span class="pre">x_reflect</span></code> and <code class="docutils literal notranslate"><span class="pre">y_reflect</span></code> which allows us to flip the positions of our wheels with respect to the x and y axis respectively. Within this macro, we can also define the visual properties of a single wheel. Lastly, we will also define a <code class="docutils literal notranslate"><span class="pre">continuous</span></code> joint to allow our wheels to freely rotate about an axis. This joint also connects our wheel to the <code class="docutils literal notranslate"><span class="pre">base_link</span></code> at the appropriate location.</p>
-<p>At the end of this code block, we will be instantiating two wheels using the macro we just made through the <code class="docutils literal notranslate"><span class="pre">xacro:wheel</span></code> tags. Note that we also define the parameters to have one wheel on both sides at the back of our robot.</p>
+<p>现在，我们将为我们的机器人添加两个大驱动轮。为了使我们的代码更简洁并避免重复，我们将使用宏来定义一个代码块，它将通过不同的参数进行重复的定义。我们的宏将有 3 个参数：<code class="docutils literal notranslate"><span class="pre">prefix</span></code> ，它只是为我们的链接和关节名称添加一个前缀，以及 <code class="docutils literal notranslate"><span class="pre">x_reflect</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y_reflect</span></code> ，它们分别相对x 和 y 轴，允许我们翻转轮子的位置 。在这个宏中，我们还可以定义单个轮子的视觉属性。最后，我们还将定义一个 <code class="docutils literal notranslate"><span class="pre">continuous</span></code> 关节，以允许我们的轮子绕轴自由旋转。这个关节还将我们的轮子连接到适当位置的 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1931">[校准&#64;songhuangong]</a></p>
+<p>在此代码块的末尾，我们将使用刚刚通过 <code class="docutils literal notranslate"><span class="pre">xacro:wheel</span></code> 标签创建的宏来实例化两个轮子。请注意，我们还将参数定义为在机器人后部两侧各有一个轮子。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1932">[校准&#64;songhuangong]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">38</span>  <span class="cm">&lt;!-- Wheels --&gt;</span>
 <span class="linenos">39</span>  <span class="nt">&lt;xacro:macro</span> <span class="na">name=</span><span class="s">&quot;wheel&quot;</span> <span class="na">params=</span><span class="s">&quot;prefix x_reflect y_reflect&quot;</span><span class="nt">&gt;</span>
 <span class="linenos">40</span>    <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">&quot;${prefix}_link&quot;</span><span class="nt">&gt;</span>
@@ -871,7 +871,7 @@ sudo apt install ros-&lt;ros2-distro&gt;-xacro
 <span class="linenos">61</span>  <span class="nt">&lt;xacro:wheel</span> <span class="na">prefix=</span><span class="s">&quot;drivewhl_r&quot;</span> <span class="na">x_reflect=</span><span class="s">&quot;-1&quot;</span> <span class="na">y_reflect=</span><span class="s">&quot;-1&quot;</span> <span class="nt">/&gt;</span>
 </pre></div>
 </div>
-<p>Next, we will be adding a caster wheel at the front of our robot. We will be modelling this wheel as a sphere to keep things simple. Again, we define the wheel's geometry, material and the joint to connect it to <code class="docutils literal notranslate"><span class="pre">base_link</span></code> at the appropriate location.</p>
+<p>接下来，我们将在机器人的前面添加一个脚轮。我们将把这个轮子建模为一个球体以保持简单。同样，我们定义了车轮的几何形状、材料和关节，以便在适当的位置将其连接到 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1933">[校准&#64;songhuangong]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">63</span>  <span class="cm">&lt;!-- Caster Wheel --&gt;</span>
 <span class="linenos">64</span>  <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">&quot;front_caster&quot;</span><span class="nt">&gt;</span>
 <span class="linenos">65</span>    <span class="nt">&lt;visual&gt;</span>
@@ -891,15 +891,15 @@ sudo apt install ros-&lt;ros2-distro&gt;-xacro
 <span class="linenos">79</span>  <span class="nt">&lt;/joint&gt;</span>
 </pre></div>
 </div>
-<p>And that's it! We have built a URDF for a simple differential drive robot. In the next section, we will focus on building the ROS Package containing our URDF, launching the robot state publisher, and visualizing the robot in RVIz.</p>
+<p>就这样！我们为简单的差动驱动机器人构建了 URDF。在下一节中，我们将重点构建包含我们的 URDF 的 ROS 包，启动 <code class="docutils literal notranslate"><span class="pre">robot</span> <span class="pre">state</span> <span class="pre">publisher</span></code> ，并在 RVIz 中可视化机器人。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1934">[校准&#64;songhuangong]</a></p>
 </section>
 <section id="build-and-launch">
-<h2>Build and Launch<a class="headerlink" href="#build-and-launch" title="永久链接至标题"></a></h2>
+<h2>Build 和 Launch <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1935">[校准&#64;songhuangong]</a><a class="headerlink" href="#build-and-launch" title="永久链接至标题"></a></h2>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>The launch files from this tutorial were adapted from the official <a class="reference external" href="https://github.com/ros/urdf_tutorial/tree/ros2">URDF Tutorials for ROS 2</a></p>
+<p>本教程的启动文件改编自官方的 <a class="reference external" href="https://github.com/ros/urdf_tutorial/tree/ros2">URDF Tutorials for ROS 2</a> <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1936">[校准&#64;songhuangong]</a></p>
 </div>
-<p>Let's start this section by adding some dependencies that will be required once we build this project. Open up the root of your project directory and add the following lines to your <code class="docutils literal notranslate"><span class="pre">package.xml</span></code> (preferably after the <code class="docutils literal notranslate"><span class="pre">&lt;buildtool_depend&gt;</span></code> tag)</p>
+<p>让我们通过添加一些依赖项来开始本节，一旦我们构建了这个项目，将需要它。打开您的项目目录的根目录并将以下行添加到您的 <code class="docutils literal notranslate"><span class="pre">package.xml</span></code> （最好在 <code class="docutils literal notranslate"><span class="pre">&lt;buildtool_depend&gt;</span></code> 标签之后） <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1937">[校准&#64;songhuangong]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;exec_depend&gt;</span>joint_state_publisher<span class="nt">&lt;/exec_depend&gt;</span>
 <span class="nt">&lt;exec_depend&gt;</span>joint_state_publisher_gui<span class="nt">&lt;/exec_depend&gt;</span>
 <span class="nt">&lt;exec_depend&gt;</span>robot_state_publisher<span class="nt">&lt;/exec_depend&gt;</span>
@@ -907,7 +907,7 @@ sudo apt install ros-&lt;ros2-distro&gt;-xacro
 <span class="nt">&lt;exec_depend&gt;</span>xacro<span class="nt">&lt;/exec_depend&gt;</span>
 </pre></div>
 </div>
-<p>Next, let us create our launch file. Launch files are used by ROS 2 to bring up the necessary nodes for our package. From the root of the project, create a directory named <code class="docutils literal notranslate"><span class="pre">launch</span></code> and a <code class="docutils literal notranslate"><span class="pre">display.launch.py</span></code> file within it. The launch file below launches a robot publisher node in ROS 2 that uses our URDF to publish the transforms for our robot. In addition, the launch file also automatically launches RVIZ so we can visualize our robot as defined by the URDF. Copy and paste the snippet below into your <code class="docutils literal notranslate"><span class="pre">display.launch.py</span></code> file.</p>
+<p>接下来，让我们创建 launch 文件。 ROS 2 使用 launch 文件来为我们的包启动必要的节点。从项目的根目录创建一个名为 <code class="docutils literal notranslate"><span class="pre">launch``的目录</span> <span class="pre">以及一个名为</span> <span class="pre">``display.launch.py</span></code> 文件。下面的启动文件在 ROS 2 中启动了一个 robot publisher 节点，该节点使用我们的 URDF 发布我们机器人的变换。此外，启动文件还会自动启动 RVIZ，因此我们可以按照 URDF 定义来可视化我们的机器人。将下面的代码段复制并粘贴到您的 <a href="#id1"><span class="problematic" id="id2">``</span></a>display.launch.py`</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">launch</span>
 <span class="kn">from</span> <span class="nn">launch.substitutions</span> <span class="kn">import</span> <span class="n">Command</span><span class="p">,</span> <span class="n">LaunchConfiguration</span>
 <span class="kn">import</span> <span class="nn">launch_ros</span>
@@ -959,9 +959,9 @@ sudo apt install ros-&lt;ros2-distro&gt;-xacro
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>For more information regarding the launch system in ROS 2, you can have a look at the official <a class="reference external" href="https://docs.ros.org/en/rolling/Tutorials/Launch-system.html">ROS 2 Launch System Documentation</a></p>
+<p>关于 ROS 2 中启动系统的更多信息，可以查看官方的 <a class="reference external" href="https://docs.ros.org/en/rolling/Tutorials/Launch-system.html">ROS 2 Launch System Documentation</a> <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1939">[校准&#64;songhuangong]</a></p>
 </div>
-<p>To keep things simpler when we get to visualization, we have provided an RVIz config file that will be loaded when we launch our package. This configuration file initializes RVIz with the proper settings so you can view the robot immediately once it launches. Create a directory named <code class="docutils literal notranslate"><span class="pre">rviz</span></code> in the root of your project and a file named <code class="docutils literal notranslate"><span class="pre">urdf_config.rviz</span></code> under it. Place the following as the contents of <code class="docutils literal notranslate"><span class="pre">urdf_config.rviz</span></code></p>
+<p>当我们开始可视化时，为了让事情变得更简单，我们提供了一个 RVIz 配置文件，当我们启动我们的包时将加载它。此配置文件使用适当的设置初始化 RVIz，因此您可以在机器人启动后立即查看它。在项目的根目录中创建一个名为 <code class="docutils literal notranslate"><span class="pre">rviz</span></code> 的目录，并在其下创建一个名为 <code class="docutils literal notranslate"><span class="pre">urdf_config.rviz</span></code> 的文件。将以下内容作为 <code class="docutils literal notranslate"><span class="pre">urdf_config.rviz</span></code> 的内容 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1940">[校准&#64;songhuangong]</a></p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Panels:
   - Class: rviz_common/Displays
     Help Height: <span class="m">78</span>
@@ -1028,41 +1028,41 @@ Visualization Manager:
     Saved: ~
 </pre></div>
 </div>
-<p>Lastly, let us modify the <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file in the project root directory to include the files we just created during the package installation process. Add the following snippet to <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file preferrably above the <code class="docutils literal notranslate"><span class="pre">if(BUILD_TESTING)</span></code> line:</p>
+<p>最后，让我们修改项目根目录中的 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> 文件，以包含我们刚刚在包安装过程中创建的文件。将以下代码段添加到 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> 文件中，最好在 <code class="docutils literal notranslate"><span class="pre">if(BUILD_TESTING)</span></code> 行上方： <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1941">[校准&#64;songhuangong]</a></p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>install<span class="o">(</span>
   DIRECTORY src launch rviz
   DESTINATION share/<span class="si">${</span><span class="nv">PROJECT_NAME</span><span class="si">}</span>
 <span class="o">)</span>
 </pre></div>
 </div>
-<p>We are now ready to build our project using colcon. Navigate to the project root and execute the following commands.</p>
+<p>我们现在准备使用 colcon 构建我们的项目。导航到项目根目录并执行以下命令。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1942">[校准&#64;songhuangong]</a></p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>colcon build
 . install/setup.bash
 </pre></div>
 </div>
-<p>After a successful build, execute the following commands to install the ROS 2 package and launch our project.</p>
+<p>构建成功后，执行以下命令安装 ROS 2 包并启动我们的项目。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1943">[校准&#64;songhuangong]</a></p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2 launch sam_bot_description display.launch.py
 </pre></div>
 </div>
-<p>ROS 2 should now launch a robot publisher node and start up RVIZ using our URDF. We'll be taking a look at our robot using RVIZ in the next section.</p>
+<p>ROS 2 现在应该启动机器人发布者节点并使用我们的 URDF 启动 RVIZ。我们将在下一节中使用 RVIZ 来看看我们的机器人。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1944">[校准&#64;songhuangong]</a></p>
 </section>
 <section id="visualization-using-rviz">
-<h2>Visualization using RVIZ<a class="headerlink" href="#visualization-using-rviz" title="永久链接至标题"></a></h2>
-<p>RVIZ is a robot visualization tool that allows us to see a 3D model of our robot using its URDF. Upon a successful launch using the commands in the previous section, RVIZ should now be visible on your screen and should look like the image below. You may need to move around and manipulate the view to get a good look at your robot.</p>
+<h2>使用 RVIZ 可视化 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1945">[校准&#64;songhuangong]</a><a class="headerlink" href="#visualization-using-rviz" title="永久链接至标题"></a></h2>
+<p>RVIZ 是一个机器人可视化工具，它允许我们使用其 URDF 查看机器人的 3D 模型。使用上一节中的命令成功启动后，RVIZ 现在应该在您的屏幕上可见，并且应该如下图所示。您可能需要四处走动并操纵视图以更好地了解您的机器人。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1946">[校准&#64;songhuangong]</a></p>
 <img alt="../../_images/base-bot_3.png" src="../../_images/base-bot_3.png" />
-<p>As you can see, we have successfully created a simple differential drive robot and visualized it in RVIz. It is not necessary to visualize your robot in RVIz, but it's a good step in order to see if you have properly defined your URDF. This helps you ensure that the robot state publisher is publishing the correct transformations.</p>
-<p>You may have noticed that another window was launched - this is a GUI for the joint state publisher. The joint state publisher is another ROS 2 package which publishes the state for our non-fixed joints. You can manipulate this publisher through the small GUI and the new pose of the joints will be reflected in RVIz. Sliding the bars for any of the two wheels will rotate these joints. You can see this in action by viewing RVIZ as you sweep the sliders in the Joint State Publisher GUI.</p>
+<p>如您所见，我们已经成功创建了一个简单的差动驱动机器人，并在 RVIz 中对其进行了可视化。没有必要在 RVIz 中可视化您的机器人，但这是一个很好的步骤，可以查看您是否正确定义了 URDF。这有助于确定 <code class="docutils literal notranslate"><span class="pre">robot</span> <span class="pre">state</span> <span class="pre">publisher</span></code> 发布是正确的转换。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1947">[校准&#64;songhuangong]</a></p>
+<p>您可能已经注意到启动的另一个窗口 - 这是 joint state publisher 的 GUI。 joint state publisher 是另一个 ROS 2 包，它为我们的非固定关节发布状态。您可以通过小 GUI 操作此发布者，关节的新姿势将反映在 RVIz 中。滑动两个轮子中的任何一个的杆都会旋转这些关节。当您在 Joint State Publisher GUI 中扫动滑块时，您可以通过查看 RVIZ 来了解这一点。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1948">[校准&#64;songhuangong]</a></p>
 <img alt="../../_images/base-bot_4.png" src="../../_images/base-bot_4.png" />
 <div class="admonition note">
 <p class="admonition-title">备注</p>
-<p>We won't be interacting much with this package for Nav2, but if you would like to know more about the joint state publisher, feel free to have a look at the official <a class="reference external" href="http://wiki.ros.org/joint_state_publisher">Joint State Publisher Documentation</a>.</p>
+<p>我们不会与 Nav2 的这个包进行太多互动，但如果您想了解更多关于联合国家发布者的信息，请随时查看官方的 <a class="reference external" href="http://wiki.ros.org/joint_state_publisher">Joint State Publisher Documentation</a> 。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1949">[校准&#64;songhuangong]</a></p>
 </div>
-<p>At this point, you may already decide to stop with this tutorial since we have already achieved our objective of creating a URDF for a simple differential drive robot. The robot state publisher is now publishing the transforms derived from the URDF. These transforms can now be used by other packages (such as Nav2) to get information regarding the shape and structure of your robot. However, to properly use this URDF in a simulation, we need physical properties so that the robot reacts to physical environments like a real robot would. The visualization fields are only for visualization, not collision, so your robot will drive straight through obstacles. We'll get into adding these properties in our URDF in the next section.</p>
+<p>此时，您可能已经决定停止学习本教程，因为我们已经实现了为简单的差动驱动机器人创建 URDF 的目标。robot state publisher 现在正在发布源自URDF的转换。现在，其他包（例如 Nav2）可以使用这些转换来获取有关机器人形状和结构的信息。但是，要在模拟中正确使用此 URDF，我们需要物理属性，以便机器人像真实机器人一样对物理环境做出反应。可视化字段仅用于可视化，不用于碰撞，因此您的机器人将直接穿过障碍物。我们将在下一节中将这些属性添加到我们的 URDF 中。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1950">[校准&#64;songhuangong]</a></p>
 </section>
 <section id="adding-physical-properties">
-<h2>Adding Physical Properties<a class="headerlink" href="#adding-physical-properties" title="永久链接至标题"></a></h2>
-<p>As an additional section to this guide, we will be modifying our current URDF to include some of our robot's kinematic properties. This information may be used by physics simulators such as Gazebo to model and simulate how our robot will act in the virtual environment.</p>
-<p>Let us first define macros containing the inertial properties of the geometric primitives we used in our project. Place the snippet below after our constants section in the URDF:</p>
+<h2>添加物理属性 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1951">[待校准&#64;1951]</a><a class="headerlink" href="#adding-physical-properties" title="永久链接至标题"></a></h2>
+<p>作为本指南的附加部分，我们将修改当前的 URDF 以包含我们机器人的一些运动学属性。 Gazebo 等物理模拟器可以使用此信息来建模和模拟我们的机器人在虚拟环境中的行为方式。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1952">[校准&#64;songhuangong]</a></p>
+<p>让我们首先定义包含我们在项目中使用的几何图元的惯性属性的宏。将下面的代码片段放在 URDF 中的常量部分之后： <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1953">[校准&#64;songhuangong]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">17</span>  <span class="cm">&lt;!-- Define intertial property macros  --&gt;</span>
 <span class="linenos">18</span>  <span class="nt">&lt;xacro:macro</span> <span class="na">name=</span><span class="s">&quot;box_inertia&quot;</span> <span class="na">params=</span><span class="s">&quot;m w h d&quot;</span><span class="nt">&gt;</span>
 <span class="linenos">19</span>    <span class="nt">&lt;inertial&gt;</span>
@@ -1088,7 +1088,7 @@ Visualization Manager:
 <span class="linenos">39</span>  <span class="nt">&lt;/xacro:macro&gt;</span>
 </pre></div>
 </div>
-<p>Let us start by adding collision areas to our <code class="docutils literal notranslate"><span class="pre">base_link</span></code> using the <code class="docutils literal notranslate"><span class="pre">&lt;collision&gt;</span></code> tag. We will also be using the box_inertia macro we defined before to add some inertial properties to our <code class="docutils literal notranslate"><span class="pre">base_link</span></code>. Include the following code snippet within <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">name=&quot;base_link&quot;&gt;</span></code> tag of base_link in our URDF.</p>
+<p>让我们先使用 <code class="docutils literal notranslate"><span class="pre">&lt;collision&gt;</span></code> 标签在我们的 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 上增加碰撞区域。我们还将使用我们之前定义的box_inertia宏为我们的 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 添加一些惯性特性。在我们的URDF中，在 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 的``&lt;link name=&quot;base_link&quot;&gt;`` 标签中包含以下代码片段。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1954">[校准&#64;songhuangong]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">52</span>    <span class="nt">&lt;collision&gt;</span>
 <span class="linenos">53</span>      <span class="nt">&lt;geometry&gt;</span>
 <span class="linenos">54</span>        <span class="nt">&lt;box</span> <span class="na">size=</span><span class="s">&quot;${base_length} ${base_width} ${base_height}&quot;</span><span class="nt">/&gt;</span>
@@ -1098,7 +1098,7 @@ Visualization Manager:
 <span class="linenos">58</span>    <span class="nt">&lt;xacro:box_inertia</span> <span class="na">m=</span><span class="s">&quot;15&quot;</span> <span class="na">w=</span><span class="s">&quot;${base_width}&quot;</span> <span class="na">d=</span><span class="s">&quot;${base_length}&quot;</span> <span class="na">h=</span><span class="s">&quot;${base_height}&quot;</span><span class="nt">/&gt;</span>
 </pre></div>
 </div>
-<p>Next, let us do the same for our wheel macros. Include the following code snippet within the <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">name=&quot;${prefix}_link&quot;&gt;</span></code> tag of our wheel macros in our URDF.</p>
+<p>接下来，让我们对车轮宏执行相同的操作。在 URDF 中车轮宏的 <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">name=&quot;${prefix}_link&quot;&gt;</span></code> 标签中包含以下代码片段。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1955">[校准&#64;songhuangong]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">83</span>      <span class="nt">&lt;collision&gt;</span>
 <span class="linenos">84</span>        <span class="nt">&lt;origin</span> <span class="na">xyz=</span><span class="s">&quot;0 0 0&quot;</span> <span class="na">rpy=</span><span class="s">&quot;${pi/2} 0 0&quot;</span><span class="nt">/&gt;</span>
 <span class="linenos">85</span>        <span class="nt">&lt;geometry&gt;</span>
@@ -1109,7 +1109,7 @@ Visualization Manager:
 <span class="linenos">90</span>      <span class="nt">&lt;xacro:cylinder_inertia</span> <span class="na">m=</span><span class="s">&quot;0.5&quot;</span> <span class="na">r=</span><span class="s">&quot;${wheel_radius}&quot;</span> <span class="na">h=</span><span class="s">&quot;${wheel_width}&quot;</span><span class="nt">/&gt;</span>
 </pre></div>
 </div>
-<p>Lastly, let us add the similar properties to our spherical caster wheels. Include the following in the <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">name=&quot;front_caster&quot;&gt;</span></code> tag of our caster wheel in the URDF.</p>
+<p>最后，让我们将类似的属性添加到我们的球形脚轮中。在 URDF 中，我们的脚轮标签中 <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">name=&quot;front_caster&quot;&gt;</span></code> 包含以下内容。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1956">[校准&#64;songhuangong]</a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">114</span>    <span class="nt">&lt;collision&gt;</span>
 <span class="linenos">115</span>      <span class="nt">&lt;origin</span> <span class="na">xyz=</span><span class="s">&quot;0 0 0&quot;</span> <span class="na">rpy=</span><span class="s">&quot;0 0 0&quot;</span><span class="nt">/&gt;</span>
 <span class="linenos">116</span>      <span class="nt">&lt;geometry&gt;</span>
@@ -1122,22 +1122,22 @@ Visualization Manager:
 </div>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
-<p>We did not add any inertial or collision properties to our <code class="docutils literal notranslate"><span class="pre">base_footprint</span></code> link since this is a virtual and non-physical link.</p>
+<p>我们没有向我们的 <code class="docutils literal notranslate"><span class="pre">base_footprint</span></code> 链接添加任何惯性或碰撞属性，因为它一个虚拟和非物理链接。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1957">[校准&#64;songhuangong]</a></p>
 </div>
-<p>Build your project and then launch RViz using the same commands in the previous section.</p>
+<p>构建您的项目，然后使用上一节中的相同命令启动 RViz。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1958">[校准&#64;songhuangong]</a></p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>colcon build
 . install/setup.bash
 ros2 launch sam_bot_description display.launch.py
 </pre></div>
 </div>
-<p>You can verify whether you have properly set up the collision areas by enabling <code class="docutils literal notranslate"><span class="pre">Collision</span> <span class="pre">Enabled</span></code> under <code class="docutils literal notranslate"><span class="pre">RobotModel</span></code> on the left pane (it may be easier to see if you also turn off <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Enabled</span></code>). For this tutorial we defined a collision area which is similar to our visual properties. Note that this may not always be the case since you may opt for simpler collision areas based on how your robot looks.</p>
+<p>您可以通过在左侧窗格的 <code class="docutils literal notranslate"><span class="pre">RobotModel</span></code> 下启用 <code class="docutils literal notranslate"><span class="pre">Collision</span> <span class="pre">Enabled</span></code> 来验证您是否正确设置了碰撞区域（如果您关闭了 <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Enabled</span></code> 可能更容易看出来）。在本教程中，我们定义了一个类似于我们的视觉属性的碰撞区域。请注意，情况可能并非总是如此，因为您可能会根据机器人的外观选择更简单的碰撞区域。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1959">[校准&#64;songhuangong]</a></p>
 <img alt="../../_images/base-bot_5.png" src="../../_images/base-bot_5.png" />
-<p>For now, we will have to stop here since we will need to set up a lot more components to actually start simulating our robot in Gazebo. We will be coming back to this project during the course of these setup guides, and we will eventually see our robot move in a virtual environment once we get to the simulation sections. The major components that are missing from this work are the simulation plugins required to mimic your robot controllers. We will introduce those and add them to this URDF in the appropriate section.</p>
+<p>现在，我们将不得不在这里停下来，因为我们需要设置更多组件才能真正开始在 Gazebo 中模拟我们的机器人。在这些设置指南的过程中，我们将回到这个项目，一旦我们进入模拟部分，我们最终将看到我们的机器人在虚拟环境中移动。这项工作缺少的主要组件是模拟机器人控制器所需的模拟插件。我们将在适当的部分介绍这些并将它们添加到此 URDF。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1960">[校准&#64;songhuangong]</a></p>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="永久链接至标题"></a></h2>
-<p>And that's it. In this tutorial, you have successfully created a URDF for a simple differential drive robot. You have also set up a ROS 2 project that launches a robot publisher node, which then uses your URDF to publish the robot's transforms. We have also used RViz to visualize our robot to verify whether our URDF is correct. Lastly, we have added in some physical properties to our URDF in order to prepare it for simulation.</p>
-<p>Feel free to use this tutorial as a template for your own robot. Remember that your main goal is to publish the correct transforms from your base_link up to your sensor_frames. Once these have been setup, then you may proceed to our other setup guides.</p>
+<h2>小结 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1616">[校准&#64;songhuangong]</a><a class="headerlink" href="#conclusion" title="永久链接至标题"></a></h2>
+<p>就是这样。在本教程中，您已成功为简单的差动驱动机器人创建了 URDF。您还设置了启动 robot publisher 节点的 ROS 2 项目，然后使用您的 URDF 发布机器人的变换。我们还使用 RViz 来可视化我们的机器人，以验证我们的 URDF 是否正确。最后，我们在 URDF 中添加了一些物理属性，以便为模拟做准备。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1961">[校准&#64;songhuangong]</a></p>
+<p>请随意使用本教程作为您自己的机器人的模板。请记住，您的主要目标是发布从 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 到 <code class="docutils literal notranslate"><span class="pre">sensor_frames</span></code> 的正确转换。设置完成后，您可以继续阅读我们的其他设置指南。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1962">[校准&#64;songhuangong]</a></p>
 </section>
 </section>
 
