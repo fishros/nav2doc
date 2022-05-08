@@ -922,7 +922,7 @@
 </li>
 <li><dl class="simple">
 <dt>在上下文恢复中清除costmap: <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=143">[校准&#64;小鱼]</a></dt><dd><ul>
-<li><p>这个 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 子树清除全球成本图。全球成本图是planner背景下的相关成本图     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=144">[待校准&#64;144]</a></p></li>
+<li><p>子树``ComputePathToPose`` 清除全球成本图。全球成本图是planner背景下的相关成本图 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=144">[校准&#64;小鱼]</a></p></li>
 <li><p>这个 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 子树清除了当地的成本图。本地costmap是控制者上下文中的相关costmap     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=145">[待校准&#64;145]</a></p></li>
 </ul>
 </dd>
@@ -967,7 +967,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">BackUp</span></code> recovery action</p></li>
 </ul>
 <p>在 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 的四个孩子父 <code class="docutils literal notranslate"><span class="pre">RoundRobin</span></code> ，机器人将尝试renavigate在 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树。如果重新隔离不成功， <code class="docutils literal notranslate"><span class="pre">RoundRobin</span></code> 的下一个孩子将被勾选。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=156">[待校准&#64;156]</a></p>
-<p>例如，假设机器人被卡住， <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>  :( 为了这个例子，让我们假设目标从未更新)。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=157">[待校准&#64;157]</a></p>
+<p>例如，假设机器人卡住， <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>  :( 为了这个例子，让我们假设目标从未更新)。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=157">[校准&#64;小鱼]</a></p>
 <ol class="arabic simple">
 <li><p>尝试使用 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树中的代价地图清除序列，并返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 。机器人现在再次移动到 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=158">[待校准&#64;158]</a></p></li>
 <li><p>让我们假设清除两个成本图是不够的，并且 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树再次返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> 。机器人现在滴答 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=159">[待校准&#64;159]</a></p></li>
