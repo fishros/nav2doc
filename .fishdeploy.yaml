@@ -1,6 +1,6 @@
 # fishros deploy tool 所有的操作都在工程目录进行
 name: nav2doc
-tag: develop
+tag: master
 pipline:
   - delete
   - install
