@@ -760,7 +760,7 @@
 </section>
 <section id="description">
 <h2>描述<a class="headerlink" href="#description" title="永久链接至标题"></a></h2>
-<p>参数 <code class="docutils literal notranslate"><span class="pre">nav2_smac_planner</span></code> 包包含一个优化的模板化A*搜索算法，用于为多种类型的机器人平台创建多个基于A*的planner。它使用模板节点类型来开发不同的基于搜索的planner。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2852">[待校准&#64;2852]</a></p>
+<p>参数 <code class="docutils literal notranslate"><span class="pre">nav2_smac_planner</span></code> 包含一个优化的模板化A*搜索算法，用于为多种类型的机器人平台创建多个基于A*的planner。它使用模板节点类型来开发不同的基于搜索的planner。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2852">[校准&#64;小鱼]</a></p>
 <p>我们支持循环差速全方位驱动机器人使用 <code class="docutils literal notranslate"><span class="pre">SmacPlanner2D</span></code> planner实现成本感知A*planner。我们使用实现混合-A*planner的 <code class="docutils literal notranslate"><span class="pre">SmacPlannerHybrid</span></code> 插件来支持类似汽车 (阿克曼) 和有腿汽车。我们支持非圆形、任意形状的任何使用 <code class="docutils literal notranslate"><span class="pre">SmacPlannerLattice</span></code> 插件的模型车辆，该插件实现了状态晶格planner (例如omni、diff、ackermann、legged、custom)。它包含用于阿克曼，腿，差动驱动和全向车辆的控制装置和发电机，但您可以为其他机器人类型提供自己的控制装置或具有不同的规划行为。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2853">[待校准&#64;2853]</a></p>
 <p>最后两个插件在运动学上是可行的，并且支持逆转。通过高度优化的启发式函数和高效的编程，它们的性能与2D-A*和NavFn等2D计数器部分相似。3planner的一个例子可以在下面看到，规划一条大约75米的路径。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2854">[待校准&#64;2854]</a></p>
 <ul class="simple">
