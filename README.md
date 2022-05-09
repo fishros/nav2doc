@@ -3,6 +3,4 @@
 完整文档请访问:http://nav2.fishros.com
 
 ## 最近一次更新记录
-- [小鱼](https://github.com/fishros) update:1050|2
-- [小鱼](https://github.com/fishros) update:1052|2
-- [小鱼](https://github.com/fishros) update:1054|2
+- [小鱼](https://github.com/fishros) update:2851|16
