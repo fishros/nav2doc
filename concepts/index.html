@@ -857,7 +857,7 @@
 <p>想象一下，您正在注释地图文件 (或任何图像文件)，以便根据注释地图中的位置执行特定操作。记/注释的示例可以是将某些区域排除在外以避免在这些区域内进行路径规划，或者让某些像素属于标记区域中的最大速度。这种带注释的地图被称为  &quot;filter mask&quot; 。就像覆盖在某个表面上的掩码一样，过滤器掩码的大小、位置和比例尺可以与主地图相同，也可以不同。过滤器掩码的主要目标是提供在地图上进行标记的能力，以标记具有某些附加功能或行为变化的区域。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=75">[校准&#64;haisenzeng]</a></p>
 <p>成本地图过滤器是基于成本地图图层的方法，可以将过滤器掩码中注释的空间相关行为变化应用到Nav2软件堆栈中。成本地图过滤器是作为成本地图插件实现的。这些插件之所以被称为  &quot;filters&quot; ，是因为它们会通过过滤器掩码上标记的空间注释对成本地图进行过滤。为了制作过滤后的成本地图并改变机器人在注释区域的行为，过滤器插件会读取来自过滤器掩码的数据。该数据在过滤器空间中被线性变换为特征图。有了这个变换后的特征图以及地图/成本地图、任何传感器数据和机器人当前坐标，过滤器就可以更新底层成本地图，并根据机器人的位置改变机器人的行为。例如，通过使用成本地图过滤器可以实现以下功能： <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=76">[校准&#64;haisenzeng]</a></p>
 <ul class="simple">
-<li><p>机器人永远不会进入的禁区/安全区。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=77">[校准&#64;haisenzeng]</a></p></li>
+<li><p>机器人永远不会进入的禁区域/安全区域。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=77">[校准&#64;小鱼]</a></p></li>
 <li><p>Speed restriction areas. Maximum speed of robots going inside those areas will be limited.</p></li>
 <li><p>机器人在工业环境和仓库中移动的首选通道。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=79">[校准&#64;haisenzeng]</a></p></li>
 </ul>
