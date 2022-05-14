@@ -21,7 +21,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Nav2行为树" href="../behavior_trees/index.html" />
-    <link rel="prev" title="旋转控制器 [待校准@2832]" href="../configuration/packages/configuring-rotation-shim-controller.html" />
+    <link rel="prev" title="旋转控制器" href="../configuration/packages/configuring-rotation-shim-controller.html" />
 
 <link rel="stylesheet" href="../_static/tcs_theme.css" type="text/css" />
 
@@ -552,12 +552,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../configuration/packages/configuring-recovery-server.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/packages/configuring-regulated-pp.html">纯追踪控制 [待校准&#64;2786]</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/packages/configuring-regulated-pp.html">纯追踪控制</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../configuration/packages/configuring-regulated-pp.html#regulated-pure-pursuit-parameters">纯追踪控制参数 [待校准&#64;2789]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../configuration/packages/configuring-regulated-pp.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/packages/configuring-rotation-shim-controller.html">旋转控制器 [待校准&#64;2832]</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/packages/configuring-rotation-shim-controller.html">旋转控制器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../configuration/packages/configuring-rotation-shim-controller.html#rotation-shim-controller-parameters">旋转控制器参数 [待校准&#64;2838]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../configuration/packages/configuring-rotation-shim-controller.html#example">Example</a></li>
 </ul>
@@ -765,7 +765,7 @@
 </section>
 <section id="rotate-in-place-behavior">
 <h2>旋转到位行为<a class="headerlink" href="#rotate-in-place-behavior" title="永久链接至标题"></a></h2>
-<p>使用 <a class="reference internal" href="../configuration/packages/configuring-rotation-shim-controller.html#configuring-rotation-shim"><span class="std std-ref">旋转控制器 [待校准&#64;2832]</span></a> ，机器人将只需旋转之前开始跟踪完整路径。这允许开发人员调整控制器插件优化路径跟踪给你清洁旋转，开箱。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1023">[待校准&#64;1023]</a></p>
+<p>使用 <a class="reference internal" href="../configuration/packages/configuring-rotation-shim-controller.html#configuring-rotation-shim"><span class="std std-ref">旋转控制器</span></a> ，机器人将只需旋转之前开始跟踪完整路径。这允许开发人员调整控制器插件优化路径跟踪给你清洁旋转，开箱。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1023">[待校准&#64;1023]</a></p>
 <p>这是添加由于怪癖一些现有控制器而调整控制器任务能硬质或算法并不旋转到位时完整路径 (如果欲望的特性)。结果是尴尬，口吃，或旋转行为机器人's initial and path heading's显著分歧。给控制器更好的起点开始跟踪路径调整控制器显着容易创建更直观结果作壁上观 (一个维护者的意见)。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1024">[待校准&#64;1024]</a></p>
 <p>注意: 如果使用非完整的、运动学上可行的planner (例如Smac Hybrid-a <a href="#id1"><span class="problematic" id="id2">*</span></a>，Smac状态晶格)，这不是必要的行为优化。这一类planner将创建考虑到机器人开始航向的计划，不需要任何旋转行为。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1025">[待校准&#64;1025]</a></p>
 <p>这种行为最适合: <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1026">[待校准&#64;1026]</a></p>
