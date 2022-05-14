@@ -544,7 +544,7 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-amcl.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-recovery-server.html">恢复服务器 [待校准&#64;2750]</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuring-recovery-server.html">恢复服务器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-recovery-server.html#recovery-server-parameters">恢复服务器参数 [待校准&#64;2753]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-recovery-server.html#default-plugins">默认插件 [待校准&#64;2606]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-recovery-server.html#spin-recovery-parameters">自旋恢复参数 [待校准&#64;2772]</a></li>
@@ -742,7 +742,7 @@
            <div itemprop="articleBody">
              
   <section id="rotation-shim-controller">
-<span id="configuring-rotation-shim"></span><h1>旋转控制器 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2832">[待校准&#64;2832]</a><a class="headerlink" href="#rotation-shim-controller" title="永久链接至标题"></a></h1>
+<span id="configuring-rotation-shim"></span><h1>旋转控制器<a class="headerlink" href="#rotation-shim-controller" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_rotation_shim_controller">Github</a> 上的源代码 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2425">[校准&#64;小鱼]</a></p>
 <p>参数 <code class="docutils literal notranslate"><span class="pre">nav2_rotation_shim_controller</span></code> 将检查机器人和新接收路径的大致航向差异。如果在阈值内，它将把请求传递给 <code class="docutils literal notranslate"><span class="pre">primary_controller</span></code> 执行任务。如果超出阈值，该控制器将机器人旋转至该路径方向的适当位置。一旦它在公差范围内，它就会将控制执行从这个旋转垫片控制器传递到主控制器插件上。此时，机器人的主插件将控制顺利完成任务。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2833">[待校准&#64;2833]</a></p>
 <p>参数``RotationShimController`` 最适用于:     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2834">[待校准&#64;2834]</a></p>
