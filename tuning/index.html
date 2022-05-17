@@ -566,7 +566,7 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">调整指南</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#inflation-potential-fields">膨胀潜在领域</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#robot-footprint-vs-radius">机器人Footprint与半径 [校准&#64;首飞]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#robot-footprint-vs-radius">机器人Footprint与半径</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rotate-in-place-behavior">旋转到位行为</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#planner-plugin-selection">规划器插件选择</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#controller-plugin-selection">控制器插件选择 [待校准&#64;1045]</a></li>
@@ -752,7 +752,7 @@
 <p>因此维护者建议，对于所有ROS中可用的基于代价搜索的规划器，增加膨胀层代价比例(cost scale)和半径(radius)以便给整个地图产生平滑的势力场。对于非常大的开放式空间，中间区域是0-cost区域是可以的，但对于大厅，过道和类似的区域; 请创建一个平滑的势力场以便提供最佳性能。 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1013">[校准&#64;首飞]</a></p>
 </section>
 <section id="robot-footprint-vs-radius">
-<h2>机器人Footprint与半径 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1014">[校准&#64;首飞]</a><a class="headerlink" href="#robot-footprint-vs-radius" title="永久链接至标题"></a></h2>
+<h2>机器人Footprint与半径<a class="headerlink" href="#robot-footprint-vs-radius" title="永久链接至标题"></a></h2>
 <p>Nav2允许用户通过两种方式指定机器人的形状: 几何 <code class="docutils literal notranslate"><span class="pre">footprint</span></code> 或围绕机器人的圆的半径。在ROS (1) 中，总是指定机器人的半径近似值是非常合理的，由于全球规划算法没有使用它，并且local planners/成本图是在循环假设的情况下建立的。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1015">[待校准&#64;1015]</a></p>
 <p>然而，Nav2，我们现在有多规划控制器算法利用全SE2足迹。如果你的机器人非圆，建议你给planners和控制器实际，几何足迹的机器人。这将允许planners和控制器计划或创建轨迹其更紧密地空间。例如，如果你有很长但紧身机器人，圆形假设不允许机器人计划空间只有点超出你的机器人，由于机器人不适合纵向。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1016">[待校准&#64;1016]</a></p>
 <p>的运动学可行planners (e。g. Smac混合A <a href="#id1"><span class="problematic" id="id2">*</span></a>，Smac状态点阵) 将使用SE2足迹碰撞检查创建运动学可行计划，如果提供实际足迹。截至2021年12月所有控制器插件支持全足迹碰撞检查确保安全路径跟踪。如果你提供足迹的机器人，将用于确保轨迹有效建议你这样做。防止一些  &quot;stuck robot&quot; 情况可以很容易避免。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=1017">[待校准&#64;1017]</a></p>
