@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>路点追踪 [待校准@2875] &mdash; Navigation 2 1.0.0 文档</title>
+  <title>路点追踪 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
@@ -373,7 +373,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">配置指南</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">路点追踪 [待校准&#64;2875]</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">路点追踪</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#provided-plugins">提供的插件 [待校准&#64;2604]</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="nav2_waypoint_follower-plugins/wait_at_waypoint.html">WaitAtWaypoint</a></li>
@@ -385,7 +385,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-bt-navigator.html">行为树导航器 [待校准&#64;2529]</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuring-bt-navigator.html">行为树导航器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-navigator.html#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-navigator.html#example">Example</a></li>
 </ul>
@@ -441,7 +441,7 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-costmaps.html">2D代价地图 [待校准&#64;2616]</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuring-costmaps.html">2D代价地图</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#costmap2d-ros-parameters">2D代价地图的ROS参数     [待校准&#64;2618]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#default-plugins">默认插件 [待校准&#64;2606]</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#plugin-parameters">插件参数 [待校准&#64;2677]</a><ul>
@@ -732,7 +732,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">配置指南</a> &raquo;</li>
-      <li>路点追踪 [待校准&#64;2875]</li>
+      <li>路点追踪</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -742,7 +742,7 @@
            <div itemprop="articleBody">
              
   <section id="waypoint-follower">
-<span id="configuring-waypoint-follower"></span><h1>路点追踪 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2875">[待校准&#64;2875]</a><a class="headerlink" href="#waypoint-follower" title="永久链接至标题"></a></h1>
+<span id="configuring-waypoint-follower"></span><h1>路点追踪<a class="headerlink" href="#waypoint-follower" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_waypoint_follower">Github</a> 上的源代码 <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2425">[校准&#64;小鱼]</a></p>
 <p>路点追踪模块实现了一种使用导航操作服务器执行路点追踪的方法。它将采用一组有序的航路点，然后尝试按顺序导航到它们。它还托管一个航点任务执行程序插件，可用于在航点执行自定义行为，如等待用户指令、拍照或拿起盒子。如果无法实现航点，则 <code class="docutils literal notranslate"><span class="pre">stop_on_failure</span></code> 参数将决定是继续到下一个航点还是停止。     <a class="reference external" href="http://dev.nav2.fishros.com/calibpage/#/home?msgid=2876">[待校准&#64;2876]</a></p>
 <section id="parameters">
