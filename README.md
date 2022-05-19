@@ -5,3 +5,4 @@
 ## 最近一次更新记录
 - [小鱼](https://github.com/fishros) update:2891|4
 - [小鱼](https://github.com/fishros) mark:no_translate
+- [小鱼](https://github.com/fishros) mark:no_translate
